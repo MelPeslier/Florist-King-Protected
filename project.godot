@@ -11,6 +11,8 @@ config_version=5
 [application]
 
 config/name="Florist King"
+config/tags=PackedStringArray("jam")
+run/main_scene="res://shop/night_shop.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -18,3 +20,8 @@ config/icon="res://icon.svg"
 
 SilentWolf="*res://addons/silent_wolf/SilentWolf.gd"
 Global="*res://autoloads/global.gd"
+
+[display]
+
+window/size/viewport_width=1200
+window/size/viewport_height=600

@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://cku22pu5ldgct"]
+
+[ext_resource type="Script" path="res://shop/room.gd" id="1_2p71r"]
+[ext_resource type="Texture2D" uid="uid://bkd5kvkxdfybm" path="res://art/placeholder/rooms/Cattura2.PNG" id="1_b4320"]
+
+[node name="Room2" type="Node2D"]
+script = ExtResource("1_2p71r")
+roomNumber = 2
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(117, 2)
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("1_b4320")
+
+[node name="DebugLabel" type="Label" parent="."]
+editor_description = "This will be removed before release"
+offset_left = -384.0
+offset_top = -232.0
+offset_right = -344.0
+offset_bottom = -162.0
+theme_override_font_sizes/font_size = 48
+text = "2"

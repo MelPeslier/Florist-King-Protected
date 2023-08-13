@@ -1,0 +1,131 @@
+[gd_scene load_steps=8 format=3 uid="uid://dllijrqhrghhe"]
+
+[ext_resource type="Script" path="res://player/Player.gd" id="1_jye1g"]
+[ext_resource type="Texture2D" uid="uid://bj6x67a4un3od" path="res://art/placeholder/minimap/MiniMap.png" id="1_l40fl"]
+[ext_resource type="Texture2D" uid="uid://d3ql01ailbyen" path="res://art/placeholder/minimap/PlayerDot.png" id="2_odfs6"]
+[ext_resource type="Texture2D" uid="uid://be5yxlfsoxp5y" path="res://art/placeholder/minimap/Arrow.png" id="4_mvfnb"]
+
+[sub_resource type="Animation" id="Animation_0gxpd"]
+resource_name = "breathe"
+length = 3.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera2D:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -10), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_8kh5l"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera2D:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7k24k"]
+_data = {
+"RESET": SubResource("Animation_8kh5l"),
+"breathe": SubResource("Animation_0gxpd")
+}
+
+[node name="Player" type="Node2D"]
+script = ExtResource("1_jye1g")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="MiniMap" type="Node" parent="HUD"]
+
+[node name="Map" type="TextureRect" parent="HUD/MiniMap"]
+texture_filter = 1
+offset_left = 960.0
+offset_top = 39.0
+offset_right = 1152.0
+offset_bottom = 211.0
+texture = ExtResource("1_l40fl")
+stretch_mode = 5
+
+[node name="PlayerDot" type="TextureRect" parent="HUD/MiniMap"]
+texture_filter = 1
+offset_left = 1076.0
+offset_top = 161.0
+offset_right = 1086.0
+offset_bottom = 171.0
+texture = ExtResource("2_odfs6")
+stretch_mode = 5
+
+[node name="ArrowLeft" type="TextureRect" parent="HUD/MiniMap/PlayerDot"]
+layout_mode = 0
+offset_left = -34.0
+offset_top = -15.0
+offset_right = 6.0
+offset_bottom = 25.0
+rotation = 3.14159
+scale = Vector2(0.5, 0.5)
+pivot_offset = Vector2(20, 20)
+texture = ExtResource("4_mvfnb")
+stretch_mode = 5
+
+[node name="ArrowRight" type="TextureRect" parent="HUD/MiniMap/PlayerDot"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = -15.0
+offset_right = 44.0
+offset_bottom = 25.0
+scale = Vector2(0.5, 0.5)
+pivot_offset = Vector2(20, 20)
+texture = ExtResource("4_mvfnb")
+stretch_mode = 5
+
+[node name="ArrowUp" type="TextureRect" parent="HUD/MiniMap/PlayerDot"]
+layout_mode = 0
+offset_left = -15.0
+offset_top = -34.0
+offset_right = 25.0
+offset_bottom = 6.0
+rotation = 4.71239
+scale = Vector2(0.5, 0.5)
+pivot_offset = Vector2(20, 20)
+texture = ExtResource("4_mvfnb")
+stretch_mode = 5
+
+[node name="ArrowDown" type="TextureRect" parent="HUD/MiniMap/PlayerDot"]
+layout_mode = 0
+offset_left = -15.0
+offset_top = 4.0
+offset_right = 25.0
+offset_bottom = 44.0
+rotation = 1.5708
+scale = Vector2(0.5, 0.5)
+pivot_offset = Vector2(20, 20)
+texture = ExtResource("4_mvfnb")
+stretch_mode = 5
+
+[node name="MoveCooldown" type="Timer" parent="."]
+wait_time = 0.3
+one_shot = true
+autostart = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "breathe"
+libraries = {
+"": SubResource("AnimationLibrary_7k24k")
+}
+
+[connection signal="timeout" from="MoveCooldown" to="." method="_on_move_cooldown_timeout"]
