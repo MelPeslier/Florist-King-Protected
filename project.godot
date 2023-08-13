@@ -13,3 +13,8 @@ config_version=5
 config/name="Florist King"
 config/features=PackedStringArray("4.1", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+SilentWolf="*res://addons/silent_wolf/SilentWolf.gd"
+Global="*res://autoloads/global.gd"
