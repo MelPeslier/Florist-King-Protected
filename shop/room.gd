@@ -5,38 +5,41 @@ extends Node2D
 @export var rightRoom : NodePath
 @export var upRoom : NodePath
 @export var downRoom : NodePath
-@export var minimapPos := Vector2.ZERO
+@export var fifthRoom : NodePath
 
 
-func move(direction, player):
+func move(selectedRoom):
+	if !selectedRoom:
+		return
+	
+	var player = get_node("../Player")
 	if !player.canMove:
 		return
 	
-	var selectedRoom
-	match direction:
-		0:
-			if leftRoom:
-				selectedRoom = leftRoom
-		1:
-			if rightRoom:
-				selectedRoom = rightRoom
-		2:
-			if upRoom:
-				selectedRoom = upRoom
-		3:
-			if downRoom:
-				selectedRoom = downRoom
-	
-	if selectedRoom:
-		selectedRoom = get_node(selectedRoom)
-		player.currentRoom = selectedRoom
-		player.position = selectedRoom.position
-		player.canMove = false
-		player.get_node("MoveCooldown").start()
-		selectedRoom.enter()
+	selectedRoom = get_node(selectedRoom)
+	player.currentRoom = selectedRoom
+	player.position = selectedRoom.position
+	player.canMove = false
+	player.get_node("MoveCooldown").start()
+	$Arrows.visible = false
+	selectedRoom.enter()
 	
 
-func enter(): # Do stuff as soon as the player enters
-	get_node("../Player").set_minimap_arrows(minimapPos, !leftRoom.is_empty(), !rightRoom.is_empty(), !upRoom.is_empty(), !downRoom.is_empty())
-	
+func enter(): # When the player enters the room
+	$Arrows.visible = true
 
+
+func _on_left_pressed():
+	move(leftRoom)
+
+func _on_right_pressed():
+	move(rightRoom)
+
+func _on_up_pressed():
+	move(upRoom)
+
+func _on_down_pressed():
+	move(downRoom)
+
+func _on_direction_5_pressed():
+	move(fifthRoom)
