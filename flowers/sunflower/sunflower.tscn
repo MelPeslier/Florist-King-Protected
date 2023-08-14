@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://mbdex38e41fq"]
+
+[ext_resource type="Script" path="res://flowers/sunflower/sunflower.gd" id="1_naqm4"]
+[ext_resource type="Texture2D" uid="uid://r8hjt2elaemd" path="res://flowers/sunflower/sprite/sunflower_tmp.jpg" id="2_qeco8"]
+
+[node name="sunflower" type="Node2D" node_paths=PackedStringArray("sprite")]
+script = ExtResource("1_naqm4")
+sprite = NodePath("Sprite2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.238462, 0.238462)
+texture = ExtResource("2_qeco8")
