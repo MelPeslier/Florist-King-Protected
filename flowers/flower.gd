@@ -5,9 +5,10 @@ extends Node2D
 @export var sprite: Sprite2D
 
 # Happiness
-var happiness :float = 1.0
-var happiness_min :float = 0.5
-var happiness_max :float = 1.5
+@export var happiness :float = 1.0
+@export var min_happiness :float = 0.5
+@export var max_happiness :float = 1.5
+
 
 # Price
 var sell_price :float
@@ -18,4 +19,3 @@ func _sell_flower() -> float:
 func _die_flower() -> void:
 	var tween = get_tree().create_tween()
 	tween.tween_property(sprite, "modulate:a", 0.0, 1.0)
-	queue_free()
