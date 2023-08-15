@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://dqggqt05eu6f7"]
+
+[ext_resource type="Script" path="res://flowers/venus_flytrap/venus_flytrap.gd" id="1_6kql5"]
+[ext_resource type="Texture2D" uid="uid://bq02q25cedibw" path="res://flowers/venus_flytrap/sprite/venus_flytrap_tmp.png" id="1_bp7c8"]
+[ext_resource type="PackedScene" uid="uid://br80202nxcfcv" path="res://commons/gauge/water_gauge.tscn" id="2_e2q2v"]
+[ext_resource type="PackedScene" uid="uid://7tikciratgn8" path="res://commons/gauge/happiness_gauge.tscn" id="3_ajsgf"]
+
+[node name="VenusFlytrap" type="Node2D"]
+script = ExtResource("1_6kql5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -88)
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("1_bp7c8")
+
+[node name="WaterGauge" parent="." instance=ExtResource("2_e2q2v")]
+
+[node name="HappinessGauge" parent="." instance=ExtResource("3_ajsgf")]
+position = Vector2(0, 40)
