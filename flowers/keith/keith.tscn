@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://cy7thd8w866r3"]
+
+[ext_resource type="Script" path="res://flowers/keith/keith.gd" id="1_hgoga"]
+[ext_resource type="Texture2D" uid="uid://da2x082ug4e5r" path="res://flowers/keith/sprite/keith_tmp.jpg" id="1_lygfw"]
+[ext_resource type="PackedScene" uid="uid://7tikciratgn8" path="res://commons/gauge/happiness_gauge.tscn" id="2_m10nn"]
+[ext_resource type="PackedScene" uid="uid://br80202nxcfcv" path="res://commons/gauge/water_gauge.tscn" id="3_uo36h"]
+
+[node name="Keith" type="Node2D"]
+script = ExtResource("1_hgoga")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-1, -48)
+scale = Vector2(0.470588, 0.470588)
+texture = ExtResource("1_lygfw")
+
+[node name="HappinessGauge" parent="." instance=ExtResource("2_m10nn")]
+position = Vector2(-1, 48)
+
+[node name="WaterGauge" parent="." instance=ExtResource("3_uo36h")]
+position = Vector2(-1, 8)

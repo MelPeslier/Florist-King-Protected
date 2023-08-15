@@ -24,3 +24,13 @@ func add_flower(flower:Flower, potNumber=null):
 			return true
 	
 	return false # If it's all full
+
+
+func check(potName :String) -> Array:
+	var flowerNames := []
+	for pot in get_children():
+		if pot.name != potName and pot.get_child_count() == 1:
+			flowerNames.push_back(pot.get_child(0).name)
+	
+	return flowerNames
+

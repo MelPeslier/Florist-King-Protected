@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://br80202nxcfcv" path="res://commons/gauge/water_gauge.tscn" id="3_tdb8n"]
 [ext_resource type="PackedScene" uid="uid://7tikciratgn8" path="res://commons/gauge/happiness_gauge.tscn" id="4_oiagj"]
 
-[node name="sunflower" type="Node2D" node_paths=PackedStringArray("sprite")]
+[node name="Sunflower" type="Node2D" node_paths=PackedStringArray("sprite")]
 script = ExtResource("1_naqm4")
 water = 75.0
 min_perfect_water = 25.0
@@ -20,8 +20,9 @@ scale = Vector2(0.180769, 0.180769)
 texture = ExtResource("2_qeco8")
 
 [node name="WaterGauge" parent="." node_paths=PackedStringArray("flower") instance=ExtResource("3_tdb8n")]
+position = Vector2(0, 8)
 flower = NodePath("..")
 
 [node name="HappinessGauge" parent="." node_paths=PackedStringArray("flower") instance=ExtResource("4_oiagj")]
-position = Vector2(0, 40)
+position = Vector2(0, 48)
 flower = NodePath("..")

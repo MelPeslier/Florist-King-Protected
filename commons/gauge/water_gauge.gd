@@ -11,7 +11,7 @@ func _ready():
 	tex.value = flower.water
 	tex.step = 0.01
 	
-	# Limits : To put the tresholds at ther right place : 128 is size of the Gauge Sprite
+	# Limits : To put the tresholds at ther right place : -10 because it wasn't perfectly in place
 	var sprite_width = tex.texture_over.get_width() -10
 	$LowLimit.position.x = flower.min_perfect_water * sprite_width / flower.max_water - sprite_width / 2
 	$HighLimit.position.x = flower.max_perfect_water * sprite_width / flower.max_water - sprite_width / 2
