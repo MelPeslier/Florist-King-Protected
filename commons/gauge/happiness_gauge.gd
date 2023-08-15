@@ -13,3 +13,8 @@ func _ready():
 
 func _process(delta):
 	tex.value = flower.happiness
+
+func update_gauge() -> void:
+	tex.min_value = flower.min_happiness
+	tex.max_value = flower.max_happiness
+	tex.value = flower.happiness
