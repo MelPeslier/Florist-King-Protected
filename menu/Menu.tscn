@@ -1,0 +1,83 @@
+[gd_scene load_steps=8 format=3 uid="uid://bl0wpwdpgqv2e"]
+
+[ext_resource type="Texture2D" uid="uid://ch7vteblt1yrb" path="res://art/placeholder/MenuImagePlaceholder.jpg" id="1_o5115"]
+[ext_resource type="Script" path="res://menu/Menu.gd" id="1_rp5sd"]
+[ext_resource type="FontFile" uid="uid://b0hof85mkga7d" path="res://art/Playfulist-rgPp8.ttf" id="2_7w0dk"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2csbd"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_teura"]
+bg_color = Color(0, 0, 0, 0.25098)
+corner_detail = 1
+anti_aliasing = false
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2bo0a"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_43a2j"]
+bg_color = Color(0, 0, 0, 0.25098)
+
+[node name="Menu" type="CanvasLayer"]
+script = ExtResource("1_rp5sd")
+
+[node name="Background" type="TextureRect" parent="."]
+offset_right = 1000.0
+offset_bottom = 600.0
+texture = ExtResource("1_o5115")
+expand_mode = 1
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 500.0
+offset_bottom = 600.0
+color = Color(0, 0, 0, 0.25098)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 27.0
+offset_top = 85.0
+offset_right = 466.0
+offset_bottom = 177.0
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("2_7w0dk")
+theme_override_font_sizes/font_size = 72
+text = "Florist King"
+
+[node name="Play" type="Button" parent="."]
+offset_left = 27.0
+offset_top = 215.0
+offset_right = 417.0
+offset_bottom = 283.0
+theme_override_fonts/font = ExtResource("2_7w0dk")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxEmpty_2csbd")
+theme_override_styles/hover = SubResource("StyleBoxFlat_teura")
+text = " Play"
+alignment = 0
+
+[node name="Leaderboards" type="Button" parent="."]
+offset_left = 27.0
+offset_top = 322.0
+offset_right = 417.0
+offset_bottom = 390.0
+theme_override_fonts/font = ExtResource("2_7w0dk")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxEmpty_2bo0a")
+theme_override_styles/hover = SubResource("StyleBoxFlat_43a2j")
+text = " Leaderboards"
+alignment = 0
+
+[node name="Quit" type="Button" parent="."]
+offset_left = 27.0
+offset_top = 426.0
+offset_right = 417.0
+offset_bottom = 494.0
+theme_override_fonts/font = ExtResource("2_7w0dk")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxEmpty_2bo0a")
+theme_override_styles/hover = SubResource("StyleBoxFlat_43a2j")
+text = " Quit"
+alignment = 0
+
+[node name="Audio" type="AudioStreamPlayer" parent="."]
+
+[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Leaderboards" to="." method="_on_leaderboards_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]

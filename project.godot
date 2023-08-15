@@ -25,6 +25,7 @@ Global="*res://autoloads/global.gd"
 
 window/size/viewport_width=1000
 window/size/viewport_height=600
+window/stretch/mode="canvas_items"
 
 [editor]
 
