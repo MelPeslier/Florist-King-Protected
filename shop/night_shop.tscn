@@ -25,7 +25,6 @@ leftRoom = NodePath("../Room5")
 rightRoom = NodePath("../Room4")
 upRoom = NodePath("../Room3")
 downRoom = NodePath("../Room1")
-fifthRoom = NodePath("../Room10")
 
 [node name="Room3" parent="." instance=ExtResource("3_3jhia")]
 position = Vector2(740, 4500)
