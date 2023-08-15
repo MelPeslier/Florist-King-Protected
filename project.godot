@@ -25,3 +25,7 @@ Global="*res://autoloads/global.gd"
 
 window/size/viewport_width=1200
 window/size/viewport_height=600
+
+[editor]
+
+run/main_run_args="--rendering-driver opengl3"

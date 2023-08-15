@@ -42,6 +42,9 @@ _data = {
 
 [node name="Player" type="Node2D"]
 script = ExtResource("1_jye1g")
+points_cannot_be_more_than = "20"
+points_cannot_be_less_than = "-20"
+default_text = "0"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
@@ -57,5 +60,11 @@ autoplay = "breathe"
 libraries = {
 "": SubResource("AnimationLibrary_7k24k")
 }
+
+[node name="points_display" type="Label" parent="."]
+offset_left = -597.0
+offset_top = -297.0
+offset_right = -547.0
+offset_bottom = -274.0
 
 [connection signal="timeout" from="MoveCooldown" to="." method="_on_move_cooldown_timeout"]
