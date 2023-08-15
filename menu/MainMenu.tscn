@@ -1,9 +1,9 @@
 [gd_scene load_steps=9 format=3 uid="uid://bl0wpwdpgqv2e"]
 
-[ext_resource type="Texture2D" uid="uid://ch7vteblt1yrb" path="res://art/placeholder/MenuImagePlaceholder.jpg" id="1_o5115"]
-[ext_resource type="Script" path="res://menu/Menu.gd" id="1_rp5sd"]
-[ext_resource type="FontFile" uid="uid://b0hof85mkga7d" path="res://art/Playfulist-rgPp8.ttf" id="2_7w0dk"]
-[ext_resource type="AudioStream" uid="uid://dmxqg357ljt0p" path="res://audio/sfx/menu_scroll.wav" id="4_3ap8q"]
+[ext_resource type="Script" path="res://menu/MainMenu.gd" id="1_weoh2"]
+[ext_resource type="Texture2D" uid="uid://ch7vteblt1yrb" path="res://art/placeholder/MenuImagePlaceholder.jpg" id="2_6nkiq"]
+[ext_resource type="FontFile" uid="uid://b0hof85mkga7d" path="res://art/Playfulist-rgPp8.ttf" id="3_bhojw"]
+[ext_resource type="AudioStream" uid="uid://dmxqg357ljt0p" path="res://audio/sfx/menu_scroll.wav" id="4_yvhwt"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2csbd"]
 
@@ -17,19 +17,21 @@ anti_aliasing = false
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_43a2j"]
 bg_color = Color(0, 0, 0, 0.25098)
 
-[node name="Menu" type="CanvasLayer"]
-script = ExtResource("1_rp5sd")
+[node name="MainMenu" type="CanvasLayer"]
+script = ExtResource("1_weoh2")
 
 [node name="Background" type="TextureRect" parent="."]
 offset_right = 1000.0
 offset_bottom = 600.0
-texture = ExtResource("1_o5115")
+texture = ExtResource("2_6nkiq")
 expand_mode = 1
+metadata/_edit_lock_ = true
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_right = 500.0
 offset_bottom = 600.0
 color = Color(0, 0, 0, 0.25098)
+metadata/_edit_lock_ = true
 
 [node name="Label" type="Label" parent="."]
 offset_left = 27.0
@@ -37,7 +39,7 @@ offset_top = 65.0
 offset_right = 466.0
 offset_bottom = 157.0
 theme_override_constants/outline_size = 3
-theme_override_fonts/font = ExtResource("2_7w0dk")
+theme_override_fonts/font = ExtResource("3_bhojw")
 theme_override_font_sizes/font_size = 72
 text = "Florist King"
 
@@ -47,7 +49,7 @@ offset_top = 195.0
 offset_right = 417.0
 offset_bottom = 263.0
 focus_mode = 0
-theme_override_fonts/font = ExtResource("2_7w0dk")
+theme_override_fonts/font = ExtResource("3_bhojw")
 theme_override_font_sizes/font_size = 48
 theme_override_styles/normal = SubResource("StyleBoxEmpty_2csbd")
 theme_override_styles/hover = SubResource("StyleBoxFlat_teura")
@@ -60,7 +62,7 @@ offset_top = 292.0
 offset_right = 417.0
 offset_bottom = 360.0
 focus_mode = 0
-theme_override_fonts/font = ExtResource("2_7w0dk")
+theme_override_fonts/font = ExtResource("3_bhojw")
 theme_override_font_sizes/font_size = 48
 theme_override_styles/normal = SubResource("StyleBoxEmpty_2bo0a")
 theme_override_styles/hover = SubResource("StyleBoxFlat_43a2j")
@@ -73,7 +75,7 @@ offset_top = 394.0
 offset_right = 417.0
 offset_bottom = 462.0
 focus_mode = 0
-theme_override_fonts/font = ExtResource("2_7w0dk")
+theme_override_fonts/font = ExtResource("3_bhojw")
 theme_override_font_sizes/font_size = 48
 theme_override_styles/normal = SubResource("StyleBoxEmpty_2bo0a")
 theme_override_styles/hover = SubResource("StyleBoxFlat_43a2j")
@@ -89,6 +91,7 @@ offset_right = 616.0
 offset_bottom = -261.0
 
 [node name="ColorRect" type="ColorRect" parent="Credits/CreditsPanel"]
+layout_mode = 0
 offset_right = 296.0
 offset_bottom = 405.0
 color = Color(0, 0, 0, 0.25098)
@@ -99,7 +102,7 @@ offset_left = 20.0
 offset_top = 20.0
 offset_right = 278.0
 offset_bottom = 369.0
-theme_override_fonts/font = ExtResource("2_7w0dk")
+theme_override_fonts/font = ExtResource("3_bhojw")
 text = "Programmers:
 Garett Skott, mel, Kuro, 
 Dominic, Roddur
@@ -121,7 +124,7 @@ offset_top = 494.0
 offset_right = 417.0
 offset_bottom = 562.0
 focus_mode = 0
-theme_override_fonts/font = ExtResource("2_7w0dk")
+theme_override_fonts/font = ExtResource("3_bhojw")
 theme_override_font_sizes/font_size = 48
 theme_override_styles/normal = SubResource("StyleBoxEmpty_2bo0a")
 theme_override_styles/hover = SubResource("StyleBoxFlat_43a2j")
@@ -129,7 +132,7 @@ text = " Quit"
 alignment = 0
 
 [node name="Audio" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("4_3ap8q")
+stream = ExtResource("4_yvhwt")
 
 [connection signal="mouse_entered" from="Play" to="." method="_on_mouse_entered"]
 [connection signal="pressed" from="Play" to="." method="_on_play_pressed"]

@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/NightShop_-_Loop.ogg-d8c0e4c213525d40ecd06aff
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
 bpm=0
 beat_count=0
