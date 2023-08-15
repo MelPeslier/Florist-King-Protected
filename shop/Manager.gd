@@ -9,7 +9,7 @@ func _ready():
 		if room is Node2D:
 			var pots := []
 			for table in room.get_children():
-				if table is Marker2D and table.name == "Table":
+				if table is Node2D and table.name == "Table":
 					for pot in table.get_children():
 						if pot is Marker2D and pot.name.begins_with("Pot"):
 							pots.push_back(pot)

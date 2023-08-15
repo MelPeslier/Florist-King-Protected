@@ -8,7 +8,7 @@ extends Node2D
 @export var fifthRoom : NodePath
 
 
-func move(selectedRoom):
+func move(selectedRoom): # Move to a different room
 	if !selectedRoom:
 		return
 	
@@ -17,16 +17,13 @@ func move(selectedRoom):
 		return
 	
 	selectedRoom = get_node(selectedRoom)
-	player.currentRoom = selectedRoom
-	player.position = selectedRoom.position
-	player.canMove = false
-	player.get_node("MoveCooldown").start()
 	$Arrows.visible = false
-	selectedRoom.enter()
-	
+	selectedRoom.enter(player)
 
-func enter(): # When the player enters the room
+
+func enter(player): # When the player enters the room
 	$Arrows.visible = true
+	player.just_entered_room(self)
 
 
 func _on_left_pressed():

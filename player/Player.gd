@@ -4,9 +4,17 @@ extends Node2D
 var canMove := false
 
 func _ready():
-	position = currentRoom.position
-	currentRoom.enter()
+	currentRoom.enter(self)
+
+func just_entered_room(room): # Adjustments when entering
+	currentRoom = room
+	position = room.position
+	canMove = false
+	$MoveCooldown.start()
+
 
 
 func _on_move_cooldown_timeout():
 	canMove = true
+
+
