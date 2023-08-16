@@ -6,7 +6,10 @@ extends Node2D
 @export var upRoom : NodePath
 @export var downRoom : NodePath
 @export var fifthRoom : NodePath
+@onready var arrows = $Arrows
 
+func _ready():
+	arrows.visible = false
 
 func move(selectedRoom): # Move to a different room
 	if !selectedRoom:
@@ -17,12 +20,11 @@ func move(selectedRoom): # Move to a different room
 		return
 	
 	selectedRoom = get_node(selectedRoom)
-	$Arrows.visible = false
+	arrows.visible = false
 	selectedRoom.enter(player)
 
 
 func enter(player): # When the player enters the room
-	$Arrows.visible = true
 	player.just_entered_room(self)
 
 

@@ -24,8 +24,10 @@ theme_override_font_sizes/font_size = 48
 text = "9
 "
 
+[node name="Table" parent="." instance=ExtResource("4_rav7m")]
+position = Vector2(0, -5)
+
 [node name="Arrows" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="Left" type="TextureButton" parent="Arrows"]
 texture_filter = 1
@@ -76,9 +78,6 @@ rotation = 1.5708
 pivot_offset = Vector2(54, 27)
 texture_normal = ExtResource("3_bv78q")
 stretch_mode = 5
-
-[node name="Table" parent="." instance=ExtResource("4_rav7m")]
-position = Vector2(0, -5)
 
 [connection signal="pressed" from="Arrows/Left" to="." method="_on_left_pressed"]
 [connection signal="pressed" from="Arrows/Right" to="." method="_on_right_pressed"]

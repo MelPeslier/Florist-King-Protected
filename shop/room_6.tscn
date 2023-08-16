@@ -23,20 +23,22 @@ offset_bottom = -197.0
 theme_override_font_sizes/font_size = 48
 text = "6"
 
+[node name="Table" parent="." instance=ExtResource("4_g473l")]
+position = Vector2(-1, -1)
+
 [node name="Arrows" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="Left" type="TextureButton" parent="Arrows"]
 texture_filter = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 25.0
-offset_top = -151.0
-offset_right = 133.0
-offset_bottom = -97.0
+offset_left = 60.0
+offset_top = 31.0
+offset_right = 168.0
+offset_bottom = 85.0
 grow_vertical = 2
-rotation = 0.349066
+rotation = -0.357792
 pivot_offset = Vector2(54, 27)
 texture_normal = ExtResource("3_xigok")
 stretch_mode = 5
@@ -47,12 +49,12 @@ texture_filter = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 25.0
-offset_top = 69.0
-offset_right = 133.0
-offset_bottom = 123.0
+offset_left = 805.0
+offset_top = 87.0
+offset_right = 913.0
+offset_bottom = 141.0
 grow_vertical = 2
-rotation = -0.349066
+rotation = -2.34572
 pivot_offset = Vector2(54, 27)
 texture_normal = ExtResource("3_xigok")
 stretch_mode = 5
@@ -71,13 +73,10 @@ offset_right = 54.0
 offset_bottom = -60.0
 grow_horizontal = 2
 grow_vertical = 0
-rotation = 1.5708
+rotation = 1.7366
 pivot_offset = Vector2(54, 27)
 texture_normal = ExtResource("3_xigok")
 stretch_mode = 5
-
-[node name="Table" parent="." instance=ExtResource("4_g473l")]
-position = Vector2(-1, -1)
 
 [connection signal="pressed" from="Arrows/Left" to="." method="_on_left_pressed"]
 [connection signal="pressed" from="Arrows/Right" to="." method="_on_right_pressed"]

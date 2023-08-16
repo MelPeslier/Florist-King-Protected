@@ -18,6 +18,7 @@ func just_entered_room(room): # Adjustments when entering
 	$MoveCooldown.start()
 
 func _on_move_cooldown_timeout():
+	currentRoom.arrows.visible = true
 	canMove = true
 
 # Called at the start of hug and at the end of hug
@@ -26,6 +27,7 @@ func _on_hugging(is_hugging) -> void:
 		$MoveCooldown.stop()
 		canMove = false
 	else:
+		currentRoom.arrows.visible = true
 		canMove = true
 
 # Death : End of game

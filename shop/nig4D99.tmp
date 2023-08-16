@@ -1,7 +1,6 @@
-[gd_scene load_steps=13 format=3 uid="uid://bstp6mip8ystj"]
+[gd_scene load_steps=12 format=3 uid="uid://bstp6mip8ystj"]
 
-[ext_resource type="PackedScene" uid="uid://dinjpcmsfbml2" path="res://shop/room_1.tscn" id="1_ufoco"]
-[ext_resource type="PackedScene" uid="uid://bp8bd6s36skh6" path="res://shop/room_2.tscn" id="2_ykdd2"]
+[ext_resource type="Script" path="res://shop/room.gd" id="1_a8mge"]
 [ext_resource type="PackedScene" uid="uid://dsdct3gq054yr" path="res://shop/room_3.tscn" id="3_3jhia"]
 [ext_resource type="PackedScene" uid="uid://cj3sjty8osk0m" path="res://player/Player.tscn" id="3_me6h3"]
 [ext_resource type="PackedScene" uid="uid://1j15enoggw34" path="res://shop/room_4.tscn" id="4_2nm4n"]
@@ -15,63 +14,89 @@
 
 [node name="NightShop" type="Node2D"]
 
-[node name="Room1" parent="." instance=ExtResource("1_ufoco")]
+[node name="Room1" type="Node2D" parent="."]
+position = Vector2(3540, 6140)
+script = ExtResource("1_a8mge")
+roomNumber = 1
 leftRoom = NodePath("../Room2")
 rightRoom = NodePath("../Room10")
+upRoom = null
+downRoom = null
+fifthRoom = null
 
-[node name="Room2" parent="." instance=ExtResource("2_ykdd2")]
-leftRoom = NodePath("../Room1")
+[node name="Room2" type="Node2D" parent="."]
+position = Vector2(2579, 4524)
+script = ExtResource("1_a8mge")
+roomNumber = 2
+leftRoom = NodePath("../Room5")
 rightRoom = NodePath("../Room4")
 upRoom = NodePath("../Room3")
-downRoom = NodePath("../Room10")
-fifthRoom = NodePath("../Room5")
+downRoom = NodePath("../Room1")
+fifthRoom = null
 
 [node name="Room3" parent="." instance=ExtResource("3_3jhia")]
 position = Vector2(740, 4500)
+leftRoom = null
+rightRoom = null
+upRoom = null
 downRoom = NodePath("../Room2")
+fifthRoom = null
 
 [node name="Room4" parent="." groups=["PotRoom"] instance=ExtResource("4_2nm4n")]
 position = Vector2(1965, 2767)
 leftRoom = NodePath("../Room2")
 rightRoom = NodePath("../Room6")
+upRoom = null
 downRoom = NodePath("../Room5")
+fifthRoom = null
 
 [node name="Room5" parent="." groups=["PotRoom"] instance=ExtResource("5_ctjjm")]
 position = Vector2(3940, 2783)
 leftRoom = NodePath("../Room6")
 rightRoom = NodePath("../Room2")
+upRoom = null
 downRoom = NodePath("../Room4")
+fifthRoom = null
 
 [node name="Room6" parent="." groups=["PotRoom"] instance=ExtResource("6_2ijvd")]
 position = Vector2(3246, 907)
 leftRoom = NodePath("../Room4")
-rightRoom = NodePath("../Room7")
-downRoom = NodePath("../Room5")
+rightRoom = NodePath("../Room5")
+upRoom = null
+downRoom = NodePath("../Room7")
+fifthRoom = null
 
 [node name="Room7" parent="." groups=["PotRoom"] instance=ExtResource("7_y6gmm")]
 position = Vector2(5526, 899)
-leftRoom = NodePath("../Room6")
+leftRoom = NodePath("../Room8")
 rightRoom = NodePath("../Room9")
-downRoom = NodePath("../Room8")
+upRoom = null
+downRoom = NodePath("../Room6")
+fifthRoom = null
 
 [node name="Room8" parent="." groups=["PotRoom"] instance=ExtResource("8_s6yka")]
 position = Vector2(6164, 2853)
 leftRoom = NodePath("../Room10")
 rightRoom = NodePath("../Room7")
+upRoom = null
 downRoom = NodePath("../Room9")
+fifthRoom = null
 
 [node name="Room9" parent="." groups=["PotRoom"] instance=ExtResource("9_emr0w")]
 position = Vector2(8070, 2835)
 leftRoom = NodePath("../Room7")
 rightRoom = NodePath("../Room10")
+upRoom = null
 downRoom = NodePath("../Room8")
+fifthRoom = null
 
 [node name="Room10" parent="." instance=ExtResource("10_del1q")]
 position = Vector2(5108, 4571)
 leftRoom = NodePath("../Room9")
-rightRoom = NodePath("../Room1")
-downRoom = NodePath("../Room8")
-fifthRoom = NodePath("../Room2")
+rightRoom = NodePath("../Room8")
+upRoom = NodePath("../Room1")
+downRoom = NodePath("../Room2")
+fifthRoom = null
 
 [node name="Player" parent="." instance=ExtResource("3_me6h3")]
 position = Vector2(500, 300)
