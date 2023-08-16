@@ -14,7 +14,7 @@ func just_entered_room(room): # Adjustments when entering
 	canMove = false
 	
 	# To activate effects in this room and to update position for flowers
-	emit_signal("player_enter_room", currentRoom)
+	Events.emit_signal("player_enter_room", currentRoom)
 	$MoveCooldown.start()
 
 func _on_move_cooldown_timeout():
