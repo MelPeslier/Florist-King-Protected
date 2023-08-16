@@ -22,12 +22,12 @@ func _process(delta) -> void:
 
 # For systems
 func _physics_process(delta) -> void:
+	super(delta)
 	if is_drinking:
 		drinking(delta)
 		is_drinking = false
 	else:
 		not_drinking(delta)
-
 
 func not_drinking(delta) -> void:
 	water_update(delta)
@@ -37,7 +37,6 @@ func not_drinking(delta) -> void:
 	
 	if water >= min_perfect_water and water <= max_perfect_water:
 		happiness = min(happiness + happiness_increase_speed * delta, max_happiness)
-	
 
 func drinking(delta) -> void:
 	water_update(delta)

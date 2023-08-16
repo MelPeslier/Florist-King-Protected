@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://csveo1j7t4qrg"]
+
+[ext_resource type="Texture2D" uid="uid://du42px8cka3m1" path="res://shop/faucet/sprite/faucet.jpg" id="1_12uli"]
+[ext_resource type="Script" path="res://shop/faucet/faucet.gd" id="1_a05xx"]
+
+[node name="Faucet" type="Node2D" groups=["faucet"]]
+script = ExtResource("1_a05xx")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -112)
+scale = Vector2(0.186667, 0.186667)
+texture = ExtResource("1_12uli")

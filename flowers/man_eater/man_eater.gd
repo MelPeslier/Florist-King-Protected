@@ -70,10 +70,6 @@ func go_to_room(number :int) -> void:
 	# they must see if theya re in the room we are then draw them if the case ?
 	#what else ?
 
-# when player has entered the room and already updated his position
-func interaction() -> void:
-	pass
-
 func eat_player() -> void:
 	emit_signal("eat_player")
 	

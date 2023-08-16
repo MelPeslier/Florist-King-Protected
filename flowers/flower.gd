@@ -23,6 +23,12 @@ func _ready():
 	if get_parent():
 		flower_room = get_parent().get_parent().get_parent().roomNumber
 
+func _physics_process(delta) -> void:
+	my_input(delta)
+
+func my_input(delta):
+	pass
+
 func _on_player_enter_room(room_number :int) -> void:
 	player_room = room_number
 	interaction()
