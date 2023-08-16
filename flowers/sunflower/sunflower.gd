@@ -1,6 +1,7 @@
 extends SharedWaterSystem
 
 func _ready() -> void:
+	super()
 	# Water
 	water = 60
 	min_perfect_water = 25
@@ -16,3 +17,6 @@ func _ready() -> void:
 	happiness_decrease_speed = 1
 	happiness_increase_speed = 2
 	sell_price = 8
+	
+	$HappinessGauge.update_gauge()
+	$WaterGauge.update_gauge()

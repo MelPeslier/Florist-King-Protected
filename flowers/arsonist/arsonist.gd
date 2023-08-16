@@ -11,6 +11,7 @@ var burn_self_plus :float = 2.25
 var burn_flowers_plus :float = 1.5
 
 func _ready() -> void:
+	super()
 	# Water
 	water = 40
 	min_perfect_water = 65
@@ -26,6 +27,9 @@ func _ready() -> void:
 	happiness_decrease_speed = 5
 	happiness_increase_speed = 7
 	sell_price = 95
+	
+	$HappinessGauge.update_gauge()
+	$WaterGauge.update_gauge()
 	
 	if get_parent():
 		var neighbors = get_parent().get_parent().check(get_parent().name)

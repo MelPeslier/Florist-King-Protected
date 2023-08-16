@@ -3,6 +3,7 @@ extends SharedWaterSystem
 var is_trying_to_eat = false
 
 func _ready() -> void:
+	super()
 	# Water
 	water = 70
 	min_perfect_water = 65
@@ -18,6 +19,9 @@ func _ready() -> void:
 	happiness_decrease_speed = 5
 	happiness_increase_speed = 7
 	sell_price = 18
+	
+	$HappinessGauge.update_gauge()
+	$WaterGauge.update_gauge()
 	
 	if get_parent():
 		var neighbors = get_parent().get_parent().check(get_parent().name)

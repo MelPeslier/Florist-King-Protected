@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://cukdwc12d48so"]
+[gd_scene load_steps=5 format=3 uid="uid://dxaryvb685fdq"]
 
 [ext_resource type="Script" path="res://flowers/arsonist/arsonist.gd" id="1_kgwtp"]
 [ext_resource type="Texture2D" uid="uid://7feue2huqhy6" path="res://flowers/arsonist/sprite/arsonist_tmp.png" id="2_gwpet"]

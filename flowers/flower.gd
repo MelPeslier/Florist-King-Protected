@@ -4,6 +4,10 @@ extends Node2D
 #Sprite
 var sprite: Sprite2D
 
+# Room and Player related
+var flower_room :int
+var player_room :int
+
 # Happiness
 var happiness :float = 1.0
 var min_happiness :float = 0.5
@@ -13,6 +17,18 @@ var happiness_increase_speed :float = 2.0
 
 # Price
 var sell_price :float
+
+func _ready():
+	Events.connect("player_enter_room", _on_player_enter_room)
+	if get_parent():
+		flower_room = get_parent().get_parent().get_parent().roomNumber
+
+func _on_player_enter_room(room_number :int) -> void:
+	player_room = room_number
+	interaction()
+
+func interaction() -> void:
+	pass
 
 func sell_flower() -> float:
 	return sell_price * happiness

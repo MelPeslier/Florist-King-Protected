@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://cy7thd8w866r3"]
+[gd_scene load_steps=5 format=3 uid="uid://bxe7lsmqr8ddt"]
 
 [ext_resource type="Script" path="res://flowers/keith/keith.gd" id="1_hgoga"]
 [ext_resource type="Texture2D" uid="uid://da2x082ug4e5r" path="res://flowers/keith/sprite/keith_tmp.jpg" id="1_lygfw"]

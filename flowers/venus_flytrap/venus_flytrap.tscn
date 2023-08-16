@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://dqggqt05eu6f7"]
+[gd_scene load_steps=5 format=3 uid="uid://b0d3hxkv3ls1i"]
 
 [ext_resource type="Script" path="res://flowers/venus_flytrap/venus_flytrap.gd" id="1_6kql5"]
 [ext_resource type="Texture2D" uid="uid://bq02q25cedibw" path="res://flowers/venus_flytrap/sprite/venus_flytrap_tmp.png" id="1_bp7c8"]

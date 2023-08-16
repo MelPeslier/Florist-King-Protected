@@ -8,6 +8,7 @@ extends SharedWaterSystem
 var neighbors :Array
 
 func _ready() -> void:
+	super()
 	# Water
 	water = 50
 	min_perfect_water = 30
@@ -23,6 +24,9 @@ func _ready() -> void:
 	happiness_decrease_speed = 5
 	happiness_increase_speed = 7
 	sell_price = 40
+	
+	$HappinessGauge.update_gauge()
+	$WaterGauge.update_gauge()
 	
 	if get_parent():
 		neighbors = get_parent().get_parent().check(get_parent().name)
