@@ -16,10 +16,6 @@ var max_perfect_water :float
 var water_decrease_speed :float = 1.0
 var water_increase_speed :float = 4.0
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass
-
 # For animation
 func _process(delta) -> void:
 	pass
@@ -33,20 +29,24 @@ func _physics_process(delta) -> void:
 
 
 func not_drinking(delta) -> void:
+	water_update(delta)
 	
-	if water >= max_water:
-		die_flower("water")
-	
-	if water <= min_water :
+	if water == min_water :
 		happiness = max(happiness - happiness_decrease_speed * delta, min_happiness)
 	
 	if water >= min_perfect_water and water <= max_perfect_water:
 		happiness = min(happiness + happiness_increase_speed * delta, max_happiness)
 	
-	water_update(delta)
-
-func water_update(delta) -> void:
-	water = max(water - water_decrease_speed * delta, min_water) 
 
 func drinking(delta) -> void:
-	pass
+	water_update(delta)
+	
+	if water >= max_water:
+		die_flower("water")
+
+func water_update(delta) -> void:
+	if is_drinking:
+		water = min(water + water_increase_speed * delta, max_water)
+	else:
+		water = max(water - water_decrease_speed * delta, min_water) 
+

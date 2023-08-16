@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://cg78wc71pbch8"]
+
+[ext_resource type="Texture2D" uid="uid://sy15j5ynehp" path="res://flowers/celeritas/sprite/celeritas_tmp.png" id="1_hqkro"]
+[ext_resource type="Script" path="res://flowers/celeritas/celeritas.gd" id="1_q4p8a"]
+[ext_resource type="PackedScene" uid="uid://7tikciratgn8" path="res://commons/gauge/happiness_gauge.tscn" id="2_m4yrd"]
+[ext_resource type="PackedScene" uid="uid://br80202nxcfcv" path="res://commons/gauge/water_gauge.tscn" id="3_t414c"]
+
+[node name="Celeritas" type="Node2D"]
+script = ExtResource("1_q4p8a")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(7.62939e-06, -56)
+scale = Vector2(0.176667, 0.176667)
+texture = ExtResource("1_hqkro")
+
+[node name="HappinessGauge" parent="." instance=ExtResource("2_m4yrd")]
+position = Vector2(0, 40)
+
+[node name="WaterGauge" parent="." instance=ExtResource("3_t414c")]

@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://bx6k8blsiqio"]
+
+[ext_resource type="Texture2D" uid="uid://r13kpns1a1cm" path="res://flowers/cassandri/sprite/cassandri_tmp.png" id="1_gcy8l"]
+[ext_resource type="Script" path="res://flowers/cassandri/cassandri.gd" id="1_kfiem"]
+[ext_resource type="PackedScene" uid="uid://br80202nxcfcv" path="res://commons/gauge/water_gauge.tscn" id="3_6mg23"]
+[ext_resource type="PackedScene" uid="uid://7tikciratgn8" path="res://commons/gauge/happiness_gauge.tscn" id="4_w43lg"]
+
+[node name="Cassandri" type="Node2D"]
+script = ExtResource("1_kfiem")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-1.90735e-06, -112)
+scale = Vector2(0.268116, 0.268116)
+texture = ExtResource("1_gcy8l")
+
+[node name="WaterGauge" parent="." instance=ExtResource("3_6mg23")]
+
+[node name="HappinessGauge" parent="." instance=ExtResource("4_w43lg")]
+position = Vector2(0, 40)

@@ -2,7 +2,7 @@ extends SharedWaterSystem
 
 var hug_time :float = 0
 var min_hug_time :float = 4
-var max_hug_time :float = 12
+var max_hug_time :float = 12 # Only to cap the max money income
 var is_hugging :bool = false
 
 var ivy_coef :float = 3
@@ -35,6 +35,11 @@ func _ready() -> void:
 			if neighbour == "Ivy":
 				min_hug_time  *= ivy_coef 
 
+func _physics_process(delta) -> void:
+	if is_drinking and not is_hugging:
+		drinking(delta)
+	else:
+		not_drinking(delta)
 
 func not_drinking(delta):
 	super(delta)

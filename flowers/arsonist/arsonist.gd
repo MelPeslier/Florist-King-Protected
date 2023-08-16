@@ -52,7 +52,10 @@ func not_drinking(delta) -> void:
 				burning("shop")
 
 func water_update(delta) -> void:
-	water = max(water - water_decrease_speed * fire_coef * delta, min_water)
+	if is_drinking:
+		water = min(water + water_increase_speed / fire_coef * delta, max_water)
+	else:
+		water = max(water - water_decrease_speed * fire_coef * delta, min_water)
 
 func burning(val :String) -> void:
 	match val:
