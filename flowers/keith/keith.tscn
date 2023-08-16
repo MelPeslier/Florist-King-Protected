@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://7tikciratgn8" path="res://commons/gauge/happiness_gauge.tscn" id="2_m10nn"]
 [ext_resource type="PackedScene" uid="uid://br80202nxcfcv" path="res://commons/gauge/water_gauge.tscn" id="3_uo36h"]
 
-[node name="Keith" type="Node2D"]
+[node name="Keith" type="Node2D" groups=["water_flower"]]
 script = ExtResource("1_hgoga")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

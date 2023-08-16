@@ -24,6 +24,7 @@ func _process(delta) -> void:
 func _physics_process(delta) -> void:
 	if is_drinking:
 		drinking(delta)
+		is_drinking = false
 	else:
 		not_drinking(delta)
 
@@ -50,3 +51,5 @@ func water_update(delta) -> void:
 	else:
 		water = max(water - water_decrease_speed * delta, min_water) 
 
+func watering_can() -> void:
+	is_drinking = true

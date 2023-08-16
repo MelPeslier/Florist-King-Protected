@@ -1,10 +1,17 @@
-[gd_scene load_steps=2 format=3 uid="uid://c44473keo80h0"]
+[gd_scene load_steps=4 format=3 uid="uid://c44473keo80h0"]
 
 [ext_resource type="Texture2D" uid="uid://280abuiswsiw" path="res://player/watering can/sprite/watering_can.jpg" id="1_3vngv"]
+[ext_resource type="Script" path="res://player/watering can/watering_can.gd" id="1_qt2jj"]
+[ext_resource type="PackedScene" uid="uid://bobxsibxyoyk" path="res://commons/gauge/watering_can_gauge.tscn" id="3_hs4o3"]
 
 [node name="WateringCan" type="Node2D"]
+script = ExtResource("1_qt2jj")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(1.19209e-07, -32)
-scale = Vector2(0.0618366, 0.0618366)
+position = Vector2(-7.15256e-07, -44)
+scale = Vector2(0.096, 0.0934182)
 texture = ExtResource("1_3vngv")
+
+[node name="WateringCanGauge" parent="." node_paths=PackedStringArray("item") instance=ExtResource("3_hs4o3")]
+position = Vector2(0, 8)
+item = NodePath("..")

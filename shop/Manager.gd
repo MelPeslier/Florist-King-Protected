@@ -13,8 +13,4 @@ func _ready():
 					if pot.name.begins_with("Pot"):
 						pots.push_back(pot)
 			rooms.push_back(pots)
-	print(rooms)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
