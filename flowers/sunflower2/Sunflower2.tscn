@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://b6dqnswscv0f6"]
+
+[ext_resource type="Script" path="res://flowers/sunflower/sunflower.gd" id="1_o1tt3"]
+[ext_resource type="Texture2D" uid="uid://r8hjt2elaemd" path="res://flowers/sunflower/sprite/sunflower_tmp.jpg" id="2_xmv23"]
+[ext_resource type="PackedScene" uid="uid://br80202nxcfcv" path="res://commons/gauge/water_gauge.tscn" id="3_qfqxe"]
+[ext_resource type="PackedScene" uid="uid://7tikciratgn8" path="res://commons/gauge/happiness_gauge.tscn" id="4_ihld1"]
+
+[node name="Sunflower" type="Node2D" groups=["flower", "water_flower"]]
+script = ExtResource("1_o1tt3")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -48)
+scale = Vector2(0.180769, 0.180769)
+texture = ExtResource("2_xmv23")
+
+[node name="WaterGauge" parent="." node_paths=PackedStringArray("flower") instance=ExtResource("3_qfqxe")]
+position = Vector2(0, 8)
+flower = NodePath("..")
+
+[node name="HappinessGauge" parent="." node_paths=PackedStringArray("flower") instance=ExtResource("4_ihld1")]
+position = Vector2(0, 48)
+flower = NodePath("..")

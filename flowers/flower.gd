@@ -26,7 +26,7 @@ func _ready():
 func _physics_process(delta) -> void:
 	my_input(delta)
 
-func my_input(delta):
+func my_input(_delta):
 	pass
 
 func _on_player_enter_room(room_number :int) -> void:

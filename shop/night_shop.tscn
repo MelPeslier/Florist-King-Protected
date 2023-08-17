@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bstp6mip8ystj"]
+[gd_scene load_steps=16 format=3 uid="uid://bstp6mip8ystj"]
 
 [ext_resource type="PackedScene" uid="uid://dinjpcmsfbml2" path="res://shop/room_1.tscn" id="1_ufoco"]
 [ext_resource type="PackedScene" uid="uid://bp8bd6s36skh6" path="res://shop/room_2.tscn" id="2_ykdd2"]
@@ -12,6 +12,9 @@
 [ext_resource type="PackedScene" uid="uid://drfj8ifuyx7pg" path="res://shop/room_9.tscn" id="9_emr0w"]
 [ext_resource type="PackedScene" uid="uid://k0wuo10gq03a" path="res://shop/room_10.tscn" id="10_del1q"]
 [ext_resource type="Script" path="res://shop/manager.gd" id="12_kxexk"]
+[ext_resource type="Script" path="res://shop/DayToNight.gd" id="13_w4uid"]
+[ext_resource type="FontFile" uid="uid://b0hof85mkga7d" path="res://art/Playfulist-rgPp8.ttf" id="14_upmsm"]
+[ext_resource type="AudioStream" uid="uid://bkiwohevp4s2i" path="res://audio/sfx/DayToNight.mp3" id="15_xp43v"]
 
 [node name="NightShop" type="Node2D"]
 
@@ -78,3 +81,37 @@ position = Vector2(500, 300)
 
 [node name="manager" type="Node" parent="."]
 script = ExtResource("12_kxexk")
+
+[node name="DayToNight" type="CanvasLayer" parent="."]
+editor_description = "Just a quick transition"
+visible = false
+script = ExtResource("13_w4uid")
+
+[node name="ColorRect" type="ColorRect" parent="DayToNight"]
+offset_left = -37.0
+offset_top = -37.0
+offset_right = 1029.0
+offset_bottom = 632.0
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="DayToNight/ColorRect"]
+layout_mode = 0
+offset_right = 1066.0
+offset_bottom = 669.0
+theme_override_fonts/font = ExtResource("14_upmsm")
+theme_override_font_sizes/font_size = 128
+text = "Night X"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="Audio" type="AudioStreamPlayer" parent="DayToNight"]
+stream = ExtResource("15_xp43v")
+bus = &"SFX"
+
+[node name="Timer" type="Timer" parent="DayToNight"]
+wait_time = 3.0
+one_shot = true
+
+[connection signal="finished" from="DayToNight/Audio" to="DayToNight" method="_on_audio_finished"]
+[connection signal="timeout" from="DayToNight/Timer" to="DayToNight" method="_on_timer_timeout"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://cvqy0bicnsbfm"]
 
-[ext_resource type="PackedScene" uid="uid://dhf3f6ndl5gn5" path="res://menu/SeedPicker.tscn" id="1_e508p"]
+[ext_resource type="PackedScene" uid="uid://dhf3f6ndl5gn5" path="res://menus/day/SeedPicker.tscn" id="1_e508p"]
 [ext_resource type="Texture2D" uid="uid://rnpjy6uyx4sw" path="res://art/placeholder/seeds/Celeritas_Seeds.png" id="2_4ucp3"]
 [ext_resource type="Texture2D" uid="uid://csfaie6crb1rh" path="res://art/placeholder/seeds/Keith_Seeds.png" id="3_ys7xp"]
 [ext_resource type="Texture2D" uid="uid://l2owl8sflnqt" path="res://art/placeholder/seeds/Ivy_Seeds.png" id="4_kldex"]
