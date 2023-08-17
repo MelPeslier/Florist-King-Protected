@@ -1,13 +1,6 @@
-[gd_scene load_steps=11 format=3 uid="uid://cvqy0bicnsbfm"]
+[gd_scene load_steps=4 format=3 uid="uid://cvqy0bicnsbfm"]
 
-[ext_resource type="PackedScene" uid="uid://dhf3f6ndl5gn5" path="res://menu/SeedPicker.tscn" id="1_e508p"]
-[ext_resource type="Texture2D" uid="uid://rnpjy6uyx4sw" path="res://art/placeholder/seeds/Celeritas_Seeds.png" id="2_4ucp3"]
-[ext_resource type="Texture2D" uid="uid://csfaie6crb1rh" path="res://art/placeholder/seeds/Keith_Seeds.png" id="3_ys7xp"]
-[ext_resource type="Texture2D" uid="uid://l2owl8sflnqt" path="res://art/placeholder/seeds/Ivy_Seeds.png" id="4_kldex"]
-[ext_resource type="Texture2D" uid="uid://kwpi0laf1tyw" path="res://art/placeholder/seeds/Venus_Seeds.png" id="5_tx4cq"]
-[ext_resource type="Texture2D" uid="uid://dfn31prhihfl5" path="res://art/placeholder/seeds/Cassandri_Seeds.png" id="6_svm3f"]
-[ext_resource type="Texture2D" uid="uid://dl3dmqybv5w7y" path="res://art/placeholder/seeds/Arsonist_Seeds.png" id="7_s38a8"]
-[ext_resource type="Texture2D" uid="uid://dlchbj6jabeei" path="res://art/placeholder/seeds/Man_Seeds.png" id="8_hlapb"]
+[ext_resource type="Script" path="res://menus/SeedList.gd" id="1_mie58"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4jjl3"]
 bg_color = Color(1, 1, 1, 1)
@@ -16,6 +9,8 @@ bg_color = Color(1, 1, 1, 1)
 VScrollBar/styles/grabber = SubResource("StyleBoxFlat_4jjl3")
 
 [node name="SeedList" type="Control"]
+clip_contents = true
+custom_minimum_size = Vector2(400, 960)
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -27,6 +22,7 @@ offset_bottom = 369.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.5, 0.5)
+script = ExtResource("1_mie58")
 
 [node name="Background" type="ColorRect" parent="."]
 layout_mode = 2
@@ -47,127 +43,3 @@ theme = SubResource("Theme_b80gh")
 [node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
 custom_minimum_size = Vector2(400, 240)
 layout_mode = 2
-
-[node name="Sunflower" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_e508p")]
-custom_minimum_size = Vector2(200, 240)
-layout_mode = 2
-
-[node name="Celeritas" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_e508p")]
-custom_minimum_size = Vector2(200, 240)
-layout_mode = 2
-
-[node name="Sprite2D" parent="ScrollContainer/VBoxContainer/Celeritas/SeedImage" index="2"]
-texture = ExtResource("2_4ucp3")
-
-[node name="Name" parent="ScrollContainer/VBoxContainer/Celeritas" index="1"]
-text = "Celeritas"
-
-[node name="Buy" parent="ScrollContainer/VBoxContainer/Celeritas" index="2"]
-text = "Seed: 3 €"
-
-[node name="Sell" parent="ScrollContainer/VBoxContainer/Celeritas" index="3"]
-text = "Flower: 16 €"
-
-[node name="Keith" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_e508p")]
-custom_minimum_size = Vector2(200, 240)
-layout_mode = 2
-
-[node name="Sprite2D" parent="ScrollContainer/VBoxContainer/Keith/SeedImage" index="2"]
-texture = ExtResource("3_ys7xp")
-
-[node name="Name" parent="ScrollContainer/VBoxContainer/Keith" index="1"]
-text = "Keith"
-
-[node name="Buy" parent="ScrollContainer/VBoxContainer/Keith" index="2"]
-text = "Seed: 8 €"
-
-[node name="Sell" parent="ScrollContainer/VBoxContainer/Keith" index="3"]
-text = "Flower: 40 €"
-
-[node name="Ivy" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_e508p")]
-custom_minimum_size = Vector2(200, 240)
-layout_mode = 2
-
-[node name="Sprite2D" parent="ScrollContainer/VBoxContainer/Ivy/SeedImage" index="2"]
-texture = ExtResource("4_kldex")
-
-[node name="Name" parent="ScrollContainer/VBoxContainer/Ivy" index="1"]
-text = "Ivy"
-
-[node name="Buy" parent="ScrollContainer/VBoxContainer/Ivy" index="2"]
-text = "Seed: 10 €"
-
-[node name="Sell" parent="ScrollContainer/VBoxContainer/Ivy" index="3"]
-text = "Flower: 40 €"
-
-[node name="VenusFlytrap" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_e508p")]
-custom_minimum_size = Vector2(200, 240)
-layout_mode = 2
-
-[node name="Sprite2D" parent="ScrollContainer/VBoxContainer/VenusFlytrap/SeedImage" index="2"]
-texture = ExtResource("5_tx4cq")
-
-[node name="Name" parent="ScrollContainer/VBoxContainer/VenusFlytrap" index="1"]
-text = "Venus Flytrap"
-
-[node name="Buy" parent="ScrollContainer/VBoxContainer/VenusFlytrap" index="2"]
-text = "Seed: 15 €"
-
-[node name="Sell" parent="ScrollContainer/VBoxContainer/VenusFlytrap" index="3"]
-text = "Flower: 18 €"
-
-[node name="Cassandri" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_e508p")]
-custom_minimum_size = Vector2(200, 240)
-layout_mode = 2
-
-[node name="Sprite2D" parent="ScrollContainer/VBoxContainer/Cassandri/SeedImage" index="2"]
-texture = ExtResource("6_svm3f")
-
-[node name="Name" parent="ScrollContainer/VBoxContainer/Cassandri" index="1"]
-text = "Cassandri"
-
-[node name="Buy" parent="ScrollContainer/VBoxContainer/Cassandri" index="2"]
-text = "Seed: 7 €"
-
-[node name="Sell" parent="ScrollContainer/VBoxContainer/Cassandri" index="3"]
-text = "Flower: 10 €"
-
-[node name="Arsonist" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_e508p")]
-custom_minimum_size = Vector2(200, 240)
-layout_mode = 2
-
-[node name="Sprite2D" parent="ScrollContainer/VBoxContainer/Arsonist/SeedImage" index="2"]
-texture = ExtResource("7_s38a8")
-
-[node name="Name" parent="ScrollContainer/VBoxContainer/Arsonist" index="1"]
-text = "Arsonist"
-
-[node name="Buy" parent="ScrollContainer/VBoxContainer/Arsonist" index="2"]
-text = "Seed: 25 €"
-
-[node name="Sell" parent="ScrollContainer/VBoxContainer/Arsonist" index="3"]
-text = "Flower: 95 €"
-
-[node name="ManEater" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_e508p")]
-custom_minimum_size = Vector2(200, 240)
-layout_mode = 2
-
-[node name="Sprite2D" parent="ScrollContainer/VBoxContainer/ManEater/SeedImage" index="2"]
-texture = ExtResource("8_hlapb")
-
-[node name="Name" parent="ScrollContainer/VBoxContainer/ManEater" index="1"]
-text = "Man Eater"
-
-[node name="Buy" parent="ScrollContainer/VBoxContainer/ManEater" index="2"]
-text = "Seed: 25 €"
-
-[node name="Sell" parent="ScrollContainer/VBoxContainer/ManEater" index="3"]
-text = "Flower: 50 €"
-
-[editable path="ScrollContainer/VBoxContainer/Celeritas"]
-[editable path="ScrollContainer/VBoxContainer/Keith"]
-[editable path="ScrollContainer/VBoxContainer/Ivy"]
-[editable path="ScrollContainer/VBoxContainer/VenusFlytrap"]
-[editable path="ScrollContainer/VBoxContainer/Cassandri"]
-[editable path="ScrollContainer/VBoxContainer/Arsonist"]
-[editable path="ScrollContainer/VBoxContainer/ManEater"]

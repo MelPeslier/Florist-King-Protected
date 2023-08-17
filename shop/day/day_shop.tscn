@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://diih1bq4ddm1s"]
+
+[ext_resource type="PackedScene" uid="uid://cvqy0bicnsbfm" path="res://menus/SeedList.tscn" id="1_8bjdu"]
+[ext_resource type="PackedScene" uid="uid://b1lfbknd23yig" path="res://menus/SeedPlacer.tscn" id="2_vsoi1"]
+
+[node name="DayShop" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="SeedList" parent="CanvasLayer" instance=ExtResource("1_8bjdu")]
+
+[node name="SeedPlacer" parent="CanvasLayer" instance=ExtResource("2_vsoi1")]
+offset_left = 390.0
+offset_top = 127.0
+offset_right = -410.0
+offset_bottom = -217.0

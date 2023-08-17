@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://c7h2r2kg3ges2"]
+
+[ext_resource type="PackedScene" uid="uid://crns6l7ov1og3" path="res://menus/pot.tscn" id="1_couyq"]
+
+[node name="Table" type="Control"]
+custom_minimum_size = Vector2(40, 40)
+layout_direction = 1
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Pot" parent="." instance=ExtResource("1_couyq")]
+position = Vector2(22, 13)
+
+[node name="Pot2" parent="." instance=ExtResource("1_couyq")]
+position = Vector2(23, 45)
+
+[node name="Pot3" parent="." instance=ExtResource("1_couyq")]
+position = Vector2(24, 77)
