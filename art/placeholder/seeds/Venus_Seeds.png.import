@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://l0k2685gk38o"
-path="res://.godot/imported/shop_plan.png-8d7b41b6cbd188f3a1e1de07f5b86ce0.ctex"
+uid="uid://kwpi0laf1tyw"
+path="res://.godot/imported/Venus_Seeds.png-5b2fb15cc54f0c7617ae0bd5d00cfa0c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://shop/sprite/shop_plan.png"
-dest_files=["res://.godot/imported/shop_plan.png-8d7b41b6cbd188f3a1e1de07f5b86ce0.ctex"]
+source_file="res://art/placeholder/seeds/Venus_Seeds.png"
+dest_files=["res://.godot/imported/Venus_Seeds.png-5b2fb15cc54f0c7617ae0bd5d00cfa0c.ctex"]
 
 [params]
 

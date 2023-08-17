@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://csmkid2i2d5e1"]
 
-[ext_resource type="Script" path="res://menu/NightSummary.gd" id="1_wy47t"]
+[ext_resource type="Script" path="res://menus/NightSummary.gd" id="1_wy47t"]
 [ext_resource type="FontFile" uid="uid://b0hof85mkga7d" path="res://art/Playfulist-rgPp8.ttf" id="2_ybsdf"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gekin"]
