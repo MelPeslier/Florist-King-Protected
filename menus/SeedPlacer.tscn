@@ -30,13 +30,20 @@ metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
 [node name="Pot" parent="Table" index="0"]
-position = Vector2(24, 16)
+offset_left = 24.0
+offset_top = 16.0
+offset_right = 148.0
+offset_bottom = 140.0
 
 [node name="Pot2" parent="Table" index="1"]
-position = Vector2(24, 48)
+offset_left = 24.0
+offset_top = 48.0
+offset_right = 148.0
+offset_bottom = 172.0
 
 [node name="Pot3" parent="Table" index="2"]
-position = Vector2(24, 78)
+offset_top = 78.0
+offset_bottom = 202.0
 
 [node name="Table2" parent="." instance=ExtResource("2_17v6b")]
 offset_left = 6.0
@@ -47,26 +54,42 @@ metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
 [node name="Pot" parent="Table2" index="0"]
-position = Vector2(8, 15)
+offset_left = 8.0
+offset_top = 15.0
+offset_right = 132.0
+offset_bottom = 139.0
 
 [node name="Pot2" parent="Table2" index="1"]
-position = Vector2(8, 47)
+offset_left = 8.0
+offset_top = 47.0
+offset_right = 132.0
+offset_bottom = 171.0
 
 [node name="Pot3" parent="Table2" index="2"]
-position = Vector2(8, 77)
+offset_left = 8.0
+offset_right = 132.0
 
 [node name="Table3" parent="." instance=ExtResource("2_17v6b")]
 metadata/_edit_lock_ = true
 metadata/_edit_group_ = true
 
 [node name="Pot" parent="Table3" index="0"]
-position = Vector2(54, 16)
+offset_left = 54.0
+offset_top = 16.0
+offset_right = 178.0
+offset_bottom = 140.0
 
 [node name="Pot2" parent="Table3" index="1"]
-position = Vector2(14, 16)
+offset_left = 14.0
+offset_top = 16.0
+offset_right = 138.0
+offset_bottom = 140.0
 
 [node name="Pot3" parent="Table3" index="2"]
-position = Vector2(14, 56)
+offset_left = 14.0
+offset_top = 56.0
+offset_right = 138.0
+offset_bottom = 180.0
 
 [node name="Table4" parent="." instance=ExtResource("2_17v6b")]
 offset_left = 150.0
@@ -77,13 +100,22 @@ metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
 [node name="Pot" parent="Table4" index="0"]
-position = Vector2(-8, 15)
+offset_left = -8.0
+offset_top = 15.0
+offset_right = 116.0
+offset_bottom = 139.0
 
 [node name="Pot2" parent="Table4" index="1"]
-position = Vector2(33, 15)
+offset_left = 33.0
+offset_top = 15.0
+offset_right = 157.0
+offset_bottom = 139.0
 
 [node name="Pot3" parent="Table4" index="2"]
-position = Vector2(33, 55)
+offset_left = 33.0
+offset_top = 55.0
+offset_right = 157.0
+offset_bottom = 179.0
 
 [node name="Table5" parent="." instance=ExtResource("2_17v6b")]
 offset_left = 94.0
@@ -94,13 +126,20 @@ metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
 [node name="Pot" parent="Table5" index="0"]
-position = Vector2(22, 10)
+offset_top = 10.0
+offset_bottom = 134.0
 
 [node name="Pot2" parent="Table5" index="1"]
-position = Vector2(22, 42)
+offset_left = 22.0
+offset_top = 42.0
+offset_right = 146.0
+offset_bottom = 166.0
 
 [node name="Pot3" parent="Table5" index="2"]
-position = Vector2(22, 72)
+offset_left = 22.0
+offset_top = 72.0
+offset_right = 146.0
+offset_bottom = 196.0
 
 [node name="Table6" parent="." instance=ExtResource("2_17v6b")]
 offset_left = 161.0
@@ -111,13 +150,16 @@ metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
 [node name="Pot" parent="Table6" index="0"]
-position = Vector2(24, 13)
+offset_left = 24.0
+offset_right = 148.0
 
 [node name="Pot2" parent="Table6" index="1"]
-position = Vector2(24, 45)
+offset_left = 24.0
+offset_right = 148.0
 
 [node name="Pot3" parent="Table6" index="2"]
-position = Vector2(24, 75)
+offset_top = 75.0
+offset_bottom = 199.0
 
 [editable path="Table"]
 [editable path="Table2"]

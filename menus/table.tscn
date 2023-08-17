@@ -11,10 +11,22 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Pot" parent="." instance=ExtResource("1_couyq")]
-position = Vector2(22, 13)
+layout_mode = 0
+offset_left = 22.0
+offset_top = 13.0
+offset_right = 146.0
+offset_bottom = 137.0
 
 [node name="Pot2" parent="." instance=ExtResource("1_couyq")]
-position = Vector2(23, 45)
+layout_mode = 0
+offset_left = 23.0
+offset_top = 45.0
+offset_right = 147.0
+offset_bottom = 169.0
 
 [node name="Pot3" parent="." instance=ExtResource("1_couyq")]
-position = Vector2(24, 77)
+layout_mode = 0
+offset_left = 24.0
+offset_top = 77.0
+offset_right = 148.0
+offset_bottom = 201.0

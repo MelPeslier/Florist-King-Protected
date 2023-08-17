@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://diih1bq4ddm1s"]
+
+[ext_resource type="PackedScene" uid="uid://cvqy0bicnsbfm" path="res://menus/SeedList.tscn" id="1_8bjdu"]
+[ext_resource type="Script" path="res://shop/day/day_shop.gd" id="1_gafeu"]
+[ext_resource type="PackedScene" uid="uid://b1lfbknd23yig" path="res://menus/SeedPlacer.tscn" id="2_vsoi1"]
+
+[node name="DayShop" type="Node2D"]
+script = ExtResource("1_gafeu")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1000.0
+offset_bottom = 512.0
+
+[node name="SeedList" parent="CanvasLayer/Control" instance=ExtResource("1_8bjdu")]
+clip_contents = false
+layout_mode = 1
+offset_bottom = 457.0
+
+[node name="SeedPlacer" parent="CanvasLayer/Control" instance=ExtResource("2_vsoi1")]
+layout_mode = 1
+offset_left = 390.0
+offset_top = 127.0
+offset_right = -410.0
+offset_bottom = -217.0

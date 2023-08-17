@@ -1,25 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://duu4y482bydrj"]
+[gd_scene load_steps=3 format=3 uid="uid://mpdv28oc7o4v"]
 
 [ext_resource type="Script" path="res://menus/seed.gd" id="1_8fvqe"]
-[ext_resource type="Shader" path="res://menus/SeedPicker.gdshader" id="1_662if"]
+[ext_resource type="Texture2D" uid="uid://cj12wxgmx1637" path="res://art/placeholder/seeds/Sunflower_Seeds.png" id="1_hvudb"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_81orp"]
-shader = ExtResource("1_662if")
-shader_parameter/shine_color = Color(1, 1, 1, 0.501961)
-shader_parameter/shine_speed = 1.0
-shader_parameter/shine_size = 0.01
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5rrm6"]
-size = Vector2(160, 160)
-
-[node name="Seed" type="Area2D" groups=["seed"]]
+[node name="Seed" type="TextureRect"]
+custom_minimum_size = Vector2(70, 70)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_hvudb")
+expand_mode = 1
 script = ExtResource("1_8fvqe")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-material = SubResource("ShaderMaterial_81orp")
-position = Vector2(79.5, 80)
-scale = Vector2(2.23438, 2.25)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(80, 80)
-shape = SubResource("RectangleShape2D_5rrm6")

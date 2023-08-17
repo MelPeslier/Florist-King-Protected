@@ -81,9 +81,9 @@ func _ready():
 	
 	for item in seeds_array:
 		var seed_picker = seed_picker_scene.instantiate()
-		var seed = seed_scene.instantiate()
-		seed.init(item)
-		seed_picker.init(seed)
+		var my_seed = seed_scene.instantiate()
+		my_seed.init(item)
+		seed_picker.init(my_seed)
 		$ScrollContainer/VBoxContainer.add_child(seed_picker)
 
 
