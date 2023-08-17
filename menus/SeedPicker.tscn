@@ -1,0 +1,81 @@
+[gd_scene load_steps=7 format=3 uid="uid://dhf3f6ndl5gn5"]
+
+[ext_resource type="Shader" path="res://menus/SeedPicker.gdshader" id="1_vd1dj"]
+[ext_resource type="Texture2D" uid="uid://cj12wxgmx1637" path="res://art/placeholder/seeds/Sunflower_Seeds.png" id="2_p3lbf"]
+[ext_resource type="FontFile" uid="uid://b0hof85mkga7d" path="res://art/Playfulist-rgPp8.ttf" id="3_y618m"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rsppl"]
+draw_center = false
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5rrm6"]
+size = Vector2(72, 71)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_81orp"]
+shader = ExtResource("1_vd1dj")
+shader_parameter/shine_color = Color(1, 1, 1, 0.501961)
+shader_parameter/shine_speed = 1.0
+shader_parameter/shine_size = 0.01
+
+[node name="SeedPicker" type="Panel"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -600.0
+offset_bottom = -360.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_rsppl")
+
+[node name="SeedImage" type="Area2D" parent="."]
+position = Vector2(11, 10)
+
+[node name="Seed" type="Panel" parent="SeedImage"]
+offset_right = 160.0
+offset_bottom = 160.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_rsppl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SeedImage"]
+visible = false
+position = Vector2(40, 39.5)
+shape = SubResource("RectangleShape2D_5rrm6")
+
+[node name="Sprite2D" type="Sprite2D" parent="SeedImage"]
+material = SubResource("ShaderMaterial_81orp")
+position = Vector2(79.5, 80)
+scale = Vector2(2.23438, 2.25)
+texture = ExtResource("2_p3lbf")
+
+[node name="Name" type="Label" parent="."]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 178.0
+offset_right = 218.0
+offset_bottom = 226.0
+theme_override_fonts/font = ExtResource("3_y618m")
+theme_override_font_sizes/font_size = 36
+text = "Sunflower"
+
+[node name="Buy" type="Label" parent="."]
+layout_mode = 0
+offset_left = 187.0
+offset_top = 35.0
+offset_right = 346.0
+offset_bottom = 88.0
+theme_override_fonts/font = ExtResource("3_y618m")
+theme_override_font_sizes/font_size = 30
+text = "Seed: 1 €"
+
+[node name="Sell" type="Label" parent="."]
+layout_mode = 0
+offset_left = 187.0
+offset_top = 118.0
+offset_right = 392.0
+offset_bottom = 171.0
+theme_override_fonts/font = ExtResource("3_y618m")
+theme_override_font_sizes/font_size = 30
+text = "Flower: 8 €"

@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bstp6mip8ystj"]
+[gd_scene load_steps=13 format=3 uid="uid://bstp6mip8ystj"]
 
 [ext_resource type="PackedScene" uid="uid://dinjpcmsfbml2" path="res://shop/room_1.tscn" id="1_ufoco"]
 [ext_resource type="PackedScene" uid="uid://bp8bd6s36skh6" path="res://shop/room_2.tscn" id="2_ykdd2"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://qkjl2hhwnw3" path="res://shop/room_8.tscn" id="8_s6yka"]
 [ext_resource type="PackedScene" uid="uid://drfj8ifuyx7pg" path="res://shop/room_9.tscn" id="9_emr0w"]
 [ext_resource type="PackedScene" uid="uid://k0wuo10gq03a" path="res://shop/room_10.tscn" id="10_del1q"]
+[ext_resource type="Script" path="res://shop/manager.gd" id="12_kxexk"]
 
 [node name="NightShop" type="Node2D"]
 
@@ -74,3 +75,6 @@ fifthRoom = NodePath("../Room2")
 
 [node name="Player" parent="." instance=ExtResource("3_me6h3")]
 position = Vector2(500, 300)
+
+[node name="manager" type="Node" parent="."]
+script = ExtResource("12_kxexk")
