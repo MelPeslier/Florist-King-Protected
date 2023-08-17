@@ -11,7 +11,7 @@ script = ExtResource("1_n53t1")
 position = Vector2(0, 141)
 texture = ExtResource("2_g2w5y")
 
-[node name="Pot1" type="Marker2D" parent="."]
+[node name="Pot1" type="Marker2D" parent="." groups=["pot"]]
 editor_description = "Used as position for the flowers, which will be their children"
 position = Vector2(-165, 0)
 
@@ -19,14 +19,14 @@ position = Vector2(-165, 0)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("3_q7cxr")
 
-[node name="Pot2" type="Marker2D" parent="."]
+[node name="Pot2" type="Marker2D" parent="." groups=["pot"]]
 editor_description = "Used as position for the flowers, which will be their children"
 
 [node name="Sprite2D" type="Sprite2D" parent="Pot2"]
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("3_q7cxr")
 
-[node name="Pot3" type="Marker2D" parent="."]
+[node name="Pot3" type="Marker2D" parent="." groups=["pot"]]
 editor_description = "Used as position for the flowers, which will be their children"
 position = Vector2(179, 0)
 

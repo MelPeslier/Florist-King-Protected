@@ -82,5 +82,3 @@ stretch_mode = 5
 [connection signal="pressed" from="Arrows/Left" to="." method="_on_left_pressed"]
 [connection signal="pressed" from="Arrows/Right" to="." method="_on_right_pressed"]
 [connection signal="pressed" from="Arrows/Down" to="." method="_on_down_pressed"]
-
-[editable path="Table"]

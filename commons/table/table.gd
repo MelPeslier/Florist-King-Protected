@@ -29,8 +29,11 @@ func add_flower(flower:Flower, potNumber=null):
 func check(potName :String) -> Array:
 	var flowerNames := []
 	for pot in get_children():
-		if pot.name != potName and pot.get_child_count() == 1:
-			flowerNames.push_back(pot.get_child(0).name)
+		if pot.is_in_group("pot"):
+			if pot.name != potName:
+				for flower in pot.get_children():
+					if flower.is_in_group("flower"):
+						flowerNames.push_back(pot.flower.name)
 	
 	return flowerNames
 
