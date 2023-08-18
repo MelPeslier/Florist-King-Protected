@@ -8,9 +8,14 @@
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="SeedList" parent="CanvasLayer" instance=ExtResource("1_8bjdu")]
+anchors_preset = -1
+anchor_right = 0.208
+anchor_bottom = 0.821
+offset_right = 202.0
+offset_bottom = 476.4
 
-[node name="SeedPlacer" parent="CanvasLayer" instance=ExtResource("2_vsoi1")]
-offset_left = 390.0
-offset_top = 127.0
-offset_right = -410.0
-offset_bottom = -217.0
+[node name="SeedPlacer" parent="." instance=ExtResource("2_vsoi1")]
+offset_left = 344.0
+offset_top = 104.0
+offset_right = 344.0
+offset_bottom = 104.0

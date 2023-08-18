@@ -1,169 +1,245 @@
 [gd_scene load_steps=3 format=3 uid="uid://b1lfbknd23yig"]
 
 [ext_resource type="Texture2D" uid="uid://d2verrnvbk7tk" path="res://shop/sprite/shop_plan.png" id="1_6i231"]
-[ext_resource type="PackedScene" uid="uid://c7h2r2kg3ges2" path="res://menus/table.tscn" id="2_17v6b"]
+[ext_resource type="Script" path="res://menus/SeedPlacer.gd" id="1_lqx4p"]
 
 [node name="SeedPlacer" type="Control"]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_right = -800.0
-offset_bottom = -344.0
-grow_horizontal = 2
-grow_vertical = 2
+anchors_preset = 0
+script = ExtResource("1_lqx4p")
 
 [node name="TextureRect" type="TextureRect" parent="."]
-self_modulate = Color(1, 1, 1, 0.392157)
+self_modulate = Color(1, 1, 1, 0.905882)
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("1_6i231")
 metadata/_edit_lock_ = true
 
-[node name="Table" parent="." instance=ExtResource("2_17v6b")]
-offset_left = 62.0
-offset_top = 98.0
-offset_right = 102.0
-offset_bottom = 138.0
+[node name="Table" type="Node2D" parent="." groups=["table"]]
+position = Vector2(260, 166)
+
+[node name="Pot" type="Control" parent="Table"]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 24.0
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Pot2" type="Control" parent="Table"]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 3
+anchors_preset = 0
+offset_left = -12.0
+offset_top = 44.0
+offset_right = 12.0
+offset_bottom = 68.0
+mouse_filter = 2
 metadata/_edit_group_ = true
-metadata/_edit_lock_ = true
+metadata/_edit_use_anchors_ = true
 
-[node name="Pot" parent="Table" index="0"]
-offset_left = 24.0
-offset_top = 16.0
-offset_right = 148.0
-offset_bottom = 140.0
-
-[node name="Pot2" parent="Table" index="1"]
-offset_left = 24.0
-offset_top = 48.0
-offset_right = 148.0
-offset_bottom = 172.0
-
-[node name="Pot3" parent="Table" index="2"]
-offset_top = 78.0
-offset_bottom = 202.0
-
-[node name="Table2" parent="." instance=ExtResource("2_17v6b")]
-offset_left = 6.0
-offset_top = 99.0
-offset_right = 46.0
-offset_bottom = 139.0
-metadata/_edit_group_ = true
-metadata/_edit_lock_ = true
-
-[node name="Pot" parent="Table2" index="0"]
-offset_left = 8.0
-offset_top = 15.0
-offset_right = 132.0
-offset_bottom = 139.0
-
-[node name="Pot2" parent="Table2" index="1"]
-offset_left = 8.0
-offset_top = 47.0
-offset_right = 132.0
-offset_bottom = 171.0
-
-[node name="Pot3" parent="Table2" index="2"]
-offset_left = 8.0
-offset_right = 132.0
-
-[node name="Table3" parent="." instance=ExtResource("2_17v6b")]
-metadata/_edit_lock_ = true
-metadata/_edit_group_ = true
-
-[node name="Pot" parent="Table3" index="0"]
-offset_left = 54.0
-offset_top = 16.0
-offset_right = 178.0
-offset_bottom = 140.0
-
-[node name="Pot2" parent="Table3" index="1"]
-offset_left = 14.0
-offset_top = 16.0
-offset_right = 138.0
-offset_bottom = 140.0
-
-[node name="Pot3" parent="Table3" index="2"]
-offset_left = 14.0
-offset_top = 56.0
-offset_right = 138.0
-offset_bottom = 180.0
-
-[node name="Table4" parent="." instance=ExtResource("2_17v6b")]
-offset_left = 150.0
-offset_top = 1.0
-offset_right = 190.0
+[node name="Pot3" type="Control" parent="Table"]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 3
+anchors_preset = 0
+offset_left = 18.0
+offset_top = 17.0
+offset_right = 42.0
 offset_bottom = 41.0
+mouse_filter = 2
+metadata/_edit_group_ = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Table2" type="Node2D" parent="." groups=["table"]]
+position = Vector2(58, 96)
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
+
+[node name="Pot" type="Control" parent="Table2"]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+metadata/_edit_group_ = true
+
+[node name="Pot2" type="Control" parent="Table2"]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+metadata/_edit_group_ = true
+
+[node name="Pot3" type="Control" parent="Table2"]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+metadata/_edit_group_ = true
+
+[node name="Table3" type="Node2D" parent="." groups=["table"]]
+position = Vector2(34, 19)
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
-[node name="Pot" parent="Table4" index="0"]
-offset_left = -8.0
-offset_top = 15.0
-offset_right = 116.0
-offset_bottom = 139.0
-
-[node name="Pot2" parent="Table4" index="1"]
-offset_left = 33.0
-offset_top = 15.0
-offset_right = 157.0
-offset_bottom = 139.0
-
-[node name="Pot3" parent="Table4" index="2"]
-offset_left = 33.0
-offset_top = 55.0
-offset_right = 157.0
-offset_bottom = 179.0
-
-[node name="Table5" parent="." instance=ExtResource("2_17v6b")]
-offset_left = 94.0
-offset_top = 104.0
-offset_right = 134.0
-offset_bottom = 144.0
+[node name="Pot" type="Control" parent="Table3"]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
 metadata/_edit_group_ = true
+
+[node name="Pot2" type="Control" parent="Table3"]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+metadata/_edit_group_ = true
+
+[node name="Pot3" type="Control" parent="Table3"]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+metadata/_edit_group_ = true
+
+[node name="Table4" type="Node2D" parent="." groups=["table"]]
+position = Vector2(168, 7)
 metadata/_edit_lock_ = true
 
-[node name="Pot" parent="Table5" index="0"]
-offset_top = 10.0
-offset_bottom = 134.0
+[node name="Pot" type="Control" parent="Table4"]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
 
-[node name="Pot2" parent="Table5" index="1"]
-offset_left = 22.0
-offset_top = 42.0
-offset_right = 146.0
-offset_bottom = 166.0
-
-[node name="Pot3" parent="Table5" index="2"]
-offset_left = 22.0
-offset_top = 72.0
-offset_right = 146.0
-offset_bottom = 196.0
-
-[node name="Table6" parent="." instance=ExtResource("2_17v6b")]
-offset_left = 161.0
-offset_top = 101.0
-offset_right = 201.0
-offset_bottom = 141.0
+[node name="Pot2" type="Control" parent="Table4"]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
 metadata/_edit_group_ = true
+
+[node name="Pot3" type="Control" parent="Table4"]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+metadata/_edit_group_ = true
+
+[node name="Table5" type="Node2D" parent="." groups=["table"]]
+position = Vector2(103, 92)
 metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
 
-[node name="Pot" parent="Table6" index="0"]
-offset_left = 24.0
-offset_right = 148.0
+[node name="Pot" type="Control" parent="Table5"]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+metadata/_edit_group_ = true
 
-[node name="Pot2" parent="Table6" index="1"]
-offset_left = 24.0
-offset_right = 148.0
+[node name="Pot2" type="Control" parent="Table5"]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+metadata/_edit_group_ = true
 
-[node name="Pot3" parent="Table6" index="2"]
-offset_top = 75.0
-offset_bottom = 199.0
+[node name="Pot3" type="Control" parent="Table5"]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+metadata/_edit_group_ = true
 
-[editable path="Table"]
-[editable path="Table2"]
-[editable path="Table3"]
-[editable path="Table4"]
-[editable path="Table5"]
-[editable path="Table6"]
+[node name="Table6" type="Node2D" parent="." groups=["table"]]
+position = Vector2(152, 96)
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
+
+[node name="Pot" type="Control" parent="Table6"]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+metadata/_edit_group_ = true
+
+[node name="Pot2" type="Control" parent="Table6"]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+metadata/_edit_group_ = true
+
+[node name="Pot3" type="Control" parent="Table6"]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+metadata/_edit_group_ = true
