@@ -1,7 +1,7 @@
 extends Control
 
 
-var icon_scene: PackedScene = preload("res://menus/icon.tscn")
+var icon_scene: PackedScene = preload("res://menus/day/icon.tscn")
 var image_path: String = "res://art/placeholder/pot/cirle.png"
 
 # Called when the node enters the scene tree for the first time.

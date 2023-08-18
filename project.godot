@@ -25,6 +25,7 @@ Events="*res://autoloads/events.gd"
 GameData="*res://autoloads/game_data.gd"
 PlacerData="*res://autoloads/placer_data.gd"
 <<<<<<<HEADGameData="*res://autoloads/game_data.gd"
+ScoreManager="*res://autoloads/ScoreManager.gd"
 
 [display]
 

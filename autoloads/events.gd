@@ -6,8 +6,4 @@ signal hugging(is_hugging: bool)
 
 signal eat_player()
 
-signal show_sell_panel(val: bool)
-
-signal sell_seed(seed_price: float)
-
-signal buy_seed(seed_price: float)
+signal show_sell_panel(val: bool, price: float)

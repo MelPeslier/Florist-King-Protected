@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://t2e6qbau1fwu"]
 
-[ext_resource type="Script" path="res://menus/icon.gd" id="2_jsoc7"]
+[ext_resource type="Script" path="res://menus/day/icon.gd" id="1_7r6rd"]
 
 [sub_resource type="Gradient" id="Gradient_dl0x5"]
 offsets = PackedFloat32Array(0)
@@ -10,6 +10,7 @@ colors = PackedColorArray(0, 0, 0, 0.741176)
 gradient = SubResource("Gradient_dl0x5")
 
 [node name="Icon" type="TextureRect"]
+use_parent_material = true
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -18,4 +19,4 @@ grow_vertical = 2
 mouse_filter = 0
 texture = SubResource("GradientTexture1D_kt3ps")
 expand_mode = 1
-script = ExtResource("2_jsoc7")
+script = ExtResource("1_7r6rd")

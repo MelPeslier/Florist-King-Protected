@@ -43,6 +43,7 @@ func die_flower(how :String) -> void:
 	match how:
 		"burn":
 			var tween = get_tree().create_tween()
+			tween.tween_property(sprite, "modulate:a", 0.0, 0.27)
 		
 		"water":
 			var tween = get_tree().create_tween()
@@ -50,6 +51,7 @@ func die_flower(how :String) -> void:
 		
 		"eat":
 			var tween = get_tree().create_tween()
+			tween.tween_property(sprite, "modulate:a", 0.0, 0.1)
 
 func act_around(potName: String, action: String) -> void:
 	for pot in get_children():

@@ -1,6 +1,6 @@
 extends CanvasLayer
 
-const night = preload("res://shop/night_shop.tscn")
+const night = preload("res://shop/night/night_shop.tscn")
 var money = 0 # Set this value when creating the object
 
 func _ready():

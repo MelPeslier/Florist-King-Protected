@@ -1,12 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://dhf3f6ndl5gn5"]
+[gd_scene load_steps=6 format=3 uid="uid://b6n3rbbpj1csk"]
 
-<<<<<<< HEAD:menus/SeedPicker.tscn
-[ext_resource type="Script" path="res://menus/SeedPicker.gd" id="1_vuvhu"]
-=======
-[ext_resource type="Shader" path="res://menus/day/SeedPicker.gdshader" id="1_vd1dj"]
-[ext_resource type="Texture2D" uid="uid://cj12wxgmx1637" path="res://art/placeholder/seeds/Sunflower_Seeds.png" id="2_p3lbf"]
->>>>>>> dda6e2990fb88fbbe0a3d8ad575bcdb8eb8e8f5e:menus/day/SeedPicker.tscn
-[ext_resource type="FontFile" uid="uid://b0hof85mkga7d" path="res://art/Playfulist-rgPp8.ttf" id="3_y618m"]
+[ext_resource type="Script" path="res://menus/day/SeedPicker.gd" id="1_uxl4n"]
+[ext_resource type="FontFile" uid="uid://b0hof85mkga7d" path="res://art/Playfulist-rgPp8.ttf" id="2_1l1r1"]
+[ext_resource type="Shader" path="res://menus/day/SeedPicker.gdshader" id="2_8ul5u"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rsppl"]
 draw_center = false
@@ -16,18 +12,12 @@ border_width_right = 4
 border_width_bottom = 4
 border_color = Color(1, 1, 1, 1)
 
-<<<<<<< HEAD:menus/SeedPicker.tscn
-=======
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5rrm6"]
-size = Vector2(151, 152)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_81orp"]
-shader = ExtResource("1_vd1dj")
-shader_parameter/shine_color = Color(1, 1, 1, 0.501961)
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lfw4x"]
+shader = ExtResource("2_8ul5u")
+shader_parameter/shine_color = Color(1, 1, 1, 1)
 shader_parameter/shine_speed = 1.0
 shader_parameter/shine_size = 0.01
 
->>>>>>> dda6e2990fb88fbbe0a3d8ad575bcdb8eb8e8f5e:menus/day/SeedPicker.tscn
 [node name="SeedPicker" type="Panel"]
 custom_minimum_size = Vector2(400, 240)
 anchors_preset = 15
@@ -39,7 +29,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_rsppl")
-script = ExtResource("1_vuvhu")
+script = ExtResource("1_uxl4n")
 
 [node name="SeedAround" type="Panel" parent="."]
 layout_mode = 1
@@ -55,34 +45,14 @@ offset_bottom = 0.0800018
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_rsppl")
 
-<<<<<<< HEAD:menus/SeedPicker.tscn
 [node name="seed_slot" type="Control" parent="SeedAround"]
+material = SubResource("ShaderMaterial_lfw4x")
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-=======
-[node name="SeedImage" type="Area2D" parent="."]
-position = Vector2(11, 10)
-
-[node name="Seed" type="Panel" parent="SeedImage"]
-offset_right = 160.0
-offset_bottom = 160.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_rsppl")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SeedImage"]
-visible = false
-position = Vector2(79.5, 80)
-shape = SubResource("RectangleShape2D_5rrm6")
-
-[node name="Sprite2D" type="Sprite2D" parent="SeedImage"]
-material = SubResource("ShaderMaterial_81orp")
-position = Vector2(79.5, 80)
-scale = Vector2(2.23438, 2.25)
-texture = ExtResource("2_p3lbf")
->>>>>>> dda6e2990fb88fbbe0a3d8ad575bcdb8eb8e8f5e:menus/day/SeedPicker.tscn
 
 [node name="Name" type="Label" parent="."]
 layout_mode = 0
@@ -90,7 +60,7 @@ offset_left = 19.0
 offset_top = 178.0
 offset_right = 218.0
 offset_bottom = 226.0
-theme_override_fonts/font = ExtResource("3_y618m")
+theme_override_fonts/font = ExtResource("2_1l1r1")
 theme_override_font_sizes/font_size = 36
 text = "Sunflower"
 
@@ -100,7 +70,7 @@ offset_left = 187.0
 offset_top = 35.0
 offset_right = 346.0
 offset_bottom = 88.0
-theme_override_fonts/font = ExtResource("3_y618m")
+theme_override_fonts/font = ExtResource("2_1l1r1")
 theme_override_font_sizes/font_size = 30
 text = "Seed: 1 €"
 
@@ -110,6 +80,6 @@ offset_left = 187.0
 offset_top = 118.0
 offset_right = 392.0
 offset_bottom = 171.0
-theme_override_fonts/font = ExtResource("3_y618m")
+theme_override_fonts/font = ExtResource("2_1l1r1")
 theme_override_font_sizes/font_size = 30
 text = "Flower: 8 €"

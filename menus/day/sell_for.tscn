@@ -1,11 +1,11 @@
 [gd_scene load_steps=2 format=3 uid="uid://dk5j2mssutuww"]
 
-[ext_resource type="FontFile" uid="uid://b0hof85mkga7d" path="res://art/Playfulist-rgPp8.ttf" id="1_y3oas"]
+[ext_resource type="FontFile" uid="uid://b0hof85mkga7d" path="res://art/Playfulist-rgPp8.ttf" id="1_l5lvs"]
 
 [node name="sell_for" type="Label"]
 offset_right = 400.0
 offset_bottom = 960.0
-theme_override_fonts/font = ExtResource("1_y3oas")
+theme_override_fonts/font = ExtResource("1_l5lvs")
 theme_override_font_sizes/font_size = 41
 text = "sell for   €"
 horizontal_alignment = 1

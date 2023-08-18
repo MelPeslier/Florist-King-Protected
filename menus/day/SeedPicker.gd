@@ -1,7 +1,7 @@
 extends Panel
 
 
-var icon_scene = preload("res://menus/icon.tscn")
+var icon_scene = preload("res://menus/day/icon.tscn")
 
 var seed_data: Dictionary
 
