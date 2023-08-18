@@ -4,7 +4,7 @@
 
 [sub_resource type="Gradient" id="Gradient_dl0x5"]
 offsets = PackedFloat32Array(0)
-colors = PackedColorArray(0, 0, 0, 1)
+colors = PackedColorArray(0, 0, 0, 0.741176)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_kt3ps"]
 gradient = SubResource("Gradient_dl0x5")
@@ -15,6 +15,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 0
 texture = SubResource("GradientTexture1D_kt3ps")
 expand_mode = 1
 script = ExtResource("2_jsoc7")

@@ -23,6 +23,7 @@ Global="*res://autoloads/global.gd"
 Music="*res://autoloads/Music.tscn"
 Events="*res://autoloads/events.gd"
 GameData="*res://autoloads/game_data.gd"
+PlacerData="*res://autoloads/placer_data.gd"
 
 [display]
 

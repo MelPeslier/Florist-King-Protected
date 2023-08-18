@@ -1,21 +1,33 @@
-[gd_scene load_steps=3 format=3 uid="uid://diih1bq4ddm1s"]
+[gd_scene load_steps=4 format=3 uid="uid://diih1bq4ddm1s"]
 
+[ext_resource type="Script" path="res://shop/day/day_shop.gd" id="1_4lncf"]
 [ext_resource type="PackedScene" uid="uid://cvqy0bicnsbfm" path="res://menus/SeedList.tscn" id="1_8bjdu"]
 [ext_resource type="PackedScene" uid="uid://b1lfbknd23yig" path="res://menus/SeedPlacer.tscn" id="2_vsoi1"]
 
-[node name="DayShop" type="Node2D"]
+[node name="DayShop" type="Node"]
+script = ExtResource("1_4lncf")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="UI" type="CanvasLayer" parent="."]
 
-[node name="SeedList" parent="CanvasLayer" instance=ExtResource("1_8bjdu")]
+[node name="Control" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SeedList" parent="UI/Control" instance=ExtResource("1_8bjdu")]
+layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.208
 anchor_bottom = 0.821
 offset_right = 202.0
 offset_bottom = 476.4
 
-[node name="SeedPlacer" parent="." instance=ExtResource("2_vsoi1")]
-offset_left = 344.0
-offset_top = 104.0
-offset_right = 344.0
-offset_bottom = 104.0
+[node name="SeedPlacer" parent="UI/Control" instance=ExtResource("2_vsoi1")]
+layout_mode = 1
+offset_left = 320.0
+offset_top = 56.0
+offset_right = 320.0
+offset_bottom = 56.0

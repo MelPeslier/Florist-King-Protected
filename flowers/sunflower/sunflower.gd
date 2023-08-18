@@ -16,7 +16,7 @@ func _ready() -> void:
 	max_happiness = 1.5
 	happiness_decrease_speed = 1
 	happiness_increase_speed = 2
-	sell_price = 8
+	sell_price = 7
 	
 	$HappinessGauge.update_gauge()
 	$WaterGauge.update_gauge()
