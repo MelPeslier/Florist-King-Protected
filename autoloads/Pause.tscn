@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://1fa3tyio2h6c"]
+[gd_scene load_steps=3 format=3 uid="uid://evem30mswvy5"]
 
 [ext_resource type="Script" path="res://autoloads/Pause.gd" id="1_h8vmw"]
 [ext_resource type="FontFile" uid="uid://b0hof85mkga7d" path="res://art/Playfulist-rgPp8.ttf" id="2_dgphf"]

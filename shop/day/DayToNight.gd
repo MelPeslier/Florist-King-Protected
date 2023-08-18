@@ -3,7 +3,7 @@ extends CanvasLayer
 const nightMusic = preload("res://audio/music/night_shop_loop.ogg")
 
 func _ready():
-	$ColorRect/Label.text = "NIGHT " + str(Global.dayNum)
+	$ColorRect/Label.text = "NIGHT " + str(ScoreManager.get_day())
 	visible = true
 	Music.stop()
 	$Audio.play()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bstp6mip8ystj"]
+[gd_scene load_steps=17 format=3 uid="uid://bstp6mip8ystj"]
 
 [ext_resource type="PackedScene" uid="uid://dinjpcmsfbml2" path="res://shop/night/room_1.tscn" id="1_y41b2"]
 [ext_resource type="PackedScene" uid="uid://bp8bd6s36skh6" path="res://shop/night/room_2.tscn" id="2_8d0sc"]
@@ -12,9 +12,10 @@
 [ext_resource type="PackedScene" uid="uid://k0wuo10gq03a" path="res://shop/night/room_10.tscn" id="10_p7x44"]
 [ext_resource type="PackedScene" uid="uid://cj3sjty8osk0m" path="res://player/Player.tscn" id="11_shb70"]
 [ext_resource type="Script" path="res://shop/manager.gd" id="12_dfyfu"]
-[ext_resource type="Script" path="res://shop/DayToNight.gd" id="13_v00ls"]
+[ext_resource type="Script" path="res://shop/day/DayToNight.gd" id="13_uw60l"]
 [ext_resource type="FontFile" uid="uid://b0hof85mkga7d" path="res://art/Playfulist-rgPp8.ttf" id="14_rh50w"]
 [ext_resource type="AudioStream" uid="uid://bkiwohevp4s2i" path="res://audio/sfx/DayToNight.mp3" id="15_k5pqt"]
+[ext_resource type="PackedScene" uid="uid://evem30mswvy5" path="res://autoloads/Pause.tscn" id="16_3bk6r"]
 
 [node name="NightShop" type="Node2D"]
 
@@ -85,7 +86,7 @@ script = ExtResource("12_dfyfu")
 [node name="DayToNight" type="CanvasLayer" parent="."]
 editor_description = "Just a quick transition"
 visible = false
-script = ExtResource("13_v00ls")
+script = ExtResource("13_uw60l")
 
 [node name="ColorRect" type="ColorRect" parent="DayToNight"]
 offset_left = -37.0
@@ -112,6 +113,8 @@ bus = &"SFX"
 [node name="Timer" type="Timer" parent="DayToNight"]
 wait_time = 3.0
 one_shot = true
+
+[node name="Pause" parent="." instance=ExtResource("16_3bk6r")]
 
 [connection signal="finished" from="DayToNight/Audio" to="DayToNight" method="_on_audio_finished"]
 [connection signal="timeout" from="DayToNight/Timer" to="DayToNight" method="_on_timer_timeout"]

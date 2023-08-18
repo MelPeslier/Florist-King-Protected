@@ -1,8 +1,9 @@
 extends Label
 
 func _ready():
-	text = str(ScoreManager.score)
+	ScoreManager.connect("update_score", _on_update_score)
+	text = str(ScoreManager.get_score()) + " €"
 
 
-func update_score():
-	text = str(ScoreManager.score)
+func _on_update_score(score: float):
+	text = str(score)

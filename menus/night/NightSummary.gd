@@ -3,7 +3,7 @@ extends CanvasLayer
 var summary = []
 
 func _ready():
-	$NightXCompleted.text = "Night " + str(Global.dayNum) + " completed!"
+	$NightXCompleted.text = "Night " + str(ScoreManager.get_day()) + " completed!"
 	Music.fade_out()
 
 
@@ -22,5 +22,5 @@ func add_to_list(list:Array): # Needs an array of strings
 
 func _on_continue_pressed():
 	# Go to next day
-	Global.dayNum += 1
+	ScoreManager.next_day()
 	pass 
