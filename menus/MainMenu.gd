@@ -1,6 +1,6 @@
 extends CanvasLayer
 
-const startScene = preload("res://shop/night_shop.tscn")
+const startScene = preload("res://shop/night/night_shop.tscn")
 # Change the scene with the day
 const menuMusic = preload("res://audio/music/MenuTheme.ogg")
 

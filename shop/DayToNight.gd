@@ -5,6 +5,7 @@ const nightMusic = preload("res://audio/music/night_shop_loop.ogg")
 func _ready():
 	$ColorRect/Label.text = "NIGHT " + str(Global.dayNum)
 	visible = true
+	Music.stop()
 	$Audio.play()
 
 

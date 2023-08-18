@@ -10,8 +10,7 @@ bg_color = Color(0, 0, 0, 0.25098)
 corner_detail = 1
 anti_aliasing = false
 
-[sub_resource type="Animation" id="Animation_wtjc8"]
-resource_name = "come_in"
+[sub_resource type="Animation" id="Animation_m1s1l"]
 length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -26,7 +25,8 @@ tracks/0/keys = {
 "values": [Vector2(500, 0), Vector2(0, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_m1s1l"]
+[sub_resource type="Animation" id="Animation_wtjc8"]
+resource_name = "come_in"
 length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false

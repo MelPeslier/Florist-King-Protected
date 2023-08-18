@@ -1,18 +1,18 @@
-[gd_scene load_steps=5 format=3 uid="uid://bipttp0f76t1t"]
+[gd_scene load_steps=5 format=3 uid="uid://1j15enoggw34"]
 
-[ext_resource type="Script" path="res://shop/room.gd" id="1_knn6r"]
-[ext_resource type="Texture2D" uid="uid://0f6ttncvly4y" path="res://art/placeholder/rooms/Cattura7.PNG" id="2_kvet6"]
-[ext_resource type="Texture2D" uid="uid://be5yxlfsoxp5y" path="res://art/placeholder/minimap/Arrow.png" id="3_bmdom"]
-[ext_resource type="PackedScene" uid="uid://oh8gi3dswlng" path="res://commons/table/table.tscn" id="4_peycb"]
+[ext_resource type="Script" path="res://shop/night/room.gd" id="1_fe7u8"]
+[ext_resource type="Texture2D" uid="uid://cuccphuxx1ljy" path="res://art/placeholder/rooms/Cattura4.PNG" id="2_82smb"]
+[ext_resource type="Texture2D" uid="uid://be5yxlfsoxp5y" path="res://art/placeholder/minimap/Arrow.png" id="3_xod2i"]
+[ext_resource type="PackedScene" uid="uid://oh8gi3dswlng" path="res://commons/table/table.tscn" id="4_gmnc6"]
 
-[node name="Room7" type="Node2D"]
-script = ExtResource("1_knn6r")
-roomNumber = 7
+[node name="Room4" type="Node2D"]
+script = ExtResource("1_fe7u8")
+roomNumber = 4
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(117, 2)
 scale = Vector2(2.5, 2.5)
-texture = ExtResource("2_kvet6")
+texture = ExtResource("2_82smb")
 
 [node name="DebugLabel" type="Label" parent="."]
 editor_description = "This will be removed before release"
@@ -21,10 +21,9 @@ offset_top = -267.0
 offset_right = -388.0
 offset_bottom = -197.0
 theme_override_font_sizes/font_size = 48
-text = "7"
+text = "4"
 
-[node name="Table" parent="." instance=ExtResource("4_peycb")]
-position = Vector2(-2, -3)
+[node name="Table" parent="." instance=ExtResource("4_gmnc6")]
 
 [node name="Arrows" type="CanvasLayer" parent="."]
 
@@ -33,15 +32,15 @@ texture_filter = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 137.0
-offset_top = 156.0
-offset_right = 245.0
-offset_bottom = 210.0
+offset_left = 25.0
+offset_top = -20.0
+offset_right = 133.0
+offset_bottom = 34.0
 grow_vertical = 2
-rotation = -4.22719
 pivot_offset = Vector2(54, 27)
-texture_normal = ExtResource("3_bmdom")
+texture_normal = ExtResource("3_xod2i")
 stretch_mode = 5
+flip_h = true
 
 [node name="Right" type="TextureButton" parent="Arrows"]
 texture_filter = 1
@@ -50,15 +49,14 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -157.0
-offset_top = 51.0
-offset_right = -48.9999
-offset_bottom = 105.0
+offset_left = -136.0
+offset_top = -26.5
+offset_right = -28.0
+offset_bottom = 27.5
 grow_horizontal = 0
 grow_vertical = 2
-rotation = 0.483456
 pivot_offset = Vector2(54, 27)
-texture_normal = ExtResource("3_bmdom")
+texture_normal = ExtResource("3_xod2i")
 stretch_mode = 5
 
 [node name="Down" type="TextureButton" parent="Arrows"]
@@ -68,15 +66,15 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = 39.0
-offset_top = -110.0
-offset_right = 147.0
-offset_bottom = -56.0
+offset_left = -54.0
+offset_top = -114.0
+offset_right = 54.0
+offset_bottom = -60.0
 grow_horizontal = 2
 grow_vertical = 0
-rotation = 1.32121
+rotation = 1.5708
 pivot_offset = Vector2(54, 27)
-texture_normal = ExtResource("3_bmdom")
+texture_normal = ExtResource("3_xod2i")
 stretch_mode = 5
 
 [connection signal="pressed" from="Arrows/Left" to="." method="_on_left_pressed"]

@@ -1,0 +1,80 @@
+[gd_scene load_steps=3 format=3 uid="uid://b5s6swmoxdck7"]
+
+[ext_resource type="Script" path="res://menus/night/GameOver.gd" id="1_8g6sc"]
+[ext_resource type="FontFile" uid="uid://b0hof85mkga7d" path="res://art/Playfulist-rgPp8.ttf" id="2_nyb1u"]
+
+[node name="GameOver" type="CanvasLayer"]
+script = ExtResource("1_8g6sc")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="."]
+offset_right = 1000.0
+offset_bottom = 421.0
+theme_override_fonts/font = ExtResource("2_nyb1u")
+theme_override_font_sizes/font_size = 128
+text = "GAME 
+OVER"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TryAgain" type="Button" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -92.0
+offset_top = -211.0
+offset_right = 91.0
+offset_bottom = -158.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("2_nyb1u")
+theme_override_font_sizes/font_size = 36
+text = "Try again"
+flat = true
+
+[node name="MainMenu" type="Button" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -92.0
+offset_top = -144.0
+offset_right = 91.0
+offset_bottom = -91.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("2_nyb1u")
+theme_override_font_sizes/font_size = 36
+text = "Main menu"
+flat = true
+
+[node name="Caution" type="Label" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -92.0
+offset_top = -114.0
+offset_right = 91.0
+offset_bottom = -61.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("2_nyb1u")
+theme_override_font_sizes/font_size = 16
+text = "(Lose all progress!)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="TryAgain" to="." method="_on_try_again_pressed"]
+[connection signal="pressed" from="MainMenu" to="." method="_on_main_menu_pressed"]
