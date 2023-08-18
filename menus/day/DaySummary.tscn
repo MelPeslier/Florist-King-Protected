@@ -1,0 +1,101 @@
+[gd_scene load_steps=8 format=3 uid="uid://dfurtkdtvthhh"]
+
+[ext_resource type="Script" path="res://menus/day/DaySummary.gd" id="1_pifg5"]
+[ext_resource type="FontFile" uid="uid://b0hof85mkga7d" path="res://art/Playfulist-rgPp8.ttf" id="2_82hu8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hpf1f"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qbnjm"]
+bg_color = Color(0, 0, 0, 0.25098)
+corner_detail = 1
+anti_aliasing = false
+
+[sub_resource type="Animation" id="Animation_m1s1l"]
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(500, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_wtjc8"]
+resource_name = "come_in"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(500, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7mmr0"]
+_data = {
+"RESET": SubResource("Animation_m1s1l"),
+"come_in": SubResource("Animation_wtjc8")
+}
+
+[node name="DaySummary" type="CanvasLayer"]
+offset = Vector2(500, 0)
+transform = Transform2D(1, 0, 0, 1, 500, 0)
+script = ExtResource("1_pifg5")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = 500.0
+offset_right = 1000.0
+offset_bottom = 600.0
+color = Color(1, 1, 1, 0.25098)
+metadata/_edit_lock_ = true
+
+[node name="DayXCompleted" type="Label" parent="."]
+offset_left = 500.0
+offset_right = 1000.0
+offset_bottom = 92.0
+theme_override_fonts/font = ExtResource("2_82hu8")
+theme_override_font_sizes/font_size = 40
+text = "Day X completed!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MoneyLabel" type="Label" parent="."]
+offset_left = 500.0
+offset_top = 236.0
+offset_right = 1000.0
+offset_bottom = 328.0
+theme_override_fonts/font = ExtResource("2_82hu8")
+theme_override_font_sizes/font_size = 36
+text = " You've earned: 999 €"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Continue" type="Button" parent="."]
+offset_left = 739.0
+offset_top = 528.0
+offset_right = 989.0
+offset_bottom = 589.0
+focus_mode = 0
+theme_override_fonts/font = ExtResource("2_82hu8")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxEmpty_hpf1f")
+theme_override_styles/hover = SubResource("StyleBoxFlat_qbnjm")
+text = " Continue"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "come_in"
+libraries = {
+"": SubResource("AnimationLibrary_7mmr0")
+}
+
+[connection signal="pressed" from="Continue" to="." method="_on_continue_pressed"]

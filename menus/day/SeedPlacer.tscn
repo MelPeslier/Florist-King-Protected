@@ -1,6 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://1duxwwc7pbei"]
+[gd_scene load_steps=3 format=3 uid="uid://b1lfbknd23yig"]
 
-[ext_resource type="Texture2D" uid="uid://b6exm4g4mew50" path="res://shop/sprite/shop_plan.png" id="1_6i231"]
+[ext_resource type="Texture2D" uid="uid://d2verrnvbk7tk" path="res://shop/sprite/shop_plan.png" id="1_6i231"]
 [ext_resource type="Script" path="res://menus/SeedPlacer.gd" id="1_lqx4p"]
 
 [node name="SeedPlacer" type="Control"]

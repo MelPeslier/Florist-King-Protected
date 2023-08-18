@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://dinjpcmsfbml2"]
 
-[ext_resource type="Script" path="res://shop/room.gd" id="1_cywfe"]
+[ext_resource type="Script" path="res://shop/night/room.gd" id="1_cywfe"]
 [ext_resource type="Texture2D" uid="uid://ckih88jockkj5" path="res://art/placeholder/rooms/Cattura1.PNG" id="1_rgu08"]
 [ext_resource type="Texture2D" uid="uid://be5yxlfsoxp5y" path="res://art/placeholder/minimap/Arrow.png" id="3_pdon0"]
 

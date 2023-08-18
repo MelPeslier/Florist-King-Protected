@@ -4,6 +4,7 @@ var summary = []
 
 func _ready():
 	$NightXCompleted.text = "Night " + str(Global.dayNum) + " completed!"
+	Music.fade_out()
 
 
 func add_to_list(list:Array): # Needs an array of strings

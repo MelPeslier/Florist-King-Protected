@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://d2ch035d0wxt4"]
+
+[ext_resource type="Script" path="res://shop/day/Points.gd" id="1_jtvdw"]
+
+[node name="Points" type="Label"]
+offset_right = 50.0
+offset_bottom = 25.0
+script = ExtResource("1_jtvdw")

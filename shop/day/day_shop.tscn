@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://diih1bq4ddm1s"]
 
 [ext_resource type="Script" path="res://shop/day/day_shop.gd" id="1_4lncf"]
-[ext_resource type="PackedScene" uid="uid://cvqy0bicnsbfm" path="res://menus/SeedList.tscn" id="1_8bjdu"]
-[ext_resource type="PackedScene" uid="uid://b1lfbknd23yig" path="res://menus/SeedPlacer.tscn" id="2_vsoi1"]
+[ext_resource type="PackedScene" uid="uid://bglsobqq16un0" path="res://menus/SeedList.tscn" id="1_8bjdu"]
+[ext_resource type="PackedScene" uid="uid://1duxwwc7pbei" path="res://menus/SeedPlacer.tscn" id="2_vsoi1"]
 
 [node name="DayShop" type="Node"]
 script = ExtResource("1_4lncf")
