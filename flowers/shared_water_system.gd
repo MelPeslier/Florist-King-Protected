@@ -1,54 +1,34 @@
-class_name SharedWaterSystem
+class_name WaterFlower
 extends Flower
 
-# Water
-var is_drinking :bool = false
+const min := 0.0
+const max := 100.0
+var water := 0.3
+var isDrinking := false
+@export var minPerfect := 0.25
+@export var maxPerfect := 0.75
 
-var water :float
 
-const min_water :float = 0.0
-const max_water :float = 100.0
+func click():
+	isDrinking = true
 
-var min_perfect_water :float
-var max_perfect_water :float
+func _on_mouse_exited():
+	isDrinking = false
 
-# 1.0 is a normal state
-var water_decrease_speed :float = 1.0
-var water_increase_speed :float = 4.0
-
-# For animation
-func _process(_delta) -> void:
-	pass
-
-# For systems
-func _physics_process(delta) -> void:
-	super(delta)
-	if is_drinking:
-		drinking(delta)
-		is_drinking = false
+func _process(delta) -> void:
+	if isDrinking:
+		water += 4
 	else:
-		not_drinking(delta)
-
-func not_drinking(delta) -> void:
-	water_update(delta)
+		water += 1
 	
-	if water == min_water :
-		happiness = max(happiness - happiness_decrease_speed * delta, min_happiness)
+	water = clamp(water, min, max)
 	
-	if water >= min_perfect_water and water <= max_perfect_water:
-		happiness = min(happiness + happiness_increase_speed * delta, max_happiness)
-
-func drinking(delta) -> void:
-	water_update(delta)
+	if water < minPerfect || water > maxPerfect:
+		remove_happiness()
+	else: # Happiness is just right
+		add_happiness()
 	
-	if water >= max_water:
-		die_flower("water")
+	if water >= max:
+		die("water")
 
-func water_update(delta) -> void:
-	if is_drinking:
-		water = min(water + water_increase_speed * delta, max_water)
-	else:
-		water = max(water - water_decrease_speed * delta, min_water) 
 
-func watering_can() -> void:
-	is_drinking = true

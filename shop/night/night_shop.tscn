@@ -92,16 +92,7 @@ script = ExtResource("12_dfyfu")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="Control" type="Control" parent="CanvasLayer"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-
-[node name="Timer2" type="Control" parent="CanvasLayer/Control"]
+[node name="Time" type="Control" parent="CanvasLayer"]
 layout_mode = 3
 anchors_preset = 0
 offset_left = 424.0
@@ -110,7 +101,7 @@ offset_right = 528.0
 offset_bottom = 57.0
 metadata/_edit_group_ = true
 
-[node name="Panel" type="Panel" parent="CanvasLayer/Control/Timer2"]
+[node name="Panel" type="Panel" parent="CanvasLayer/Time"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -118,7 +109,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="CanvasLayer/Control/Timer2"]
+[node name="Label" type="Label" parent="CanvasLayer/Time"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

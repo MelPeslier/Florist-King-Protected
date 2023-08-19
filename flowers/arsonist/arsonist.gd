@@ -1,4 +1,4 @@
-extends SharedWaterSystem
+extends FlowerWater
 
 signal burn_shop
 

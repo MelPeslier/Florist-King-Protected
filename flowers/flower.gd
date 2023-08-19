@@ -1,60 +1,57 @@
 class_name Flower
-extends Node2D
+extends Area2D
 
-#Sprite
-var sprite: Sprite2D
+@onready var flower_room = get_node("../../..").roomNumber # get_parent() 3 times
+var player_room : int
 
-# Room and Player related
-var flower_room :int
-var player_room :int
+var happiness := 1.0
 
-# Happiness
-var happiness :float = 1.0
-var min_happiness :float = 0.5
-var max_happiness :float = 1.5
-var happiness_decrease_speed :float = 0.07
-
-var happiness_increase_speed :float = 0.15
-
-# Price
-var sell_price :float
 
 func _ready():
-	Events.connect("player_enter_room", _on_player_enter_room)
-	if get_parent():
-		flower_room = get_parent().get_parent().get_parent().roomNumber
+	Events.player_enter_room.connect(_on_player_enter_room)
+	input_event.connect(_on_input_event)
+	mouse_entered.connect(_on_mouse_entered)
+	mouse_exited.connect(_on_mouse_exited)
 
-func _physics_process(delta) -> void:
-	my_input(delta)
-
-func my_input(_delta):
-	pass
-
-func _on_player_enter_room(room_number :int) -> void:
+func _on_player_enter_room(room_number :int):
 	player_room = room_number
 	interaction()
 
-func interaction() -> void:
-	pass
+func add_happiness(amount = 0.15):
+	happiness += amount
+	happiness = min(happiness, 1.5)
 
-func sell_flower() -> float:
-	return sell_price * happiness
+func remove_happiness(amount = 0.07):
+	happiness -= amount
+	happiness = max(happiness, 0.5)
 
-func die_flower(how :String) -> void:
+
+
+func die(how :String):
 	match how:
 		"burn":
-			var tween = get_tree().create_tween()
-			tween.tween_property(sprite, "modulate:a", 0.0, 0.27)
-		
+			create_tween().tween_property($Sprite, "modulate:a", 0.0, 0.5)
 		"water":
-			var tween = get_tree().create_tween()
-			tween.tween_property(sprite, "modulate:a", 0.0, 1.0)
-		
+			create_tween().tween_property($Sprite, "modulate:a", 0.0, 1.0)
 		"eat":
-			var tween = get_tree().create_tween()
-			tween.tween_property(sprite, "modulate:a", 0.0, 0.1)
+			create_tween().tween_property($Sprite, "modulate:a", 0.0, 0.1)
 
-func act_around(potName: String, action: String) -> void:
-	for pot in get_children():
-		if pot.name != potName and pot.get_child_count() == 1:
-			pot.get_child(0).die_flower(action)
+
+
+func _on_input_event(_viewport, event, _shape_idx):
+	if event is InputEventMouseButton && event.pressed:
+		if event.button_index == 1:
+			click()
+
+func _on_mouse_entered():
+	pass # Abstract function
+
+func _on_mouse_exited():
+	pass # Abstract function
+
+func click():
+	pass # Abstract function
+
+func interaction():
+	pass # Abstract function
+
