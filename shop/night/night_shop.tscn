@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://bstp6mip8ystj"]
+[gd_scene load_steps=18 format=3 uid="uid://bstp6mip8ystj"]
 
 [ext_resource type="PackedScene" uid="uid://dinjpcmsfbml2" path="res://shop/night/room_1.tscn" id="1_y41b2"]
 [ext_resource type="Script" path="res://shop/night/TimerNight.gd" id="2_4fms2"]
@@ -17,7 +17,6 @@
 [ext_resource type="FontFile" uid="uid://b0hof85mkga7d" path="res://art/Playfulist-rgPp8.ttf" id="14_rh50w"]
 [ext_resource type="AudioStream" uid="uid://bkiwohevp4s2i" path="res://audio/sfx/DayToNight.mp3" id="15_k5pqt"]
 [ext_resource type="PackedScene" uid="uid://evem30mswvy5" path="res://autoloads/Pause.tscn" id="16_3bk6r"]
-[ext_resource type="PackedScene" uid="uid://csmkid2i2d5e1" path="res://menus/night/NightSummary.tscn" id="17_oewxx"]
 
 [node name="NightShop" type="Node2D"]
 
@@ -164,13 +163,9 @@ bus = &"SFX"
 wait_time = 3.0
 one_shot = true
 
-[node name="NightSummary" parent="." instance=ExtResource("17_oewxx")]
-visible = false
-
 [node name="Pause" parent="." instance=ExtResource("16_3bk6r")]
 visible = false
 
 [connection signal="timeout" from="Timer" to="manager" method="_on_timer_timeout"]
-[connection signal="timeout" from="Timer" to="NightSummary" method="_on_timer_timeout"]
 [connection signal="finished" from="DayToNight/Audio" to="DayToNight" method="_on_audio_finished"]
 [connection signal="timeout" from="DayToNight/Timer" to="DayToNight" method="_on_timer_timeout"]
