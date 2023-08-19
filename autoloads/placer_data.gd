@@ -24,3 +24,10 @@ func first_day():
 				seed_number -= 1
 			else:
 				placer_data["Room" + str(i)]["Pot" + str(j)] = null
+
+
+
+
+
+
+

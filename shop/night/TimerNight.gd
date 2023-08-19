@@ -9,7 +9,3 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	$"../CanvasLayer/Control/Timer2/Label".text = str(int(time_left)) + " s"
-
-
-func _on_timeout():
-	pass # Replace with function body.

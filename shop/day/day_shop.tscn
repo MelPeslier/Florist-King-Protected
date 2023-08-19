@@ -13,7 +13,7 @@
 script = ExtResource("1_ffrgk")
 
 [node name="DayTimer" type="Timer" parent="."]
-wait_time = 13.0
+wait_time = 2.0
 one_shot = true
 autostart = true
 script = ExtResource("1_jhdo6")
@@ -99,6 +99,5 @@ script = ExtResource("5_4b5cc")
 
 [node name="Audio" type="AudioStreamPlayer" parent="."]
 
-[connection signal="timeout" from="DayTimer" to="." method="_on_day_timer_timeout"]
 [connection signal="timeout" from="DayTimer" to="DayTimer" method="_on_timeout"]
 [connection signal="timeout" from="DayTimer" to="DaySummary" method="_on_day_timer_timeout"]

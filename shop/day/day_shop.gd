@@ -9,7 +9,6 @@ func _ready():
 	Events.connect("play_the_song", _on_play_the_song)
 
 
-
 func _on_play_the_song(song:String):
 	var val
 	match song:
@@ -19,9 +18,6 @@ func _on_play_the_song(song:String):
 			val = no_song
 	$Audio.stream = val
 	$Audio.play()
-
-func _on_day_timer_timeout():
-	pass
 
 
 
