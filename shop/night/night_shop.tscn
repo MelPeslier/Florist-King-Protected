@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://drfj8ifuyx7pg" path="res://shop/night/room_9.tscn" id="9_jijwl"]
 [ext_resource type="PackedScene" uid="uid://k0wuo10gq03a" path="res://shop/night/room_10.tscn" id="10_p7x44"]
 [ext_resource type="PackedScene" uid="uid://cj3sjty8osk0m" path="res://player/Player.tscn" id="11_shb70"]
-[ext_resource type="Script" path="res://shop/manager.gd" id="12_dfyfu"]
+[ext_resource type="Script" path="res://shop/night/manager.gd" id="13_oapso"]
 [ext_resource type="Script" path="res://shop/day/DayToNight.gd" id="13_uw60l"]
 [ext_resource type="FontFile" uid="uid://b0hof85mkga7d" path="res://art/Playfulist-rgPp8.ttf" id="14_rh50w"]
 [ext_resource type="AudioStream" uid="uid://bkiwohevp4s2i" path="res://audio/sfx/DayToNight.mp3" id="15_k5pqt"]
@@ -89,7 +89,7 @@ fifthRoom = NodePath("../Room2")
 position = Vector2(500, 300)
 
 [node name="manager" type="Node" parent="."]
-script = ExtResource("12_dfyfu")
+script = ExtResource("13_oapso")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

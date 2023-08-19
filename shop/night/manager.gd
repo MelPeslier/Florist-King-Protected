@@ -1,4 +1,5 @@
 extends Node
+
 var default_scene = preload("res://commons/pot/pot_vide.tscn")
 var rooms := []
 
