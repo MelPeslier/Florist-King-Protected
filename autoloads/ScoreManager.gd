@@ -27,6 +27,11 @@ func buy_seed(seed_price: float) -> void:
 	emit_signal("update_score", score)
 
 
+func sell_flower(flower_price: float) -> void:
+	score += flower_price
+	emit_signal("update_score", score)
+
+
 func get_score():
 	return score
 

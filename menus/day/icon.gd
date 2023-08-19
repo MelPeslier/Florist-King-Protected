@@ -61,7 +61,11 @@ func _can_drop_data(_at_position, data):
 	if target_slot == "sell_seed":
 		if data.origin_data.has("seed_price"):
 			return true
-
+	
+	elif target_slot == "sell_flower":
+		if !data.origin_data.has("seed_price"):
+			return true
+	
 	elif target_slot.begins_with("Pot"):
 		var room_slot = get_parent().get_parent().get_name()
 
@@ -91,6 +95,18 @@ func _drop_data(_at_position, data):
 				var default_texture = load("res://art/placeholder/pot/cirle.png")
 				data["origin_node"].texture = default_texture
 				# No need to update texture or TARGET (it's sell price one)
+	
+	elif target_slot == "sell_flower":
+		if !data.origin_data.has("seed_price"):
+				ScoreManager.sell_flower(data.origin_data["flower_price"])
+				Events.emit_signal("play_the_song", "yes")
+				
+				# Update data of ORIGIN
+				PlacerData.placer_data[origin_slot[0]][origin_slot[1]] = null
+				
+				# Update texture of ORIGIN
+				var default_texture = load("res://art/placeholder/pot/cirle.png")
+				data["origin_node"].texture = default_texture
 	
 	elif target_slot.begins_with("Pot"):
 		var room_slot = get_parent().get_parent().get_name()

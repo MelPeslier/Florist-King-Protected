@@ -9,6 +9,7 @@ func _process(_delta):
 
 # To be called after the flower initialisation
 func update_gauge() -> void:
+	flower = get_parent()
 	# Progress Bar
 	tex.min_value = flower.min_water
 	tex.max_value = flower.max_water

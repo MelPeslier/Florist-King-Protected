@@ -54,7 +54,4 @@ func die_flower(how :String) -> void:
 			var tween = get_tree().create_tween()
 			tween.tween_property(sprite, "modulate:a", 0.0, 0.1)
 
-func act_around(potName: String, action: String) -> void:
-	for pot in get_children():
-		if pot.name != potName and pot.get_child_count() == 1:
-			pot.get_child(0).die_flower(action)
+
