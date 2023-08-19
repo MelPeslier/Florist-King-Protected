@@ -5,6 +5,9 @@ const daymusicstart = preload("res://audio/music/day_shop_start.ogg")
 const daymusicloop = preload("res://audio/music/day_shop_loop.ogg")
 
 
+signal last_day()
+
+
 func _ready() -> void:
 	visible = true
 	$AnimationPlayer.play("RESET")
@@ -25,8 +28,11 @@ func _on_loop_start():
 
 
 func _on_day_timer_timeout():
-	
-	$DayXCompleted.text = "Day " + str(ScoreManager.get_day()) + " completed!"
-	$MoneyLabel.text =  "You have now: " + str(ScoreManager.get_score()) + " €"
 	Music.fade_out()
-	$AnimationPlayer.play("come_in")
+	if ScoreManager.get_day() < ScoreManager.get_max_day():
+		$DayXCompleted.text = "Day " + str(ScoreManager.get_day()) + " completed!"
+		$MoneyLabel.text =  "You have : " + str(ScoreManager.get_score()) + " €"
+		$AnimationPlayer.play("come_in")
+	
+	else:
+		emit_signal("last_day")

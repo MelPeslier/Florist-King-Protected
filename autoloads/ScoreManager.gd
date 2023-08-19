@@ -4,7 +4,9 @@ signal update_score(score: float)
 
 var score: float = 0
 
-var dayNum := 1 # From 1 to 6
+var dayNum := 6 # From 1 to 6
+
+var maxDay: int= 6
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -42,3 +44,7 @@ func next_day():
 
 func get_day():
 	return dayNum
+
+
+func get_max_day():
+	return maxDay

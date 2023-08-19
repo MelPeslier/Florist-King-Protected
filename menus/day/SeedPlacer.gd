@@ -8,7 +8,7 @@ var image_path: String = "res://art/placeholder/pot/cirle.png"
 func _ready():
 	if ScoreManager.get_day() == 1:
 		PlacerData.first_day()
-	
+	PlacerData.first_day()
 	for room in get_children():
 		if room.get_name().begins_with("Room"):
 			for pot in room.get_children():
