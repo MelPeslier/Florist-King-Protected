@@ -7,7 +7,8 @@ func _get_drag_data(_at_position):
 	if get_parent().get_name().begins_with("seed_slot"):
 		var seed_data = get_parent().get_parent().get_parent().seed_data
 		var slot = get_parent().get_name()
-		if !ScoreManager.buy_seed(seed_data["seed_price"]):
+		if !ScoreManager.can_buy_seed(seed_data["seed_price"]):
+			Events.emit_signal("play_the_song", "no")
 			return null
 		else:
 			data = {
@@ -16,7 +17,6 @@ func _get_drag_data(_at_position):
 						"origin_node" : self,
 						"origin_slot" : [slot]
 					}
-			Events.emit_signal("show_sell_panel", true, data.origin_data["seed_price"])
 		
 	# Placer Slot drag
 	elif get_parent().get_name().begins_with("Pot"):
@@ -57,19 +57,19 @@ func _get_drag_data(_at_position):
 
 func _can_drop_data(_at_position, data):
 	var target_slot = get_parent().get_name()
-	
+
 	if target_slot == "sell_seed":
 		if data.origin_data.has("seed_price"):
 			return true
-	
+
 	elif target_slot.begins_with("Pot"):
 		var room_slot = get_parent().get_parent().get_name()
-		
+
 		if data["origin_slot"].size() > 1:
 			return true
 		elif PlacerData.placer_data[room_slot][target_slot] == null:
 			return true
-	
+
 	return false
 
 
@@ -79,10 +79,11 @@ func _drop_data(_at_position, data):
 	# IF SEED GO TO SELL SEED SLOT OK
 	if target_slot == "sell_seed":
 		if data.origin_data.has("seed_price"):
-			ScoreManager.sell_seed(data.origin_data["seed_price"])
-			Events.emit_signal("play_the_song", "yes")
 
 			if origin_slot.size() > 1:
+				ScoreManager.sell_seed(data.origin_data["seed_price"])
+				Events.emit_signal("play_the_song", "yes")
+				
 				# Update data of ORIGIN
 				PlacerData.placer_data[origin_slot[0]][origin_slot[1]] = null
 				
@@ -122,3 +123,4 @@ func _drop_data(_at_position, data):
 				PlacerData.placer_data[room_slot][target_slot] = data.origin_data
 				texture = load(data["origin_data"]["image"])
 				Events.emit_signal("play_the_song", "yes")
+				ScoreManager.buy_seed(data.origin_data.seed_price)

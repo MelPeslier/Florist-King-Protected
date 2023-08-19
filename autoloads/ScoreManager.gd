@@ -16,13 +16,15 @@ func sell_seed(seed_price: float) -> void:
 	emit_signal("update_score", score)
 
 
-func buy_seed(seed_price: float) -> bool:
+func can_buy_seed(seed_price: float) -> bool:
 	if seed_price > score:
 		return false
-	
+	return true
+
+
+func buy_seed(seed_price: float) -> void:
 	score -= seed_price
 	emit_signal("update_score", score)
-	return true
 
 
 func get_score():
