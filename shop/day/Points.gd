@@ -6,4 +6,4 @@ func _ready():
 
 
 func _on_update_score(score: float):
-	text = str(score)
+	text = str(score) + " €"

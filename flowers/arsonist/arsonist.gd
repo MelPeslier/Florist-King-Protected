@@ -30,7 +30,10 @@ func _ready() -> void:
 	
 	$HappinessGauge.update_gauge()
 	$WaterGauge.update_gauge()
-	
+	Events.connect("manager", _on_manager_end)
+
+
+func _on_manager_end():
 	if get_parent():
 		var neighbors = get_parent().get_parent().check(get_parent().name)
 	

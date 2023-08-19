@@ -9,3 +9,7 @@ signal eat_player()
 signal show_sell_panel(val: bool, price: float)
 
 signal play_the_song(song:String)
+
+signal show_sell_flower_panel(val: bool, price: float)
+
+signal manager_end()
