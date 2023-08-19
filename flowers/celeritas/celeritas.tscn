@@ -16,4 +16,5 @@ texture = ExtResource("1_hqkro")
 [node name="HappinessGauge" parent="." instance=ExtResource("2_m4yrd")]
 position = Vector2(0, 40)
 
-[node name="WaterGauge" parent="." instance=ExtResource("3_t414c")]
+[node name="WaterGauge" parent="." node_paths=PackedStringArray("flower") instance=ExtResource("3_t414c")]
+flower = NodePath("..")

@@ -12,18 +12,19 @@ func _ready():
 				for pot in table.get_children():
 					if pot.name.begins_with("Pot"):
 						var scene:PackedScene
-						if PlacerData.placer_data[room.get_name()][pot.get_name()] == null:
-							scene = default_scene
-						else :
+						if PlacerData.placer_data[room.get_name()][pot.get_name()] != null:
 							# Update data
 							var flower_name = PlacerData.placer_data[room.get_name()][pot.get_name()]["flower_name"]
-							PlacerData.placer_data[room.get_name()][pot.get_name()] = GameData.flowers[flower_name.to_lower()]
+							PlacerData.placer_data[room.get_name()][pot.get_name()] = GameData.flowers[flower_name.to_snake_case()]
 							
 							scene = load(PlacerData.placer_data[room.get_name()][pot.get_name()].flower_scene)
-						
+						else :
 						# Instantiate flowers
+							scene = default_scene
 						var scene_instance = scene.instantiate()
 						pot.add_child(scene_instance)
+	
+	Events.emit_signal("manager_end")
 
 
 
@@ -37,10 +38,7 @@ func _on_timer_timeout():
 			if table.name == "Table":
 				for pot in table.get_children():
 					if pot.name.begins_with("Pot"):
-						var scene:PackedScene
-						if PlacerData.placer_data[room.get_name()][pot.get_name()] == null:
-							scene = default_scene
-						else :
+						if !PlacerData.placer_data[room.get_name()][pot.get_name()] == null:
 							#access previously instantiated flowers
 							var price: float = pot.get_child(0).sell_flower()
 							

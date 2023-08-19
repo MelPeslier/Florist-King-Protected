@@ -23,8 +23,12 @@ func _ready() -> void:
 	$HappinessGauge.update_gauge()
 	$WaterGauge.update_gauge()
 	
+	Events.connect("manager_end", _on_manager_end)
+
+
+func _on_manager_end():
 	if get_parent():
-		var neighbors = get_parent().get_parent().check(get_parent().name)
+		var neighbors = get_parent().get_parent().check(get_parent().get_name())
 		
 		for neighbour in neighbors:
 			if neighbour == "VenusFlytrap":
@@ -41,7 +45,7 @@ func not_drinking(delta :float) -> void:
 	
 	if happiness <= min_happiness:
 		# Animation to eat
-		act_around(get_parent().name, "eat")
+		get_parent().get_parent().act_around(get_parent().name, "eat")
 		max_happiness = 3.5
 		happiness = 3.5
 		$HappinessGauge.update_gauge()

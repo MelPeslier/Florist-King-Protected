@@ -21,7 +21,7 @@
 [node name="NightShop" type="Node2D"]
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 2.0
+wait_time = 60.0
 one_shot = true
 autostart = true
 script = ExtResource("2_4fms2")

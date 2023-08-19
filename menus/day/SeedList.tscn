@@ -26,11 +26,10 @@ mouse_filter = 2
 script = ExtResource("1_5kcbl")
 
 [node name="Background" type="ColorRect" parent="."]
-layout_mode = 2
-anchor_right = 1.02
-anchor_bottom = 1.017
-offset_right = -3.05176e-05
-offset_bottom = -4.32007
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
