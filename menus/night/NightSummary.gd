@@ -1,12 +1,9 @@
 extends CanvasLayer
 
-@onready var day = "res://shop/day/day_shop.tscn"
-
 var summary = []
 
 func _ready():
 	visible = false
-	$AnimationPlayer.play("RESET")
 	$NightXCompleted.text = "Night " + str(ScoreManager.get_day()) + " completed!"
 
 
@@ -27,9 +24,7 @@ func add_to_list(list:Array): # Needs an array of strings
 func _on_continue_pressed():
 	# Go to next day
 	ScoreManager.next_day()
-	# M U S T  Be CHANGE_SCENE_TO_FILE to escape bugs (it wait time that the process end 
-	# => time to finish data and all stuff
-	get_tree().change_scene_to_file(day)
+	get_tree().change_scene_to_file("res://shop/day/day_shop.tscn")
 
 
 func _on_timer_timeout():

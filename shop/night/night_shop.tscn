@@ -21,16 +21,21 @@
 [node name="NightShop" type="Node2D"]
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 60.0
+wait_time = 2.0
 one_shot = true
 autostart = true
 script = ExtResource("2_4fms2")
 
+[node name="Player" parent="." instance=ExtResource("11_shb70")]
+position = Vector2(500, 300)
+
 [node name="Room1" parent="." instance=ExtResource("1_y41b2")]
+position = Vector2(3575, 6202)
 leftRoom = NodePath("../Room2")
 rightRoom = NodePath("../Room10")
 
 [node name="Room2" parent="." instance=ExtResource("2_8d0sc")]
+position = Vector2(2818, 4576)
 leftRoom = NodePath("../Room1")
 rightRoom = NodePath("../Room4")
 upRoom = NodePath("../Room3")
@@ -83,9 +88,6 @@ leftRoom = NodePath("../Room9")
 rightRoom = NodePath("../Room1")
 downRoom = NodePath("../Room8")
 fifthRoom = NodePath("../Room2")
-
-[node name="Player" parent="." instance=ExtResource("11_shb70")]
-position = Vector2(500, 300)
 
 [node name="manager" type="Node" parent="."]
 script = ExtResource("12_dfyfu")
@@ -155,7 +157,6 @@ wait_time = 3.0
 one_shot = true
 
 [node name="Pause" parent="." instance=ExtResource("16_3bk6r")]
-visible = false
 
 [connection signal="timeout" from="Timer" to="manager" method="_on_timer_timeout"]
 [connection signal="finished" from="DayToNight/Audio" to="DayToNight" method="_on_audio_finished"]

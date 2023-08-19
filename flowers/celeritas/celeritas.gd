@@ -1,4 +1,4 @@
-extends SharedWaterSystem
+extends FlowerWater
 
 var is_escaping :bool = false
 var the_travel_time :float = 3
@@ -8,18 +8,18 @@ func _ready() -> void:
 	super()
 	# Water
 	water = 80
-	min_perfect_water = 10
-	max_perfect_water = 30
-	water_decrease_speed = 3
-	water_increase_speed = 7
+	minPerfectWater = 10
+	maxPerfectWater = 30
+	waterDecrSpeed = 3
+	waterIncrSpeed = 7
 	
 	# Flower
-	sprite = $Sprite2D
+	
 	happiness = 0.5
-	min_happiness = 0.5
-	max_happiness = 1.5
-	happiness_decrease_speed = 1
-	happiness_increase_speed = 3
+	minHappiness = 0.5
+	maxHappiness = 1.5
+	happDecrSpeed = 1
+	happIncrSpeed = 3
 	sell_price = 16
 	
 	travel_time = the_travel_time
@@ -28,7 +28,7 @@ func _ready() -> void:
 	$WaterGauge.update_gauge()
 
 func _physics_process(delta) -> void:
-	if is_drinking and not is_escaping:
+	if isDrinking and not is_escaping:
 		drinking(delta)
 	else:
 		not_drinking(delta)
@@ -36,7 +36,7 @@ func _physics_process(delta) -> void:
 func not_drinking(delta) -> void:
 	super(delta)
 	
-	if water == min_water and not is_escaping:
+	if water == minWater and not is_escaping:
 		is_escaping = true
 	
 	if is_escaping:

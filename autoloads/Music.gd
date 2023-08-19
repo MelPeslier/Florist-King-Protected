@@ -12,4 +12,4 @@ func fade_in():
 
 
 func _on_finished():
-	emit_signal("loop_start")
+	loop_start.emit()

@@ -14,23 +14,23 @@ func _ready() -> void:
 	super()
 	# Water
 	water = 40
-	min_perfect_water = 65
-	max_perfect_water = 90
-	water_decrease_speed = 5
-	water_increase_speed = normal_plus
+	minPerfectWater = 65
+	maxPerfectWater = 90
+	waterDecrSpeed = 5
+	waterIncrSpeed = normal_plus
 	
 	# Flower
-	sprite = $Sprite2D
+	
 	happiness = 1.5
-	min_happiness = 0.5
-	max_happiness = 1.5
-	happiness_decrease_speed = 5
-	happiness_increase_speed = 7
+	minHappiness = 0.5
+	maxHappiness = 1.5
+	happDecrSpeed = 5
+	happIncrSpeed = 7
 	sell_price = 95
 	
 	$HappinessGauge.update_gauge()
 	$WaterGauge.update_gauge()
-	Events.connect("manager", _on_manager_end)
+	Events.manager.connect(_on_manager_end)
 
 
 func _on_manager_end():
@@ -41,7 +41,7 @@ func _on_manager_end():
 			if neighbour == "Arsonist":
 				fire_coef += 1
 
-func not_drinking(delta) -> void:
+func not_drinking(delta):
 	super(delta)
 	if water > fire_start_threshold:
 		burning("false")
@@ -51,28 +51,28 @@ func not_drinking(delta) -> void:
 		if water < fire_burn_nearby_flower_threshold:
 			burning("flowers")
 			
-			if water <= min_water:
+			if water <= minWater:
 				burning("shop")
 
 func water_update(delta) -> void:
-	if is_drinking:
-		water = min(water + water_increase_speed / fire_coef * delta, max_water)
+	if isDrinking:
+		water = min(water + waterIncrSpeed / fire_coef * delta, maxWater)
 	else:
-		water = max(water - water_decrease_speed * fire_coef * delta, min_water)
+		water = max(water - waterDecrSpeed * fire_coef * delta, minWater)
 
 func burning(val :String) -> void:
 	match val:
 		"false":
-			water_increase_speed = normal_plus / fire_coef
+			waterIncrSpeed = normal_plus / fire_coef
 		
 		"self":
-			water_increase_speed = burn_self_plus  / fire_coef
+			waterIncrSpeed = burn_self_plus  / fire_coef
 		
 		"flowers":
-			water_increase_speed = burn_flowers_plus / fire_coef
+			waterIncrSpeed = burn_flowers_plus / fire_coef
 			if get_parent():
 				get_parent().get_parent().burn_around(get_parent().name)
 		
 		"shop":
-			emit_signal("burn_shop")
+			burn_shop.emit()
 

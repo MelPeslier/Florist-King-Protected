@@ -8,7 +8,7 @@ func _get_drag_data(_at_position):
 		var seed_data = get_parent().get_parent().get_parent().seed_data
 		var slot = get_parent().get_name()
 		if !ScoreManager.can_buy_seed(seed_data["seed_price"]):
-			Events.emit_signal("play_the_song", "no")
+			Events.play_the_song.emit("no")
 			return null
 		else:
 			data = {
@@ -86,7 +86,7 @@ func _drop_data(_at_position, data):
 
 			if origin_slot.size() > 1:
 				ScoreManager.sell_seed(data.origin_data["seed_price"])
-				Events.emit_signal("play_the_song", "yes")
+				Events.play_the_song.emit("yes")
 				
 				# Update data of ORIGIN
 				PlacerData.placer_data[origin_slot[0]][origin_slot[1]] = null
@@ -99,7 +99,7 @@ func _drop_data(_at_position, data):
 	elif target_slot == "sell_flower":
 		if !data.origin_data.has("seed_price"):
 				ScoreManager.sell_flower(data.origin_data["flower_price"])
-				Events.emit_signal("play_the_song", "yes")
+				Events.play_the_song.emit("yes")
 				
 				# Update data of ORIGIN
 				PlacerData.placer_data[origin_slot[0]][origin_slot[1]] = null
@@ -113,7 +113,7 @@ func _drop_data(_at_position, data):
 		
 		# IF COME FROM 'POT' SLOT
 		if data.origin_slot.size() > 1:
-			Events.emit_signal("play_the_song", "yes")
+			Events.play_the_song.emit("yes")
 			# Update data of ORIGIN
 			var tmp = PlacerData.placer_data[origin_slot[0]][origin_slot[1]]
 			PlacerData.placer_data[origin_slot[0]][origin_slot[1]] = PlacerData.placer_data[room_slot][target_slot]
@@ -138,5 +138,5 @@ func _drop_data(_at_position, data):
 				# Update TARGET ONLY
 				PlacerData.placer_data[room_slot][target_slot] = data.origin_data
 				texture = load(data["origin_data"]["image"])
-				Events.emit_signal("play_the_song", "yes")
+				Events.play_the_song.emit("yes")
 				ScoreManager.buy_seed(data.origin_data.seed_price)

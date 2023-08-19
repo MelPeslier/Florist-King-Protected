@@ -1,17 +1,24 @@
-[gd_scene load_steps=5 format=3 uid="uid://dxpq4kxv2b0pb"]
+[gd_scene load_steps=6 format=3 uid="uid://dxpq4kxv2b0pb"]
 
 [ext_resource type="Script" path="res://flowers/ivy/ivy.gd" id="1_avw74"]
 [ext_resource type="Texture2D" uid="uid://5gc3vluy41bn" path="res://flowers/ivy/sprite/ivy_tmp.png" id="2_es77w"]
 [ext_resource type="PackedScene" uid="uid://7tikciratgn8" path="res://commons/gauge/happiness_gauge.tscn" id="3_45uqv"]
 [ext_resource type="PackedScene" uid="uid://br80202nxcfcv" path="res://commons/gauge/water_gauge.tscn" id="4_csv4a"]
 
-[node name="Ivy" type="Node2D" groups=["flower", "water_flower"]]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7xq8v"]
+size = Vector2(249, 193)
+
+[node name="Ivy" type="Area2D" groups=["flower", "water_flower"]]
 script = ExtResource("1_avw74")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -104)
 scale = Vector2(0.285395, 0.285395)
 texture = ExtResource("2_es77w")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, -101.5)
+shape = SubResource("RectangleShape2D_7xq8v")
 
 [node name="HappinessGauge" parent="." instance=ExtResource("3_45uqv")]
 position = Vector2(0, 40)

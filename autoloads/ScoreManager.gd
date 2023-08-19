@@ -13,7 +13,7 @@ func _ready():
 
 func sell_seed(seed_price: float) -> void:
 	score += seed_price
-	emit_signal("update_score", score)
+	update_score.emit(score)
 
 
 func can_buy_seed(seed_price: float) -> bool:
@@ -24,12 +24,12 @@ func can_buy_seed(seed_price: float) -> bool:
 
 func buy_seed(seed_price: float) -> void:
 	score -= seed_price
-	emit_signal("update_score", score)
+	update_score.emit(score)
 
 
 func sell_flower(flower_price: float) -> void:
 	score += flower_price
-	emit_signal("update_score", score)
+	update_score.emit(score)
 
 
 func get_score():
