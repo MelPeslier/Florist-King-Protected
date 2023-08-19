@@ -23,7 +23,7 @@ func _ready():
 							scene = default_scene
 						var scene_instance = scene.instantiate()
 						pot.add_child(scene_instance)
-						print(room.name + " " + pot.name + " " + str(pot.get_child(0)))
+	
 	Events.emit_signal("manager_end")
 
 
