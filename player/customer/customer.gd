@@ -12,13 +12,13 @@ func _ready():
 	var sell = sell_scene.instantiate()
 	$sell_flower.add_child(icon)
 	$sell_flower.get_child(0).add_child(sell)
-	$sell_flower.visible = true
+	$sell_flower.visible = false
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	if Input.is_action_just_released("left_click") and $sell_flower.visible:
-		$sell_flower.visible = true
+		$sell_flower.visible = false
 
 
 func _on_show_sell_flower_panel(val: bool, price: float) -> void:

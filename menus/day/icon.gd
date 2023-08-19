@@ -34,6 +34,8 @@ func _get_drag_data(_at_position):
 			
 			if data.origin_data.has("seed_price"):
 				Events.emit_signal("show_sell_panel", true, data.origin_data["seed_price"])
+			else:
+				Events.emit_signal("show_sell_flower_panel", true, data.origin_data["flower_price"])
 		else:
 			# If no condition met
 			return null
