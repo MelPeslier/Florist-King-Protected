@@ -1,15 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://dsdct3gq054yr"]
 
 [ext_resource type="Script" path="res://shop/night/room.gd" id="1_t5e40"]
-<<<<<<< HEAD
-[ext_resource type="Texture2D" path="res://art/placeholder/rooms/Room3.PNG" id="2_tnx4p"]
-[ext_resource type="PackedScene" uid="uid://csveo1j7t4qrg" path="res://shop/faucet/faucet.tscn" id="3_flfco"]
-[ext_resource type="Texture2D" path="res://art/placeholder/HUD/Arrow.png" id="4_fjhig"]
-=======
 [ext_resource type="Texture2D" uid="uid://1w2t3kqfkuw" path="res://art/placeholder/rooms/Room3.PNG" id="2_tnx4p"]
 [ext_resource type="PackedScene" uid="uid://csveo1j7t4qrg" path="res://shop/faucet/faucet.tscn" id="3_flfco"]
 [ext_resource type="Texture2D" uid="uid://be5yxlfsoxp5y" path="res://art/placeholder/HUD/Arrow.png" id="4_fjhig"]
->>>>>>> garett
 
 [node name="Room3" type="Node2D"]
 script = ExtResource("1_t5e40")

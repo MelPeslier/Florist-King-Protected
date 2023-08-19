@@ -44,8 +44,3 @@ func _on_direction_5_pressed():
 	move(fifthRoom)
 
 
-
-
-
-func _on_timer_timeout():
-	pass # Replace with function body.

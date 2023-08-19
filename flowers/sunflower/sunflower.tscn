@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://flowers/sunflower/sunflower.gd" id="1_naqm4"]
 [ext_resource type="Texture2D" uid="uid://r8hjt2elaemd" path="res://flowers/sunflower/sprite/sunflower_tmp.jpg" id="2_qeco8"]
-[ext_resource type="PackedScene" uid="uid://7tikciratgn8" path="res://commons/gauge/happiness_gauge.tscn" id="3_3ji5y"]
-[ext_resource type="PackedScene" uid="uid://br80202nxcfcv" path="res://commons/gauge/water_gauge.tscn" id="4_3n6ps"]
+[ext_resource type="PackedScene" uid="uid://br80202nxcfcv" path="res://commons/gauge/water_gauge.tscn" id="3_crjpr"]
+[ext_resource type="PackedScene" uid="uid://7tikciratgn8" path="res://commons/gauge/happiness_gauge.tscn" id="4_guyuw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rr55k"]
 size = Vector2(39, 93)
@@ -16,18 +16,12 @@ position = Vector2(0, -48)
 scale = Vector2(0.180769, 0.180769)
 texture = ExtResource("2_qeco8")
 
-<<<<<<< HEAD
-[node name="WaterGauge" parent="." instance=ExtResource("3_tdb8n")]
-position = Vector2(0, 8)
-
-[node name="HappinessGauge" parent="." instance=ExtResource("4_oiagj")]
-=======
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1.5, -47.5)
+position = Vector2(0, -48)
 shape = SubResource("RectangleShape2D_rr55k")
 
-[node name="HappinessGauge" parent="." instance=ExtResource("3_3ji5y")]
+[node name="WaterGauge" parent="." instance=ExtResource("3_crjpr")]
+position = Vector2(0, 10)
 
-[node name="WaterGauge" parent="." instance=ExtResource("4_3n6ps")]
->>>>>>> garett
-position = Vector2(0, 48)
+[node name="HappinessGauge" parent="." instance=ExtResource("4_guyuw")]
+position = Vector2(2, 59)
