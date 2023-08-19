@@ -21,16 +21,21 @@
 [node name="NightShop" type="Node2D"]
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 60.0
+wait_time = 2.0
 one_shot = true
 autostart = true
 script = ExtResource("2_4fms2")
 
+[node name="Player" parent="." instance=ExtResource("11_shb70")]
+position = Vector2(500, 300)
+
 [node name="Room1" parent="." instance=ExtResource("1_y41b2")]
+position = Vector2(3575, 6202)
 leftRoom = NodePath("../Room2")
 rightRoom = NodePath("../Room10")
 
 [node name="Room2" parent="." instance=ExtResource("2_8d0sc")]
+position = Vector2(2818, 4576)
 leftRoom = NodePath("../Room1")
 rightRoom = NodePath("../Room4")
 upRoom = NodePath("../Room3")
@@ -84,24 +89,12 @@ rightRoom = NodePath("../Room1")
 downRoom = NodePath("../Room8")
 fifthRoom = NodePath("../Room2")
 
-[node name="Player" parent="." instance=ExtResource("11_shb70")]
-position = Vector2(500, 300)
-
 [node name="manager" type="Node" parent="."]
 script = ExtResource("12_dfyfu")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="Control" type="Control" parent="CanvasLayer"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-
-[node name="Timer2" type="Control" parent="CanvasLayer/Control"]
+[node name="Time" type="Control" parent="CanvasLayer"]
 layout_mode = 3
 anchors_preset = 0
 offset_left = 424.0
@@ -110,7 +103,7 @@ offset_right = 528.0
 offset_bottom = 57.0
 metadata/_edit_group_ = true
 
-[node name="Panel" type="Panel" parent="CanvasLayer/Control/Timer2"]
+[node name="Panel" type="Panel" parent="CanvasLayer/Time"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -118,7 +111,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="CanvasLayer/Control/Timer2"]
+[node name="Label" type="Label" parent="CanvasLayer/Time"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

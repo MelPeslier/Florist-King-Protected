@@ -13,10 +13,8 @@ position = Vector2(0, -48)
 scale = Vector2(0.180769, 0.180769)
 texture = ExtResource("2_qeco8")
 
-[node name="WaterGauge" parent="." node_paths=PackedStringArray("flower") instance=ExtResource("3_tdb8n")]
+[node name="WaterGauge" parent="." instance=ExtResource("3_tdb8n")]
 position = Vector2(0, 8)
-flower = NodePath("..")
 
-[node name="HappinessGauge" parent="." node_paths=PackedStringArray("flower") instance=ExtResource("4_oiagj")]
+[node name="HappinessGauge" parent="." instance=ExtResource("4_oiagj")]
 position = Vector2(0, 48)
-flower = NodePath("..")
