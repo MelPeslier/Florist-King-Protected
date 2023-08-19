@@ -1,7 +1,6 @@
 extends CanvasLayer
 
 const startScene = preload("res://shop/day/day_shop.tscn")
-# Change the scene with the day
 const menuMusic = preload("res://audio/music/MenuTheme.ogg")
 
 func _ready():
@@ -14,7 +13,7 @@ func _on_play_pressed():
 
 func _on_leaderboards_pressed():
 	$Credits/CreditsPanel.visible = false
-	# Mel will deal with this
+	# Mel will deal with this.
 	# How about the list appears in the 
 	#  same place the credits appear?
 	pass

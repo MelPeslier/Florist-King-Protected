@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://diih1bq4ddm1s"]
+[gd_scene load_steps=9 format=3 uid="uid://diih1bq4ddm1s"]
 
 [ext_resource type="Script" path="res://shop/day/day_shop.gd" id="1_ffrgk"]
 [ext_resource type="Script" path="res://shop/day/DayTimer.gd" id="1_jhdo6"]
@@ -7,14 +7,13 @@
 [ext_resource type="FontFile" uid="uid://b0hof85mkga7d" path="res://art/Playfulist-rgPp8.ttf" id="3_ac2vx"]
 [ext_resource type="PackedScene" uid="uid://dfurtkdtvthhh" path="res://menus/day/DaySummary.tscn" id="3_brqb0"]
 [ext_resource type="Script" path="res://shop/day/Points.gd" id="5_4b5cc"]
-[ext_resource type="PackedScene" uid="uid://2ktu46qamiis" path="res://player/customer/customer.tscn" id="5_lpa6t"]
 [ext_resource type="PackedScene" uid="uid://evem30mswvy5" path="res://autoloads/Pause.tscn" id="7_cfdb7"]
 
 [node name="DayShop" type="Node"]
 script = ExtResource("1_ffrgk")
 
 [node name="DayTimer" type="Timer" parent="."]
-wait_time = 10.0
+wait_time = 2.0
 one_shot = true
 autostart = true
 script = ExtResource("1_jhdo6")
@@ -43,12 +42,6 @@ offset_right = -485.0
 offset_bottom = -172.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="Customer" parent="UI/Control" instance=ExtResource("5_lpa6t")]
-offset_left = 575.0
-offset_top = 47.0
-offset_right = 767.0
-offset_bottom = 303.0
 
 [node name="Timer" type="Control" parent="UI/Control"]
 anchors_preset = 0

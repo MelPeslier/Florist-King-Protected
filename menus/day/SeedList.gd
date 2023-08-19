@@ -8,7 +8,7 @@ var emplacements :Array
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	Events.connect("show_sell_panel", _on_show_sell_panel)
+	Events.show_sell_panel.connect(_on_show_sell_panel)
 	var icon = icon_scene.instantiate()
 	icon.set_anchors_preset(PRESET_FULL_RECT)
 	

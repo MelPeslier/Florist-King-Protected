@@ -6,15 +6,16 @@ var attack_time :float = 0.75
 
 var seen_player_room :int = 0
 
+var player_room = player.currentRoom.roomNumber
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	super()
 	
 	# Flower
-	sprite = $Sprite2D
+	
 	happiness = 1.0
-	min_happiness = 1.0
-	max_happiness = 3.5
+	minHappiness = 1.0
+	maxHappiness = 3.5
 	sell_price = 50
 	
 	travel_time = the_travel_time

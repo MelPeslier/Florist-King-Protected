@@ -41,5 +41,5 @@ func act_around(potName: String, action: String) -> void:
 	for pot in get_children():
 		if pot.get_name().begins_with("Pot"): 
 			if pot.name != potName and !pot.get_child(0).is_in_group("PotVide"):
-				pot.get_child(0).die_flower(action)
+				pot.get_child(0).die(action)
 				break

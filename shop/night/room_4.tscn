@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://1j15enoggw34"]
 
 [ext_resource type="Script" path="res://shop/night/room.gd" id="1_fe7u8"]
-[ext_resource type="Texture2D" uid="uid://cuccphuxx1ljy" path="res://art/placeholder/rooms/Cattura4.PNG" id="2_82smb"]
-[ext_resource type="Texture2D" uid="uid://be5yxlfsoxp5y" path="res://art/placeholder/minimap/Arrow.png" id="3_xod2i"]
+[ext_resource type="Texture2D" uid="uid://jspp7kvbg6wk" path="res://art/placeholder/rooms/Room4.PNG" id="2_dhtja"]
 [ext_resource type="PackedScene" uid="uid://oh8gi3dswlng" path="res://commons/table/table.tscn" id="4_gmnc6"]
+[ext_resource type="Texture2D" uid="uid://be5yxlfsoxp5y" path="res://art/placeholder/HUD/Arrow.png" id="4_ie0y5"]
 
 [node name="Room4" type="Node2D"]
 script = ExtResource("1_fe7u8")
@@ -12,7 +12,7 @@ roomNumber = 4
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(117, 2)
 scale = Vector2(2.5, 2.5)
-texture = ExtResource("2_82smb")
+texture = ExtResource("2_dhtja")
 
 [node name="DebugLabel" type="Label" parent="."]
 editor_description = "This will be removed before release"
@@ -20,6 +20,7 @@ offset_left = -428.0
 offset_top = -267.0
 offset_right = -388.0
 offset_bottom = -197.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 48
 text = "4"
 
@@ -48,7 +49,7 @@ offset_right = 133.0
 offset_bottom = 34.0
 grow_vertical = 2
 pivot_offset = Vector2(54, 27)
-texture_normal = ExtResource("3_xod2i")
+texture_normal = ExtResource("4_ie0y5")
 stretch_mode = 5
 flip_h = true
 
@@ -66,7 +67,7 @@ offset_bottom = 27.5
 grow_horizontal = 0
 grow_vertical = 2
 pivot_offset = Vector2(54, 27)
-texture_normal = ExtResource("3_xod2i")
+texture_normal = ExtResource("4_ie0y5")
 stretch_mode = 5
 
 [node name="Down" type="TextureButton" parent="Arrows"]
@@ -84,7 +85,7 @@ grow_horizontal = 2
 grow_vertical = 0
 rotation = 1.5708
 pivot_offset = Vector2(54, 27)
-texture_normal = ExtResource("3_xod2i")
+texture_normal = ExtResource("4_ie0y5")
 stretch_mode = 5
 
 [connection signal="pressed" from="Arrows/Left" to="." method="_on_left_pressed"]

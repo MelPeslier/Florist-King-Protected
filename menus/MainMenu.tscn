@@ -43,11 +43,19 @@ theme_override_fonts/font = ExtResource("3_jeus4")
 theme_override_font_sizes/font_size = 72
 text = "Florist King"
 
-[node name="Play" type="Button" parent="."]
+[node name="Audio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_dlyhx")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
 offset_left = 27.0
-offset_top = 195.0
-offset_right = 417.0
-offset_bottom = 263.0
+offset_top = 181.0
+offset_right = 421.0
+offset_bottom = 551.0
+size_flags_vertical = 3
+theme_override_constants/separation = 30
+
+[node name="Play" type="Button" parent="VBoxContainer"]
+layout_mode = 2
 focus_mode = 0
 theme_override_fonts/font = ExtResource("3_jeus4")
 theme_override_font_sizes/font_size = 48
@@ -56,11 +64,8 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_teura")
 text = " Play"
 alignment = 0
 
-[node name="Leaderboards" type="Button" parent="."]
-offset_left = 27.0
-offset_top = 292.0
-offset_right = 417.0
-offset_bottom = 360.0
+[node name="Leaderboards" type="Button" parent="VBoxContainer"]
+layout_mode = 2
 focus_mode = 0
 theme_override_fonts/font = ExtResource("3_jeus4")
 theme_override_font_sizes/font_size = 48
@@ -69,11 +74,8 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_43a2j")
 text = " Leaderboards"
 alignment = 0
 
-[node name="Credits" type="Button" parent="."]
-offset_left = 27.0
-offset_top = 394.0
-offset_right = 417.0
-offset_bottom = 462.0
+[node name="Credits" type="Button" parent="VBoxContainer"]
+layout_mode = 2
 focus_mode = 0
 theme_override_fonts/font = ExtResource("3_jeus4")
 theme_override_font_sizes/font_size = 48
@@ -82,7 +84,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_43a2j")
 text = " Credits"
 alignment = 0
 
-[node name="CreditsPanel" type="Control" parent="Credits"]
+[node name="CreditsPanel" type="Control" parent="VBoxContainer/Credits"]
 visible = false
 anchors_preset = 0
 offset_left = 576.0
@@ -90,13 +92,13 @@ offset_top = -301.0
 offset_right = 616.0
 offset_bottom = -261.0
 
-[node name="ColorRect" type="ColorRect" parent="Credits/CreditsPanel"]
+[node name="ColorRect" type="ColorRect" parent="VBoxContainer/Credits/CreditsPanel"]
 layout_mode = 0
 offset_right = 296.0
 offset_bottom = 405.0
 color = Color(0, 0, 0, 0.25098)
 
-[node name="Label" type="Label" parent="Credits/CreditsPanel"]
+[node name="Label" type="Label" parent="VBoxContainer/Credits/CreditsPanel"]
 layout_mode = 0
 offset_left = 20.0
 offset_top = 20.0
@@ -118,11 +120,8 @@ ryanindoors
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Quit" type="Button" parent="."]
-offset_left = 27.0
-offset_top = 494.0
-offset_right = 417.0
-offset_bottom = 562.0
+[node name="Quit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
 focus_mode = 0
 theme_override_fonts/font = ExtResource("3_jeus4")
 theme_override_font_sizes/font_size = 48
@@ -131,14 +130,11 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_43a2j")
 text = " Quit"
 alignment = 0
 
-[node name="Audio" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("4_dlyhx")
-
-[connection signal="mouse_entered" from="Play" to="." method="_on_mouse_entered"]
-[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
-[connection signal="mouse_entered" from="Leaderboards" to="." method="_on_mouse_entered"]
-[connection signal="pressed" from="Leaderboards" to="." method="_on_leaderboards_pressed"]
-[connection signal="mouse_entered" from="Credits" to="." method="_on_mouse_entered"]
-[connection signal="pressed" from="Credits" to="." method="_on_credits_pressed"]
-[connection signal="mouse_entered" from="Quit" to="." method="_on_mouse_entered"]
-[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
+[connection signal="mouse_entered" from="VBoxContainer/Play" to="." method="_on_mouse_entered"]
+[connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="mouse_entered" from="VBoxContainer/Leaderboards" to="." method="_on_mouse_entered"]
+[connection signal="pressed" from="VBoxContainer/Leaderboards" to="." method="_on_leaderboards_pressed"]
+[connection signal="mouse_entered" from="VBoxContainer/Credits" to="." method="_on_mouse_entered"]
+[connection signal="pressed" from="VBoxContainer/Credits" to="." method="_on_credits_pressed"]
+[connection signal="mouse_entered" from="VBoxContainer/Quit" to="." method="_on_mouse_entered"]
+[connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]

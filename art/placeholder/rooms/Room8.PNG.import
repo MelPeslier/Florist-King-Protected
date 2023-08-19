@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://0f6ttncvly4y"
-path="res://.godot/imported/Cattura7.PNG-d4f5dbab07f6cf1ff9bf0d196bbbe222.ctex"
+uid="uid://cd7nfqkdjcmk"
+path="res://.godot/imported/Room8.PNG-8edd2d95ae1f0fc7750ff9b0f32cf0b9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/placeholder/rooms/Cattura7.PNG"
-dest_files=["res://.godot/imported/Cattura7.PNG-d4f5dbab07f6cf1ff9bf0d196bbbe222.ctex"]
+source_file="res://art/placeholder/rooms/Room8.PNG"
+dest_files=["res://.godot/imported/Room8.PNG-8edd2d95ae1f0fc7750ff9b0f32cf0b9.ctex"]
 
 [params]
 

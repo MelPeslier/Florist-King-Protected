@@ -4,9 +4,8 @@ var yes_song = preload("res://audio/sfx/drag_drop/Advance_Dialogue.wav")
 var no_song = preload("res://audio/sfx/drag_drop/error_sound.wav")
 
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	Events.connect("play_the_song", _on_play_the_song)
+	Events.play_the_song.connect(_on_play_the_song)
 #	$UI/Control/Icon.texture = null
 
 

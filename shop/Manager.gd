@@ -24,7 +24,7 @@ func _ready():
 						var scene_instance = scene.instantiate()
 						pot.add_child(scene_instance)
 	
-	Events.emit_signal("manager_end")
+	Events.manager_end.emit()
 
 
 
@@ -40,7 +40,7 @@ func _on_timer_timeout():
 					if pot.name.begins_with("Pot"):
 						if !PlacerData.placer_data[room.get_name()][pot.get_name()] == null:
 							#access previously instantiated flowers
-							var price: float = pot.get_child(0).sell_flower()
-							
-							PlacerData.placer_data[room.get_name()][pot.get_name()].flower_price = int(price)
+							#var price: float = pot.get_child(0).sell_flower()
+							pass
+							#PlacerData.placer_data[room.get_name()][pot.get_name()].flower_price = int(price)
 						
