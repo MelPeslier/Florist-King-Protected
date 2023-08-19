@@ -12,8 +12,9 @@ var player_room :int
 var happiness :float = 1.0
 var min_happiness :float = 0.5
 var max_happiness :float = 1.5
-var happiness_decrease_speed :float = 1.0
-var happiness_increase_speed :float = 2.0
+var happiness_decrease_speed :float = 0.07
+
+var happiness_increase_speed :float = 0.15
 
 # Price
 var sell_price :float

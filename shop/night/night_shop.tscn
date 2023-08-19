@@ -1,6 +1,7 @@
-[gd_scene load_steps=17 format=3 uid="uid://bstp6mip8ystj"]
+[gd_scene load_steps=19 format=3 uid="uid://bstp6mip8ystj"]
 
 [ext_resource type="PackedScene" uid="uid://dinjpcmsfbml2" path="res://shop/night/room_1.tscn" id="1_y41b2"]
+[ext_resource type="Script" path="res://shop/night/TimerNight.gd" id="2_4fms2"]
 [ext_resource type="PackedScene" uid="uid://bp8bd6s36skh6" path="res://shop/night/room_2.tscn" id="2_8d0sc"]
 [ext_resource type="PackedScene" uid="uid://dsdct3gq054yr" path="res://shop/night/room_3.tscn" id="3_8q40k"]
 [ext_resource type="PackedScene" uid="uid://1j15enoggw34" path="res://shop/night/room_4.tscn" id="4_2kyh4"]
@@ -16,8 +17,15 @@
 [ext_resource type="FontFile" uid="uid://b0hof85mkga7d" path="res://art/Playfulist-rgPp8.ttf" id="14_rh50w"]
 [ext_resource type="AudioStream" uid="uid://bkiwohevp4s2i" path="res://audio/sfx/DayToNight.mp3" id="15_k5pqt"]
 [ext_resource type="PackedScene" uid="uid://evem30mswvy5" path="res://autoloads/Pause.tscn" id="16_3bk6r"]
+[ext_resource type="PackedScene" uid="uid://csmkid2i2d5e1" path="res://menus/night/NightSummary.tscn" id="17_oewxx"]
 
 [node name="NightShop" type="Node2D"]
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 13.0
+one_shot = true
+autostart = true
+script = ExtResource("2_4fms2")
 
 [node name="Room1" parent="." instance=ExtResource("1_y41b2")]
 leftRoom = NodePath("../Room2")
@@ -83,6 +91,47 @@ position = Vector2(500, 300)
 [node name="manager" type="Node" parent="."]
 script = ExtResource("12_dfyfu")
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Timer2" type="Control" parent="CanvasLayer/Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 424.0
+offset_top = 9.0
+offset_right = 528.0
+offset_bottom = 57.0
+metadata/_edit_group_ = true
+
+[node name="Panel" type="Panel" parent="CanvasLayer/Control/Timer2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/Timer2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("14_rh50w")
+theme_override_font_sizes/font_size = 23
+text = "180 s"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="DayToNight" type="CanvasLayer" parent="."]
 editor_description = "Just a quick transition"
 visible = false
@@ -93,6 +142,7 @@ offset_left = -37.0
 offset_top = -37.0
 offset_right = 1029.0
 offset_bottom = 632.0
+mouse_filter = 2
 color = Color(0, 0, 0, 1)
 
 [node name="Label" type="Label" parent="DayToNight/ColorRect"]
@@ -114,7 +164,13 @@ bus = &"SFX"
 wait_time = 3.0
 one_shot = true
 
-[node name="Pause" parent="." instance=ExtResource("16_3bk6r")]
+[node name="NightSummary" parent="." instance=ExtResource("17_oewxx")]
+visible = false
 
+[node name="Pause" parent="." instance=ExtResource("16_3bk6r")]
+visible = false
+
+[connection signal="timeout" from="Timer" to="Timer" method="_on_timeout"]
+[connection signal="timeout" from="Timer" to="NightSummary" method="_on_timer_timeout"]
 [connection signal="finished" from="DayToNight/Audio" to="DayToNight" method="_on_audio_finished"]
 [connection signal="timeout" from="DayToNight/Timer" to="DayToNight" method="_on_timer_timeout"]

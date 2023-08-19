@@ -36,6 +36,7 @@ position = Vector2(10, -101)
 position = Vector2(426, 59)
 
 [node name="Arrows" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="Left" type="TextureButton" parent="Arrows"]
 texture_filter = 1
