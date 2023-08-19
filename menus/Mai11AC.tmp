@@ -1,11 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://bl0wpwdpgqv2e"]
+[gd_scene load_steps=10 format=3 uid="uid://bl0wpwdpgqv2e"]
 
 [ext_resource type="Script" path="res://menus/MainMenu.gd" id="1_g8514"]
 [ext_resource type="Texture2D" uid="uid://ch7vteblt1yrb" path="res://art/placeholder/MenuImagePlaceholder.jpg" id="2_7rebt"]
 [ext_resource type="FontFile" uid="uid://b0hof85mkga7d" path="res://art/Playfulist-rgPp8.ttf" id="3_jeus4"]
 [ext_resource type="Script" path="res://menus/LeaderboardPanel.gd" id="4_3aoqa"]
 [ext_resource type="AudioStream" uid="uid://dmxqg357ljt0p" path="res://audio/sfx/menu/menu_scroll.wav" id="4_dlyhx"]
-[ext_resource type="AudioStream" uid="uid://rodbeyob6u82" path="res://audio/sfx/drag_drop/error_sound.wav" id="6_2msp6"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2csbd"]
 
@@ -88,35 +87,6 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.25098)
 
-[node name="MarginContainer" type="MarginContainer" parent="Leaderboards/LeaderboardPanel"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 20
-theme_override_constants/margin_top = 20
-theme_override_constants/margin_right = 20
-theme_override_constants/margin_bottom = 20
-
-[node name="Panel" type="Panel" parent="Leaderboards/LeaderboardPanel/MarginContainer"]
-layout_mode = 2
-
-[node name="ScrollContainer" type="ScrollContainer" parent="Leaderboards/LeaderboardPanel/MarginContainer/Panel"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Leaderboards/LeaderboardPanel/MarginContainer/Panel/ScrollContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_constants/separation = 0
-
 [node name="Credits" type="Button" parent="."]
 offset_left = 27.0
 offset_top = 394.0
@@ -184,7 +154,6 @@ text = " Quit"
 alignment = 0
 
 [node name="NameRegister" type="CanvasLayer" parent="."]
-layer = 2
 
 [node name="NameRegistering" type="Control" parent="NameRegister"]
 layout_mode = 3
@@ -220,41 +189,19 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_fonts/font = ExtResource("3_jeus4")
 theme_override_font_sizes/font_size = 20
+text = "UIOPazeraeraeraezraeraaaaaUIOP"
 placeholder_text = "Enter your name"
 alignment = 1
 max_length = 30
-caret_blink = true
 
-[node name="TopMargin" type="MarginContainer" parent="NameRegister/NameRegistering/VBoxContainer"]
-layout_mode = 2
-theme_override_constants/margin_top = 30
-
-[node name="HBoxContainer" type="HBoxContainer" parent="NameRegister/NameRegistering/VBoxContainer/TopMargin"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-
-[node name="BackMargin" type="MarginContainer" parent="NameRegister/NameRegistering/VBoxContainer/TopMargin/HBoxContainer"]
-layout_mode = 2
-theme_override_constants/margin_left = 30
-theme_override_constants/margin_right = 30
-
-[node name="Back" type="Button" parent="NameRegister/NameRegistering/VBoxContainer/TopMargin/HBoxContainer/BackMargin"]
-custom_minimum_size = Vector2(110, 0)
-layout_mode = 2
-theme_override_fonts/font = ExtResource("3_jeus4")
-theme_override_font_sizes/font_size = 31
-text = "Back
-"
-
-[node name="ContinueMargin" type="MarginContainer" parent="NameRegister/NameRegistering/VBoxContainer/TopMargin/HBoxContainer"]
+[node name="MarginContainer2" type="MarginContainer" parent="NameRegister/NameRegistering/VBoxContainer"]
 custom_minimum_size = Vector2(200, 70)
 layout_mode = 2
-theme_override_constants/margin_left = 30
-theme_override_constants/margin_right = 30
+theme_override_constants/margin_left = 160
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 160
 
-[node name="EnterName" type="Button" parent="NameRegister/NameRegistering/VBoxContainer/TopMargin/HBoxContainer/ContinueMargin"]
-custom_minimum_size = Vector2(200, 0)
+[node name="Button" type="Button" parent="NameRegister/NameRegistering/VBoxContainer/MarginContainer2"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_jeus4")
 theme_override_font_sizes/font_size = 31
@@ -262,9 +209,6 @@ text = "Continue"
 
 [node name="Audio" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_dlyhx")
-
-[node name="AudioWrong" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("6_2msp6")
 
 [connection signal="mouse_entered" from="Play" to="." method="_on_mouse_entered"]
 [connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
@@ -274,7 +218,3 @@ stream = ExtResource("6_2msp6")
 [connection signal="pressed" from="Credits" to="." method="_on_credits_pressed"]
 [connection signal="mouse_entered" from="Quit" to="." method="_on_mouse_entered"]
 [connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
-[connection signal="button_up" from="NameRegister/NameRegistering/VBoxContainer/TopMargin/HBoxContainer/BackMargin/Back" to="." method="_on_back_button_up"]
-[connection signal="mouse_entered" from="NameRegister/NameRegistering/VBoxContainer/TopMargin/HBoxContainer/BackMargin/Back" to="." method="_on_mouse_entered"]
-[connection signal="button_up" from="NameRegister/NameRegistering/VBoxContainer/TopMargin/HBoxContainer/ContinueMargin/EnterName" to="." method="_on_enter_name_button_up"]
-[connection signal="mouse_entered" from="NameRegister/NameRegistering/VBoxContainer/TopMargin/HBoxContainer/ContinueMargin/EnterName" to="." method="_on_mouse_entered"]

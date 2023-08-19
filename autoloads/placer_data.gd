@@ -10,7 +10,7 @@ var pot_number: int = 3
 var placer_data: Dictionary
 
 
-func first_day():
+func reset():
 	var flower_number: int = 5 
 	var seed_number: int = 2
 	for i in range(4, 4 + room_number):

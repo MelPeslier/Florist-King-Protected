@@ -3,6 +3,8 @@ extends Node
 var YOUR_SILENTWOLF_API_KEY :String = "dnJ0rZvJDI3Vfz6wrJ2Dx9diJiAKZ0wy7HJeGwLO"
 var YOUR_SILENTWOLF_GAME_ID :String = "FloristKing"
 
+var main_scene = "res://menus/MainMenu.tscn"
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	SilentWolf.configure({
@@ -12,7 +14,7 @@ func _ready():
 	})
 
 	SilentWolf.configure_scores({
-		"open_scene_on_close": "res://scenes/MainPage.tscn"
+		"open_scene_on_close": main_scene
 	})
 
 

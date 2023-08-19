@@ -12,7 +12,6 @@ func _ready() -> void:
 	visible = true
 	$AnimationPlayer.play("RESET")
 	
-	Music.stop()
 	Music.stream = daymusicstart
 	Music.play()
 	Music.fade_in()
