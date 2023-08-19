@@ -6,7 +6,8 @@ var image_path: String = "res://art/placeholder/pot/cirle.png"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	PlacerData.first_day()
+	if ScoreManager.get_day() == 1:
+		PlacerData.first_day()
 	
 	for room in get_children():
 		if room.get_name().begins_with("Room"):

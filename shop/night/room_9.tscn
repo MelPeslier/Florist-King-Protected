@@ -13,6 +13,7 @@ roomNumber = 9
 position = Vector2(117, 2)
 scale = Vector2(2.5, 2.5)
 texture = ExtResource("2_w4y56")
+metadata/_edit_lock_ = true
 
 [node name="DebugLabel" type="Label" parent="."]
 editor_description = "This will be removed before release"
@@ -27,7 +28,14 @@ text = "9
 [node name="Table" parent="." instance=ExtResource("4_rav7m")]
 position = Vector2(0, -5)
 
+[node name="Pot2" parent="Table" index="2"]
+position = Vector2(-32, 117)
+
+[node name="Pot3" parent="Table" index="3"]
+position = Vector2(232, 157)
+
 [node name="Arrows" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="Left" type="TextureButton" parent="Arrows"]
 texture_filter = 1
@@ -82,3 +90,5 @@ stretch_mode = 5
 [connection signal="pressed" from="Arrows/Left" to="." method="_on_left_pressed"]
 [connection signal="pressed" from="Arrows/Right" to="." method="_on_right_pressed"]
 [connection signal="pressed" from="Arrows/Down" to="." method="_on_down_pressed"]
+
+[editable path="Table"]

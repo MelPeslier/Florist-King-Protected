@@ -16,5 +16,6 @@ func _on_audio_finished():
 	Music.play()
 	Music.fade_in()
 
+
 func _on_timer_timeout():
 	queue_free()

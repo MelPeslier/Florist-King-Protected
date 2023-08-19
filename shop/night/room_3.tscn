@@ -28,6 +28,7 @@ text = "3
 position = Vector2(-296, 76)
 
 [node name="Arrows" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="Down" type="TextureButton" parent="Arrows"]
 texture_filter = 1

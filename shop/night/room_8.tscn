@@ -10,7 +10,6 @@ script = ExtResource("1_bpksp")
 roomNumber = 8
 
 [node name="Background" type="Sprite2D" parent="."]
-position = Vector2(117, 2)
 scale = Vector2(2.5, 2.5)
 texture = ExtResource("2_qmiaj")
 
@@ -26,7 +25,14 @@ text = "8"
 [node name="Table" parent="." instance=ExtResource("4_q5i3t")]
 position = Vector2(2, -3)
 
+[node name="Pot1" parent="Table" index="1"]
+position = Vector2(-226, -69)
+
+[node name="Pot2" parent="Table" index="2"]
+position = Vector2(14, -101)
+
 [node name="Arrows" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="Left" type="TextureButton" parent="Arrows"]
 texture_filter = 1
@@ -81,3 +87,5 @@ stretch_mode = 5
 [connection signal="pressed" from="Arrows/Left" to="." method="_on_left_pressed"]
 [connection signal="pressed" from="Arrows/Right" to="." method="_on_right_pressed"]
 [connection signal="pressed" from="Arrows/Down" to="." method="_on_down_pressed"]
+
+[editable path="Table"]

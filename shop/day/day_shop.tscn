@@ -1,5 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://diih1bq4ddm1s"]
+[gd_scene load_steps=9 format=3 uid="uid://diih1bq4ddm1s"]
 
+[ext_resource type="Script" path="res://shop/day/day_shop.gd" id="1_ffrgk"]
 [ext_resource type="Script" path="res://shop/day/DayTimer.gd" id="1_jhdo6"]
 [ext_resource type="PackedScene" uid="uid://bglsobqq16un0" path="res://menus/day/SeedList.tscn" id="1_t8liv"]
 [ext_resource type="PackedScene" uid="uid://1duxwwc7pbei" path="res://menus/day/SeedPlacer.tscn" id="2_usasd"]
@@ -9,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://evem30mswvy5" path="res://autoloads/Pause.tscn" id="7_cfdb7"]
 
 [node name="DayShop" type="Node"]
+script = ExtResource("1_ffrgk")
 
 [node name="DayTimer" type="Timer" parent="."]
 wait_time = 13.0
@@ -87,5 +89,8 @@ script = ExtResource("5_4b5cc")
 
 [node name="Pause" parent="." instance=ExtResource("7_cfdb7")]
 
+[node name="Audio" type="AudioStreamPlayer" parent="."]
+
+[connection signal="timeout" from="DayTimer" to="." method="_on_day_timer_timeout"]
 [connection signal="timeout" from="DayTimer" to="DayTimer" method="_on_timeout"]
 [connection signal="timeout" from="DayTimer" to="DaySummary" method="_on_day_timer_timeout"]

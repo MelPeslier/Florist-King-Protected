@@ -23,6 +23,7 @@ theme_override_font_sizes/font_size = 48
 text = "2"
 
 [node name="Arrows" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="Left" type="TextureButton" parent="Arrows"]
 texture_filter = 1

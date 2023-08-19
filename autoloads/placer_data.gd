@@ -24,13 +24,3 @@ func first_day():
 				seed_number -= 1
 			else:
 				placer_data["Room" + str(i)]["Pot" + str(j)] = null
-
-
-# Transforming seeds into flowers and putting them in the right place
-func to_night():
-	pass
-
-
-# Putting flowers from night in there respective slots along with the right data
-func to_day():
-	pass

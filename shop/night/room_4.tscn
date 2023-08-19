@@ -25,7 +25,17 @@ text = "4"
 
 [node name="Table" parent="." instance=ExtResource("4_gmnc6")]
 
+[node name="Pot1" parent="Table" index="1"]
+position = Vector2(-193, 5)
+
+[node name="Pot2" parent="Table" index="2"]
+position = Vector2(-1, -163)
+
+[node name="Pot3" parent="Table" index="3"]
+position = Vector2(150, 215)
+
 [node name="Arrows" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="Left" type="TextureButton" parent="Arrows"]
 texture_filter = 1
@@ -80,3 +90,5 @@ stretch_mode = 5
 [connection signal="pressed" from="Arrows/Left" to="." method="_on_left_pressed"]
 [connection signal="pressed" from="Arrows/Right" to="." method="_on_right_pressed"]
 [connection signal="pressed" from="Arrows/Down" to="." method="_on_down_pressed"]
+
+[editable path="Table"]

@@ -80,6 +80,7 @@ func _drop_data(_at_position, data):
 	if target_slot == "sell_seed":
 		if data.origin_data.has("seed_price"):
 			ScoreManager.sell_seed(data.origin_data["seed_price"])
+			Events.emit_signal("play_the_song", "yes")
 
 			if origin_slot.size() > 1:
 				# Update data of ORIGIN
@@ -95,7 +96,7 @@ func _drop_data(_at_position, data):
 		
 		# IF COME FROM 'POT' SLOT
 		if data.origin_slot.size() > 1:
-		
+			Events.emit_signal("play_the_song", "yes")
 			# Update data of ORIGIN
 			var tmp = PlacerData.placer_data[origin_slot[0]][origin_slot[1]]
 			PlacerData.placer_data[origin_slot[0]][origin_slot[1]] = PlacerData.placer_data[room_slot][target_slot]
@@ -103,15 +104,13 @@ func _drop_data(_at_position, data):
 			if PlacerData.placer_data[room_slot][target_slot] == null:
 				var for_origin_texture = load("res://art/placeholder/pot/cirle.png")
 				data["origin_node"].texture = for_origin_texture
-
+			
 			else:
-
 				var for_origin_texture = load(PlacerData.placer_data[room_slot][target_slot]["image"])
 				data["origin_node"].texture = for_origin_texture
 			
 			# Update data of TARGET
 			PlacerData.placer_data[room_slot][target_slot] = tmp
-
 			
 			# Update Texture of target
 			texture = load(data["origin_data"]["image"])
@@ -122,8 +121,4 @@ func _drop_data(_at_position, data):
 				# Update TARGET ONLY
 				PlacerData.placer_data[room_slot][target_slot] = data.origin_data
 				texture = load(data["origin_data"]["image"])
-			
-			else:
-				ScoreManager.sell_seed(data.origin_data["seed_price"])
-					#Always close the label if it was open
-
+				Events.emit_signal("play_the_song", "yes")

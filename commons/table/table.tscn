@@ -2,34 +2,21 @@
 
 [ext_resource type="Script" path="res://commons/table/table.gd" id="1_n53t1"]
 [ext_resource type="Texture2D" uid="uid://bpd4ntvin2v3c" path="res://commons/table/sprite/table.jpg" id="2_g2w5y"]
-[ext_resource type="Texture2D" uid="uid://bkka0y0w6i63r" path="res://commons/pot/sprite/pot.png" id="3_q7cxr"]
+[ext_resource type="PackedScene" uid="uid://8lpyo4m5siaj" path="res://commons/pot/pot.tscn" id="3_tbegc"]
 
 [node name="Table" type="Node2D"]
 script = ExtResource("1_n53t1")
+metadata/_edit_lock_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, 141)
 texture = ExtResource("2_g2w5y")
+metadata/_edit_lock_ = true
 
-[node name="Pot1" type="Marker2D" parent="." groups=["pot"]]
-editor_description = "Used as position for the flowers, which will be their children"
-position = Vector2(-165, 0)
+[node name="Pot1" parent="." instance=ExtResource("3_tbegc")]
+position = Vector2(-200, -96)
 
-[node name="Sprite2D" type="Sprite2D" parent="Pot1"]
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("3_q7cxr")
+[node name="Pot2" parent="." instance=ExtResource("3_tbegc")]
+position = Vector2(0, -112)
 
-[node name="Pot2" type="Marker2D" parent="." groups=["pot"]]
-editor_description = "Used as position for the flowers, which will be their children"
-
-[node name="Sprite2D" type="Sprite2D" parent="Pot2"]
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("3_q7cxr")
-
-[node name="Pot3" type="Marker2D" parent="." groups=["pot"]]
-editor_description = "Used as position for the flowers, which will be their children"
-position = Vector2(179, 0)
-
-[node name="Sprite2D" type="Sprite2D" parent="Pot3"]
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("3_q7cxr")
+[node name="Pot3" parent="." instance=ExtResource("3_tbegc")]
+position = Vector2(208, -96)

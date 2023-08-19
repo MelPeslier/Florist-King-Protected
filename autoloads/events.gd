@@ -7,3 +7,5 @@ signal hugging(is_hugging: bool)
 signal eat_player()
 
 signal show_sell_panel(val: bool, price: float)
+
+signal play_the_song(song:String)
