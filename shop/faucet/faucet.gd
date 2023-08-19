@@ -6,7 +6,7 @@ func _ready():
 	watering = false
 
 
-func _process(delta):
+func _process(_delta):
 	if watering :
 		watering = true #to replace
 		#Play animation

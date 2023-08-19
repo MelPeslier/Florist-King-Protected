@@ -4,11 +4,12 @@ extends Node2D
 @onready var tex = $TextureProgressBar
 
 
-func _process(delta):
+func _process(_delta):
 	tex.value = flower.water
 
 # To be called after the flower initialisation
 func update_gauge() -> void:
+	flower = get_parent()
 	# Progress Bar
 	tex.min_value = flower.min_water
 	tex.max_value = flower.max_water

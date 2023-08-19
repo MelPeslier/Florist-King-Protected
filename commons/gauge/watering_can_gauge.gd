@@ -4,7 +4,7 @@ extends Node2D
 @onready var tex = $TextureProgressBar
 
 
-func _process(delta):
+func _process(_delta):
 	tex.value = item.water
 
 # To be called after the item initialisation

@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://7tikciratgn8" path="res://commons/gauge/happiness_gauge.tscn" id="2_m4yrd"]
 [ext_resource type="PackedScene" uid="uid://br80202nxcfcv" path="res://commons/gauge/water_gauge.tscn" id="3_t414c"]
 
-[node name="Celeritas" type="Node2D" groups=["water_flower"]]
+[node name="Celeritas" type="Node2D" groups=["flower", "water_flower"]]
 script = ExtResource("1_q4p8a")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -16,4 +16,5 @@ texture = ExtResource("1_hqkro")
 [node name="HappinessGauge" parent="." instance=ExtResource("2_m4yrd")]
 position = Vector2(0, 40)
 
-[node name="WaterGauge" parent="." instance=ExtResource("3_t414c")]
+[node name="WaterGauge" parent="." node_paths=PackedStringArray("flower") instance=ExtResource("3_t414c")]
+flower = NodePath("..")

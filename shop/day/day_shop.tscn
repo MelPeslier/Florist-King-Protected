@@ -1,0 +1,111 @@
+[gd_scene load_steps=10 format=3 uid="uid://diih1bq4ddm1s"]
+
+[ext_resource type="Script" path="res://shop/day/day_shop.gd" id="1_ffrgk"]
+[ext_resource type="Script" path="res://shop/day/DayTimer.gd" id="1_jhdo6"]
+[ext_resource type="PackedScene" uid="uid://bglsobqq16un0" path="res://menus/day/SeedList.tscn" id="1_t8liv"]
+[ext_resource type="PackedScene" uid="uid://1duxwwc7pbei" path="res://menus/day/SeedPlacer.tscn" id="2_usasd"]
+[ext_resource type="FontFile" uid="uid://b0hof85mkga7d" path="res://art/Playfulist-rgPp8.ttf" id="3_ac2vx"]
+[ext_resource type="PackedScene" uid="uid://dfurtkdtvthhh" path="res://menus/day/DaySummary.tscn" id="3_brqb0"]
+[ext_resource type="Script" path="res://shop/day/Points.gd" id="5_4b5cc"]
+[ext_resource type="PackedScene" uid="uid://2ktu46qamiis" path="res://player/customer/customer.tscn" id="5_lpa6t"]
+[ext_resource type="PackedScene" uid="uid://evem30mswvy5" path="res://autoloads/Pause.tscn" id="7_cfdb7"]
+
+[node name="DayShop" type="Node"]
+script = ExtResource("1_ffrgk")
+
+[node name="DayTimer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+autostart = true
+script = ExtResource("1_jhdo6")
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SeedList" parent="UI/Control" instance=ExtResource("1_t8liv")]
+layout_mode = 1
+
+[node name="SeedPlacer" parent="UI/Control" instance=ExtResource("2_usasd")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 256.0
+offset_top = 96.0
+offset_right = -485.0
+offset_bottom = -172.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Customer" parent="UI/Control" instance=ExtResource("5_lpa6t")]
+offset_left = 575.0
+offset_top = 47.0
+offset_right = 767.0
+offset_bottom = 303.0
+
+[node name="Timer" type="Control" parent="UI/Control"]
+anchors_preset = 0
+offset_left = 304.0
+offset_top = 9.0
+offset_right = 408.0
+offset_bottom = 57.0
+metadata/_edit_group_ = true
+
+[node name="Panel" type="Panel" parent="UI/Control/Timer"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="UI/Control/Timer"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_ac2vx")
+theme_override_font_sizes/font_size = 23
+text = "180 s"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Money" type="Control" parent="UI/Control"]
+anchors_preset = 0
+offset_left = 784.0
+offset_top = 352.0
+offset_right = 920.0
+offset_bottom = 416.0
+
+[node name="Label" type="Label" parent="UI/Control/Money"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_ac2vx")
+theme_override_font_sizes/font_size = 33
+text = "1000 €"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("5_4b5cc")
+
+[node name="DaySummary" parent="." instance=ExtResource("3_brqb0")]
+
+[node name="Pause" parent="." instance=ExtResource("7_cfdb7")]
+visible = false
+
+[node name="Audio" type="AudioStreamPlayer" parent="."]
+
+[connection signal="timeout" from="DayTimer" to="DayTimer" method="_on_timeout"]
+[connection signal="timeout" from="DayTimer" to="DaySummary" method="_on_day_timer_timeout"]

@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://flowers/man_eater/man_eater.gd" id="1_vdkwt"]
 [ext_resource type="Texture2D" uid="uid://dneu5mk1g2rwq" path="res://flowers/man_eater/sprite/man_eater_tmp.png" id="2_w0w04"]
 
-[node name="ManEater" type="Node2D"]
+[node name="ManEater" type="Node2D" groups=["flower"]]
 script = ExtResource("1_vdkwt")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

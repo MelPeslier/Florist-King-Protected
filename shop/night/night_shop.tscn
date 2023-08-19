@@ -1,0 +1,176 @@
+[gd_scene load_steps=19 format=3 uid="uid://bstp6mip8ystj"]
+
+[ext_resource type="PackedScene" uid="uid://dinjpcmsfbml2" path="res://shop/night/room_1.tscn" id="1_y41b2"]
+[ext_resource type="Script" path="res://shop/night/TimerNight.gd" id="2_4fms2"]
+[ext_resource type="PackedScene" uid="uid://bp8bd6s36skh6" path="res://shop/night/room_2.tscn" id="2_8d0sc"]
+[ext_resource type="PackedScene" uid="uid://dsdct3gq054yr" path="res://shop/night/room_3.tscn" id="3_8q40k"]
+[ext_resource type="PackedScene" uid="uid://1j15enoggw34" path="res://shop/night/room_4.tscn" id="4_2kyh4"]
+[ext_resource type="PackedScene" uid="uid://c0p8fhp5fkix5" path="res://shop/night/room_5.tscn" id="5_wpjcc"]
+[ext_resource type="PackedScene" uid="uid://dmlpgi4aoupij" path="res://shop/night/room_6.tscn" id="6_etqvl"]
+[ext_resource type="PackedScene" uid="uid://bipttp0f76t1t" path="res://shop/night/room_7.tscn" id="7_vkj8n"]
+[ext_resource type="PackedScene" uid="uid://qkjl2hhwnw3" path="res://shop/night/room_8.tscn" id="8_jlfcj"]
+[ext_resource type="PackedScene" uid="uid://drfj8ifuyx7pg" path="res://shop/night/room_9.tscn" id="9_jijwl"]
+[ext_resource type="PackedScene" uid="uid://k0wuo10gq03a" path="res://shop/night/room_10.tscn" id="10_p7x44"]
+[ext_resource type="PackedScene" uid="uid://cj3sjty8osk0m" path="res://player/Player.tscn" id="11_shb70"]
+[ext_resource type="Script" path="res://shop/manager.gd" id="12_dfyfu"]
+[ext_resource type="Script" path="res://shop/day/DayToNight.gd" id="13_uw60l"]
+[ext_resource type="FontFile" uid="uid://b0hof85mkga7d" path="res://art/Playfulist-rgPp8.ttf" id="14_rh50w"]
+[ext_resource type="AudioStream" uid="uid://bkiwohevp4s2i" path="res://audio/sfx/DayToNight.mp3" id="15_k5pqt"]
+[ext_resource type="PackedScene" uid="uid://evem30mswvy5" path="res://autoloads/Pause.tscn" id="16_3bk6r"]
+[ext_resource type="PackedScene" uid="uid://csmkid2i2d5e1" path="res://menus/night/NightSummary.tscn" id="17_oewxx"]
+
+[node name="NightShop" type="Node2D"]
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 60.0
+one_shot = true
+autostart = true
+script = ExtResource("2_4fms2")
+
+[node name="Room1" parent="." instance=ExtResource("1_y41b2")]
+leftRoom = NodePath("../Room2")
+rightRoom = NodePath("../Room10")
+
+[node name="Room2" parent="." instance=ExtResource("2_8d0sc")]
+leftRoom = NodePath("../Room1")
+rightRoom = NodePath("../Room4")
+upRoom = NodePath("../Room3")
+downRoom = NodePath("../Room10")
+fifthRoom = NodePath("../Room5")
+
+[node name="Room3" parent="." instance=ExtResource("3_8q40k")]
+position = Vector2(740, 4500)
+downRoom = NodePath("../Room2")
+
+[node name="Room4" parent="." groups=["PotRoom"] instance=ExtResource("4_2kyh4")]
+position = Vector2(1965, 2767)
+leftRoom = NodePath("../Room2")
+rightRoom = NodePath("../Room6")
+downRoom = NodePath("../Room5")
+
+[node name="Room5" parent="." groups=["PotRoom"] instance=ExtResource("5_wpjcc")]
+position = Vector2(3940, 2783)
+leftRoom = NodePath("../Room6")
+rightRoom = NodePath("../Room2")
+downRoom = NodePath("../Room4")
+
+[node name="Room6" parent="." groups=["PotRoom"] instance=ExtResource("6_etqvl")]
+position = Vector2(3246, 907)
+leftRoom = NodePath("../Room4")
+rightRoom = NodePath("../Room7")
+downRoom = NodePath("../Room5")
+
+[node name="Room7" parent="." groups=["PotRoom"] instance=ExtResource("7_vkj8n")]
+position = Vector2(5526, 899)
+leftRoom = NodePath("../Room6")
+rightRoom = NodePath("../Room9")
+downRoom = NodePath("../Room8")
+
+[node name="Room8" parent="." groups=["PotRoom"] instance=ExtResource("8_jlfcj")]
+position = Vector2(6164, 2853)
+leftRoom = NodePath("../Room10")
+rightRoom = NodePath("../Room7")
+downRoom = NodePath("../Room9")
+
+[node name="Room9" parent="." groups=["PotRoom"] instance=ExtResource("9_jijwl")]
+position = Vector2(8070, 2835)
+leftRoom = NodePath("../Room7")
+rightRoom = NodePath("../Room10")
+downRoom = NodePath("../Room8")
+
+[node name="Room10" parent="." instance=ExtResource("10_p7x44")]
+position = Vector2(5108, 4571)
+leftRoom = NodePath("../Room9")
+rightRoom = NodePath("../Room1")
+downRoom = NodePath("../Room8")
+fifthRoom = NodePath("../Room2")
+
+[node name="Player" parent="." instance=ExtResource("11_shb70")]
+position = Vector2(500, 300)
+
+[node name="manager" type="Node" parent="."]
+script = ExtResource("12_dfyfu")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Timer2" type="Control" parent="CanvasLayer/Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 424.0
+offset_top = 9.0
+offset_right = 528.0
+offset_bottom = 57.0
+metadata/_edit_group_ = true
+
+[node name="Panel" type="Panel" parent="CanvasLayer/Control/Timer2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/Timer2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("14_rh50w")
+theme_override_font_sizes/font_size = 23
+text = "180 s"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DayToNight" type="CanvasLayer" parent="."]
+editor_description = "Just a quick transition"
+visible = false
+script = ExtResource("13_uw60l")
+
+[node name="ColorRect" type="ColorRect" parent="DayToNight"]
+offset_left = -37.0
+offset_top = -37.0
+offset_right = 1029.0
+offset_bottom = 632.0
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="DayToNight/ColorRect"]
+layout_mode = 0
+offset_right = 1066.0
+offset_bottom = 669.0
+theme_override_fonts/font = ExtResource("14_rh50w")
+theme_override_font_sizes/font_size = 128
+text = "Night X"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="Audio" type="AudioStreamPlayer" parent="DayToNight"]
+stream = ExtResource("15_k5pqt")
+bus = &"SFX"
+
+[node name="Timer" type="Timer" parent="DayToNight"]
+wait_time = 3.0
+one_shot = true
+
+[node name="NightSummary" parent="." instance=ExtResource("17_oewxx")]
+visible = false
+
+[node name="Pause" parent="." instance=ExtResource("16_3bk6r")]
+visible = false
+
+[connection signal="timeout" from="Timer" to="manager" method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer" to="NightSummary" method="_on_timer_timeout"]
+[connection signal="finished" from="DayToNight/Audio" to="DayToNight" method="_on_audio_finished"]
+[connection signal="timeout" from="DayToNight/Timer" to="DayToNight" method="_on_timer_timeout"]

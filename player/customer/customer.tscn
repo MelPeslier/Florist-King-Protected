@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://2ktu46qamiis"]
+
+[ext_resource type="Script" path="res://player/customer/customer.gd" id="1_u7p7x"]
+
+[node name="Customer" type="Control"]
+clip_contents = true
+custom_minimum_size = Vector2(100, 200)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 192.0
+offset_bottom = 256.0
+script = ExtResource("1_u7p7x")
+
+[node name="sell_flower" type="Control" parent="."]
+custom_minimum_size = Vector2(100, 200)
+anchors_preset = 0
+offset_right = 192.0
+offset_bottom = 256.0

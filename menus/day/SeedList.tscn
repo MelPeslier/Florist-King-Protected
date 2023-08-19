@@ -1,0 +1,53 @@
+[gd_scene load_steps=4 format=3 uid="uid://bglsobqq16un0"]
+
+[ext_resource type="Script" path="res://menus/day/SeedList.gd" id="1_5kcbl"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4jjl3"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="Theme" id="Theme_b80gh"]
+VScrollBar/styles/grabber = SubResource("StyleBoxFlat_4jjl3")
+
+[node name="SeedList" type="Control"]
+clip_contents = true
+custom_minimum_size = Vector2(400, 960)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 9.0
+offset_right = -590.0
+offset_bottom = 369.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+mouse_filter = 2
+script = ExtResource("1_5kcbl")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0.25098)
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 0
+offset_right = 408.0
+offset_bottom = 975.0
+theme = SubResource("Theme_b80gh")
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+custom_minimum_size = Vector2(400, 240)
+layout_mode = 2
+
+[node name="sell_seed" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 400.0
+offset_bottom = 960.0

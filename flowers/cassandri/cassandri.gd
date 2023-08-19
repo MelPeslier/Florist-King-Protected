@@ -25,7 +25,7 @@ func _ready() -> void:
 	max_happiness = 1.5
 	happiness_decrease_speed = 7
 	happiness_increase_speed = 1
-	sell_price = 16
+	sell_price = 14
 	
 	travel_time = the_travel_time
 	money_stole = 0

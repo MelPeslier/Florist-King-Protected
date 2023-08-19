@@ -1,7 +1,5 @@
 extends Node
 
-var dayNum := 1 # From 1 to 7 (or 6?)
-
 var YOUR_SILENTWOLF_API_KEY :String = "dnJ0rZvJDI3Vfz6wrJ2Dx9diJiAKZ0wy7HJeGwLO"
 var YOUR_SILENTWOLF_GAME_ID :String = "FloristKing"
 

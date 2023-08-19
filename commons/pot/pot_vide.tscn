@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://dve1cwi1xmexu"]
+
+[ext_resource type="Texture2D" uid="uid://bkka0y0w6i63r" path="res://commons/pot/sprite/pot.png" id="1_0kijw"]
+
+[node name="PotVide" type="Node2D" groups=["PotVide"]]
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(4.76837e-07, 4.76837e-07)
+scale = Vector2(0.121983, 0.121983)
+texture = ExtResource("1_0kijw")

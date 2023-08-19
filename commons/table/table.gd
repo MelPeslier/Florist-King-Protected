@@ -29,9 +29,17 @@ func add_flower(flower:Flower, potNumber=null):
 func check(potName :String) -> Array:
 	var flowerNames := []
 	for pot in get_children():
-		if pot.name != potName and pot.get_child_count() == 1:
-			flowerNames.push_back(pot.get_child(0).name)
+		if pot.is_in_group("pot"):
+			if pot.get_child(0) != null:
+				if pot.name != potName and !pot.get_child(0).is_in_group("PotVide"):
+					flowerNames.push_back(pot.get_child(0).get_name())
 	
 	return flowerNames
 
 
+func act_around(potName: String, action: String) -> void:
+	for pot in get_children():
+		if pot.get_name().begins_with("Pot"): 
+			if pot.name != potName and !pot.get_child(0).is_in_group("PotVide"):
+				pot.get_child(0).die_flower(action)
+				break

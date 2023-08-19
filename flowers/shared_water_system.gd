@@ -17,7 +17,7 @@ var water_decrease_speed :float = 1.0
 var water_increase_speed :float = 4.0
 
 # For animation
-func _process(delta) -> void:
+func _process(_delta) -> void:
 	pass
 
 # For systems

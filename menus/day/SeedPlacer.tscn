@@ -1,0 +1,314 @@
+[gd_scene load_steps=3 format=3 uid="uid://1duxwwc7pbei"]
+
+[ext_resource type="Script" path="res://menus/day/SeedPlacer.gd" id="1_v3ewy"]
+[ext_resource type="Texture2D" uid="uid://b6exm4g4mew50" path="res://shop/sprite/shop_plan.png" id="2_4mknd"]
+
+[node name="SeedPlacer" type="Control"]
+custom_minimum_size = Vector2(259, 332)
+layout_direction = 1
+layout_mode = 3
+anchors_preset = 0
+offset_right = 259.0
+offset_bottom = 332.0
+script = ExtResource("1_v3ewy")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+self_modulate = Color(1, 1, 1, 0.905882)
+custom_minimum_size = Vector2(283, 363)
+layout_mode = 0
+offset_right = 283.0
+offset_bottom = 363.0
+texture = ExtResource("2_4mknd")
+
+[node name="Room4" type="Panel" parent="."]
+layout_mode = 1
+offset_left = -98.0
+offset_right = -98.0
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
+
+[node name="Pot1" type="Control" parent="Room4"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 98.0
+offset_top = 230.0
+offset_right = 138.0
+offset_bottom = 270.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+metadata/_edit_group_ = true
+
+[node name="Pot2" type="Control" parent="Room4"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 98.0
+offset_top = 180.0
+offset_right = 138.0
+offset_bottom = 220.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+metadata/_edit_group_ = true
+
+[node name="Pot3" type="Control" parent="Room4"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 98.0
+offset_top = 132.0
+offset_right = 138.0
+offset_bottom = 172.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+metadata/_edit_group_ = true
+
+[node name="Room5" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 102.0
+offset_right = 102.0
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
+
+[node name="Pot1" type="Control" parent="Room5"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -3.0
+offset_top = 132.0
+offset_right = 37.0
+offset_bottom = 172.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+metadata/_edit_group_ = true
+
+[node name="Pot2" type="Control" parent="Room5"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -3.0
+offset_top = 180.0
+offset_right = 37.0
+offset_bottom = 220.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+metadata/_edit_group_ = true
+
+[node name="Pot3" type="Control" parent="Room5"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -3.0
+offset_top = 225.0
+offset_right = 37.0
+offset_bottom = 265.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+metadata/_edit_group_ = true
+
+[node name="Room6" type="Panel" parent="."]
+layout_mode = 0
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
+
+[node name="Pot1" type="Control" parent="Room6"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 56.0
+offset_right = 40.0
+offset_bottom = 96.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+metadata/_edit_group_ = true
+
+[node name="Pot2" type="Control" parent="Room6"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 40.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+metadata/_edit_group_ = true
+
+[node name="Pot3" type="Control" parent="Room6"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 62.0
+offset_right = 102.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+metadata/_edit_group_ = true
+
+[node name="Room7" type="Panel" parent="."]
+layout_mode = 0
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
+
+[node name="Pot1" type="Control" parent="Room7"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 172.0
+offset_right = 212.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+metadata/_edit_group_ = true
+
+[node name="Pot2" type="Control" parent="Room7"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 243.0
+offset_right = 283.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+metadata/_edit_group_ = true
+
+[node name="Pot3" type="Control" parent="Room7"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 243.0
+offset_top = 56.0
+offset_right = 283.0
+offset_bottom = 96.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+metadata/_edit_group_ = true
+
+[node name="Room8" type="Panel" parent="."]
+layout_mode = 0
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
+
+[node name="Pot1" type="Control" parent="Room8"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 145.0
+offset_top = 230.0
+offset_right = 185.0
+offset_bottom = 270.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_group_ = true
+
+[node name="Pot2" type="Control" parent="Room8"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 1
+anchors_preset = 0
+offset_left = 145.0
+offset_top = 180.0
+offset_right = 185.0
+offset_bottom = 220.0
+mouse_filter = 2
+metadata/_edit_group_ = true
+
+[node name="Pot3" type="Control" parent="Room8"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 145.0
+offset_top = 132.0
+offset_right = 185.0
+offset_bottom = 172.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+metadata/_edit_group_ = true
+
+[node name="Room9" type="Panel" parent="."]
+layout_mode = 0
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
+
+[node name="Pot1" type="Control" parent="Room9"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 243.0
+offset_top = 132.0
+offset_right = 283.0
+offset_bottom = 172.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+metadata/_edit_group_ = true
+
+[node name="Pot2" type="Control" parent="Room9"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 243.0
+offset_top = 180.0
+offset_right = 283.0
+offset_bottom = 220.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+metadata/_edit_group_ = true
+
+[node name="Pot3" type="Control" parent="Room9"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 243.0
+offset_top = 230.0
+offset_right = 283.0
+offset_bottom = 270.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+metadata/_edit_group_ = true
