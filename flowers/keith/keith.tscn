@@ -1,11 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://bxe7lsmqr8ddt"]
+[gd_scene load_steps=6 format=3 uid="uid://bxe7lsmqr8ddt"]
 
 [ext_resource type="Script" path="res://flowers/keith/keith.gd" id="1_hgoga"]
 [ext_resource type="Texture2D" uid="uid://da2x082ug4e5r" path="res://flowers/keith/sprite/keith_tmp.jpg" id="1_lygfw"]
 [ext_resource type="PackedScene" uid="uid://7tikciratgn8" path="res://commons/gauge/happiness_gauge.tscn" id="2_m10nn"]
 [ext_resource type="PackedScene" uid="uid://br80202nxcfcv" path="res://commons/gauge/water_gauge.tscn" id="3_uo36h"]
 
-[node name="Keith" type="Node2D" groups=["flower", "water_flower"]]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gss1n"]
+size = Vector2(90, 93)
+
+[node name="Keith" type="Area2D" groups=["flower", "water_flower"]]
 script = ExtResource("1_hgoga")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -18,3 +21,7 @@ position = Vector2(-1, 48)
 
 [node name="WaterGauge" parent="." instance=ExtResource("3_uo36h")]
 position = Vector2(-1, 8)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -47.5)
+shape = SubResource("RectangleShape2D_gss1n")

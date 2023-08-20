@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://280abuiswsiw"
-path="res://.godot/imported/watering_can.jpg-6835e31e1710246387c3032a03d21351.ctex"
+uid="uid://jspp7kvbg6wk"
+path="res://.godot/imported/Room4.PNG-ebc974668e84dbe69a7fe78d54801495.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://player/watering can/sprite/watering_can.jpg"
-dest_files=["res://.godot/imported/watering_can.jpg-6835e31e1710246387c3032a03d21351.ctex"]
+source_file="res://art/placeholder/rooms/Room4.PNG"
+dest_files=["res://.godot/imported/Room4.PNG-ebc974668e84dbe69a7fe78d54801495.ctex"]
 
 [params]
 

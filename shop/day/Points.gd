@@ -1,7 +1,7 @@
 extends Label
 
 func _ready():
-	ScoreManager.connect("update_score", _on_update_score)
+	ScoreManager.update_score.connect(_on_update_score)
 	text = str(ScoreManager.get_score()) + " €"
 
 

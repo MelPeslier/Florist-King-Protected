@@ -1,57 +1,66 @@
 class_name Flower
-extends Node2D
+extends Area2D
 
-#Sprite
-var sprite: Sprite2D
+@onready var flower_room = get_node("../../..").roomNumber # get_parent() 3 times
+@onready var player = get_node("../../../../Player") as Player
 
-# Room and Player related
-var flower_room :int
-var player_room :int
+var happiness := 1.0
+var maxHappiness := 1.5
+var minHappiness := 0.5
+var happIncrSpeed := 0.15
+var happDecrSpeed := 0.07
 
-# Happiness
-var happiness :float = 1.0
-var min_happiness :float = 0.5
-var max_happiness :float = 1.5
-var happiness_decrease_speed :float = 0.07
+var sell_price = 20
 
-var happiness_increase_speed :float = 0.15
-
-# Price
-var sell_price :float
 
 func _ready():
-	Events.connect("player_enter_room", _on_player_enter_room)
-	if get_parent():
-		flower_room = get_parent().get_parent().get_parent().roomNumber
+	Events.player_enter_room.connect(_on_player_enter_room)
+	input_event.connect(_on_input_event)
+	mouse_entered.connect(_on_mouse_entered)
+	mouse_exited.connect(_on_mouse_exited)
 
-func _physics_process(delta) -> void:
-	my_input(delta)
 
-func my_input(_delta):
-	pass
-
-func _on_player_enter_room(room_number :int) -> void:
-	player_room = room_number
+func _on_player_enter_room(room_number :int):
 	interaction()
 
-func interaction() -> void:
-	pass
+func add_happiness(amount = happIncrSpeed):
+	happiness += amount
+	happiness = min(happiness, maxHappiness)
 
-func sell_flower() -> float:
-	return sell_price * happiness
+func remove_happiness(amount = happDecrSpeed):
+	happiness -= amount
+	happiness = max(happiness, minHappiness)
 
-func die_flower(how :String) -> void:
+
+func die(how :String):
 	match how:
 		"burn":
-			var tween = get_tree().create_tween()
-			tween.tween_property(sprite, "modulate:a", 0.0, 0.27)
-		
+			create_tween().tween_property($Sprite2D, "modulate:a", 0.0, 0.5)
 		"water":
-			var tween = get_tree().create_tween()
-			tween.tween_property(sprite, "modulate:a", 0.0, 1.0)
-		
+			create_tween().tween_property($Sprite2D, "modulate:a", 0.0, 1.0)
 		"eat":
-			var tween = get_tree().create_tween()
-			tween.tween_property(sprite, "modulate:a", 0.0, 0.1)
+			create_tween().tween_property($Sprite2D, "modulate:a", 0.0, 0.1)
 
 
+
+func _on_input_event(_viewport, event, _shape_idx):
+	if event is InputEventMouseButton:
+		if event.pressed && event.button_index == 1:
+			click()
+		elif !event.pressed:
+			unclick()
+
+func _on_mouse_entered():
+	pass # Abstract function
+
+func _on_mouse_exited():
+	pass # Abstract function
+
+func click():
+	pass # Abstract function
+
+func unclick():
+	pass # Abstract function
+
+func interaction():
+	pass # Abstract function

@@ -45,11 +45,16 @@ theme_override_fonts/font = ExtResource("3_jeus4")
 theme_override_font_sizes/font_size = 72
 text = "Florist King"
 
-[node name="Play" type="Button" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
 offset_left = 27.0
-offset_top = 195.0
-offset_right = 417.0
-offset_bottom = 263.0
+offset_top = 181.0
+offset_right = 421.0
+offset_bottom = 551.0
+size_flags_vertical = 3
+theme_override_constants/separation = 30
+
+[node name="Play" type="Button" parent="VBoxContainer"]
+layout_mode = 2
 focus_mode = 0
 theme_override_fonts/font = ExtResource("3_jeus4")
 theme_override_font_sizes/font_size = 48
@@ -58,11 +63,8 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_teura")
 text = " Play"
 alignment = 0
 
-[node name="Leaderboards" type="Button" parent="."]
-offset_left = 27.0
-offset_top = 292.0
-offset_right = 417.0
-offset_bottom = 360.0
+[node name="Leaderboards" type="Button" parent="VBoxContainer"]
+layout_mode = 2
 focus_mode = 0
 theme_override_fonts/font = ExtResource("3_jeus4")
 theme_override_font_sizes/font_size = 48
@@ -71,7 +73,28 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_43a2j")
 text = " Leaderboards"
 alignment = 0
 
-[node name="LeaderboardPanel" type="Control" parent="Leaderboards"]
+[node name="Credits" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+theme_override_fonts/font = ExtResource("3_jeus4")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxEmpty_2bo0a")
+theme_override_styles/hover = SubResource("StyleBoxFlat_43a2j")
+text = " Credits"
+alignment = 0
+
+[node name="Quit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+theme_override_fonts/font = ExtResource("3_jeus4")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxEmpty_2bo0a")
+theme_override_styles/hover = SubResource("StyleBoxFlat_43a2j")
+text = " Quit"
+alignment = 0
+
+[node name="Leaderboards@LeaderboardPanel" type="Control" parent="."]
+layout_mode = 3
 anchors_preset = 0
 offset_left = 576.0
 offset_top = -199.0
@@ -79,8 +102,7 @@ offset_right = 872.0
 offset_bottom = 206.0
 script = ExtResource("4_3aoqa")
 
-[node name="ColorRect" type="ColorRect" parent="Leaderboards/LeaderboardPanel"]
-layout_mode = 1
+[node name="Leaderboards@LeaderboardPanel@ColorRect2" type="ColorRect" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -88,8 +110,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.25098)
 
-[node name="MarginContainer" type="MarginContainer" parent="Leaderboards/LeaderboardPanel"]
-layout_mode = 1
+[node name="Leaderboards@LeaderboardPanel@MarginContainer" type="MarginContainer" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -100,46 +121,30 @@ theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
 
-[node name="Panel" type="Panel" parent="Leaderboards/LeaderboardPanel/MarginContainer"]
-layout_mode = 2
+[node name="Leaderboards@LeaderboardPanel@MarginContainer@Panel" type="Panel" parent="."]
 
-[node name="ScrollContainer" type="ScrollContainer" parent="Leaderboards/LeaderboardPanel/MarginContainer/Panel"]
-layout_mode = 1
+[node name="Leaderboards@LeaderboardPanel@MarginContainer@Panel@ScrollContainer" type="ScrollContainer" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Leaderboards/LeaderboardPanel/MarginContainer/Panel/ScrollContainer"]
-layout_mode = 2
+[node name="Leaderboards@LeaderboardPanel@MarginContainer@Panel@ScrollContainer@VBoxContainer2" type="VBoxContainer" parent="."]
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_constants/separation = 0
 
-[node name="Credits" type="Button" parent="."]
-offset_left = 27.0
-offset_top = 394.0
-offset_right = 417.0
-offset_bottom = 462.0
-focus_mode = 0
-theme_override_fonts/font = ExtResource("3_jeus4")
-theme_override_font_sizes/font_size = 48
-theme_override_styles/normal = SubResource("StyleBoxEmpty_2bo0a")
-theme_override_styles/hover = SubResource("StyleBoxFlat_43a2j")
-text = " Credits"
-alignment = 0
-
-[node name="CreditsPanel" type="Control" parent="Credits"]
+[node name="VBoxContainer@Credits@CreditsPanel" type="Control" parent="."]
 visible = false
+layout_mode = 3
 anchors_preset = 0
 offset_left = 576.0
 offset_top = -301.0
 offset_right = 872.0
 offset_bottom = 104.0
 
-[node name="ColorRect" type="ColorRect" parent="Credits/CreditsPanel"]
-layout_mode = 1
+[node name="Credits@CreditsPanel@ColorRect3" type="ColorRect" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -147,8 +152,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.25098)
 
-[node name="Label" type="Label" parent="Credits/CreditsPanel"]
-layout_mode = 1
+[node name="Credits@CreditsPanel@Label2" type="Label" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -170,21 +174,9 @@ ryanindoors
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Quit" type="Button" parent="."]
-offset_left = 27.0
-offset_top = 494.0
-offset_right = 417.0
-offset_bottom = 562.0
-focus_mode = 0
-theme_override_fonts/font = ExtResource("3_jeus4")
-theme_override_font_sizes/font_size = 48
-theme_override_styles/normal = SubResource("StyleBoxEmpty_2bo0a")
-theme_override_styles/hover = SubResource("StyleBoxFlat_43a2j")
-text = " Quit"
-alignment = 0
-
 [node name="NameRegister" type="CanvasLayer" parent="."]
 layer = 2
+visible = false
 
 [node name="NameRegistering" type="Control" parent="NameRegister"]
 layout_mode = 3
@@ -266,14 +258,8 @@ stream = ExtResource("4_dlyhx")
 [node name="AudioWrong" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_2msp6")
 
-[connection signal="mouse_entered" from="Play" to="." method="_on_mouse_entered"]
-[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
-[connection signal="mouse_entered" from="Leaderboards" to="." method="_on_mouse_entered"]
-[connection signal="pressed" from="Leaderboards" to="." method="_on_leaderboards_pressed"]
-[connection signal="mouse_entered" from="Credits" to="." method="_on_mouse_entered"]
-[connection signal="pressed" from="Credits" to="." method="_on_credits_pressed"]
-[connection signal="mouse_entered" from="Quit" to="." method="_on_mouse_entered"]
-[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
+[connection signal="mouse_entered" from="VBoxContainer/Credits" to="." method="_on_mouse_entered"]
+[connection signal="pressed" from="VBoxContainer/Credits" to="." method="_on_credits_pressed"]
 [connection signal="button_up" from="NameRegister/NameRegistering/VBoxContainer/TopMargin/HBoxContainer/BackMargin/Back" to="." method="_on_back_button_up"]
 [connection signal="mouse_entered" from="NameRegister/NameRegistering/VBoxContainer/TopMargin/HBoxContainer/BackMargin/Back" to="." method="_on_mouse_entered"]
 [connection signal="button_up" from="NameRegister/NameRegistering/VBoxContainer/TopMargin/HBoxContainer/ContinueMargin/EnterName" to="." method="_on_enter_name_button_up"]

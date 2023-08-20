@@ -1,12 +1,20 @@
+class_name Player
 extends Node2D
 
 @onready var currentRoom = get_node("../Room10") # Starting room
 var canMove := false
+var water := 34.0
 
 func _ready():
-	Events.connect("hugging", _on_hugging)
-	Events.connect("eat_player", _on_eat_player)
+	Events.hugging.connect(_on_hugging)
+	Events.eat_player.connect(_on_eat_player)
 	currentRoom.enter(self)
+
+func take_water(amount):
+	water = clamp(water-amount, 0, 100)
+	if water == 0:
+		return false
+	return true
 
 func just_entered_room(room): # Adjustments when entering
 	currentRoom = room
@@ -14,7 +22,7 @@ func just_entered_room(room): # Adjustments when entering
 	canMove = false
 	
 	# To activate effects in this room and to update position for flowers
-	Events.emit_signal("player_enter_room", currentRoom.roomNumber)
+	Events.player_enter_room.emit(currentRoom.roomNumber)
 	$MoveCooldown.start()
 
 func _on_move_cooldown_timeout():

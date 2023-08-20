@@ -5,7 +5,7 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	Events.connect("show_sell_flower_panel", _on_show_sell_flower_panel)
+	Events.show_sell_flower_panel.connect(_on_show_sell_flower_panel)
 	var icon = icon_scene.instantiate()
 	icon.set_anchors_preset(PRESET_FULL_RECT)
 	

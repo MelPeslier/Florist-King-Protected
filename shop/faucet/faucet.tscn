@@ -1,12 +1,23 @@
-[gd_scene load_steps=3 format=3 uid="uid://csveo1j7t4qrg"]
+[gd_scene load_steps=4 format=3 uid="uid://csveo1j7t4qrg"]
 
 [ext_resource type="Texture2D" uid="uid://du42px8cka3m1" path="res://shop/faucet/sprite/faucet.jpg" id="1_12uli"]
 [ext_resource type="Script" path="res://shop/faucet/faucet.gd" id="1_a05xx"]
 
-[node name="Faucet" type="Node2D" groups=["faucet"]]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cngvp"]
+size = Vector2(215, 238)
+
+[node name="Faucet" type="Area2D"]
 script = ExtResource("1_a05xx")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -112)
 scale = Vector2(0.186667, 0.186667)
 texture = ExtResource("1_12uli")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(-0.5, -109)
+shape = SubResource("RectangleShape2D_cngvp")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

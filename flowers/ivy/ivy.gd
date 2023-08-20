@@ -1,4 +1,4 @@
-extends SharedWaterSystem
+extends FlowerWater
 
 var hug_time :float = 0
 var min_hug_time :float = 4
@@ -11,23 +11,23 @@ func _ready() -> void:
 	super()
 		# Water
 	water = 33
-	min_perfect_water = 12
-	max_perfect_water = 18
-	water_decrease_speed = 2
-	water_increase_speed = 20
+	minPerfectWater = 12
+	maxPerfectWater = 18
+	waterDecrSpeed = 2
+	waterIncrSpeed = 20
 	
 	# Flower
-	sprite = $Sprite2D
+	
 	happiness = 1.5
-	min_happiness = 0.25
-	max_happiness = 1.5
-	happiness_decrease_speed = 21
-	happiness_increase_speed = 7
+	minHappiness = 0.25
+	maxHappiness = 1.5
+	happDecrSpeed = 21
+	happIncrSpeed = 7
 	sell_price = 10
 	
 	$HappinessGauge.update_gauge()
 	$WaterGauge.update_gauge()
-	Events.connect("manager_end", _on_manager_end)
+	Events.manager_end.connect(_on_manager_end)
 
 
 func _on_manager_end():
@@ -39,7 +39,7 @@ func _on_manager_end():
 				min_hug_time  *= ivy_coef 
 
 func _physics_process(delta) -> void:
-	if is_drinking and not is_hugging:
+	if isDrinking and not is_hugging:
 		drinking(delta)
 	else:
 		not_drinking(delta)
