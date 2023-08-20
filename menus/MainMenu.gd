@@ -6,11 +6,11 @@ const menuMusic = preload("res://audio/music/MenuTheme.ogg")
 
 @onready var audio_wrong = $AudioWrong
 
-
-#@onready var line_edit = $NameRegister/NameRegistering/VBoxContainer/MarginContainer/LineEdit
-#@onready var leaderboard_panel = $Leaderboards/LeaderboardPanel
-#@onready var credits_panel = $Credits/CreditsPanel
+@onready var line_edit = $NameRegister/NameRegistering/VBoxContainer/MarginContainer/LineEdit
 @onready var name_register = $NameRegister
+
+@onready var credits_control = $RightControl/SharedControl/CreditsControl
+@onready var leaderboard_control = $RightControl/SharedControl/LeaderboardControl
 
 
 func _ready():
@@ -28,24 +28,24 @@ func _ready():
 	if ScoreManager.score > 0:
 		leaderboard = true
 	else:
-#		leaderboard_panel.visible = leaderboard
-#		credits_panel.visible = false
+		leaderboard_control.visible = leaderboard
+		credits_control.visible = false
 		name_register.visible = false
 
 
 func _on_play_pressed():
 	name_register.visible = true
-#	line_edit.grab_focus()
+	line_edit.grab_focus()
 
 
 func _on_leaderboards_pressed():
-#	leaderboard_panel.visible = !leaderboard_panel.visible
-#	credits_panel.visible = !leaderboard_panel
+	leaderboard_control.visible = !leaderboard_control.visible
+	credits_control.visible = !leaderboard_control
 
 
 func _on_credits_pressed():
-#	credits_panel.visible = !credits_panel.visible
-#	leaderboard_panel.visible = !credits_panel
+	credits_control.visible = !credits_control.visible
+	leaderboard_control.visible = !credits_control
 
 
 func _on_quit_pressed():

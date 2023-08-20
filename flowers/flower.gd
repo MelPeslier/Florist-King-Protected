@@ -20,7 +20,7 @@ func _ready():
 	mouse_exited.connect(_on_mouse_exited)
 
 
-func _on_player_enter_room(room_number :int):
+func _on_player_enter_room(_room_number :int):
 	interaction()
 
 func add_happiness(amount = happIncrSpeed):

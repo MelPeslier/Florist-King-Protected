@@ -18,7 +18,7 @@ func _ready():
 
 func reset() -> void:
 	score = 0
-	dayNum = maxDay #for testing purposes
+	dayNum = 1 #for testing purposes
 	player_name = ""
 
 
