@@ -10,30 +10,20 @@ script = ExtResource("1_cyimn")
 roomNumber = 5
 
 [node name="Background" type="Sprite2D" parent="."]
-position = Vector2(117, 2)
 texture = ExtResource("2_vdg6n")
-
-[node name="DebugLabel" type="Label" parent="."]
-editor_description = "This will be removed before release"
-offset_left = -373.0
-offset_top = -280.0
-offset_right = -333.0
-offset_bottom = -210.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 48
-text = "5"
+metadata/_edit_lock_ = true
 
 [node name="Table" parent="." instance=ExtResource("4_yqe7k")]
 position = Vector2(-2, -4)
 
 [node name="Pot1" parent="Table" index="0"]
-position = Vector2(-265, 58)
+position = Vector2(-418, 24)
 
 [node name="Pot2" parent="Table" index="1"]
 position = Vector2(-12, 41)
 
 [node name="Pot3" parent="Table" index="2"]
-position = Vector2(224, 68)
+position = Vector2(440, 25)
 
 [node name="Arrows" type="CanvasLayer" parent="."]
 visible = false

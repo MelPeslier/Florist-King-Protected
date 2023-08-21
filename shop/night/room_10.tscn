@@ -9,18 +9,7 @@ script = ExtResource("1_h77w1")
 roomNumber = 10
 
 [node name="Background" type="Sprite2D" parent="."]
-position = Vector2(117, 2)
 texture = ExtResource("2_e1262")
-
-[node name="DebugLabel" type="Label" parent="."]
-editor_description = "This will be removed before release"
-offset_left = -395.0
-offset_top = -272.0
-offset_right = -341.0
-offset_bottom = -202.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 48
-text = "10"
 
 [node name="Arrows" type="CanvasLayer" parent="."]
 

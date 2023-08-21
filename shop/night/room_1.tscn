@@ -11,16 +11,6 @@ roomNumber = 1
 [node name="Background" type="Sprite2D" parent="."]
 texture = ExtResource("2_hbwda")
 
-[node name="DebugLabel" type="Label" parent="."]
-editor_description = "This will be removed before release"
-offset_left = -428.0
-offset_top = -267.0
-offset_right = -388.0
-offset_bottom = -197.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 48
-text = "1"
-
 [node name="Arrows" type="CanvasLayer" parent="."]
 visible = false
 

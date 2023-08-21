@@ -12,19 +12,8 @@ roomNumber = 3
 [node name="Background" type="Sprite2D" parent="."]
 texture = ExtResource("2_qgdpb")
 
-[node name="DebugLabel" type="Label" parent="."]
-editor_description = "This will be removed before release"
-offset_left = -245.0
-offset_top = -283.0
-offset_right = -205.0
-offset_bottom = -213.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 48
-text = "3
-"
-
 [node name="Faucet" parent="." instance=ExtResource("3_flfco")]
-position = Vector2(-296, 76)
+position = Vector2(-760, -8)
 
 [node name="Arrows" type="CanvasLayer" parent="."]
 visible = false

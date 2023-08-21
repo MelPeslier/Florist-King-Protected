@@ -13,24 +13,17 @@ roomNumber = 9
 texture = ExtResource("2_1vl4g")
 metadata/_edit_lock_ = true
 
-[node name="DebugLabel" type="Label" parent="."]
-editor_description = "This will be removed before release"
-offset_left = -428.0
-offset_top = -267.0
-offset_right = -388.0
-offset_bottom = -197.0
-theme_override_font_sizes/font_size = 48
-text = "9
-"
-
 [node name="Table" parent="." instance=ExtResource("4_rav7m")]
 position = Vector2(0, -5)
 
+[node name="Pot1" parent="Table" index="0"]
+position = Vector2(-416, 45)
+
 [node name="Pot2" parent="Table" index="1"]
-position = Vector2(-32, 117)
+position = Vector2(-40, 61)
 
 [node name="Pot3" parent="Table" index="2"]
-position = Vector2(232, 157)
+position = Vector2(352, 45)
 
 [node name="Arrows" type="CanvasLayer" parent="."]
 visible = false

@@ -11,25 +11,19 @@ roomNumber = 8
 
 [node name="Background" type="Sprite2D" parent="."]
 texture = ExtResource("2_ccuy3")
-
-[node name="DebugLabel" type="Label" parent="."]
-editor_description = "This will be removed before release"
-offset_left = -428.0
-offset_top = -267.0
-offset_right = -388.0
-offset_bottom = -197.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 48
-text = "8"
+metadata/_edit_lock_ = true
 
 [node name="Table" parent="." instance=ExtResource("4_q5i3t")]
 position = Vector2(2, -3)
 
 [node name="Pot1" parent="Table" index="0"]
-position = Vector2(-226, -69)
+position = Vector2(-474, 115)
 
 [node name="Pot2" parent="Table" index="1"]
-position = Vector2(14, -101)
+position = Vector2(-74, 131)
+
+[node name="Pot3" parent="Table" index="2"]
+position = Vector2(318, 99)
 
 [node name="Arrows" type="CanvasLayer" parent="."]
 visible = false
