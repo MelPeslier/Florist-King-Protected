@@ -4,8 +4,8 @@ const night = preload("res://shop/night/night_shop.tscn")
 const daymusicstart = preload("res://audio/music/day_shop_start.ogg")
 const daymusicloop = preload("res://audio/music/day_shop_loop.ogg")
 
-@onready var day_x_completed = $Control/HBoxContainer/VBoxContainer/MarginDay/DayXCompleted
-@onready var money_label = $Control/HBoxContainer/VBoxContainer/MoneyLabel
+@onready var day_x_completed = $Control/HBoxContainer/Control/VBoxContainer/MarginDay/DayXCompleted
+@onready var money_label = $Control/HBoxContainer/Control/VBoxContainer/MoneyLabel
 
 signal last_day()
 
