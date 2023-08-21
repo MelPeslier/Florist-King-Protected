@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://c0p8fhp5fkix5"]
 
 [ext_resource type="Script" path="res://shop/night/room.gd" id="1_cyimn"]
-[ext_resource type="Texture2D" uid="uid://c6eujct0bapm6" path="res://art/placeholder/rooms/Room5.PNG" id="2_sul0k"]
+[ext_resource type="Texture2D" uid="uid://cah5k6ayytrsp" path="res://art/placeholder/rooms/Room5.png" id="2_vdg6n"]
 [ext_resource type="Texture2D" uid="uid://be5yxlfsoxp5y" path="res://art/placeholder/HUD/Arrow.png" id="3_1rysi"]
 [ext_resource type="PackedScene" uid="uid://oh8gi3dswlng" path="res://commons/table/table.tscn" id="4_yqe7k"]
 
@@ -11,8 +11,7 @@ roomNumber = 5
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(117, 2)
-scale = Vector2(2.5, 2.5)
-texture = ExtResource("2_sul0k")
+texture = ExtResource("2_vdg6n")
 
 [node name="DebugLabel" type="Label" parent="."]
 editor_description = "This will be removed before release"
@@ -27,13 +26,13 @@ text = "5"
 [node name="Table" parent="." instance=ExtResource("4_yqe7k")]
 position = Vector2(-2, -4)
 
-[node name="Pot1" parent="Table" index="1"]
+[node name="Pot1" parent="Table" index="0"]
 position = Vector2(-265, 58)
 
-[node name="Pot2" parent="Table" index="2"]
+[node name="Pot2" parent="Table" index="1"]
 position = Vector2(-12, 41)
 
-[node name="Pot3" parent="Table" index="3"]
+[node name="Pot3" parent="Table" index="2"]
 position = Vector2(224, 68)
 
 [node name="Arrows" type="CanvasLayer" parent="."]

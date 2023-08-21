@@ -23,9 +23,11 @@ func _ready():
 func _on_player_enter_room(_room_number :int):
 	interaction()
 
+
 func add_happiness(amount = happIncrSpeed):
 	happiness += amount
 	happiness = min(happiness, maxHappiness)
+
 
 func remove_happiness(amount = happDecrSpeed):
 	happiness -= amount

@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bp8bd6s36skh6"]
 
 [ext_resource type="Script" path="res://shop/night/room.gd" id="1_2p71r"]
-[ext_resource type="Texture2D" uid="uid://d25tvmkkoqnbo" path="res://art/placeholder/rooms/Room2.PNG" id="2_lxy8n"]
+[ext_resource type="Texture2D" uid="uid://d4m5d3776wyh4" path="res://art/placeholder/rooms/Room2.png" id="2_ha157"]
 [ext_resource type="Texture2D" uid="uid://be5yxlfsoxp5y" path="res://art/placeholder/HUD/Arrow.png" id="3_quxrs"]
 
 [node name="Room2" type="Node2D"]
@@ -9,9 +9,7 @@ script = ExtResource("1_2p71r")
 roomNumber = 2
 
 [node name="Background" type="Sprite2D" parent="."]
-position = Vector2(117, 2)
-scale = Vector2(2.5, 2.5)
-texture = ExtResource("2_lxy8n")
+texture = ExtResource("2_ha157")
 
 [node name="DebugLabel" type="Label" parent="."]
 editor_description = "This will be removed before release"

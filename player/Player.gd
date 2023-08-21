@@ -10,11 +10,13 @@ func _ready():
 	Events.eat_player.connect(_on_eat_player)
 	currentRoom.enter(self)
 
+
 func take_water(amount):
 	water = clamp(water-amount, 0, 100)
 	if water == 0:
 		return false
 	return true
+
 
 func just_entered_room(room): # Adjustments when entering
 	currentRoom = room
@@ -25,9 +27,11 @@ func just_entered_room(room): # Adjustments when entering
 	Events.player_enter_room.emit(currentRoom.roomNumber)
 	$MoveCooldown.start()
 
+
 func _on_move_cooldown_timeout():
 	currentRoom.arrows.visible = true
 	canMove = true
+
 
 # Called at the start of hug and at the end of hug
 func _on_hugging(is_hugging) -> void:
@@ -37,6 +41,7 @@ func _on_hugging(is_hugging) -> void:
 	else:
 		currentRoom.arrows.visible = true
 		canMove = true
+
 
 # Death : End of game
 func _on_eat_player():
