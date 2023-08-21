@@ -44,6 +44,7 @@ func _physics_process(delta) -> void:
 	else:
 		not_drinking(delta)
 
+
 func not_drinking(delta):
 	super(delta)
 	
@@ -53,10 +54,12 @@ func not_drinking(delta):
 			Events.emmit("hugging", false)
 			is_hugging = false
 
+
 func interacttion() -> void:
 	if hug_time <= 0 :
 		Events.emmit("hugging", true)
 		is_hugging = true
+
 
 func sell_flower() -> float:
 	return sell_price * happiness * clamp(hug_time, 1, max_hug_time)

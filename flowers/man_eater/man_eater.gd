@@ -62,6 +62,7 @@ func _physics_process(delta) -> void:
 	
 	else:
 		if seen_player_room != 0:
+			happiness = min(happiness, happiness + 0.25, max_happiness)
 			go_to_room(seen_player_room)
 
 func go_to_room(number :int) -> void:

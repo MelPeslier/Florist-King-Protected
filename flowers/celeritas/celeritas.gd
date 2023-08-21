@@ -71,9 +71,11 @@ func not_drinking(delta) -> void:
 				10:
 					escape()
 
+
 func go_to_room(number :int) -> void:
 	travel_time = the_travel_time
 	flower_room = number
+
 
 # Free Flower + Events related
 func escape() -> void:
