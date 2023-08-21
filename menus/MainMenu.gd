@@ -6,11 +6,11 @@ const menuMusic = preload("res://audio/music/MenuTheme.ogg")
 
 @onready var audio_wrong = $AudioWrong
 
-@onready var line_edit = $NameRegister/NameRegistering/VBoxContainer/MarginContainer/LineEdit
+@onready var line_edit = $NameRegister/Splitscreen/NameRegistering/VBoxContainer/CenterAll/VBoxContainer/LineEdit
 @onready var name_register = $NameRegister
 
-@onready var credits_control = $RightControl/SharedControl/CreditsControl
-@onready var leaderboard_control = $RightControl/SharedControl/LeaderboardControl
+@onready var credits_control = $UI/UISplit/RightControl/SharedControl/CreditsControl
+@onready var leaderboard_control = $UI/UISplit/RightControl/SharedControl/LeaderboardControl
 
 
 func _ready():

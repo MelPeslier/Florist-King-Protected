@@ -22,93 +22,133 @@ bg_color = Color(0, 0, 0, 0.25098)
 [node name="MainMenu" type="CanvasLayer"]
 script = ExtResource("1_g8514")
 
-[node name="Background" type="TextureRect" parent="."]
-offset_right = 1000.0
-offset_bottom = 600.0
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="TextureRect" parent="UI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("2_7rebt")
 expand_mode = 1
 
-[node name="LeftControl" type="Control" parent="."]
-custom_minimum_size = Vector2(500, 600)
-layout_mode = 3
-anchors_preset = 0
-offset_right = 500.0
-offset_bottom = 600.0
+[node name="UISplit" type="HBoxContainer" parent="UI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="ColorRect" type="ColorRect" parent="LeftControl"]
-offset_right = 500.0
-offset_bottom = 600.0
+[node name="LeftControl" type="Control" parent="UI/UISplit"]
+custom_minimum_size = Vector2(500, 600)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ColorRect" type="ColorRect" parent="UI/UISplit/LeftControl"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 color = Color(0, 0, 0, 0.25098)
 metadata/_edit_lock_ = true
 
-[node name="Label" type="Label" parent="LeftControl"]
-offset_left = 27.0
-offset_top = 65.0
-offset_right = 466.0
-offset_bottom = 157.0
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/UISplit/LeftControl"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="CenterTitle" type="CenterContainer" parent="UI/UISplit/LeftControl/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="UI/UISplit/LeftControl/VBoxContainer/CenterTitle"]
+layout_mode = 2
 theme_override_constants/outline_size = 3
 theme_override_fonts/font = ExtResource("3_jeus4")
-theme_override_font_sizes/font_size = 72
+theme_override_font_sizes/font_size = 135
 text = "Florist King"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="MainButtons" type="VBoxContainer" parent="LeftControl"]
-offset_left = 27.0
-offset_top = 181.0
-offset_right = 421.0
-offset_bottom = 551.0
-size_flags_vertical = 3
-theme_override_constants/separation = 30
-
-[node name="Play" type="Button" parent="LeftControl/MainButtons"]
+[node name="CenterContainer" type="CenterContainer" parent="UI/UISplit/LeftControl/VBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MainButtons" type="VBoxContainer" parent="UI/UISplit/LeftControl/VBoxContainer/CenterContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 60
+
+[node name="Play" type="Button" parent="UI/UISplit/LeftControl/VBoxContainer/CenterContainer/MainButtons"]
+layout_mode = 2
+size_flags_vertical = 3
 focus_mode = 0
 theme_override_fonts/font = ExtResource("3_jeus4")
-theme_override_font_sizes/font_size = 48
+theme_override_font_sizes/font_size = 70
 theme_override_styles/normal = SubResource("StyleBoxEmpty_2csbd")
 theme_override_styles/hover = SubResource("StyleBoxFlat_teura")
 text = " Play"
 alignment = 0
 
-[node name="Leaderboards" type="Button" parent="LeftControl/MainButtons"]
+[node name="Leaderboards" type="Button" parent="UI/UISplit/LeftControl/VBoxContainer/CenterContainer/MainButtons"]
 layout_mode = 2
+size_flags_vertical = 3
 focus_mode = 0
 theme_override_fonts/font = ExtResource("3_jeus4")
-theme_override_font_sizes/font_size = 48
+theme_override_font_sizes/font_size = 70
 theme_override_styles/normal = SubResource("StyleBoxEmpty_2bo0a")
 theme_override_styles/hover = SubResource("StyleBoxFlat_43a2j")
 text = " Leaderboards"
 alignment = 0
 
-[node name="Credits" type="Button" parent="LeftControl/MainButtons"]
+[node name="Credits" type="Button" parent="UI/UISplit/LeftControl/VBoxContainer/CenterContainer/MainButtons"]
 layout_mode = 2
+size_flags_vertical = 3
 focus_mode = 0
 theme_override_fonts/font = ExtResource("3_jeus4")
-theme_override_font_sizes/font_size = 48
+theme_override_font_sizes/font_size = 70
 theme_override_styles/normal = SubResource("StyleBoxEmpty_2bo0a")
 theme_override_styles/hover = SubResource("StyleBoxFlat_43a2j")
 text = " Credits"
 alignment = 0
 
-[node name="Quit" type="Button" parent="LeftControl/MainButtons"]
+[node name="Quit" type="Button" parent="UI/UISplit/LeftControl/VBoxContainer/CenterContainer/MainButtons"]
 layout_mode = 2
+size_flags_vertical = 3
 focus_mode = 0
 theme_override_fonts/font = ExtResource("3_jeus4")
-theme_override_font_sizes/font_size = 48
+theme_override_font_sizes/font_size = 70
 theme_override_styles/normal = SubResource("StyleBoxEmpty_2bo0a")
 theme_override_styles/hover = SubResource("StyleBoxFlat_43a2j")
 text = " Quit"
 alignment = 0
 
-[node name="RightControl" type="Control" parent="."]
-custom_minimum_size = Vector2(500, 600)
-layout_mode = 3
-anchors_preset = 0
-offset_left = 500.0
-offset_right = 1000.0
-offset_bottom = 600.0
+[node name="MarginDummy" type="MarginContainer" parent="UI/UISplit/LeftControl/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
 
-[node name="SharedControl" type="Control" parent="RightControl"]
-custom_minimum_size = Vector2(350, 500)
+[node name="RightControl" type="Control" parent="UI/UISplit"]
+custom_minimum_size = Vector2(500, 600)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="SharedControl" type="Control" parent="UI/UISplit/RightControl"]
+custom_minimum_size = Vector2(750, 900)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -122,8 +162,7 @@ offset_bottom = 250.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="CreditsControl" type="Control" parent="RightControl/SharedControl"]
-visible = false
+[node name="CreditsControl" type="Control" parent="UI/UISplit/RightControl/SharedControl"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -133,7 +172,7 @@ grow_vertical = 2
 metadata/_edit_lock_ = true
 metadata/_edit_group_ = true
 
-[node name="CreditBackground" type="ColorRect" parent="RightControl/SharedControl/CreditsControl"]
+[node name="CreditBackground" type="ColorRect" parent="UI/UISplit/RightControl/SharedControl/CreditsControl"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -143,7 +182,7 @@ grow_vertical = 2
 color = Color(0, 0, 0, 0.25098)
 metadata/_edit_lock_ = true
 
-[node name="CreditsPanel" type="Label" parent="RightControl/SharedControl/CreditsControl"]
+[node name="CreditsPanel" type="Label" parent="UI/UISplit/RightControl/SharedControl/CreditsControl"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -151,23 +190,20 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("3_jeus4")
-text = "Programmers:
-Garett Skott, mel, Kuro, 
-Dominic, Roddur
+theme_override_font_sizes/font_size = 44
+text = "Garett Skott
+Mel Peslier
 
-Artist:
-eg
-
-Music / SFX:
-SerTune9, Jeg, 
-ryanindoors
+SerTune9
+Jeg 
+Ryanindoors
 
 "
 horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_lock_ = true
 
-[node name="LeaderboardControl" type="Control" parent="RightControl/SharedControl"]
+[node name="LeaderboardControl" type="Control" parent="UI/UISplit/RightControl/SharedControl"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -178,7 +214,7 @@ script = ExtResource("4_3aoqa")
 metadata/_edit_lock_ = true
 metadata/_edit_group_ = true
 
-[node name="LBBackground" type="ColorRect" parent="RightControl/SharedControl/LeaderboardControl"]
+[node name="LBBackground" type="ColorRect" parent="UI/UISplit/RightControl/SharedControl/LeaderboardControl"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -187,7 +223,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.25098)
 
-[node name="LBMargin" type="MarginContainer" parent="RightControl/SharedControl/LeaderboardControl"]
+[node name="LBMargin" type="MarginContainer" parent="UI/UISplit/RightControl/SharedControl/LeaderboardControl"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -199,34 +235,39 @@ theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
 
-[node name="LBScroll" type="ScrollContainer" parent="RightControl/SharedControl/LeaderboardControl/LBMargin"]
+[node name="LBScroll" type="ScrollContainer" parent="UI/UISplit/RightControl/SharedControl/LeaderboardControl/LBMargin"]
 layout_mode = 2
 
-[node name="LBVbox" type="VBoxContainer" parent="RightControl/SharedControl/LeaderboardControl/LBMargin/LBScroll"]
+[node name="LBVbox" type="VBoxContainer" parent="UI/UISplit/RightControl/SharedControl/LeaderboardControl/LBMargin/LBScroll"]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_constants/separation = 0
+theme_override_constants/separation = 5
 
 [node name="NameRegister" type="CanvasLayer" parent="."]
 layer = 2
-visible = false
 
-[node name="NameRegistering" type="Control" parent="NameRegister"]
-layout_mode = 3
+[node name="Splitscreen" type="HBoxContainer" parent="NameRegister"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = -500.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 3
 
-[node name="ColorRect" type="ColorRect" parent="NameRegister/NameRegistering"]
+[node name="NameRegistering" type="Control" parent="NameRegister/Splitscreen"]
 layout_mode = 2
-offset_right = 500.0
-offset_bottom = 600.0
+size_flags_horizontal = 3
+
+[node name="ColorRect" type="ColorRect" parent="NameRegister/Splitscreen/NameRegistering"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 color = Color(0.258824, 0, 0.0352941, 1)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="NameRegister/NameRegistering"]
+[node name="VBoxContainer" type="VBoxContainer" parent="NameRegister/Splitscreen/NameRegistering"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -234,56 +275,61 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="NameRegister/NameRegistering/VBoxContainer"]
+[node name="CenterAll" type="CenterContainer" parent="NameRegister/Splitscreen/NameRegistering/VBoxContainer"]
 layout_mode = 2
-theme_override_constants/margin_top = 250
+size_flags_vertical = 3
 
-[node name="LineEdit" type="LineEdit" parent="NameRegister/NameRegistering/VBoxContainer/MarginContainer"]
-custom_minimum_size = Vector2(400, 70)
+[node name="VBoxContainer" type="VBoxContainer" parent="NameRegister/Splitscreen/NameRegistering/VBoxContainer/CenterAll"]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="LineEdit" type="LineEdit" parent="NameRegister/Splitscreen/NameRegistering/VBoxContainer/CenterAll/VBoxContainer"]
+custom_minimum_size = Vector2(600, 90)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_fonts/font = ExtResource("3_jeus4")
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 40
 placeholder_text = "Enter your name"
 alignment = 1
-max_length = 30
+max_length = 25
 caret_blink = true
 
-[node name="TopMargin" type="MarginContainer" parent="NameRegister/NameRegistering/VBoxContainer"]
-layout_mode = 2
-theme_override_constants/margin_top = 30
-
-[node name="HBoxContainer" type="HBoxContainer" parent="NameRegister/NameRegistering/VBoxContainer/TopMargin"]
+[node name="HBoxContainer" type="HBoxContainer" parent="NameRegister/Splitscreen/NameRegistering/VBoxContainer/CenterAll/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="BackMargin" type="MarginContainer" parent="NameRegister/NameRegistering/VBoxContainer/TopMargin/HBoxContainer"]
+[node name="BackMargin" type="MarginContainer" parent="NameRegister/Splitscreen/NameRegistering/VBoxContainer/CenterAll/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 theme_override_constants/margin_left = 30
 theme_override_constants/margin_right = 30
 
-[node name="Back" type="Button" parent="NameRegister/NameRegistering/VBoxContainer/TopMargin/HBoxContainer/BackMargin"]
-custom_minimum_size = Vector2(110, 0)
+[node name="Back" type="Button" parent="NameRegister/Splitscreen/NameRegistering/VBoxContainer/CenterAll/VBoxContainer/HBoxContainer/BackMargin"]
+custom_minimum_size = Vector2(120, 80)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_jeus4")
-theme_override_font_sizes/font_size = 31
+theme_override_font_sizes/font_size = 37
 text = "Back
 "
 
-[node name="ContinueMargin" type="MarginContainer" parent="NameRegister/NameRegistering/VBoxContainer/TopMargin/HBoxContainer"]
+[node name="ContinueMargin" type="MarginContainer" parent="NameRegister/Splitscreen/NameRegistering/VBoxContainer/CenterAll/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(200, 70)
 layout_mode = 2
 theme_override_constants/margin_left = 30
 theme_override_constants/margin_right = 30
 
-[node name="EnterName" type="Button" parent="NameRegister/NameRegistering/VBoxContainer/TopMargin/HBoxContainer/ContinueMargin"]
-custom_minimum_size = Vector2(200, 0)
+[node name="EnterName" type="Button" parent="NameRegister/Splitscreen/NameRegistering/VBoxContainer/CenterAll/VBoxContainer/HBoxContainer/ContinueMargin"]
+custom_minimum_size = Vector2(220, 80)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_jeus4")
-theme_override_font_sizes/font_size = 31
+theme_override_font_sizes/font_size = 37
 text = "Continue"
+
+[node name="MarginDummy" type="MarginContainer" parent="NameRegister/Splitscreen"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
 
 [node name="Audio" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_dlyhx")
@@ -291,12 +337,12 @@ stream = ExtResource("4_dlyhx")
 [node name="AudioWrong" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_2msp6")
 
-[connection signal="button_up" from="LeftControl/MainButtons/Play" to="." method="_on_play_pressed"]
-[connection signal="button_up" from="LeftControl/MainButtons/Leaderboards" to="." method="_on_leaderboards_pressed"]
-[connection signal="mouse_entered" from="LeftControl/MainButtons/Credits" to="." method="_on_mouse_entered"]
-[connection signal="pressed" from="LeftControl/MainButtons/Credits" to="." method="_on_credits_pressed"]
-[connection signal="button_up" from="LeftControl/MainButtons/Quit" to="." method="_on_quit_pressed"]
-[connection signal="button_up" from="NameRegister/NameRegistering/VBoxContainer/TopMargin/HBoxContainer/BackMargin/Back" to="." method="_on_back_button_up"]
-[connection signal="mouse_entered" from="NameRegister/NameRegistering/VBoxContainer/TopMargin/HBoxContainer/BackMargin/Back" to="." method="_on_mouse_entered"]
-[connection signal="button_up" from="NameRegister/NameRegistering/VBoxContainer/TopMargin/HBoxContainer/ContinueMargin/EnterName" to="." method="_on_enter_name_button_up"]
-[connection signal="mouse_entered" from="NameRegister/NameRegistering/VBoxContainer/TopMargin/HBoxContainer/ContinueMargin/EnterName" to="." method="_on_mouse_entered"]
+[connection signal="button_up" from="UI/UISplit/LeftControl/VBoxContainer/CenterContainer/MainButtons/Play" to="." method="_on_play_pressed"]
+[connection signal="button_up" from="UI/UISplit/LeftControl/VBoxContainer/CenterContainer/MainButtons/Leaderboards" to="." method="_on_leaderboards_pressed"]
+[connection signal="mouse_entered" from="UI/UISplit/LeftControl/VBoxContainer/CenterContainer/MainButtons/Credits" to="." method="_on_mouse_entered"]
+[connection signal="pressed" from="UI/UISplit/LeftControl/VBoxContainer/CenterContainer/MainButtons/Credits" to="." method="_on_credits_pressed"]
+[connection signal="button_up" from="UI/UISplit/LeftControl/VBoxContainer/CenterContainer/MainButtons/Quit" to="." method="_on_quit_pressed"]
+[connection signal="button_up" from="NameRegister/Splitscreen/NameRegistering/VBoxContainer/CenterAll/VBoxContainer/HBoxContainer/BackMargin/Back" to="." method="_on_back_button_up"]
+[connection signal="mouse_entered" from="NameRegister/Splitscreen/NameRegistering/VBoxContainer/CenterAll/VBoxContainer/HBoxContainer/BackMargin/Back" to="." method="_on_mouse_entered"]
+[connection signal="button_up" from="NameRegister/Splitscreen/NameRegistering/VBoxContainer/CenterAll/VBoxContainer/HBoxContainer/ContinueMargin/EnterName" to="." method="_on_enter_name_button_up"]
+[connection signal="mouse_entered" from="NameRegister/Splitscreen/NameRegistering/VBoxContainer/CenterAll/VBoxContainer/HBoxContainer/ContinueMargin/EnterName" to="." method="_on_mouse_entered"]
