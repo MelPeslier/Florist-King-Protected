@@ -22,7 +22,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(500, 0)]
+"values": [Vector2(960, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_wtjc8"]
@@ -48,8 +48,8 @@ _data = {
 }
 
 [node name="DaySummary" type="CanvasLayer"]
-offset = Vector2(500, 0)
-transform = Transform2D(1, 0, 0, 1, 500, 0)
+offset = Vector2(960, 0)
+transform = Transform2D(1, 0, 0, 1, 960, 0)
 script = ExtResource("1_pifg5")
 
 [node name="Control" type="Control" parent="."]
@@ -72,17 +72,33 @@ grow_vertical = 2
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/HBoxContainer"]
+[node name="Control" type="Control" parent="Control/HBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ColorRect" type="ColorRect" parent="Control/HBoxContainer/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0.25098)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/HBoxContainer/Control"]
+layout_mode = 2
+offset_left = 4.0
+offset_right = 960.0
+offset_bottom = 1080.0
 size_flags_horizontal = 3
 alignment = 1
 
-[node name="MarginDay" type="MarginContainer" parent="Control/HBoxContainer/VBoxContainer"]
+[node name="MarginDay" type="MarginContainer" parent="Control/HBoxContainer/Control/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/margin_top = 50
 theme_override_constants/margin_bottom = 25
 
-[node name="DayXCompleted" type="Label" parent="Control/HBoxContainer/VBoxContainer/MarginDay"]
+[node name="DayXCompleted" type="Label" parent="Control/HBoxContainer/Control/VBoxContainer/MarginDay"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_82hu8")
 theme_override_font_sizes/font_size = 90
@@ -90,7 +106,7 @@ text = "Day X completed!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="MoneyLabel" type="Label" parent="Control/HBoxContainer/VBoxContainer"]
+[node name="MoneyLabel" type="Label" parent="Control/HBoxContainer/Control/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("2_82hu8")
@@ -99,12 +115,12 @@ text = " You've earned: 999 €"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="MarginContinue" type="MarginContainer" parent="Control/HBoxContainer/VBoxContainer"]
+[node name="MarginContinue" type="MarginContainer" parent="Control/HBoxContainer/Control/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/margin_top = 25
 theme_override_constants/margin_bottom = 50
 
-[node name="Continue" type="Button" parent="Control/HBoxContainer/VBoxContainer/MarginContinue"]
+[node name="Continue" type="Button" parent="Control/HBoxContainer/Control/VBoxContainer/MarginContinue"]
 layout_mode = 2
 focus_mode = 0
 theme_override_fonts/font = ExtResource("2_82hu8")
@@ -113,16 +129,10 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_hpf1f")
 theme_override_styles/hover = SubResource("StyleBoxFlat_qbnjm")
 text = " Continue"
 
-[node name="ColorRect" type="ColorRect" parent="."]
-offset_bottom = 40.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(1, 1, 1, 0.25098)
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "come_in"
 libraries = {
 "": SubResource("AnimationLibrary_7mmr0")
 }
 
-[connection signal="pressed" from="Control/HBoxContainer/VBoxContainer/MarginContinue/Continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="Control/HBoxContainer/Control/VBoxContainer/MarginContinue/Continue" to="." method="_on_continue_pressed"]

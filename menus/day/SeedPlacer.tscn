@@ -1,314 +1,155 @@
-[gd_scene load_steps=3 format=3 uid="uid://1duxwwc7pbei"]
+[gd_scene load_steps=4 format=3 uid="uid://1duxwwc7pbei"]
 
 [ext_resource type="Script" path="res://menus/day/SeedPlacer.gd" id="1_v3ewy"]
 [ext_resource type="Texture2D" uid="uid://b6exm4g4mew50" path="res://shop/sprite/shop_plan.png" id="2_4mknd"]
+[ext_resource type="PackedScene" uid="uid://d1mhsgt40cmet" path="res://menus/day/Pots.tscn" id="3_oaucd"]
 
 [node name="SeedPlacer" type="Control"]
 custom_minimum_size = Vector2(259, 332)
 layout_direction = 1
 layout_mode = 3
 anchors_preset = 0
-offset_right = 259.0
-offset_bottom = 332.0
+offset_right = 501.0
+offset_bottom = 661.0
 script = ExtResource("1_v3ewy")
+metadata/_edit_group_ = true
 
 [node name="TextureRect" type="TextureRect" parent="."]
 self_modulate = Color(1, 1, 1, 0.905882)
 custom_minimum_size = Vector2(283, 363)
-layout_mode = 0
-offset_right = 283.0
-offset_bottom = 363.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("2_4mknd")
 
-[node name="Room4" type="Panel" parent="."]
+[node name="All" type="HBoxContainer" parent="."]
 layout_mode = 1
-offset_left = -98.0
-offset_right = -98.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Left" type="VBoxContainer" parent="All"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Room6" type="GridContainer" parent="All/Left"]
+layout_mode = 2
+size_flags_vertical = 3
+columns = 2
 metadata/_edit_lock_ = true
 metadata/_edit_group_ = true
 
-[node name="Pot1" type="Control" parent="Room4"]
-custom_minimum_size = Vector2(40, 40)
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 98.0
-offset_top = 230.0
-offset_right = 138.0
-offset_bottom = 270.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-metadata/_edit_group_ = true
+[node name="Pot2" parent="All/Left/Room6" groups=["Room6Pot"] instance=ExtResource("3_oaucd")]
+layout_mode = 2
 
-[node name="Pot2" type="Control" parent="Room4"]
-custom_minimum_size = Vector2(40, 40)
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 98.0
-offset_top = 180.0
-offset_right = 138.0
-offset_bottom = 220.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-metadata/_edit_group_ = true
+[node name="Pot3" parent="All/Left/Room6" groups=["Room6Pot"] instance=ExtResource("3_oaucd")]
+layout_mode = 2
 
-[node name="Pot3" type="Control" parent="Room4"]
-custom_minimum_size = Vector2(40, 40)
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 98.0
-offset_top = 132.0
-offset_right = 138.0
-offset_bottom = 172.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-metadata/_edit_group_ = true
+[node name="Pot1" parent="All/Left/Room6" groups=["Room6Pot"] instance=ExtResource("3_oaucd")]
+layout_mode = 2
 
-[node name="Room5" type="Panel" parent="."]
-layout_mode = 0
-offset_left = 102.0
-offset_right = 102.0
+[node name="Split" type="HBoxContainer" parent="All/Left"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Room4" type="VBoxContainer" parent="All/Left/Split"]
+layout_mode = 2
+size_flags_horizontal = 3
 metadata/_edit_lock_ = true
 metadata/_edit_group_ = true
 
-[node name="Pot1" type="Control" parent="Room5"]
-custom_minimum_size = Vector2(40, 40)
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -3.0
-offset_top = 132.0
-offset_right = 37.0
-offset_bottom = 172.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-metadata/_edit_group_ = true
+[node name="Pot3" parent="All/Left/Split/Room4" groups=["Room4Pot"] instance=ExtResource("3_oaucd")]
+layout_mode = 2
 
-[node name="Pot2" type="Control" parent="Room5"]
-custom_minimum_size = Vector2(40, 40)
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -3.0
-offset_top = 180.0
-offset_right = 37.0
-offset_bottom = 220.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-metadata/_edit_group_ = true
+[node name="Pot2" parent="All/Left/Split/Room4" groups=["Room4Pot"] instance=ExtResource("3_oaucd")]
+layout_mode = 2
 
-[node name="Pot3" type="Control" parent="Room5"]
-custom_minimum_size = Vector2(40, 40)
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -3.0
-offset_top = 225.0
-offset_right = 37.0
-offset_bottom = 265.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-metadata/_edit_group_ = true
+[node name="Pot1" parent="All/Left/Split/Room4" groups=["Room4Pot"] instance=ExtResource("3_oaucd")]
+layout_mode = 2
 
-[node name="Room6" type="Panel" parent="."]
-layout_mode = 0
+[node name="Room5" type="VBoxContainer" parent="All/Left/Split"]
+layout_mode = 2
+size_flags_horizontal = 3
 metadata/_edit_lock_ = true
 metadata/_edit_group_ = true
 
-[node name="Pot1" type="Control" parent="Room6"]
-custom_minimum_size = Vector2(40, 40)
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = 56.0
-offset_right = 40.0
-offset_bottom = 96.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-metadata/_edit_group_ = true
+[node name="Pot1" parent="All/Left/Split/Room5" groups=["Room5Pot"] instance=ExtResource("3_oaucd")]
+layout_mode = 2
 
-[node name="Pot2" type="Control" parent="Room6"]
-custom_minimum_size = Vector2(40, 40)
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_right = 40.0
-offset_bottom = 40.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-metadata/_edit_group_ = true
+[node name="Pot2" parent="All/Left/Split/Room5" groups=["Room5Pot"] instance=ExtResource("3_oaucd")]
+layout_mode = 2
 
-[node name="Pot3" type="Control" parent="Room6"]
-custom_minimum_size = Vector2(40, 40)
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 62.0
-offset_right = 102.0
-offset_bottom = 40.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-metadata/_edit_group_ = true
+[node name="Pot3" parent="All/Left/Split/Room5" groups=["Room5Pot"] instance=ExtResource("3_oaucd")]
+layout_mode = 2
 
-[node name="Room7" type="Panel" parent="."]
-layout_mode = 0
+[node name="MarginDummy" type="MarginContainer" parent="All/Left"]
+custom_minimum_size = Vector2(0, 160)
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Right" type="VBoxContainer" parent="All"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Room7" type="GridContainer" parent="All/Right"]
+layout_mode = 2
+size_flags_vertical = 3
+columns = 2
 metadata/_edit_lock_ = true
 metadata/_edit_group_ = true
 
-[node name="Pot1" type="Control" parent="Room7"]
-custom_minimum_size = Vector2(40, 40)
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 172.0
-offset_right = 212.0
-offset_bottom = 40.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-metadata/_edit_group_ = true
+[node name="Pot1" parent="All/Right/Room7" groups=["Room7Pot"] instance=ExtResource("3_oaucd")]
+layout_mode = 2
 
-[node name="Pot2" type="Control" parent="Room7"]
-custom_minimum_size = Vector2(40, 40)
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 243.0
-offset_right = 283.0
-offset_bottom = 40.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-metadata/_edit_group_ = true
+[node name="Pot2" parent="All/Right/Room7" groups=["Room7Pot"] instance=ExtResource("3_oaucd")]
+layout_mode = 2
 
-[node name="Pot3" type="Control" parent="Room7"]
-custom_minimum_size = Vector2(40, 40)
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 243.0
-offset_top = 56.0
-offset_right = 283.0
-offset_bottom = 96.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-metadata/_edit_group_ = true
+[node name="MarginDummy" type="MarginContainer" parent="All/Right/Room7"]
+layout_mode = 2
 
-[node name="Room8" type="Panel" parent="."]
-layout_mode = 0
+[node name="Pot3" parent="All/Right/Room7" groups=["Room7Pot"] instance=ExtResource("3_oaucd")]
+layout_mode = 2
+
+[node name="Split" type="HBoxContainer" parent="All/Right"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Room8" type="VBoxContainer" parent="All/Right/Split"]
+layout_mode = 2
+size_flags_horizontal = 3
 metadata/_edit_lock_ = true
 metadata/_edit_group_ = true
 
-[node name="Pot1" type="Control" parent="Room8"]
-custom_minimum_size = Vector2(40, 40)
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 145.0
-offset_top = 230.0
-offset_right = 185.0
-offset_bottom = 270.0
-grow_horizontal = 2
-grow_vertical = 2
-metadata/_edit_group_ = true
+[node name="Pot1" parent="All/Right/Split/Room8" groups=["Room8Pot"] instance=ExtResource("3_oaucd")]
+layout_mode = 2
 
-[node name="Pot2" type="Control" parent="Room8"]
-custom_minimum_size = Vector2(40, 40)
-layout_mode = 1
-anchors_preset = 0
-offset_left = 145.0
-offset_top = 180.0
-offset_right = 185.0
-offset_bottom = 220.0
-mouse_filter = 2
-metadata/_edit_group_ = true
+[node name="Pot2" parent="All/Right/Split/Room8" groups=["Room8Pot"] instance=ExtResource("3_oaucd")]
+layout_mode = 2
 
-[node name="Pot3" type="Control" parent="Room8"]
-custom_minimum_size = Vector2(40, 40)
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 145.0
-offset_top = 132.0
-offset_right = 185.0
-offset_bottom = 172.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-metadata/_edit_group_ = true
+[node name="Pot3" parent="All/Right/Split/Room8" groups=["Room8Pot"] instance=ExtResource("3_oaucd")]
+layout_mode = 2
 
-[node name="Room9" type="Panel" parent="."]
-layout_mode = 0
+[node name="Room9" type="VBoxContainer" parent="All/Right/Split"]
+layout_mode = 2
+size_flags_horizontal = 3
 metadata/_edit_lock_ = true
 metadata/_edit_group_ = true
 
-[node name="Pot1" type="Control" parent="Room9"]
-custom_minimum_size = Vector2(40, 40)
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 243.0
-offset_top = 132.0
-offset_right = 283.0
-offset_bottom = 172.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-metadata/_edit_group_ = true
+[node name="Pot1" parent="All/Right/Split/Room9" groups=["Room9Pot"] instance=ExtResource("3_oaucd")]
+layout_mode = 2
 
-[node name="Pot2" type="Control" parent="Room9"]
-custom_minimum_size = Vector2(40, 40)
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 243.0
-offset_top = 180.0
-offset_right = 283.0
-offset_bottom = 220.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-metadata/_edit_group_ = true
+[node name="Pot2" parent="All/Right/Split/Room9" groups=["Room9Pot"] instance=ExtResource("3_oaucd")]
+layout_mode = 2
 
-[node name="Pot3" type="Control" parent="Room9"]
-custom_minimum_size = Vector2(40, 40)
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 243.0
-offset_top = 230.0
-offset_right = 283.0
-offset_bottom = 270.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-metadata/_edit_group_ = true
+[node name="Pot3" parent="All/Right/Split/Room9" groups=["Room9Pot"] instance=ExtResource("3_oaucd")]
+layout_mode = 2
+
+[node name="MarginDummy" type="MarginContainer" parent="All/Right"]
+custom_minimum_size = Vector2(0, 160)
+layout_mode = 2
+size_flags_vertical = 4

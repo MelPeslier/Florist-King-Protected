@@ -7,12 +7,16 @@ clip_contents = true
 custom_minimum_size = Vector2(100, 200)
 layout_mode = 3
 anchors_preset = 0
-offset_right = 192.0
-offset_bottom = 256.0
+offset_right = 288.0
+offset_bottom = 568.0
 script = ExtResource("1_u7p7x")
 
 [node name="sell_flower" type="Control" parent="."]
 custom_minimum_size = Vector2(100, 200)
-anchors_preset = 0
-offset_right = 192.0
-offset_bottom = 256.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_lock_ = true
