@@ -8,8 +8,8 @@ func _ready() -> void:
 	water = 70
 	min_perfect_water = 65
 	max_perfect_water = 90
-	water_decr_speed = 3
-	water_incr_speed = 11
+	water_decr_speed = 1.2
+	water_incr_speed = 34
 	
 	# Flower
 	
@@ -54,3 +54,5 @@ func get_meal():
 	max_happiness = 3.5
 	happiness = 3.5
 	$HappinessGauge.update_gauge()
+	
+	state_label = "have eaten"

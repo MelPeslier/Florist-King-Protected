@@ -3,6 +3,8 @@ extends Area2D
 @onready var player = get_node("../../Player") as Player
 var running := false
 
+var spray_amount := -20.0
+
 func _on_mouse_exited():
 	running = false
 
@@ -13,6 +15,6 @@ func _on_input_event(_viewport, event, _shape_idx):
 		elif !event.pressed:
 			running = false
 
-func _process(_delta):
+func _process(delta):
 	if running:
-		running = player.take_water(-5)
+		running = player.take_water(spray_amount * delta)

@@ -4,7 +4,7 @@ signal player_enter_room(room_number :int)
 
 signal hugging(is_hugging: bool)
 
-signal eat_player()
+signal player_death(message:String)
 
 signal show_sell_panel(val: bool, price: float)
 

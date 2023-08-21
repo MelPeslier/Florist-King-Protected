@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://bx6k8blsiqio"]
+[gd_scene load_steps=7 format=3 uid="uid://bx6k8blsiqio"]
 
 [ext_resource type="Texture2D" uid="uid://r13kpns1a1cm" path="res://flowers/cassandri/sprite/cassandri_tmp.png" id="1_gcy8l"]
 [ext_resource type="Script" path="res://flowers/cassandri/cassandri.gd" id="1_kfiem"]
 [ext_resource type="PackedScene" uid="uid://br80202nxcfcv" path="res://commons/gauge/water_gauge.tscn" id="3_6mg23"]
 [ext_resource type="PackedScene" uid="uid://7tikciratgn8" path="res://commons/gauge/happiness_gauge.tscn" id="4_w43lg"]
+[ext_resource type="FontFile" uid="uid://b0hof85mkga7d" path="res://art/Playfulist-rgPp8.ttf" id="5_2p2ne"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r1s0y"]
 size = Vector2(208, 227)
@@ -12,11 +13,11 @@ size = Vector2(208, 227)
 script = ExtResource("1_kfiem")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-3, -114.5)
+position = Vector2(-2.24998, -124.754)
 shape = SubResource("RectangleShape2D_r1s0y")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-1.90735e-06, -112)
+position = Vector2(-2.24998, -124.754)
 scale = Vector2(0.268116, 0.268116)
 texture = ExtResource("1_gcy8l")
 
@@ -24,3 +25,14 @@ texture = ExtResource("1_gcy8l")
 
 [node name="HappinessGauge" parent="." instance=ExtResource("4_w43lg")]
 position = Vector2(0, 40)
+
+[node name="StateLabel" type="Label" parent="."]
+offset_left = -168.0
+offset_top = 80.0
+offset_right = 168.0
+offset_bottom = 121.0
+theme_override_fonts/font = ExtResource("5_2p2ne")
+theme_override_font_sizes/font_size = 20
+text = "debug"
+horizontal_alignment = 1
+vertical_alignment = 1

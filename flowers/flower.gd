@@ -1,7 +1,7 @@
 class_name Flower
 extends Area2D
 
-@onready var flower_room = get_node("../../..").roomNumber # get_parent() 3 times
+@onready var flower_room = get_node("../../..").room_number # get_parent() 3 times
 @onready var player = get_node("../../../../Player") as Player
 
 var happiness := 1.0
@@ -12,6 +12,9 @@ var happ_decr_speed := 4.7
 
 var sell_price = 1
 
+
+# Debug purposes
+@onready var state_label = $StateLabel
 
 func _ready():
 	Events.player_enter_room.connect(_on_player_enter_room)
@@ -32,25 +35,29 @@ func _on_player_enter_room(_room_number :int):
 	interaction()
 
 
-func add_happiness(amount = happ_incr_speed):
-	happiness += amount
+func add_happiness():
+	happiness = min(happiness + happ_incr_speed * delta, max_happiness)
 	happiness = min(happiness, max_happiness)
 
 
-func remove_happiness(amount = happ_decr_speed):
-	happiness -= amount
-	happiness = max(happiness, min_happiness)
+func remove_happiness():
+	happiness = max(happiness)
 
 
 func die(how :String):
-	pass
-#	match how:
-#		"burn":
-#			create_tween().tween_property($Sprite2D, "modulate:a", 0.0, 0.5)
-#		"water":
-#			create_tween().tween_property($Sprite2D, "modulate:a", 0.0, 1.0)
-#		"eat":
-#			create_tween().tween_property($Sprite2D, "modulate:a", 0.0, 0.1)
+	var timer = Timer.new()
+	timer.set_one_shot(true)
+	timer.start(4.0)
+	await timer.timeout
+	queue_free()
+	
+	match how:
+		"burn":
+			state_label.text = "burning"
+		"water":
+			state_label.text = "drowning"
+		"eat":
+			state_label.text = "getting eaten"
 
 
 func sell_flower() -> float:

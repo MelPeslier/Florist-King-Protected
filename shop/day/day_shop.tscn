@@ -114,6 +114,15 @@ horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("5_4b5cc")
 
+[node name="SkipDayButton" type="Button" parent="UI/Control"]
+offset_left = 1690.0
+offset_top = 391.0
+offset_right = 1922.0
+offset_bottom = 481.0
+theme_override_fonts/font = ExtResource("3_ac2vx")
+theme_override_font_sizes/font_size = 34
+text = "Skip day"
+
 [node name="DaySummary" parent="." instance=ExtResource("3_brqb0")]
 visible = false
 
@@ -127,4 +136,6 @@ visible = false
 
 [connection signal="timeout" from="DayTimer" to="DayTimer" method="_on_timeout"]
 [connection signal="timeout" from="DayTimer" to="DaySummary" method="_on_day_timer_timeout"]
+[connection signal="button_up" from="UI/Control/SkipDayButton" to="DayTimer" method="_on_timeout"]
+[connection signal="button_up" from="UI/Control/SkipDayButton" to="DaySummary" method="_on_day_timer_timeout"]
 [connection signal="last_day" from="DaySummary" to="LastDaySummary" method="_on_day_summary_last_day"]

@@ -1,5 +1,6 @@
-[gd_scene load_steps=19 format=3 uid="uid://bstp6mip8ystj"]
+[gd_scene load_steps=21 format=3 uid="uid://bstp6mip8ystj"]
 
+[ext_resource type="Script" path="res://shop/night/night_shop.gd" id="1_3rpaq"]
 [ext_resource type="PackedScene" uid="uid://dinjpcmsfbml2" path="res://shop/night/room_1.tscn" id="1_y41b2"]
 [ext_resource type="Script" path="res://shop/night/TimerNight.gd" id="2_4fms2"]
 [ext_resource type="PackedScene" uid="uid://bp8bd6s36skh6" path="res://shop/night/room_2.tscn" id="2_8d0sc"]
@@ -18,11 +19,13 @@
 [ext_resource type="AudioStream" uid="uid://bkiwohevp4s2i" path="res://audio/sfx/DayToNight.mp3" id="15_k5pqt"]
 [ext_resource type="PackedScene" uid="uid://evem30mswvy5" path="res://autoloads/Pause.tscn" id="16_3bk6r"]
 [ext_resource type="PackedScene" uid="uid://csmkid2i2d5e1" path="res://menus/night/NightSummary.tscn" id="17_oewxx"]
+[ext_resource type="PackedScene" uid="uid://b5s6swmoxdck7" path="res://menus/night/GameOver.tscn" id="19_ttm3c"]
 
 [node name="NightShop" type="Node2D"]
+script = ExtResource("1_3rpaq")
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 5.0
+wait_time = 180.0
 one_shot = true
 autostart = true
 script = ExtResource("2_4fms2")
@@ -173,13 +176,16 @@ stream = ExtResource("15_k5pqt")
 bus = &"SFX"
 
 [node name="Timer" type="Timer" parent="DayToNight"]
-wait_time = 60.0
+wait_time = 3.0
 one_shot = true
 
 [node name="NightSummary" parent="." instance=ExtResource("17_oewxx")]
 visible = false
 
 [node name="Pause" parent="." instance=ExtResource("16_3bk6r")]
+visible = false
+
+[node name="GameOver" parent="." instance=ExtResource("19_ttm3c")]
 visible = false
 
 [connection signal="timeout" from="Timer" to="manager" method="_on_timer_timeout"]

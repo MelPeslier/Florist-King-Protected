@@ -1,12 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://b0d3hxkv3ls1i"]
+[gd_scene load_steps=7 format=3 uid="uid://b0d3hxkv3ls1i"]
 
 [ext_resource type="Script" path="res://flowers/venus_flytrap/venus_flytrap.gd" id="1_6kql5"]
 [ext_resource type="Texture2D" uid="uid://bq02q25cedibw" path="res://flowers/venus_flytrap/sprite/venus_flytrap_tmp.png" id="1_bp7c8"]
 [ext_resource type="PackedScene" uid="uid://br80202nxcfcv" path="res://commons/gauge/water_gauge.tscn" id="2_e2q2v"]
 [ext_resource type="PackedScene" uid="uid://7tikciratgn8" path="res://commons/gauge/happiness_gauge.tscn" id="3_ajsgf"]
+[ext_resource type="FontFile" uid="uid://b0hof85mkga7d" path="res://art/Playfulist-rgPp8.ttf" id="5_pxlhu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6hj3d"]
-size = Vector2(102, 150)
+size = Vector2(128, 175)
 
 [node name="VenusFlytrap" type="Area2D" groups=["flower", "water_flower"]]
 script = ExtResource("1_6kql5")
@@ -17,10 +18,21 @@ scale = Vector2(0.35, 0.35)
 texture = ExtResource("1_bp7c8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, -76)
+position = Vector2(0, -88.5)
 shape = SubResource("RectangleShape2D_6hj3d")
 
 [node name="WaterGauge" parent="." instance=ExtResource("2_e2q2v")]
 
 [node name="HappinessGauge" parent="." instance=ExtResource("3_ajsgf")]
 position = Vector2(0, 40)
+
+[node name="StateLabel" type="Label" parent="."]
+offset_left = -168.0
+offset_top = 80.0
+offset_right = 168.0
+offset_bottom = 121.0
+theme_override_fonts/font = ExtResource("5_pxlhu")
+theme_override_font_sizes/font_size = 20
+text = "debug"
+horizontal_alignment = 1
+vertical_alignment = 1

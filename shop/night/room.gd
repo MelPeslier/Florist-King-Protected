@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var roomNumber : int
+@export var room_number : int
 @export var leftRoom : NodePath
 @export var rightRoom : NodePath
 @export var upRoom : NodePath
@@ -19,7 +19,7 @@ func move(selectedRoom): # Move to a different room
 		return
 	
 	var player = get_node("../Player")
-	if !player.canMove:
+	if !player.can_move:
 		return
 	
 	selectedRoom = get_node(selectedRoom)

@@ -16,7 +16,7 @@ func _ready() -> void:
 	min_perfect_water = 50
 	max_perfect_water = 85
 	water_decr_speed = 2.5
-	water_incr_speed = 14
+	water_incr_speed = 35
 	
 	# Flower
 	

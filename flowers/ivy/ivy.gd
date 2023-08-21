@@ -14,7 +14,7 @@ func _ready() -> void:
 	min_perfect_water = 12
 	max_perfect_water = 18
 	water_decr_speed = 2
-	water_incr_speed = 20
+	water_incr_speed = 30
 	
 	# Flower
 	
@@ -55,7 +55,7 @@ func not_drinking(delta):
 			is_hugging = false
 
 
-func interacttion() -> void:
+func interacttion(_room_number: int) -> void:
 	if hug_time <= 0 :
 		Events.emmit("hugging", true)
 		is_hugging = true

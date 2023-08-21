@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://dxaryvb685fdq"]
+[gd_scene load_steps=7 format=3 uid="uid://dxaryvb685fdq"]
 
 [ext_resource type="Script" path="res://flowers/arsonist/arsonist.gd" id="1_kgwtp"]
 [ext_resource type="Texture2D" uid="uid://7feue2huqhy6" path="res://flowers/arsonist/sprite/arsonist_tmp.png" id="2_gwpet"]
 [ext_resource type="PackedScene" uid="uid://br80202nxcfcv" path="res://commons/gauge/water_gauge.tscn" id="3_rxim0"]
 [ext_resource type="PackedScene" uid="uid://7tikciratgn8" path="res://commons/gauge/happiness_gauge.tscn" id="4_ykg5g"]
+[ext_resource type="FontFile" uid="uid://b0hof85mkga7d" path="res://art/Playfulist-rgPp8.ttf" id="5_4iuuy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jcpwj"]
 size = Vector2(253, 198)
@@ -12,14 +13,25 @@ size = Vector2(253, 198)
 script = ExtResource("1_kgwtp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(7.5, -103)
+position = Vector2(0.5, -109)
 shape = SubResource("RectangleShape2D_jcpwj")
 
 [node name="Sprite2D" type="Sprite2D" parent="." groups=["flower", "water_flower"]]
-position = Vector2(8, -104)
+position = Vector2(0.5, -109)
 texture = ExtResource("2_gwpet")
 
 [node name="WaterGauge" parent="." instance=ExtResource("3_rxim0")]
 
 [node name="HappinessGauge" parent="." instance=ExtResource("4_ykg5g")]
 position = Vector2(0, 40)
+
+[node name="StateLabel" type="Label" parent="."]
+offset_left = -168.0
+offset_top = 80.0
+offset_right = 168.0
+offset_bottom = 121.0
+theme_override_fonts/font = ExtResource("5_4iuuy")
+theme_override_font_sizes/font_size = 20
+text = "debug"
+horizontal_alignment = 1
+vertical_alignment = 1

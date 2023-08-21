@@ -1,14 +1,14 @@
 extends FlowerWater
 
-signal burn_shop
 
 var fire_start_threshold :float = 30
 var fire_burn_nearby_flower_threshold :float = 10
 var fire_coef :float = 1
 
-var normal_plus :float = 3
+var normal_plus :float = 25
 var burn_self_plus :float = 2.25
 var burn_flowers_plus :float = 1.5
+
 
 func _ready() -> void:
 	super()
@@ -41,6 +41,7 @@ func _on_manager_end():
 			if neighbour == "Arsonist":
 				fire_coef += 1
 
+
 func not_drinking(delta):
 	super(delta)
 	if water > fire_start_threshold:
@@ -54,11 +55,13 @@ func not_drinking(delta):
 			if water <= min_water:
 				burning("shop")
 
+
 func water_update(delta) -> void:
 	if is_drinking:
 		water = min(water + water_incr_speed / fire_coef * delta, max_water)
 	else:
 		water = max(water - water_decr_speed * fire_coef * delta, min_water)
+
 
 func burning(val :String) -> void:
 	match val:
@@ -74,5 +77,5 @@ func burning(val :String) -> void:
 				get_parent().get_parent().burn_around(get_parent().name)
 		
 		"shop":
-			burn_shop.emit()
+			Events.player_death.emit("You got Burned\nNext time, care about 'arsonist'")
 

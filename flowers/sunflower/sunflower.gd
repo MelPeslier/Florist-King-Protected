@@ -7,7 +7,7 @@ func _ready() -> void:
 	min_perfect_water = 25
 	max_perfect_water = 75
 	water_decr_speed = 2
-	water_incr_speed = 10
+	water_incr_speed = 37
 	
 	# Flower
 	happiness = 0.5

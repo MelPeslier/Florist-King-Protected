@@ -1,6 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://cj3sjty8osk0m"]
+[gd_scene load_steps=7 format=3 uid="uid://cj3sjty8osk0m"]
 
 [ext_resource type="Script" path="res://player/Player.gd" id="1_jye1g"]
+[ext_resource type="FontFile" uid="uid://b0hof85mkga7d" path="res://art/Playfulist-rgPp8.ttf" id="2_7vd5l"]
+[ext_resource type="PackedScene" uid="uid://bsub57unmnhga" path="res://player/player_water_gauge.tscn" id="3_xbxf6"]
 
 [sub_resource type="Animation" id="Animation_8kh5l"]
 length = 0.001
@@ -55,5 +57,25 @@ autoplay = "breathe"
 libraries = {
 "": SubResource("AnimationLibrary_7k24k")
 }
+
+[node name="PlayerWaterGauge" parent="." instance=ExtResource("3_xbxf6")]
+position = Vector2(0, 420)
+
+[node name="StateLabel" type="Label" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -322.0
+offset_top = 464.0
+offset_right = 319.0
+offset_bottom = 541.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_fonts/font = ExtResource("2_7vd5l")
+theme_override_font_sizes/font_size = 25
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="timeout" from="MoveCooldown" to="." method="_on_move_cooldown_timeout"]

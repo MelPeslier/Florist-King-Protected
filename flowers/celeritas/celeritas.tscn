@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://cg78wc71pbch8"]
+[gd_scene load_steps=7 format=3 uid="uid://cg78wc71pbch8"]
 
 [ext_resource type="Texture2D" uid="uid://sy15j5ynehp" path="res://flowers/celeritas/sprite/celeritas_tmp.png" id="1_hqkro"]
 [ext_resource type="Script" path="res://flowers/celeritas/celeritas.gd" id="1_q4p8a"]
 [ext_resource type="PackedScene" uid="uid://7tikciratgn8" path="res://commons/gauge/happiness_gauge.tscn" id="2_m4yrd"]
 [ext_resource type="PackedScene" uid="uid://br80202nxcfcv" path="res://commons/gauge/water_gauge.tscn" id="3_t414c"]
+[ext_resource type="FontFile" uid="uid://b0hof85mkga7d" path="res://art/Playfulist-rgPp8.ttf" id="5_3s0f2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gng7j"]
 size = Vector2(148, 108)
@@ -12,11 +13,11 @@ size = Vector2(148, 108)
 script = ExtResource("1_q4p8a")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1, -56)
+position = Vector2(-1.3332, -58.9999)
 shape = SubResource("RectangleShape2D_gng7j")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(7.62939e-06, -56)
+position = Vector2(-1.3332, -58.9999)
 scale = Vector2(0.176667, 0.176667)
 texture = ExtResource("1_hqkro")
 
@@ -24,3 +25,14 @@ texture = ExtResource("1_hqkro")
 position = Vector2(0, 40)
 
 [node name="WaterGauge" parent="." instance=ExtResource("3_t414c")]
+
+[node name="StateLabel" type="Label" parent="."]
+offset_left = -168.0
+offset_top = 80.0
+offset_right = 168.0
+offset_bottom = 121.0
+theme_override_fonts/font = ExtResource("5_3s0f2")
+theme_override_font_sizes/font_size = 20
+text = "debug"
+horizontal_alignment = 1
+vertical_alignment = 1

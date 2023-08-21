@@ -13,8 +13,8 @@ func _ready() -> void:
 	water = 50
 	min_perfect_water = 30
 	max_perfect_water = 50
-	water_decr_speed = 2
-	water_incr_speed = 4
+	water_decr_speed = 2.5
+	water_incr_speed = 30
 	
 	# Flower
 	
@@ -44,6 +44,7 @@ func _on_manager_end():
 				happ_decr_speed -= other_neighbour_coef
 				happ_incr_speed += other_neighbour_coef
 
+
 func not_drinking(delta) -> void:
 	# To use the previous code and the one we writte here
 	super(delta)
@@ -53,9 +54,10 @@ func not_drinking(delta) -> void:
 	elif water < min_perfect_water :
 		happiness = max(min_happiness, happiness - happ_decr_speed / 5 * delta)
 
+
 func die(how :String) -> void:
 	super(how)
 	
 	match how:
 		"suicide":
-			var tween = create_tween()
+			state_label.text = "has commit suicide"

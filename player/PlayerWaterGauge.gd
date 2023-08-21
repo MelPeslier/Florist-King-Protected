@@ -7,11 +7,9 @@ extends Node2D
 func _process(_delta):
 	tex.value = parent.water
 
-
 # To be called after the parent initialisation
 func update_gauge() -> void:
 	parent = get_parent()
-	# Progress Bar
 	tex.min_value = parent.min_water
 	tex.max_value = parent.max_water
 	tex.value = parent.water

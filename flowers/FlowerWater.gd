@@ -40,7 +40,7 @@ func drinking(delta):
 	var amount = 4 * delta
 	is_drinking = player.take_water(amount)
 	# If there's no more water, is_drinking will be set to false
-	water += amount
+	water = min(water + water_incr_speed * delta, max_water)
 
 func not_drinking(delta):
-	water -= 1 * delta
+	water = max(water - water_decr_speed * delta, min_water)

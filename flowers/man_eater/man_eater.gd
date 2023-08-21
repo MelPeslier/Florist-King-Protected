@@ -4,9 +4,11 @@ var the_travel_time :float = 4
 var travel_time :float
 var attack_time :float = 0.75
 
-var seen_player_room :int = 0
+var seen_player_room: int = 0
 
-var player_room = player.currentRoom.roomNumber
+var player_room: int = -1
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	super()
@@ -20,7 +22,7 @@ func _ready():
 	
 	travel_time = the_travel_time
 
-func _physics_process(delta) -> void:
+func _physics_process(delta):
 	travel_time = max(travel_time - delta, 0)
 	
 	if player_room == flower_room:
@@ -30,6 +32,7 @@ func _physics_process(delta) -> void:
 		
 		if attack_time == 0 and player_room == flower_room:
 			eat_player()
+		return
 		
 	else:
 		attack_time = 0.75
@@ -73,8 +76,9 @@ func go_to_room(number :int) -> void:
 	#what else ?
 
 func eat_player() -> void:
-	emit_signal("eat_player")
+	Events.player_death.emit("Yout got eaten\nNext time care about 'Man eater'")
 	
+	state_label.text = "E A T I N G  Y O U  :3"
 	# Eat sound animation
 
 func player_is_near() -> bool:
@@ -130,3 +134,5 @@ func player_is_near() -> bool:
 	return false
 
 
+func interation():
+	player_room = player.current_room.room_number
