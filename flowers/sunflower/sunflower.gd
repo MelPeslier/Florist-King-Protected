@@ -4,15 +4,15 @@ func _ready() -> void:
 	super()
 	# Water
 	water = 60
-	minPerfectWater = 25
-	maxPerfectWater = 75
-	waterDecrSpeed = 0.75
-	waterIncrSpeed = 10
+	min_perfect_water = 25
+	max_perfect_water = 75
+	water_decr_speed = 2
+	water_incr_speed = 10
 	
 	# Flower
 	happiness = 0.5
-	minHappiness = 0.5
-	maxHappiness = 1.5
-	happDecrSpeed = 1
-	happIncrSpeed = 2
+	min_happiness = 0.5
+	max_happiness = 1.5
+	happ_decr_speed = 1
+	happ_incr_speed = 2
 

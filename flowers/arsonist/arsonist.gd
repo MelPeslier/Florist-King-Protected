@@ -14,18 +14,18 @@ func _ready() -> void:
 	super()
 	# Water
 	water = 40
-	minPerfectWater = 65
-	maxPerfectWater = 90
-	waterDecrSpeed = 5
-	waterIncrSpeed = normal_plus
+	min_perfect_water = 65
+	max_perfect_water = 90
+	water_decr_speed = 5
+	water_incr_speed = normal_plus
 	
 	# Flower
 	
 	happiness = 1.5
-	minHappiness = 0.5
-	maxHappiness = 1.5
-	happDecrSpeed = 5
-	happIncrSpeed = 7
+	min_happiness = 0.5
+	max_happiness = 1.5
+	happ_decr_speed = 5
+	happ_incr_speed = 7
 	sell_price = 95
 	
 	$HappinessGauge.update_gauge()
@@ -51,25 +51,25 @@ func not_drinking(delta):
 		if water < fire_burn_nearby_flower_threshold:
 			burning("flowers")
 			
-			if water <= minWater:
+			if water <= min_water:
 				burning("shop")
 
 func water_update(delta) -> void:
-	if isDrinking:
-		water = min(water + waterIncrSpeed / fire_coef * delta, maxWater)
+	if is_drinking:
+		water = min(water + water_incr_speed / fire_coef * delta, max_water)
 	else:
-		water = max(water - waterDecrSpeed * fire_coef * delta, minWater)
+		water = max(water - water_decr_speed * fire_coef * delta, min_water)
 
 func burning(val :String) -> void:
 	match val:
 		"false":
-			waterIncrSpeed = normal_plus / fire_coef
+			water_incr_speed = normal_plus / fire_coef
 		
 		"self":
-			waterIncrSpeed = burn_self_plus  / fire_coef
+			water_decr_speed = burn_self_plus  / fire_coef
 		
 		"flowers":
-			waterIncrSpeed = burn_flowers_plus / fire_coef
+			water_incr_speed = burn_flowers_plus / fire_coef
 			if get_parent():
 				get_parent().get_parent().burn_around(get_parent().name)
 		

@@ -14,8 +14,8 @@ func _ready():
 	# Flower
 	
 	happiness = 1.0
-	minHappiness = 1.0
-	maxHappiness = 3.5
+	min_happiness = 1.0
+	max_happiness = 3.5
 	sell_price = 50
 	
 	travel_time = the_travel_time

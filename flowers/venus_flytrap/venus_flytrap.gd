@@ -1,23 +1,23 @@
 extends FlowerWater
 
-var is_trying_to_eat = false
+var something_to_eat = false
 
 func _ready() -> void:
 	super()
 	# Water
 	water = 70
-	minPerfectWater = 65
-	maxPerfectWater = 90
-	waterDecrSpeed = 3
-	waterIncrSpeed = 11
+	min_perfect_water = 65
+	max_perfect_water = 90
+	water_decr_speed = 3
+	water_incr_speed = 11
 	
 	# Flower
 	
 	happiness = 1.1
-	minHappiness = 0.5
-	maxHappiness = 1.5
-	happDecrSpeed = 5
-	happIncrSpeed = 7
+	min_happiness = 0.5
+	max_happiness = 1.5
+	happ_decr_speed = 5
+	happ_incr_speed = 7
 	sell_price = 18
 	
 	$HappinessGauge.update_gauge()
@@ -32,20 +32,25 @@ func _on_manager_end():
 		
 		for neighbour in neighbors:
 			if neighbour == "VenusFlytrap":
-				happIncrSpeed = 0
-				minHappiness = 0.25
+				happ_incr_speed = 0
+				min_happiness = 0.25
 				happiness = 0.25
 				$HappinessGauge.update_gauge()
 				
-			else:
-				is_trying_to_eat = true
+			elif neighbors != null:
+				something_to_eat = true
 
 func not_drinking(delta :float) -> void:
 	super(delta)
 	
-	if happiness <= minHappiness:
+	if something_to_eat and happiness <= min_happiness:
 		# Animation to eat
-		get_parent().get_parent().act_around(get_parent().name, "eat")
-		maxHappiness = 3.5
-		happiness = 3.5
-		$HappinessGauge.update_gauge()
+		get_meal()
+
+
+func get_meal():
+	get_parent().get_parent().act_around(get_parent().name, "eat")
+	something_to_eat = false
+	max_happiness = 3.5
+	happiness = 3.5
+	$HappinessGauge.update_gauge()

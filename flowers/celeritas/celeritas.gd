@@ -8,18 +8,18 @@ func _ready() -> void:
 	super()
 	# Water
 	water = 80
-	minPerfectWater = 10
-	maxPerfectWater = 30
-	waterDecrSpeed = 3
-	waterIncrSpeed = 7
+	min_perfect_water = 10
+	max_perfect_water = 30
+	water_decr_speed = 3
+	water_incr_speed = 7
 	
 	# Flower
 	
 	happiness = 0.5
-	minHappiness = 0.5
-	maxHappiness = 1.5
-	happDecrSpeed = 1
-	happIncrSpeed = 3
+	min_happiness = 0.5
+	max_happiness = 1.5
+	happ_decr_speed = 1
+	happ_incr_speed = 3
 	sell_price = 16
 	
 	travel_time = the_travel_time
@@ -28,7 +28,7 @@ func _ready() -> void:
 	$WaterGauge.update_gauge()
 
 func _physics_process(delta) -> void:
-	if isDrinking and not is_escaping:
+	if is_drinking and not is_escaping:
 		drinking(delta)
 	else:
 		not_drinking(delta)
@@ -36,7 +36,7 @@ func _physics_process(delta) -> void:
 func not_drinking(delta) -> void:
 	super(delta)
 	
-	if water == minWater and not is_escaping:
+	if water == min_water and not is_escaping:
 		is_escaping = true
 	
 	if is_escaping:

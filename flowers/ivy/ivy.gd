@@ -11,18 +11,18 @@ func _ready() -> void:
 	super()
 		# Water
 	water = 33
-	minPerfectWater = 12
-	maxPerfectWater = 18
-	waterDecrSpeed = 2
-	waterIncrSpeed = 20
+	min_perfect_water = 12
+	max_perfect_water = 18
+	water_decr_speed = 2
+	water_incr_speed = 20
 	
 	# Flower
 	
 	happiness = 1.5
-	minHappiness = 0.25
-	maxHappiness = 1.5
-	happDecrSpeed = 21
-	happIncrSpeed = 7
+	min_happiness = 0.25
+	max_happiness = 1.5
+	happ_decr_speed = 21
+	happ_incr_speed = 7
 	sell_price = 10
 	
 	$HappinessGauge.update_gauge()
@@ -39,7 +39,7 @@ func _on_manager_end():
 				min_hug_time  *= ivy_coef 
 
 func _physics_process(delta) -> void:
-	if isDrinking and not is_hugging:
+	if is_drinking and not is_hugging:
 		drinking(delta)
 	else:
 		not_drinking(delta)
