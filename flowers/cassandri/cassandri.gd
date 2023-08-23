@@ -1,6 +1,6 @@
 extends FlowerWater
 
-var travel_rooms :Array
+var travel_rooms := []
 var is_out := false
 
 var max_money_stole: int = 3
@@ -99,6 +99,7 @@ func not_drinking(delta) -> void:
 func go_to_room(number :int) -> void:
 	travel_time = the_travel_time
 	flower_room = number
+	global_position
 
 
 # Steal + Events related
