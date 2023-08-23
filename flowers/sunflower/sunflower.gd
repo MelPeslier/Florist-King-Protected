@@ -15,4 +15,12 @@ func _ready() -> void:
 	max_happiness = 1.5
 	happ_decr_speed = 1
 	happ_incr_speed = 2
+	
+	sell_price = 8
+	
+	$WaterGauge.update_gauge()
+	$HappinessGauge.update_gauge()
 
+
+func _physics_process(delta):
+	super(delta)

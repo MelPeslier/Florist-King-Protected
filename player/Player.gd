@@ -8,6 +8,8 @@ var can_move := false
 var min_water := 0.0
 var max_water := 100.0
 var water := 34.0
+var water_decr_speed := 8.0
+var water_incr_speed := 20.0
 
 func _ready():
 	Events.hugging.connect(_on_hugging)
@@ -15,17 +17,19 @@ func _ready():
 	player_water_gauge.update_gauge()
 
 
-func take_water(amount):
-	if amount < 0 :
+func take_water(delta: float):
+	state_label.text = ""
+	if delta < 0 :
 		state_label.text = "taking water"
+		water = min(water + water_incr_speed * -delta, max_water)
 	else:
 		state_label.text = "watering the plants"
+		water = max(water - water_decr_speed * delta, min_water)
 	
-	water = clamp(water - amount, min_water, max_water)
-	
-	if water == 0:
+	if water <= min_water + 0.01:
 		state_label.text = "No watter !  Need to replenish at faucet !"
 		return false
+	
 	return true
 	
 

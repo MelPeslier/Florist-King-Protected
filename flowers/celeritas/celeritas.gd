@@ -1,8 +1,8 @@
 extends FlowerWater
 
-var is_escaping :bool = false
-var the_travel_time :float = 3
-var travel_time :float
+var is_escaping := false
+var the_travel_time := 3.0
+var travel_time := the_travel_time
 
 func _ready() -> void:
 	super()
@@ -22,8 +22,6 @@ func _ready() -> void:
 	happ_incr_speed = 3
 	sell_price = 16
 	
-	travel_time = the_travel_time
-	
 	$HappinessGauge.update_gauge()
 	$WaterGauge.update_gauge()
 
@@ -32,6 +30,14 @@ func _physics_process(delta) -> void:
 		drinking(delta)
 	else:
 		not_drinking(delta)
+	
+	if water == min_water:
+		remove_happiness(delta)
+	elif water > min_perfect_water and water < max_perfect_water: # Happiness is juuuuust right
+		add_happiness(delta)
+	
+	if water == max_water:
+		die("water")
 
 func not_drinking(delta) -> void:
 	super(delta)

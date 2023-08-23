@@ -16,3 +16,7 @@ func update_gauge() -> void:
 	tex.max_value = parent.max_water
 	tex.value = parent.water
 	tex.step = 0.01
+		# Limits : To put the tresholds at ther right place : -10 because it wasn't perfectly in place
+	var sprite_width = tex.texture_over.get_width() -10
+	$LowLimit.position.x = parent.min_perfect_water * sprite_width / parent.max_water - sprite_width / 2
+	$HighLimit.position.x = parent.max_perfect_water * sprite_width / parent.max_water - sprite_width / 2

@@ -1,11 +1,11 @@
 extends FlowerWater
 
-@export var keith_neighbour_coef :float = 2.5
-@export var alone_coef :float = 1.75
-
-@export var other_neighbour_coef :float = 1.5
+var keith_neighbour_coef := 2.5
+var alone_coef := 1.75
+var other_neighbour_coef := 1.5
 
 var neighbors :Array
+
 
 func _ready() -> void:
 	super()
@@ -17,7 +17,6 @@ func _ready() -> void:
 	water_incr_speed = 30
 	
 	# Flower
-	
 	happiness = 1.5
 	min_happiness = 0
 	max_happiness = 1.5
@@ -46,7 +45,7 @@ func _on_manager_end():
 
 
 func not_drinking(delta) -> void:
-	# To use the previous code and the one we writte here
+	# To use the previous code and the one we write here
 	super(delta)
 	
 	if water > max_perfect_water :

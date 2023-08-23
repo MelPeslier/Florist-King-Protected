@@ -1,6 +1,6 @@
 extends FlowerWater
 
-var something_to_eat = false
+var something_to_eat := false
 
 func _ready() -> void:
 	super()
@@ -40,13 +40,12 @@ func _on_manager_end():
 			elif neighbors != null:
 				something_to_eat = true
 
-func not_drinking(delta :float) -> void:
+
+func remove_happiness(delta: float):
 	super(delta)
-	
-	if something_to_eat and happiness <= min_happiness:
+	if something_to_eat and happiness == min_happiness:
 		# Animation to eat
 		get_meal()
-
 
 func get_meal():
 	get_parent().get_parent().act_around(get_parent().name, "eat")

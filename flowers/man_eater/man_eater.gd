@@ -1,8 +1,8 @@
 extends Flower
 
-var the_travel_time :float = 4
-var travel_time :float
-var attack_time :float = 0.75
+var the_travel_time := 4
+var travel_time := the_travel_time
+var attack_time := 0.75
 
 var seen_player_room: int = 0
 

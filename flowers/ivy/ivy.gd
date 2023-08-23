@@ -1,11 +1,11 @@
 extends FlowerWater
 
-var hug_time :float = 0
-var min_hug_time :float = 4
-var max_hug_time :float = 12 # Only to cap the max money income
-var is_hugging :bool = false
+var hug_time := 0.0
+var min_hug_time := 4.0
+var max_hug_time := 12.0 # Only to cap the max money income
+var is_hugging := false
 
-var ivy_coef :float = 3
+var ivy_coef := 3.0
 
 func _ready() -> void:
 	super()
@@ -38,7 +38,8 @@ func _on_manager_end():
 			if neighbour == "Ivy":
 				min_hug_time  *= ivy_coef 
 
-func _physics_process(delta) -> void:
+
+func water_update(delta: float):
 	if is_drinking and not is_hugging:
 		drinking(delta)
 	else:
@@ -55,8 +56,8 @@ func not_drinking(delta):
 			is_hugging = false
 
 
-func interacttion(_room_number: int) -> void:
-	if hug_time <= 0 :
+func _on_player_enter_room(_room_number :int):
+	if hug_time == 0.0 :
 		Events.emmit("hugging", true)
 		is_hugging = true
 

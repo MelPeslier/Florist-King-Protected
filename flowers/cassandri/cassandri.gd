@@ -1,13 +1,14 @@
 extends FlowerWater
 
 var travel_rooms :Array
-var is_out :bool = false
+var is_out := false
 
 var max_money_stole: int = 3
-var money_stole :int
+var money_stole :int = 0
+var has_stole := false
 
-var the_travel_time :float = 2.5
-var travel_time :float
+var the_travel_time := 2.5
+var travel_time := the_travel_time
 
 func _ready() -> void:
 	super()
@@ -19,7 +20,6 @@ func _ready() -> void:
 	water_incr_speed = 35
 	
 	# Flower
-	
 	happiness = 0.5
 	min_happiness = 0.5
 	max_happiness = 1.5
@@ -27,17 +27,24 @@ func _ready() -> void:
 	happ_incr_speed = 1
 	sell_price = 14
 	
-	travel_time = the_travel_time
-	money_stole = 0
-	
 	$HappinessGauge.update_gauge()
 	$WaterGauge.update_gauge()
+
 
 func _physics_process(delta) -> void:
 	if is_drinking and not is_out:
 		drinking(delta)
 	else:
 		not_drinking(delta)
+	
+	# Do none if water > max_perfect_water
+	if water < min_perfect_water:
+		remove_happiness(delta)
+	elif water < max_perfect_water:
+		add_happiness(delta)
+	
+	if water == max_water:
+		die("water")
 
 func not_drinking(delta) -> void:
 	super(delta)
@@ -49,7 +56,7 @@ func not_drinking(delta) -> void:
 	if is_out:
 		travel_time = max(travel_time - delta, 0)
 		if travel_time == 0:
-			if money_stole == 0:
+			if not has_stole:
 					travel_rooms.push_back(flower_room)
 					match flower_room:
 						4, 5:
@@ -88,14 +95,21 @@ func not_drinking(delta) -> void:
 					is_out = false
 					#enter_pot()
 
+
 func go_to_room(number :int) -> void:
 	travel_time = the_travel_time
 	flower_room = number
 
+
 # Steal + Events related
 func steal(amount: int) -> int:
-	# Money = Money - amount
-	return amount
+	has_stole = true
+	if ScoreManager.can_buy_seed(amount):
+		ScoreManager.buy_seed(amount)
+		return amount
+	
+	return 0
+
 
 func sell_flower() -> float:
 	return sell_price * happiness * min(float(money_stole), 1)
