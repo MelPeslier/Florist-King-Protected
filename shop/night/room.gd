@@ -10,7 +10,7 @@ extends Node2D
 
  
 func _ready():
-	visible = false
+	visible = true
 	arrows.visible = false
 
 
@@ -25,12 +25,11 @@ func move(selectedRoom): # Move to a different room
 	selectedRoom = get_node(selectedRoom)
 	arrows.visible = false
 	selectedRoom.enter(player)
-	visible = false
 
 
 func enter(player): # When the player enters the room
 	player.just_entered_room(self)
-	visible = true
+
 
 
 
