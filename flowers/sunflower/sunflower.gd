@@ -20,7 +20,3 @@ func _ready() -> void:
 	
 	$WaterGauge.update_gauge()
 	$HappinessGauge.update_gauge()
-
-
-func _physics_process(delta):
-	super(delta)

@@ -26,7 +26,6 @@ func _on_mouse_exited():
 
 
 func _physics_process(delta) -> void:
-	super(delta)
 	print("enter_physic process")
 	water_update(delta)
 	

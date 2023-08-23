@@ -32,10 +32,6 @@ func _on_input_event(_viewport, event, _shape_idx):
 			unclick()
 
 
-func _physics_process(_delta):
-	pass
-
-
 func _on_player_enter_room(_room_number :int):
 	pass
 
