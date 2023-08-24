@@ -1,13 +1,17 @@
-[gd_scene load_steps=5 format=3 uid="uid://c0p8fhp5fkix5"]
+[gd_scene load_steps=6 format=3 uid="uid://c0p8fhp5fkix5"]
 
 [ext_resource type="Script" path="res://shop/night/room.gd" id="1_cyimn"]
-[ext_resource type="Texture2D" uid="uid://cah5k6ayytrsp" path="res://art/placeholder/rooms/Room5.png" id="2_vdg6n"]
-[ext_resource type="Texture2D" uid="uid://be5yxlfsoxp5y" path="res://art/placeholder/HUD/Arrow.png" id="3_1rysi"]
+[ext_resource type="Texture2D" uid="uid://cah5k6ayytrsp" path="res://art/placeholder/rooms/Room5.PNG" id="2_vdg6n"]
 [ext_resource type="PackedScene" uid="uid://oh8gi3dswlng" path="res://commons/table/table.tscn" id="4_yqe7k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_71r46"]
+size = Vector2(256, 1082)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_236qf"]
+size = Vector2(1413, 227)
 
 [node name="Room5" type="Node2D"]
 script = ExtResource("1_cyimn")
-roomNumber = 5
 
 [node name="Background" type="Sprite2D" parent="."]
 texture = ExtResource("2_vdg6n")
@@ -25,61 +29,39 @@ position = Vector2(-12, 41)
 [node name="Pot3" parent="Table" index="2"]
 position = Vector2(440, 25)
 
-[node name="Arrows" type="CanvasLayer" parent="."]
+[node name="Left" type="Area2D" parent="."]
+position = Vector2(-832, 0)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Left"]
 visible = false
+shape = SubResource("RectangleShape2D_71r46")
 
-[node name="Left" type="TextureButton" parent="Arrows"]
-texture_filter = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 25.0
-offset_top = -20.0
-offset_right = 133.0
-offset_bottom = 34.0
-grow_vertical = 2
-pivot_offset = Vector2(54, 27)
-texture_normal = ExtResource("3_1rysi")
-stretch_mode = 5
-flip_h = true
+[node name="Right" type="Area2D" parent="."]
+position = Vector2(833, 0)
+metadata/_edit_group_ = true
 
-[node name="Right" type="TextureButton" parent="Arrows"]
-texture_filter = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -136.0
-offset_top = -26.5
-offset_right = -28.0
-offset_bottom = 27.5
-grow_horizontal = 0
-grow_vertical = 2
-pivot_offset = Vector2(54, 27)
-texture_normal = ExtResource("3_1rysi")
-stretch_mode = 5
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Right"]
+visible = false
+shape = SubResource("RectangleShape2D_71r46")
 
-[node name="Down" type="TextureButton" parent="Arrows"]
-texture_filter = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -54.0
-offset_top = -114.0
-offset_right = 54.0
-offset_bottom = -60.0
-grow_horizontal = 2
-grow_vertical = 0
-rotation = 1.5708
-pivot_offset = Vector2(54, 27)
-texture_normal = ExtResource("3_1rysi")
-stretch_mode = 5
+[node name="Down" type="Area2D" parent="."]
+position = Vector2(0, 540)
+metadata/_edit_group_ = true
 
-[connection signal="pressed" from="Arrows/Left" to="." method="_on_left_pressed"]
-[connection signal="pressed" from="Arrows/Right" to="." method="_on_right_pressed"]
-[connection signal="pressed" from="Arrows/Down" to="." method="_on_down_pressed"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Down"]
+visible = false
+position = Vector2(0.5, -110.5)
+shape = SubResource("RectangleShape2D_236qf")
+
+[connection signal="input_event" from="Left" to="." method="_on_left_input_event"]
+[connection signal="mouse_entered" from="Left" to="." method="_on_area_mouse_entered"]
+[connection signal="mouse_exited" from="Left" to="." method="_on_area_mouse_exited"]
+[connection signal="input_event" from="Right" to="." method="_on_right_input_event"]
+[connection signal="mouse_entered" from="Right" to="." method="_on_area_mouse_entered"]
+[connection signal="mouse_exited" from="Right" to="." method="_on_area_mouse_exited"]
+[connection signal="input_event" from="Down" to="." method="_on_down_input_event"]
+[connection signal="mouse_entered" from="Down" to="." method="_on_area_mouse_entered"]
+[connection signal="mouse_exited" from="Down" to="." method="_on_area_mouse_exited"]
 
 [editable path="Table"]

@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://dinjpcmsfbml2"]
+[gd_scene load_steps=4 format=3 uid="uid://dinjpcmsfbml2"]
 
 [ext_resource type="Script" path="res://shop/night/room.gd" id="1_cywfe"]
-[ext_resource type="Texture2D" uid="uid://dhokg4a7wxecv" path="res://art/placeholder/rooms/Room1.png" id="2_hbwda"]
-[ext_resource type="Script" path="res://shop/night/ChangeRoomPoint.gd" id="3_t0gwh"]
-[ext_resource type="Texture2D" uid="uid://be5yxlfsoxp5y" path="res://art/placeholder/HUD/Arrow.png" id="3_t0iwk"]
+[ext_resource type="Texture2D" uid="uid://dhokg4a7wxecv" path="res://art/placeholder/rooms/Room1.PNG" id="2_hbwda"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bvu0g"]
+size = Vector2(256, 1082)
 
 [node name="Room1" type="Node2D"]
 script = ExtResource("1_cywfe")
@@ -11,46 +12,25 @@ script = ExtResource("1_cywfe")
 [node name="Background" type="Sprite2D" parent="."]
 texture = ExtResource("2_hbwda")
 
-[node name="MarkerLeft" type="Marker2D" parent="."]
-position = Vector2(-888, 432)
-script = ExtResource("3_t0gwh")
+[node name="Left" type="Area2D" parent="."]
+position = Vector2(-832, 0)
+metadata/_edit_group_ = true
 
-[node name="MarkerRight" type="Marker2D" parent="."]
-position = Vector2(864, 464)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Left"]
+visible = false
+shape = SubResource("RectangleShape2D_bvu0g")
 
-[node name="Arrows" type="CanvasLayer" parent="."]
+[node name="Right" type="Area2D" parent="."]
+position = Vector2(833, 0)
+metadata/_edit_group_ = true
 
-[node name="Left" type="TextureButton" parent="Arrows"]
-texture_filter = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 25.0
-offset_top = -20.0
-offset_right = 133.0
-offset_bottom = 34.0
-grow_vertical = 2
-pivot_offset = Vector2(54, 27)
-texture_normal = ExtResource("3_t0iwk")
-stretch_mode = 5
-flip_h = true
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Right"]
+visible = false
+shape = SubResource("RectangleShape2D_bvu0g")
 
-[node name="Right" type="TextureButton" parent="Arrows"]
-texture_filter = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -136.0
-offset_top = -26.5
-offset_right = -28.0
-offset_bottom = 27.5
-grow_horizontal = 0
-grow_vertical = 2
-pivot_offset = Vector2(54, 27)
-texture_normal = ExtResource("3_t0iwk")
-stretch_mode = 5
-
-[connection signal="pressed" from="Arrows/Left" to="." method="_on_left_pressed"]
-[connection signal="pressed" from="Arrows/Right" to="." method="_on_right_pressed"]
+[connection signal="input_event" from="Left" to="." method="_on_left_input_event"]
+[connection signal="mouse_entered" from="Left" to="." method="_on_area_mouse_entered"]
+[connection signal="mouse_exited" from="Left" to="." method="_on_area_mouse_exited"]
+[connection signal="input_event" from="Right" to="." method="_on_right_input_event"]
+[connection signal="mouse_entered" from="Right" to="." method="_on_area_mouse_entered"]
+[connection signal="mouse_exited" from="Right" to="." method="_on_area_mouse_exited"]

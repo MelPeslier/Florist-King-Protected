@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://player/Player.gd" id="1_jye1g"]
 [ext_resource type="FontFile" uid="uid://b0hof85mkga7d" path="res://art/Playfulist-rgPp8.ttf" id="2_7vd5l"]
-[ext_resource type="PackedScene" uid="uid://bsub57unmnhga" path="res://player/player_water_gauge.tscn" id="3_xbxf6"]
+[ext_resource type="PackedScene" path="res://player/player_water_gauge.tscn" id="3_xbxf6"]
 
 [sub_resource type="Animation" id="Animation_8kh5l"]
 length = 0.001

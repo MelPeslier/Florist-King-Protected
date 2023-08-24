@@ -1,13 +1,10 @@
 extends CanvasLayer
 
-var day_path = "res://shop/day/day_shop.tscn"
-
 var summary := []
-@onready var animation_player = $AnimationPlayer
-@onready var recap_template = $RecapTemplate
+
 
 func _ready():
-	visible = false
+	$HBoxContainer/Control/VBoxContainer/MarginTitle/Title.text = "Night " + str(ScoreManager.get_day()) + " completed!"
 
 
 
@@ -25,17 +22,10 @@ func add_to_list(list:Array): # Needs an array of strings
 
 
 func _on_timer_timeout():
-	var recap_message: String = "Night Summary :"
-	for info in summary:
-		recap_message += "\n" + info
-
-	Music.fade_out()
 	visible = true
-	
-	recap_template.initialise(
-		"Night " + str(ScoreManager.get_day()) + " completed!",
-		recap_message,
-		day_path
-	)
-	animation_player.play("come_in")
+	Music.fade_out()
+	$AnimationPlayer.play("come_in")
 	ScoreManager.next_day()
+
+func _on_continue_pressed():
+	get_tree().change_scene_to_file("res://shop/day/day_shop.tscn")

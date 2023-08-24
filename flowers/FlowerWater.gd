@@ -26,7 +26,6 @@ func _on_mouse_exited():
 
 
 func _physics_process(delta) -> void:
-	print("enter_physic process")
 	water_update(delta)
 	
 	if water <= min_water + 0.01:
@@ -42,7 +41,6 @@ func water_update(delta: float):
 	if is_drinking:
 		drinking(delta)
 	else:
-		print("enter wawter_update")
 		not_drinking(delta)
 
 
@@ -52,5 +50,4 @@ func drinking(delta: float):
 
 
 func not_drinking(delta: float):
-	print("laa")
 	water = max(water - water_decr_speed * delta, min_water)

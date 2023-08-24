@@ -1,14 +1,14 @@
 extends Node2D
 
-@onready var game_over = $GameOver
+const game_over = preload("res://menus/night/GameOver.tscn")
 @onready var timer = $Timer
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	Events.player_death.connect(_on_player_death)
 
 
 func _on_player_death(message:String):
 	timer.stop()
-	game_over.set_death_cause(message)
-	game_over.visible = true
+	var death = game_over.instantiate()
+	death.set_death_cause(message)
+	add_child(death)

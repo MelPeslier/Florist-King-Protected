@@ -45,7 +45,6 @@ func just_entered_room(room): # Adjustments when entering
 
 
 func _on_move_cooldown_timeout():
-	current_room.arrows.visible = true
 	can_move = true
 
 
