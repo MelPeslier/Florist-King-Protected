@@ -7,7 +7,6 @@
 
 [node name="Room4" type="Node2D"]
 script = ExtResource("1_fe7u8")
-roomNumber = 4
 
 [node name="Background" type="Sprite2D" parent="."]
 texture = ExtResource("2_lfjjc")

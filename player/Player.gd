@@ -1,5 +1,6 @@
 class_name Player
 extends Node2D
+
 @onready var state_label = $StateLabel
 @onready var player_water_gauge = $PlayerWaterGauge
 

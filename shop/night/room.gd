@@ -1,12 +1,9 @@
 extends Node2D
 
+
 @export var room_number : int
-@export var leftRoom : NodePath
-@export var rightRoom : NodePath
-@export var upRoom : NodePath
-@export var downRoom : NodePath
-@export var fifthRoom : NodePath
 @onready var arrows = $Arrows
+
 
  
 func _ready():
@@ -22,7 +19,7 @@ func move(selectedRoom): # Move to a different room
 	if !player.can_move:
 		return
 	
-	selectedRoom = get_node(selectedRoom)
+	selectedRoom = get_tree().get_root().get_node(selectedRoom)
 	arrows.visible = false
 	selectedRoom.enter(player)
 
@@ -31,26 +28,9 @@ func enter(player): # When the player enters the room
 	player.just_entered_room(self)
 
 
+func update_data(nearby_rooms: Array) -> void:
+	pass
 
 
-
-func _on_left_pressed():
-	move(leftRoom)
-
-
-func _on_right_pressed():
-	move(rightRoom)
-
-
-func _on_up_pressed():
-	move(upRoom)
-
-
-func _on_down_pressed():
-	move(downRoom)
-
-
-func _on_direction_5_pressed():
-	move(fifthRoom)
-
-
+func _on_move_button_pressed(path: NodePath) -> void:
+	move(path)

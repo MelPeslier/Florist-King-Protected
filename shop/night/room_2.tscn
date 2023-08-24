@@ -6,13 +6,11 @@
 
 [node name="Room2" type="Node2D"]
 script = ExtResource("1_2p71r")
-roomNumber = 2
 
 [node name="Background" type="Sprite2D" parent="."]
 texture = ExtResource("2_ha157")
 
 [node name="Arrows" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="Left" type="TextureButton" parent="Arrows"]
 texture_filter = 1
