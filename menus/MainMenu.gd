@@ -1,14 +1,10 @@
 extends CanvasLayer
 
-const startScene = "res://shop/day/day_shop.tscn"
-# Change the scene with the day
 const menuMusic = preload("res://audio/music/MenuTheme.ogg")
 
 @onready var audio_wrong = $AudioWrong
-
-@onready var line_edit = $NameRegister/Splitscreen/NameRegistering/VBoxContainer/CenterAll/VBoxContainer/LineEdit
+@onready var line_edit = $NameRegister/NameRegistering/VBoxContainer/CenterAll/VBoxContainer/LineEdit
 @onready var name_register = $NameRegister
-
 @onready var credits_control = $UI/UISplit/RightControl/SharedControl/CreditsControl
 @onready var leaderboard_control = $UI/UISplit/RightControl/SharedControl/LeaderboardControl
 
@@ -66,7 +62,7 @@ func _on_enter_name_button_up():
 		audio_wrong.play()
 	else:
 		ScoreManager.player_name = line_edit.text
-		get_tree().change_scene_to_file(startScene)
+		get_tree().change_scene_to_file("res://shop/day/day_shop.tscn")
 
 
 func _on_back_button_up():
