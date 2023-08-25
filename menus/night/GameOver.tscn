@@ -48,6 +48,10 @@ vertical_alignment = 1
 
 [node name="DeathMessage" type="Label" parent="Control/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_nyb1u")
+theme_override_font_sizes/font_size = 36
+text = "Shenanigans!"
+horizontal_alignment = 1
 
 [node name="TryAgain" type="Button" parent="Control/VBoxContainer"]
 layout_mode = 2

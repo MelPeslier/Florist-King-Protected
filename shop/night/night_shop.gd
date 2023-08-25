@@ -19,11 +19,10 @@ var path_to := {}
 
 var nearby_rooms := {}
 
-@onready var game_over = $GameOver
+# Called when the node enters the scene tree for the first time.
+const game_over = preload("res://menus/night/GameOver.tscn")
 @onready var timer = $Timer
 
-
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	Events.player_death.connect(_on_player_death)
 	
@@ -39,8 +38,9 @@ func _ready():
 
 func _on_player_death(message:String):
 	timer.stop()
-	game_over.set_death_cause(message)
-	game_over.visible = true
+	var death = game_over.instantiate()
+	death.set_death_cause(message)
+	add_child(death)
 
 
 func init_dic():
@@ -101,3 +101,4 @@ func init_dic():
 		[Rooms.ROOM_8, path_to[Rooms.ROOM_8]],
 		[Rooms.ROOM_9, path_to[Rooms.ROOM_9]]
 	]
+

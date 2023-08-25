@@ -25,6 +25,15 @@
 script = ExtResource("1_3rpaq")
 room_path = [NodePath("Room1"), NodePath("Room2"), NodePath("Room3"), NodePath("Room4"), NodePath("Room5"), NodePath("Room6"), NodePath("Room7"), NodePath("Room8"), NodePath("Room9"), NodePath("Room10")]
 
+[node name="Darkness" type="CanvasModulate" parent="."]
+visible = false
+color = Color(0.05, 0.05, 0.05, 1)
+
+[node name="EditorLight" type="DirectionalLight2D" parent="."]
+editor_description = "Just so you can see something while developing. This light isn't shown while executing"
+visible = false
+editor_only = true
+
 [node name="Timer" type="Timer" parent="."]
 wait_time = 180.0
 one_shot = true
@@ -161,10 +170,10 @@ bus = &"SFX"
 wait_time = 3.0
 one_shot = true
 
-[node name="NightSummary" parent="." instance=ExtResource("17_oewxx")]
+[node name="Pause" parent="." instance=ExtResource("16_3bk6r")]
 visible = false
 
-[node name="Pause" parent="." instance=ExtResource("16_3bk6r")]
+[node name="NightSummary" parent="." instance=ExtResource("17_oewxx")]
 visible = false
 
 [node name="GameOver" parent="." instance=ExtResource("19_ttm3c")]

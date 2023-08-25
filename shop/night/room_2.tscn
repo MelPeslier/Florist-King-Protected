@@ -1,8 +1,18 @@
-[gd_scene load_steps=4 format=3 uid="uid://bp8bd6s36skh6"]
+[gd_scene load_steps=6 format=3 uid="uid://bp8bd6s36skh6"]
 
 [ext_resource type="Script" path="res://shop/night/room.gd" id="1_2p71r"]
 [ext_resource type="Texture2D" uid="uid://d4m5d3776wyh4" path="res://art/placeholder/rooms/Room2.png" id="2_ha157"]
 [ext_resource type="PackedScene" uid="uid://dwoebmusguoxv" path="res://shop/night/Display/next_room.tscn" id="3_gyrbm"]
+[ext_resource type="Texture2D" uid="uid://d4m5d3776wyh4" path="res://art/placeholder/rooms/Room2.PNG" id="2_ha157"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lgahr"]
+size = Vector2(329, 539)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x57rm"]
+size = Vector2(256, 1082)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m5toa"]
+size = Vector2(1413, 227)
 
 [node name="Room2" type="Node2D"]
 script = ExtResource("1_2p71r")
@@ -26,3 +36,49 @@ position = Vector2(624, 520)
 position = Vector2(-152, 520)
 
 [node name="Arrows" type="CanvasLayer" parent="."]
+[node name="Up" type="Area2D" parent="."]
+position = Vector2(305, -114)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Up"]
+visible = false
+position = Vector2(9.5, 20.5)
+shape = SubResource("RectangleShape2D_lgahr")
+
+[node name="Left" type="Area2D" parent="."]
+position = Vector2(-832, 0)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Left"]
+visible = false
+shape = SubResource("RectangleShape2D_x57rm")
+
+[node name="Right" type="Area2D" parent="."]
+position = Vector2(833, 0)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Right"]
+visible = false
+shape = SubResource("RectangleShape2D_x57rm")
+
+[node name="Down" type="Area2D" parent="."]
+position = Vector2(0, 540)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Down"]
+visible = false
+position = Vector2(0.5, -110.5)
+shape = SubResource("RectangleShape2D_m5toa")
+
+[connection signal="input_event" from="Up" to="." method="_on_up_input_event"]
+[connection signal="mouse_entered" from="Up" to="." method="_on_area_mouse_entered"]
+[connection signal="mouse_exited" from="Up" to="." method="_on_area_mouse_exited"]
+[connection signal="input_event" from="Left" to="." method="_on_left_input_event"]
+[connection signal="mouse_entered" from="Left" to="." method="_on_area_mouse_entered"]
+[connection signal="mouse_exited" from="Left" to="." method="_on_area_mouse_exited"]
+[connection signal="input_event" from="Right" to="." method="_on_right_input_event"]
+[connection signal="mouse_entered" from="Right" to="." method="_on_area_mouse_entered"]
+[connection signal="mouse_exited" from="Right" to="." method="_on_area_mouse_exited"]
+[connection signal="input_event" from="Down" to="." method="_on_down_input_event"]
+[connection signal="mouse_entered" from="Down" to="." method="_on_area_mouse_entered"]
+[connection signal="mouse_exited" from="Down" to="." method="_on_area_mouse_exited"]

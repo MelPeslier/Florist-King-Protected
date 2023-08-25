@@ -3,6 +3,10 @@
 [ext_resource type="Script" path="res://shop/night/room.gd" id="1_cywfe"]
 [ext_resource type="Texture2D" uid="uid://dhokg4a7wxecv" path="res://art/placeholder/rooms/Room1.png" id="2_hbwda"]
 [ext_resource type="PackedScene" uid="uid://dwoebmusguoxv" path="res://shop/night/Display/next_room.tscn" id="3_wb7dy"]
+[ext_resource type="Texture2D" uid="uid://dhokg4a7wxecv" path="res://art/placeholder/rooms/Room1.PNG" id="2_hbwda"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bvu0g"]
+size = Vector2(256, 1082)
 
 [node name="Room1" type="Node2D"]
 script = ExtResource("1_cywfe")
@@ -17,3 +21,25 @@ position = Vector2(-928, 432)
 position = Vector2(912, 448)
 
 [node name="Arrows" type="CanvasLayer" parent="."]
+[node name="Left" type="Area2D" parent="."]
+position = Vector2(-832, 0)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Left"]
+visible = false
+shape = SubResource("RectangleShape2D_bvu0g")
+
+[node name="Right" type="Area2D" parent="."]
+position = Vector2(833, 0)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Right"]
+visible = false
+shape = SubResource("RectangleShape2D_bvu0g")
+
+[connection signal="input_event" from="Left" to="." method="_on_left_input_event"]
+[connection signal="mouse_entered" from="Left" to="." method="_on_area_mouse_entered"]
+[connection signal="mouse_exited" from="Left" to="." method="_on_area_mouse_exited"]
+[connection signal="input_event" from="Right" to="." method="_on_right_input_event"]
+[connection signal="mouse_entered" from="Right" to="." method="_on_area_mouse_entered"]
+[connection signal="mouse_exited" from="Right" to="." method="_on_area_mouse_exited"]

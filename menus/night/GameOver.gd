@@ -2,10 +2,6 @@ extends CanvasLayer
 
 @onready var death_message = $Control/VBoxContainer/DeathMessage
 
-func _ready():
-	visible = false
-
-
 func set_death_cause(message:String):
 	death_message.text = message
 

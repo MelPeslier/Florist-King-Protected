@@ -41,7 +41,8 @@ func _on_timer_timeout():
 					if pot.name.begins_with("Pot"):
 						if !PlacerData.placer_data[room.get_name()][pot.get_name()] == null:
 							#access previously instantiated flowers
-							var price: float = pot.get_child(0).sell_flower()
+							if pot.get_child_count() > 0:
+								var price: float = pot.get_child(0).sell_flower()
 							
-							PlacerData.placer_data[room.get_name()][pot.get_name()].flower_price = int(price)
+								PlacerData.placer_data[room.get_name()][pot.get_name()].flower_price = int(price)
 						

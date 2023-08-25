@@ -14,13 +14,9 @@ var nearby_rooms :=[]
  
 func _ready():
 	visible = true
-	arrows.visible = false
 
 
 func move(selectedRoom): # Move to a different room
-	if !selectedRoom:
-		return
-	
 	var player = get_node("../Player")
 	if !player.can_move:
 		return
@@ -55,6 +51,12 @@ func update_data(room, nearby: Array) -> void:
 			i += 1
 
 
+func rotate_to_target(dummy, target):
+	var direction = target.global_position - global_position
+	var angle = direction.angle()
+	dummy.rotation = angle
+
+
 func update_flower(target_room: int) -> Array:
 	var i: int = 0
 	var pos = global_position
@@ -65,12 +67,38 @@ func update_flower(target_room: int) -> Array:
 				pos = marker.global_position
 				path = nearby_rooms[i][Room.PATH]
 	return [pos, path]
+   
+   
+func _on_left_input_event(_viewport, event, _shape_idx):
+	if event is InputEventMouseButton:
+		if event.pressed && event.button_index == MOUSE_BUTTON_LEFT:
+			move(leftRoom)
 
 
-func rotate_to_target(dummy, target):
-	var direction = target.global_position - global_position
-	var angle = direction.angle()
-	dummy.rotation = angle
+func _on_right_input_event(_viewport, event, _shape_idx):
+	if event is InputEventMouseButton:
+		if event.pressed && event.button_index == MOUSE_BUTTON_LEFT:
+			move(rightRoom)
+
+
+func _on_up_input_event(_viewport, event, _shape_idx):
+	if event is InputEventMouseButton:
+		if event.pressed && event.button_index == MOUSE_BUTTON_LEFT:
+			move(upRoom)
+
+
+func _on_down_input_event(_viewport, event, _shape_idx):
+	if event is InputEventMouseButton:
+		if event.pressed && event.button_index == MOUSE_BUTTON_LEFT:
+			move(downRoom)
+
+
+func _on_area_mouse_entered():
+	Input.set_default_cursor_shape(Input.CURSOR_POINTING_HAND)
+
+
+func _on_area_mouse_exited():
+	Input.set_default_cursor_shape(Input.CURSOR_ARROW)
 
 
 func go_to(room: int) -> void:

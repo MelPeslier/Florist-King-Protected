@@ -1,9 +1,17 @@
-[gd_scene load_steps=5 format=3 uid="uid://1j15enoggw34"]
+[gd_scene load_steps=6 format=3 uid="uid://1j15enoggw34"]
 
 [ext_resource type="Script" path="res://shop/night/room.gd" id="1_fe7u8"]
 [ext_resource type="Texture2D" uid="uid://dnujvnv73i0p" path="res://art/placeholder/rooms/Room4.png" id="2_lfjjc"]
 [ext_resource type="PackedScene" uid="uid://dwoebmusguoxv" path="res://shop/night/Display/next_room.tscn" id="4_bme27"]
 [ext_resource type="PackedScene" uid="uid://oh8gi3dswlng" path="res://commons/table/table.tscn" id="4_gmnc6"]
+[ext_resource type="Texture2D" uid="uid://dnujvnv73i0p" path="res://art/placeholder/rooms/Room4.PNG" id="2_lfjjc"]
+[ext_resource type="PackedScene" uid="uid://oh8gi3dswlng" path="res://commons/table/table.tscn" id="4_gmnc6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u2u1w"]
+size = Vector2(256, 1082)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nce4g"]
+size = Vector2(1413, 227)
 
 [node name="Room4" type="Node2D"]
 script = ExtResource("1_fe7u8")
@@ -32,5 +40,39 @@ position = Vector2(-257, 31)
 position = Vector2(318, 49)
 
 [node name="Arrows" type="CanvasLayer" parent="."]
+[node name="Left" type="Area2D" parent="."]
+position = Vector2(-832, 0)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Left"]
+visible = false
+shape = SubResource("RectangleShape2D_u2u1w")
+
+[node name="Right" type="Area2D" parent="."]
+position = Vector2(833, 0)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Right"]
+visible = false
+shape = SubResource("RectangleShape2D_u2u1w")
+
+[node name="Down" type="Area2D" parent="."]
+position = Vector2(0, 540)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Down"]
+visible = false
+position = Vector2(0.5, -110.5)
+shape = SubResource("RectangleShape2D_nce4g")
+
+[connection signal="input_event" from="Left" to="." method="_on_left_input_event"]
+[connection signal="mouse_entered" from="Left" to="." method="_on_area_mouse_entered"]
+[connection signal="mouse_exited" from="Left" to="." method="_on_area_mouse_exited"]
+[connection signal="input_event" from="Right" to="." method="_on_right_input_event"]
+[connection signal="mouse_entered" from="Right" to="." method="_on_area_mouse_entered"]
+[connection signal="mouse_exited" from="Right" to="." method="_on_area_mouse_exited"]
+[connection signal="input_event" from="Down" to="." method="_on_down_input_event"]
+[connection signal="mouse_entered" from="Down" to="." method="_on_area_mouse_entered"]
+[connection signal="mouse_exited" from="Down" to="." method="_on_area_mouse_exited"]
 
 [editable path="Table"]
