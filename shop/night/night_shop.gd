@@ -33,8 +33,7 @@ func _ready():
 	var i = 1
 	for room in get_children():
 		if room.is_in_group("room"):
-			print(nearby_rooms[i])
-			room.update_data(nearby_rooms[i])
+			room.update_data(i, nearby_rooms[i])
 			i += 1
 
 
@@ -53,51 +52,52 @@ func init_dic():
 	
 	# Initialise nearby_rooms dictionary
 	nearby_rooms[Rooms.ROOM_1] = [
-		path_to[Rooms.ROOM_2],
-		path_to[Rooms.ROOM_10]
+		[Rooms.ROOM_2, path_to[Rooms.ROOM_2]],
+		[Rooms.ROOM_10, path_to[Rooms.ROOM_10]]
 	]
 	nearby_rooms[Rooms.ROOM_2] = [
-		path_to[Rooms.ROOM_1],
-		path_to[Rooms.ROOM_3],
-		path_to[Rooms.ROOM_4],
-		path_to[Rooms.ROOM_5]
+		[Rooms.ROOM_1, path_to[Rooms.ROOM_1]],
+		[Rooms.ROOM_3, path_to[Rooms.ROOM_3]],
+		[Rooms.ROOM_4, path_to[Rooms.ROOM_4]],
+		[Rooms.ROOM_5, path_to[Rooms.ROOM_5]],
+		[Rooms.ROOM_10, path_to[Rooms.ROOM_10]]
 	]
 	nearby_rooms[Rooms.ROOM_3] = [
-		path_to[Rooms.ROOM_2]
+		[Rooms.ROOM_2, path_to[Rooms.ROOM_2]]
 	]
 	nearby_rooms[Rooms.ROOM_4] = [
-		path_to[Rooms.ROOM_2],
-		path_to[Rooms.ROOM_5],
-		path_to[Rooms.ROOM_6]
+		[Rooms.ROOM_2, path_to[Rooms.ROOM_2]],
+		[Rooms.ROOM_5, path_to[Rooms.ROOM_5]],
+		[Rooms.ROOM_6, path_to[Rooms.ROOM_6]]
 	]
 	nearby_rooms[Rooms.ROOM_5] = [
-		path_to[Rooms.ROOM_2],
-		path_to[Rooms.ROOM_4],
-		path_to[Rooms.ROOM_6]
+		[Rooms.ROOM_2, path_to[Rooms.ROOM_2]],
+		[Rooms.ROOM_4, path_to[Rooms.ROOM_4]],
+		[Rooms.ROOM_6, path_to[Rooms.ROOM_6]]
 	]
 	nearby_rooms[Rooms.ROOM_6] = [
-		path_to[Rooms.ROOM_4],
-		path_to[Rooms.ROOM_5],
-		path_to[Rooms.ROOM_7]
+		[Rooms.ROOM_4, path_to[Rooms.ROOM_4]],
+		[Rooms.ROOM_5, path_to[Rooms.ROOM_5]],
+		[Rooms.ROOM_7, path_to[Rooms.ROOM_7]]
 	]
 	nearby_rooms[Rooms.ROOM_7] = [
-		path_to[Rooms.ROOM_6],
-		path_to[Rooms.ROOM_8],
-		path_to[Rooms.ROOM_9]
+		[Rooms.ROOM_6, path_to[Rooms.ROOM_6]],
+		[Rooms.ROOM_8, path_to[Rooms.ROOM_8]],
+		[Rooms.ROOM_9, path_to[Rooms.ROOM_9]]
 	]
 	nearby_rooms[Rooms.ROOM_8] = [
-		path_to[Rooms.ROOM_7],
-		path_to[Rooms.ROOM_9],
-		path_to[Rooms.ROOM_10]
+		[Rooms.ROOM_7, path_to[Rooms.ROOM_7]],
+		[Rooms.ROOM_9, path_to[Rooms.ROOM_9]],
+		[Rooms.ROOM_10, path_to[Rooms.ROOM_10]]
 	]
 	nearby_rooms[Rooms.ROOM_9] = [
-		path_to[Rooms.ROOM_7],
-		path_to[Rooms.ROOM_8],
-		path_to[Rooms.ROOM_10]
+		[Rooms.ROOM_7, path_to[Rooms.ROOM_7]],
+		[Rooms.ROOM_8, path_to[Rooms.ROOM_8]],
+		[Rooms.ROOM_10, path_to[Rooms.ROOM_10]]
 	]
 	nearby_rooms[Rooms.ROOM_10] = [
-		path_to[Rooms.ROOM_1],
-		path_to[Rooms.ROOM_2],
-		path_to[Rooms.ROOM_8],
-		path_to[Rooms.ROOM_9]
+		[Rooms.ROOM_1, path_to[Rooms.ROOM_1]],
+		[Rooms.ROOM_2, path_to[Rooms.ROOM_2]],
+		[Rooms.ROOM_8, path_to[Rooms.ROOM_8]],
+		[Rooms.ROOM_9, path_to[Rooms.ROOM_9]]
 	]

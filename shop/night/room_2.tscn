@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://shop/night/room.gd" id="1_2p71r"]
 [ext_resource type="Texture2D" uid="uid://d4m5d3776wyh4" path="res://art/placeholder/rooms/Room2.png" id="2_ha157"]
-[ext_resource type="Texture2D" uid="uid://be5yxlfsoxp5y" path="res://art/placeholder/HUD/Arrow.png" id="3_quxrs"]
+[ext_resource type="PackedScene" uid="uid://dwoebmusguoxv" path="res://shop/night/Display/next_room.tscn" id="3_gyrbm"]
 
 [node name="Room2" type="Node2D"]
 script = ExtResource("1_2p71r")
@@ -10,94 +10,19 @@ script = ExtResource("1_2p71r")
 [node name="Background" type="Sprite2D" parent="."]
 texture = ExtResource("2_ha157")
 
+[node name="NextRoom" parent="." instance=ExtResource("3_gyrbm")]
+position = Vector2(-888, 464)
+
+[node name="NextRoom2" parent="." instance=ExtResource("3_gyrbm")]
+position = Vector2(272, 0)
+
+[node name="NextRoom3" parent="." instance=ExtResource("3_gyrbm")]
+position = Vector2(888, 336)
+
+[node name="NextRoom4" parent="." instance=ExtResource("3_gyrbm")]
+position = Vector2(624, 520)
+
+[node name="NextRoom5" parent="." instance=ExtResource("3_gyrbm")]
+position = Vector2(-152, 520)
+
 [node name="Arrows" type="CanvasLayer" parent="."]
-
-[node name="Left" type="TextureButton" parent="Arrows"]
-texture_filter = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 8.0
-offset_top = -21.0
-offset_right = 116.0
-offset_bottom = 33.0
-grow_vertical = 2
-rotation = 3.14159
-pivot_offset = Vector2(54, 27)
-texture_normal = ExtResource("3_quxrs")
-stretch_mode = 5
-
-[node name="Right" type="TextureButton" parent="Arrows"]
-texture_filter = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -136.0
-offset_top = -67.0
-offset_right = -28.0
-offset_bottom = -13.0
-grow_horizontal = 0
-grow_vertical = 2
-rotation = -0.259816
-pivot_offset = Vector2(54, 27)
-texture_normal = ExtResource("3_quxrs")
-stretch_mode = 5
-
-[node name="Up" type="TextureButton" parent="Arrows"]
-texture_filter = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -53.0
-offset_top = 52.0
-offset_right = 55.0
-offset_bottom = 106.0
-grow_horizontal = 2
-rotation = -1.5708
-pivot_offset = Vector2(54, 27)
-texture_normal = ExtResource("3_quxrs")
-stretch_mode = 5
-
-[node name="Down" type="TextureButton" parent="Arrows"]
-texture_filter = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -365.0
-offset_top = -128.0
-offset_right = -257.0
-offset_bottom = -74.0
-grow_horizontal = 2
-grow_vertical = 0
-rotation = 2.48651
-pivot_offset = Vector2(54, 27)
-texture_normal = ExtResource("3_quxrs")
-stretch_mode = 5
-
-[node name="Direction5" type="TextureButton" parent="Arrows"]
-texture_filter = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = 357.0
-offset_top = -207.0
-offset_right = 465.0
-offset_bottom = -153.0
-grow_horizontal = 2
-grow_vertical = 0
-rotation = 0.493726
-pivot_offset = Vector2(54, 27)
-texture_normal = ExtResource("3_quxrs")
-stretch_mode = 5
-
-[connection signal="pressed" from="Arrows/Left" to="." method="_on_left_pressed"]
-[connection signal="pressed" from="Arrows/Right" to="." method="_on_right_pressed"]
-[connection signal="pressed" from="Arrows/Up" to="." method="_on_up_pressed"]
-[connection signal="pressed" from="Arrows/Down" to="." method="_on_down_pressed"]
-[connection signal="pressed" from="Arrows/Direction5" to="." method="_on_direction_5_pressed"]
