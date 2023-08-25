@@ -115,6 +115,7 @@ vertical_alignment = 1
 script = ExtResource("5_4b5cc")
 
 [node name="SkipDayButton" type="Button" parent="UI/Control"]
+layout_mode = 0
 offset_left = 1690.0
 offset_top = 391.0
 offset_right = 1922.0

@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://dmlpgi4aoupij"]
+[gd_scene load_steps=7 format=3 uid="uid://dmlpgi4aoupij"]
 
 [ext_resource type="Script" path="res://shop/night/room.gd" id="1_tbqd1"]
 [ext_resource type="Texture2D" uid="uid://byqfdicjhpbm5" path="res://art/placeholder/rooms/Room6.png" id="2_urc7p"]
-[ext_resource type="Texture2D" uid="uid://byqfdicjhpbm5" path="res://art/placeholder/rooms/Room6.PNG" id="2_urc7p"]
 [ext_resource type="PackedScene" uid="uid://oh8gi3dswlng" path="res://commons/table/table.tscn" id="4_g473l"]
 [ext_resource type="PackedScene" uid="uid://dwoebmusguoxv" path="res://shop/night/Display/next_room.tscn" id="4_xc0wc"]
 
@@ -41,6 +40,7 @@ position = Vector2(-123, -252)
 position = Vector2(283, -194)
 
 [node name="Arrows" type="CanvasLayer" parent="."]
+
 [node name="Left" type="Area2D" parent="."]
 position = Vector2(-832, 0)
 metadata/_edit_group_ = true
