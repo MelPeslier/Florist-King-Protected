@@ -21,6 +21,7 @@ func move(selectedRoom): # Move to a different room
 	if !player.can_move:
 		return
 	
+	# To get absolute path
 	selectedRoom = get_node("/root/NightShop/" + str(selectedRoom))
 	arrows.visible = false
 	selectedRoom.enter(player)
@@ -48,7 +49,6 @@ func update_data(room, nearby: Array) -> void:
 			# Rotation
 			rotate_to_target(arrow, marker)
 			i += 1
-
 
 
 func rotate_to_target(dummy, target):

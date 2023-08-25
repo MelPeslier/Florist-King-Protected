@@ -28,7 +28,7 @@ position = Vector2(440, 25)
 position = Vector2(926, 284)
 
 [node name="NextRoom2" parent="." instance=ExtResource("4_3bnxi")]
-position = Vector2(10, 486)
+position = Vector2(12, 508)
 
 [node name="NextRoom3" parent="." instance=ExtResource("4_3bnxi")]
 position = Vector2(-922, 311)

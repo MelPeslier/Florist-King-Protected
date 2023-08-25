@@ -11,9 +11,9 @@ script = ExtResource("1_cywfe")
 texture = ExtResource("2_hbwda")
 
 [node name="NextRoom" parent="." instance=ExtResource("3_wb7dy")]
-position = Vector2(-880, 432)
+position = Vector2(-928, 432)
 
 [node name="NextRoom2" parent="." instance=ExtResource("3_wb7dy")]
-position = Vector2(832, 440)
+position = Vector2(912, 448)
 
 [node name="Arrows" type="CanvasLayer" parent="."]

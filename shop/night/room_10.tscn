@@ -20,6 +20,6 @@ position = Vector2(760, 504)
 position = Vector2(-448, 512)
 
 [node name="NextRoom4" parent="." instance=ExtResource("3_ngufr")]
-position = Vector2(-912, 312)
+position = Vector2(-936, 320)
 
 [node name="Arrows" type="CanvasLayer" parent="."]

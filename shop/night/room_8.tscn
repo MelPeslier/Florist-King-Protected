@@ -25,7 +25,7 @@ position = Vector2(-74, 131)
 position = Vector2(318, 99)
 
 [node name="NextRoom" parent="." instance=ExtResource("4_0vpsn")]
-position = Vector2(896, 360)
+position = Vector2(920, 368)
 
 [node name="NextRoom2" parent="." instance=ExtResource("4_0vpsn")]
 position = Vector2(0, 504)

@@ -11,13 +11,13 @@ script = ExtResource("1_2p71r")
 texture = ExtResource("2_ha157")
 
 [node name="NextRoom" parent="." instance=ExtResource("3_gyrbm")]
-position = Vector2(-888, 464)
+position = Vector2(-936, 496)
 
 [node name="NextRoom2" parent="." instance=ExtResource("3_gyrbm")]
-position = Vector2(272, 0)
+position = Vector2(232, -344)
 
 [node name="NextRoom3" parent="." instance=ExtResource("3_gyrbm")]
-position = Vector2(888, 336)
+position = Vector2(920, 360)
 
 [node name="NextRoom4" parent="." instance=ExtResource("3_gyrbm")]
 position = Vector2(624, 520)

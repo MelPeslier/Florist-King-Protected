@@ -25,13 +25,13 @@ position = Vector2(26, -101)
 position = Vector2(274, 35)
 
 [node name="NextRoom" parent="." instance=ExtResource("4_p2c2n")]
-position = Vector2(-832, 464)
+position = Vector2(-920, 472)
 
 [node name="NextRoom2" parent="." instance=ExtResource("4_p2c2n")]
 position = Vector2(216, 496)
 
 [node name="NextRoom3" parent="." instance=ExtResource("4_p2c2n")]
-position = Vector2(816, 480)
+position = Vector2(912, 480)
 
 [node name="Arrows" type="CanvasLayer" parent="."]
 
