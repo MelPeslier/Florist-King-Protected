@@ -70,27 +70,31 @@ func update_flower(target_room: int) -> Array:
    
    
 func _on_left_input_event(_viewport, event, _shape_idx):
-	if event is InputEventMouseButton:
-		if event.pressed && event.button_index == MOUSE_BUTTON_LEFT:
-			move(leftRoom)
+#	if event is InputEventMouseButton:
+#		if event.pressed && event.button_index == MOUSE_BUTTON_LEFT:
+#			move(leftRoom)
+			pass
 
 
 func _on_right_input_event(_viewport, event, _shape_idx):
-	if event is InputEventMouseButton:
-		if event.pressed && event.button_index == MOUSE_BUTTON_LEFT:
-			move(rightRoom)
+#	if event is InputEventMouseButton:
+#		if event.pressed && event.button_index == MOUSE_BUTTON_LEFT:
+#			move(rightRoom)
+	pass
 
 
 func _on_up_input_event(_viewport, event, _shape_idx):
-	if event is InputEventMouseButton:
-		if event.pressed && event.button_index == MOUSE_BUTTON_LEFT:
-			move(upRoom)
+#	if event is InputEventMouseButton:
+#		if event.pressed && event.button_index == MOUSE_BUTTON_LEFT:
+#			move(upRoom)
+	pass
 
 
 func _on_down_input_event(_viewport, event, _shape_idx):
-	if event is InputEventMouseButton:
-		if event.pressed && event.button_index == MOUSE_BUTTON_LEFT:
-			move(downRoom)
+#	if event is InputEventMouseButton:
+#		if event.pressed && event.button_index == MOUSE_BUTTON_LEFT:
+#			move(downRoom)
+	pass
 
 
 func _on_area_mouse_entered():

@@ -1,9 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://dinjpcmsfbml2"]
+[gd_scene load_steps=5 format=3 uid="uid://dinjpcmsfbml2"]
 
 [ext_resource type="Script" path="res://shop/night/room.gd" id="1_cywfe"]
 [ext_resource type="Texture2D" uid="uid://dhokg4a7wxecv" path="res://art/placeholder/rooms/Room1.png" id="2_hbwda"]
 [ext_resource type="PackedScene" uid="uid://dwoebmusguoxv" path="res://shop/night/Display/next_room.tscn" id="3_wb7dy"]
-[ext_resource type="Texture2D" uid="uid://dhokg4a7wxecv" path="res://art/placeholder/rooms/Room1.PNG" id="2_hbwda"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bvu0g"]
 size = Vector2(256, 1082)
@@ -21,6 +20,7 @@ position = Vector2(-928, 432)
 position = Vector2(912, 448)
 
 [node name="Arrows" type="CanvasLayer" parent="."]
+
 [node name="Left" type="Area2D" parent="."]
 position = Vector2(-832, 0)
 metadata/_edit_group_ = true
