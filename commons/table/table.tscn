@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://commons/table/table.gd" id="1_n53t1"]
 [ext_resource type="PackedScene" uid="uid://8lpyo4m5siaj" path="res://commons/pot/pot.tscn" id="3_tbegc"]
 
-[node name="Table" type="Node2D"]
+[node name="Table" type="Node2D" groups=["table"]]
 script = ExtResource("1_n53t1")
 metadata/_edit_lock_ = true
 

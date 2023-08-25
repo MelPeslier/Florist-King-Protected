@@ -2,7 +2,7 @@ class_name Flower
 extends Area2D
 
 
-@onready var flower_room = get_node("../../..").room_number # get_parent() 3 times
+@onready var flower_room = get_node("../../..") # get_parent() 3 times
 @onready var player = get_node("../../../../Player") as Player
 
 

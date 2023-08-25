@@ -11,6 +11,15 @@ script = ExtResource("1_fe7u8")
 [node name="Background" type="Sprite2D" parent="."]
 texture = ExtResource("2_lfjjc")
 
+[node name="NextRoom" parent="." instance=ExtResource("4_bme27")]
+position = Vector2(-909, 393)
+
+[node name="NextRoom2" parent="." instance=ExtResource("4_bme27")]
+position = Vector2(9, 499)
+
+[node name="NextRoom3" parent="." instance=ExtResource("4_bme27")]
+position = Vector2(931, 341)
+
 [node name="Table" parent="." instance=ExtResource("4_gmnc6")]
 
 [node name="Pot1" parent="Table" index="0"]
@@ -21,15 +30,6 @@ position = Vector2(-257, 31)
 
 [node name="Pot3" parent="Table" index="2"]
 position = Vector2(318, 49)
-
-[node name="NextRoom" parent="." instance=ExtResource("4_bme27")]
-position = Vector2(-909, 393)
-
-[node name="NextRoom2" parent="." instance=ExtResource("4_bme27")]
-position = Vector2(9, 499)
-
-[node name="NextRoom3" parent="." instance=ExtResource("4_bme27")]
-position = Vector2(931, 341)
 
 [node name="Arrows" type="CanvasLayer" parent="."]
 

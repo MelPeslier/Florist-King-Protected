@@ -45,8 +45,10 @@ func water_update(delta: float):
 
 
 func drinking(delta: float):
-	water = min(water + water_incr_speed * delta, max_water)
 	is_drinking = player.take_water(delta)
+	if is_drinking:
+		water = min(water + water_incr_speed * delta, max_water)
+	else: not_drinking(delta)
 
 
 func not_drinking(delta: float):

@@ -1,5 +1,9 @@
 extends Node2D
 
+enum Room {
+	NUMBER,
+	PATH
+}
 
 var room_number: int = 0
 var nearby_rooms :=[]
@@ -49,6 +53,18 @@ func update_data(room, nearby: Array) -> void:
 			# Rotation
 			rotate_to_target(arrow, marker)
 			i += 1
+
+
+func update_flower(target_room: int) -> Array:
+	var i: int = 0
+	var pos = global_position
+	var path = ""
+	for marker in get_children():
+		if marker is Marker2D:
+			if nearby_rooms[i][Room.NUMBER] == target_room:
+				pos = marker.global_position
+				path = nearby_rooms[i][Room.PATH]
+	return [pos, path]
 
 
 func rotate_to_target(dummy, target):

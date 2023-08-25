@@ -12,6 +12,15 @@ script = ExtResource("1_cyimn")
 texture = ExtResource("2_vdg6n")
 metadata/_edit_lock_ = true
 
+[node name="NextRoom" parent="." instance=ExtResource("4_3bnxi")]
+position = Vector2(926, 284)
+
+[node name="NextRoom2" parent="." instance=ExtResource("4_3bnxi")]
+position = Vector2(12, 508)
+
+[node name="NextRoom3" parent="." instance=ExtResource("4_3bnxi")]
+position = Vector2(-922, 311)
+
 [node name="Table" parent="." instance=ExtResource("4_yqe7k")]
 position = Vector2(-2, -4)
 
@@ -23,15 +32,6 @@ position = Vector2(-12, 41)
 
 [node name="Pot3" parent="Table" index="2"]
 position = Vector2(440, 25)
-
-[node name="NextRoom" parent="." instance=ExtResource("4_3bnxi")]
-position = Vector2(926, 284)
-
-[node name="NextRoom2" parent="." instance=ExtResource("4_3bnxi")]
-position = Vector2(12, 508)
-
-[node name="NextRoom3" parent="." instance=ExtResource("4_3bnxi")]
-position = Vector2(-922, 311)
 
 [node name="Arrows" type="CanvasLayer" parent="."]
 

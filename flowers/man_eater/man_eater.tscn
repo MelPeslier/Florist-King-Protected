@@ -8,6 +8,8 @@
 size = Vector2(200, 24)
 
 [node name="ManEater" type="Area2D" groups=["flower"]]
+collision_layer = 4
+collision_mask = 0
 script = ExtResource("1_vdkwt")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
