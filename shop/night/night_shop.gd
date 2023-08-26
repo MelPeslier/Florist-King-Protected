@@ -19,13 +19,12 @@ var path_to := {}
 
 var nearby_rooms := {}
 
-# Called when the node enters the scene tree for the first time.
 const game_over = preload("res://menus/night/GameOver.tscn")
 @onready var timer = $Timer
 
 func _ready():
 	Events.player_death.connect(_on_player_death)
-	
+	events()
 	# Initialise stored data
 	init_dic()
 	
@@ -102,3 +101,12 @@ func init_dic():
 		[Rooms.ROOM_9, path_to[Rooms.ROOM_9]]
 	]
 
+# Check for events that happen during specific nights
+func events():
+	if !Events.broken_lights:
+		if ScoreManager.dayNum == 2:
+			var blackout = load("res://shop/Blackout.tscn")
+			add_child(blackout.instantiate())
+	else:
+		$Darkness.visible = true
+		$Player.use_flashlight()

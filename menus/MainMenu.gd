@@ -11,7 +11,7 @@ const menuMusic = preload("res://audio/music/MenuTheme.ogg")
 
 func _ready():
 	#Audio
-	Music.fade_in()
+	#Music.fade_in()
 	Music.stream = menuMusic
 	Music.play()
 	

@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dinjpcmsfbml2"]
 
 [ext_resource type="Script" path="res://shop/night/room.gd" id="1_cywfe"]
-[ext_resource type="Texture2D" uid="uid://dhokg4a7wxecv" path="res://art/placeholder/rooms/Room1.png" id="2_hbwda"]
+[ext_resource type="Texture2D" uid="uid://dhokg4a7wxecv" path="res://art/placeholder/rooms/Room1.PNG" id="2_hbwda"]
 [ext_resource type="PackedScene" uid="uid://dwoebmusguoxv" path="res://shop/night/Display/next_room.tscn" id="3_wb7dy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bvu0g"]

@@ -1,13 +1,22 @@
 extends Node
 
-var yes_song = preload("res://audio/sfx/drag_drop/Advance_Dialogue.wav")
-var no_song = preload("res://audio/sfx/drag_drop/error_sound.wav")
+const daymusicstart = preload("res://audio/music/day_shop_start.ogg")
+const daymusicloop = preload("res://audio/music/day_shop_loop.ogg")
+const yes_song = preload("res://audio/sfx/drag_drop/Advance_Dialogue.wav")
+const no_song = preload("res://audio/sfx/drag_drop/error_sound.wav")
 
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	Events.connect("play_the_song", _on_play_the_song)
+	Events.play_the_song.connect(_on_play_the_song)
+	Pause.canPause = true
 #	$UI/Control/Icon.texture = null
+	Music.stream = daymusicstart
+	Music.play()
+
+
+func _on_loop_start():
+	Music.stream = daymusicloop
+	Music.play()
 
 
 func _on_play_the_song(song:String):

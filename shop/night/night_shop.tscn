@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://bstp6mip8ystj"]
+[gd_scene load_steps=19 format=3 uid="uid://bstp6mip8ystj"]
 
 [ext_resource type="Script" path="res://shop/night/night_shop.gd" id="1_3rpaq"]
 [ext_resource type="PackedScene" uid="uid://dinjpcmsfbml2" path="res://shop/night/room_1.tscn" id="1_y41b2"]
@@ -17,7 +17,6 @@
 [ext_resource type="Script" path="res://shop/day/DayToNight.gd" id="13_uw60l"]
 [ext_resource type="FontFile" uid="uid://b0hof85mkga7d" path="res://art/Playfulist-rgPp8.ttf" id="14_rh50w"]
 [ext_resource type="AudioStream" uid="uid://bkiwohevp4s2i" path="res://audio/sfx/DayToNight.mp3" id="15_k5pqt"]
-[ext_resource type="PackedScene" uid="uid://evem30mswvy5" path="res://autoloads/Pause.tscn" id="16_3bk6r"]
 [ext_resource type="PackedScene" uid="uid://csmkid2i2d5e1" path="res://menus/night/NightSummary.tscn" id="17_oewxx"]
 
 [node name="NightShop" type="Node2D"]
@@ -28,13 +27,8 @@ room_path = [NodePath("Room1"), NodePath("Room2"), NodePath("Room3"), NodePath("
 visible = false
 color = Color(0.05, 0.05, 0.05, 1)
 
-[node name="EditorLight" type="DirectionalLight2D" parent="."]
-editor_description = "Just so you can see something while developing. This light isn't shown while executing"
-visible = false
-editor_only = true
-
 [node name="Timer" type="Timer" parent="."]
-wait_time = 180.0
+wait_time = 30.0
 one_shot = true
 autostart = true
 script = ExtResource("2_4fms2")
@@ -168,9 +162,6 @@ bus = &"SFX"
 [node name="Timer" type="Timer" parent="DayToNight"]
 wait_time = 3.0
 one_shot = true
-
-[node name="Pause" parent="." instance=ExtResource("16_3bk6r")]
-visible = false
 
 [node name="NightSummary" parent="." instance=ExtResource("17_oewxx")]
 visible = false

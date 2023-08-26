@@ -22,3 +22,4 @@ func _on_audio_finished():
 
 func _on_timer_timeout():
 	queue_free()
+	Pause.canPause = true

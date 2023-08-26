@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://bp8bd6s36skh6"]
 
 [ext_resource type="Script" path="res://shop/night/room.gd" id="1_2p71r"]
-[ext_resource type="Texture2D" uid="uid://d4m5d3776wyh4" path="res://art/placeholder/rooms/Room2.png" id="2_ha157"]
+[ext_resource type="Texture2D" uid="uid://d4m5d3776wyh4" path="res://art/placeholder/rooms/Room2.PNG" id="2_ha157"]
 [ext_resource type="PackedScene" uid="uid://dwoebmusguoxv" path="res://shop/night/Display/next_room.tscn" id="3_gyrbm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lgahr"]
@@ -66,6 +66,7 @@ position = Vector2(0, 540)
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Down"]
+visible = false
 position = Vector2(0.5, -110.5)
 shape = SubResource("RectangleShape2D_m5toa")
 

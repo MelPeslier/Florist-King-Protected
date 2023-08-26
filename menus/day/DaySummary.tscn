@@ -48,6 +48,7 @@ corner_detail = 1
 anti_aliasing = false
 
 [node name="DaySummary" type="CanvasLayer"]
+process_mode = 3
 offset = Vector2(960, 0)
 transform = Transform2D(1, 0, 0, 1, 960, 0)
 script = ExtResource("1_pifg5")

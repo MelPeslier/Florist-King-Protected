@@ -17,6 +17,8 @@ func _ready():
 	current_room.enter(self)
 	player_water_gauge.update_gauge()
 
+func _process(_delta):
+	$Flashlight.position = get_local_mouse_position()
 
 func take_water(delta: float):
 	state_label.text = ""
@@ -60,4 +62,17 @@ func _on_hugging(is_hugging) -> void:
 		current_room.arrows.visible = true
 		can_move = true
 
+func talk(words):
+	if words == "":
+		return
+	
+	$HUD/Speech.visible = true
+	$HUD/Speech.text = words
+	$HUD/Speech/Timer.start()
 
+func use_flashlight():
+	$Flashlight.visible = true
+
+
+func _on_timer_timeout():
+	$HUD/Speech.visible = false

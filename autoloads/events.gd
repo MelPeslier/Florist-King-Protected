@@ -1,5 +1,7 @@
 extends Node
 
+var broken_lights := false
+
 signal player_enter_room(room_number :int)
 
 signal hugging(is_hugging: bool)

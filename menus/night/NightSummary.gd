@@ -13,7 +13,7 @@ func add_to_list(list:Array): # Needs an array of strings
 	#  the night, then feed them to this function 
 	#   when creating the summary.
 	
-	if list.size() == 0: # You've done everything right!
+	if list.size() == 0:
 		summary.append("Everything seems fine!")
 	else:
 		summary.append_array(list)
@@ -23,9 +23,12 @@ func add_to_list(list:Array): # Needs an array of strings
 
 func _on_timer_timeout():
 	visible = true
+	get_tree().paused = true
+	Pause.canPause = false
 	Music.fade_out()
 	$AnimationPlayer.play("come_in")
 	ScoreManager.next_day()
 
 func _on_continue_pressed():
+	get_tree().paused = false
 	get_tree().change_scene_to_file("res://shop/day/day_shop.tscn")
