@@ -10,3 +10,5 @@ func fade_in():
 
 func _on_finished():
 	loop_start.emit()
+
+
