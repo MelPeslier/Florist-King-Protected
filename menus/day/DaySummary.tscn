@@ -118,7 +118,7 @@ layout_mode = 2
 theme_override_constants/margin_top = 25
 theme_override_constants/margin_bottom = 50
 
-[node name="Continue" type="Button" parent="HBoxContainer/Control/VBoxContainer/MarginContinue"]
+[node name="ContinueToNight" type="Button" parent="HBoxContainer/Control/VBoxContainer/MarginContinue"]
 layout_mode = 2
 focus_mode = 0
 theme_override_fonts/font = ExtResource("2_o8ptp")
@@ -127,4 +127,4 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_gpecu")
 theme_override_styles/hover = SubResource("StyleBoxFlat_otqdg")
 text = " Continue"
 
-[connection signal="pressed" from="HBoxContainer/Control/VBoxContainer/MarginContinue/Continue" to="." method="_on_continue_pressed"]
+[connection signal="button_up" from="HBoxContainer/Control/VBoxContainer/MarginContinue/ContinueToNight" to="." method="_on_continue_to_night_button_up"]
