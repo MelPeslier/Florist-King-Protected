@@ -41,6 +41,10 @@ window/stretch/mode="canvas_items"
 
 run/main_run_args="--rendering-driver opengl3"
 
+[filesystem]
+
+import/blender/enabled=false
+
 [input]
 
 left_click={

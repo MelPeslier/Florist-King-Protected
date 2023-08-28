@@ -58,7 +58,7 @@ func not_drinking(delta):
 
 func _on_player_enter_room(_room_number :int):
 	if hug_time == 0.0 :
-		Events.emmit("hugging", true)
+		Events.hugging.emit(true)
 		is_hugging = true
 
 
