@@ -64,6 +64,10 @@ func die(how :String):
 	queue_free()
 
 
+func init_movements() -> void:
+	pass
+
+
 func sell_flower() -> float:
 	return sell_price * happiness
 

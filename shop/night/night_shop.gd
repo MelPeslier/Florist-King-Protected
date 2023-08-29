@@ -38,8 +38,19 @@ func _ready():
 func _on_player_death(message:String):
 	timer.stop()
 	var death = game_over.instantiate()
-	death.set_death_cause(message)
 	add_child(death)
+	death.set_death_cause(message)
+
+
+# Check for events that happen during specific nights
+func events():
+	if !Events.broken_lights:
+		if ScoreManager.dayNum == 2:
+			var blackout = load("res://shop/Blackout.tscn")
+			add_child(blackout.instantiate())
+	else:
+		$Darkness.visible = true
+		$Player.use_flashlight()
 
 
 func init_dic():
@@ -100,13 +111,3 @@ func init_dic():
 		[Rooms.ROOM_8, path_to[Rooms.ROOM_8]],
 		[Rooms.ROOM_9, path_to[Rooms.ROOM_9]]
 	]
-
-# Check for events that happen during specific nights
-func events():
-	if !Events.broken_lights:
-		if ScoreManager.dayNum == 2:
-			var blackout = load("res://shop/Blackout.tscn")
-			add_child(blackout.instantiate())
-	else:
-		$Darkness.visible = true
-		$Player.use_flashlight()

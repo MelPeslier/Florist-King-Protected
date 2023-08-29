@@ -22,7 +22,6 @@ func _on_day_timer_timeout():
 
 
 func _on_continue_to_night_button_up():
-#	get_tree().paused = false
-	print("oui")
+	get_tree().paused = false
 	get_tree().change_scene_to_file("res://shop/night/night_shop.tscn")
 

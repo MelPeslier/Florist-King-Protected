@@ -40,7 +40,10 @@ func update_data(room, nearby: Array) -> void:
 	var i: int = 0
 	for marker in get_children():
 		if marker is Marker2D:
+			# Update where to wich room the marker is pointing
+			marker.to_room = nearby_rooms[i][0]
 			
+			# Player Movement Arrows
 			var arrow = arrow_scene.instantiate()
 			add_child(arrow)
 			arrow.to_room = nearby_rooms[i][0]
@@ -49,6 +52,13 @@ func update_data(room, nearby: Array) -> void:
 			# Rotation
 			rotate_to_target(arrow, marker)
 			i += 1
+			
+		# Init movement for flowers
+		elif marker.is_in_group("table"):
+			for pot in marker.get_children():
+				if not pot.get_child(0).is_in_group("PotVide"):
+					pot.get_child(0).init_movements()
+			
 
 
 func rotate_to_target(dummy, target):
@@ -66,6 +76,7 @@ func update_flower(target_room: int) -> Array:
 			if nearby_rooms[i][Room.NUMBER] == target_room:
 				pos = marker.global_position
 				path = nearby_rooms[i][Room.PATH]
+			i += 1
 	return [pos, path]
    
    
