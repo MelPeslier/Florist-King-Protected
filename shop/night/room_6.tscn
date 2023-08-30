@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://dmlpgi4aoupij"]
+[gd_scene load_steps=8 format=3 uid="uid://dmlpgi4aoupij"]
 
 [ext_resource type="Script" path="res://shop/night/room.gd" id="1_tbqd1"]
 [ext_resource type="Texture2D" uid="uid://byqfdicjhpbm5" path="res://art/placeholder/rooms/Room6.png" id="2_urc7p"]
-[ext_resource type="PackedScene" uid="uid://oh8gi3dswlng" path="res://commons/table/table.tscn" id="4_g473l"]
+[ext_resource type="PackedScene" uid="uid://8lpyo4m5siaj" path="res://commons/pot/pot.tscn" id="3_h1y7j"]
+[ext_resource type="PackedScene" uid="uid://rmdl0x86wm3g" path="res://shop/night/Flower Interaction/flower_interaction.tscn" id="4_etfb4"]
 [ext_resource type="PackedScene" uid="uid://dwoebmusguoxv" path="res://shop/night/Display/next_room.tscn" id="4_xc0wc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mwi7n"]
@@ -11,12 +12,25 @@ size = Vector2(256, 1082)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pqpr4"]
 size = Vector2(1413, 227)
 
-[node name="Room6" type="Node2D"]
+[node name="Room6" type="Node2D" node_paths=PackedStringArray("pots")]
 script = ExtResource("1_tbqd1")
+pots = [NodePath("Pot1"), NodePath("Pot2"), NodePath("Pot3")]
 
 [node name="Background" type="Sprite2D" parent="."]
 texture = ExtResource("2_urc7p")
 metadata/_edit_lock_ = true
+
+[node name="Pot1" parent="." instance=ExtResource("3_h1y7j")]
+position = Vector2(-482, -121)
+
+[node name="Pot2" parent="." instance=ExtResource("3_h1y7j")]
+position = Vector2(-97, -290)
+
+[node name="Pot3" parent="." instance=ExtResource("3_h1y7j")]
+position = Vector2(265, -238)
+
+[node name="FlowerInteraction" parent="." node_paths=PackedStringArray("main_room") instance=ExtResource("4_etfb4")]
+main_room = NodePath("..")
 
 [node name="NextRoom" parent="." instance=ExtResource("4_xc0wc")]
 position = Vector2(-941, 464)
@@ -26,18 +40,6 @@ position = Vector2(-114, 509)
 
 [node name="NextRoom3" parent="." instance=ExtResource("4_xc0wc")]
 position = Vector2(928, 338)
-
-[node name="Table" parent="." instance=ExtResource("4_g473l")]
-position = Vector2(-1, -1)
-
-[node name="Pot1" parent="Table" index="0"]
-position = Vector2(-466, -98)
-
-[node name="Pot2" parent="Table" index="1"]
-position = Vector2(-123, -252)
-
-[node name="Pot3" parent="Table" index="2"]
-position = Vector2(283, -194)
 
 [node name="Arrows" type="CanvasLayer" parent="."]
 
@@ -75,5 +77,3 @@ shape = SubResource("RectangleShape2D_pqpr4")
 [connection signal="input_event" from="Down" to="." method="_on_down_input_event"]
 [connection signal="mouse_entered" from="Down" to="." method="_on_area_mouse_entered"]
 [connection signal="mouse_exited" from="Down" to="." method="_on_area_mouse_exited"]
-
-[editable path="Table"]

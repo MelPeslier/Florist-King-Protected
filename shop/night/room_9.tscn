@@ -1,9 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://drfj8ifuyx7pg"]
+[gd_scene load_steps=8 format=3 uid="uid://drfj8ifuyx7pg"]
 
 [ext_resource type="Script" path="res://shop/night/room.gd" id="1_wt0o0"]
 [ext_resource type="Texture2D" uid="uid://chrixba4pongx" path="res://art/placeholder/rooms/Room9.png" id="2_1vl4g"]
-[ext_resource type="Texture2D" uid="uid://chrixba4pongx" path="res://art/placeholder/rooms/Room9.PNG" id="2_1vl4g"]
-[ext_resource type="PackedScene" uid="uid://oh8gi3dswlng" path="res://commons/table/table.tscn" id="4_rav7m"]
+[ext_resource type="PackedScene" uid="uid://8lpyo4m5siaj" path="res://commons/pot/pot.tscn" id="4_q2toy"]
+[ext_resource type="PackedScene" uid="uid://rmdl0x86wm3g" path="res://shop/night/Flower Interaction/flower_interaction.tscn" id="4_qqyx2"]
 [ext_resource type="PackedScene" uid="uid://dwoebmusguoxv" path="res://shop/night/Display/next_room.tscn" id="4_rltjl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1sfnw"]
@@ -12,12 +12,25 @@ size = Vector2(256, 1082)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gd7ml"]
 size = Vector2(1413, 227)
 
-[node name="Room9" type="Node2D"]
+[node name="Room9" type="Node2D" node_paths=PackedStringArray("pots")]
 script = ExtResource("1_wt0o0")
+pots = [NodePath("Pot1"), NodePath("Pot2"), NodePath("Pot3")]
 
 [node name="Background" type="Sprite2D" parent="."]
 texture = ExtResource("2_1vl4g")
 metadata/_edit_lock_ = true
+
+[node name="Pot1" parent="." instance=ExtResource("4_q2toy")]
+position = Vector2(-488, 56)
+
+[node name="Pot2" parent="." instance=ExtResource("4_q2toy")]
+position = Vector2(-56, 32)
+
+[node name="Pot3" parent="." instance=ExtResource("4_q2toy")]
+position = Vector2(360, 32)
+
+[node name="FlowerInteraction" parent="." node_paths=PackedStringArray("main_room") instance=ExtResource("4_qqyx2")]
+main_room = NodePath("..")
 
 [node name="NextRoom" parent="." instance=ExtResource("4_rltjl")]
 position = Vector2(-928, 368)
@@ -28,19 +41,8 @@ position = Vector2(0, 504)
 [node name="NextRoom3" parent="." instance=ExtResource("4_rltjl")]
 position = Vector2(912, 328)
 
-[node name="Table" parent="." instance=ExtResource("4_rav7m")]
-position = Vector2(0, -5)
-
-[node name="Pot1" parent="Table" index="0"]
-position = Vector2(-416, 45)
-
-[node name="Pot2" parent="Table" index="1"]
-position = Vector2(-40, 61)
-
-[node name="Pot3" parent="Table" index="2"]
-position = Vector2(352, 45)
-
 [node name="Arrows" type="CanvasLayer" parent="."]
+
 [node name="Left" type="Area2D" parent="."]
 position = Vector2(-832, 0)
 metadata/_edit_group_ = true
@@ -75,5 +77,3 @@ shape = SubResource("RectangleShape2D_gd7ml")
 [connection signal="input_event" from="Down" to="." method="_on_down_input_event"]
 [connection signal="mouse_entered" from="Down" to="." method="_on_area_mouse_entered"]
 [connection signal="mouse_exited" from="Down" to="." method="_on_area_mouse_exited"]
-
-[editable path="Table"]

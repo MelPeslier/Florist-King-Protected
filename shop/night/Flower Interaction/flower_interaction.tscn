@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://rmdl0x86wm3g"]
+
+[ext_resource type="Script" path="res://shop/night/Flower Interaction/flower_interaction.gd" id="1_hvvdv"]
+
+[node name="FlowerInteraction" type="Node"]
+script = ExtResource("1_hvvdv")

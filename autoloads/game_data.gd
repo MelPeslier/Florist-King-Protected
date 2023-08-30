@@ -63,7 +63,7 @@ var seeds = {
 var flowers = {
 	"sunflower" : {
 		"image" : "res://flowers/sunflower/sprite/sunflower_tmp.jpg",
-		"flower_price" : int(7),
+		"flower_price" : 7,
 		"flower_name" : "Sunflower", 
 		"flower_scene" : "res://flowers/sunflower/sunflower.tscn"
 		},

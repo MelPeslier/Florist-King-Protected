@@ -56,7 +56,7 @@ func not_drinking(delta):
 		state = burn_self
 	
 	elif water > min_water:
-		get_parent().get_parent().burn_around(get_parent().name)
+		var nearby_flowers: Array[Flower] = get_node("../../FlowerInteraction").act_around(get_parent().name, "burn")
 		
 		state = burn_other
 	

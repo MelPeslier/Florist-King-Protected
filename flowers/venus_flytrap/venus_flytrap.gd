@@ -48,7 +48,9 @@ func remove_happiness(delta: float):
 		get_meal()
 
 func get_meal():
-	get_parent().get_parent().act_around(get_parent().name, "eat")
+	var nearby_flowers: Array[Flower] = get_node("../../FlowerInterction").act_around(get_parent().name, "eat")
+	
+	#Lancement de l'attaque
 	something_to_eat = false
 	max_happiness = 3.5
 	happiness = 3.5

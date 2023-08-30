@@ -4,10 +4,9 @@ enum Room {
 	NUMBER,
 	PATH
 }
-
+@export var pots: Array[Node2D]
 var room_number: int = 0
-var nearby_rooms :=[]
-
+var nearby_rooms :=[] 
 @onready var arrow_scene = preload("res://shop/night/Display/arrow.tscn")
 @onready var arrows = $Arrows
 

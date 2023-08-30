@@ -27,6 +27,16 @@ func reset():
 
 
 
+func check(room: String, pot: String) -> Array:
+	var flower_names := []
+	var pots_key = placer_data[room].keys()
+	
+	for pot_key in pots_key:
+		if pot_key != pot and placer_data[room][pot_key] != null:
+			var flower_name = placer_data[room][pot_key]["flower_name"]
+			flower_names.push_back(flower_name)
+	
+	return flower_names
 
 
 

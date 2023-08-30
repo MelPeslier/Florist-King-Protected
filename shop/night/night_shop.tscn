@@ -23,6 +23,10 @@
 script = ExtResource("1_3rpaq")
 room_path = [NodePath("Room1"), NodePath("Room2"), NodePath("Room3"), NodePath("Room4"), NodePath("Room5"), NodePath("Room6"), NodePath("Room7"), NodePath("Room8"), NodePath("Room9"), NodePath("Room10")]
 
+[node name="manager" type="Node" parent="." node_paths=PackedStringArray("rooms")]
+script = ExtResource("13_oapso")
+rooms = [NodePath("../Room4"), NodePath("../Room5"), NodePath("../Room6"), NodePath("../Room7"), NodePath("../Room8"), NodePath("../Room9")]
+
 [node name="Darkness" type="CanvasModulate" parent="."]
 visible = false
 color = Color(0.05, 0.05, 0.05, 1)
@@ -65,9 +69,6 @@ position = Vector2(4216, -744)
 metadata/_edit_group_ = true
 
 [node name="Player" parent="." instance=ExtResource("11_shb70")]
-
-[node name="manager" type="Node" parent="."]
-script = ExtResource("13_oapso")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

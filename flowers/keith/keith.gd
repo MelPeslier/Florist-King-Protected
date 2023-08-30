@@ -30,6 +30,7 @@ func _ready() -> void:
 
 
 func _on_manager_end():
+	PlacerData.check(placer_room, placer_pot)
 	if get_parent():
 		neighbors = get_parent().get_parent().check(get_parent().name)
 		if neighbors.is_empty():

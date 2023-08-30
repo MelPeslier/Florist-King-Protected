@@ -3,7 +3,7 @@ extends Area2D
 
 
 @onready var flower_room = get_node("../../..") # get_parent() 3 times
-@onready var player = get_node("../../../../Player") as Player
+@onready var player = get_node("../../../Player") as Player
 
 
 var happiness: float
@@ -14,6 +14,8 @@ var happ_decr_speed: float
 
 var sell_price: float
 
+var placer_room: String
+var placer_pot: String
 
 # Debug purposes
 @onready var state_label = $StateLabel
