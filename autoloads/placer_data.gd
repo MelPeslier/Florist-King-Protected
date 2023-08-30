@@ -7,7 +7,7 @@ var pot_number: int = 3
 
 # First array is a room ( 4 - 5 - 6 - 7 - 8 - 9)
 # Second array is a pot ( 1 - 2 - 3)
-var placer_data: Dictionary
+var placer_data := {}
 
 
 func reset():

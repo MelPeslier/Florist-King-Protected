@@ -1,6 +1,6 @@
 extends Node
 
-const seeds:Dictionary = {
+var seeds = {
 	"sunflower" : {
 		"image" : "res://art/placeholder/seeds/Sunflower_Seeds.png",
 		"seed_price" : 1, 
@@ -60,10 +60,10 @@ const seeds:Dictionary = {
 }
 
 
-const flowers: Dictionary = {
+var flowers = {
 	"sunflower" : {
 		"image" : "res://flowers/sunflower/sprite/sunflower_tmp.jpg",
-		"flower_price" : 7,
+		"flower_price" : int(7),
 		"flower_name" : "Sunflower", 
 		"flower_scene" : "res://flowers/sunflower/sunflower.tscn"
 		},
