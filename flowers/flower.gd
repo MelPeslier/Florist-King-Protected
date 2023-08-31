@@ -15,7 +15,7 @@ var sell_price: float
 var placer_room: String
 var placer_pot: String
 
-@onready var flower_room = get_node("../../..") # get_parent() 3 times
+@onready var flower_room = get_node("../..") # get_parent() 3 times
 @onready var player = get_node("../../../Player") as Player
 # Debug purposes
 @onready var state_label = $StateLabel
@@ -39,6 +39,7 @@ func _on_input_event(_viewport, event, _shape_idx):
 	if event is InputEventMouseButton:
 		if event.pressed && event.button_index == MOUSE_BUTTON_LEFT:
 			click()
+			print("oui")
 		elif !event.pressed:
 			unclick()
 
@@ -53,6 +54,7 @@ func add_happiness(delta: float):
 
 func remove_happiness(delta: float):
 	happiness = max(happiness - happ_decr_speed * delta, min_happiness)
+	print(happiness)
 
 
 func die(how :String):

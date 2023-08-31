@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_xx4qe")
-water = 60.0
+water = 2.0
 min_perfect_water = 25.0
 max_perfect_water = 75.0
 water_incr_speed = 37.0

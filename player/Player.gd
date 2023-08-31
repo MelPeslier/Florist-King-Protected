@@ -33,6 +33,7 @@ func take_water(delta: float):
 		state_label.text = "No watter !  Need to replenish at faucet !"
 		return false
 	
+	print("yeah")
 	return true
 	
 

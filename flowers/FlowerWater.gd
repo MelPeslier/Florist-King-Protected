@@ -14,6 +14,8 @@ var is_drinking := false
 
 
 func _ready() -> void:
+	super()
+	
 	water = flower_data.water
 	max_perfect_water = flower_data.max_perfect_water
 	min_perfect_water = flower_data.min_perfect_water
@@ -23,12 +25,13 @@ func _ready() -> void:
 
 func _physics_process(delta) -> void:
 	water_update(delta)
-	
+
 	if water <= min_water + 0.01:
 		remove_happiness(delta)
 	elif water > min_perfect_water and water < max_perfect_water: # Happiness is juuuuust right
 		add_happiness(delta)
 	
+
 	if water >= max_water - 0.01:
 		die("water")
 
@@ -56,7 +59,8 @@ func drinking(delta: float):
 	is_drinking = player.take_water(delta)
 	if is_drinking:
 		water = min(water + water_incr_speed * delta, max_water)
-	else: not_drinking(delta)
+	else: 
+		not_drinking(delta)
 
 
 func not_drinking(delta: float):
