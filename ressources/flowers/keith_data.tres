@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="WaterFlowerData" load_steps=2 format=3 uid="uid://64t82hn2choc"]
+
+[ext_resource type="Script" path="res://ressources/flowers/water_flower_data.gd" id="1_kq7bj"]
+
+[resource]
+script = ExtResource("1_kq7bj")
+water = 50.0
+min_perfect_water = 30.0
+max_perfect_water = 50.0
+water_incr_speed = 2.0
+water_decr_speed = 30.0
+happiness = 1.5
+min_happiness = 0.5
+max_happiness = 1.5
+happ_incr_speed = 7.0
+happ_decr_speed = 5.0
+flower_name = "Keith"
+seed_price = 12.0
+flower_price = 40.0

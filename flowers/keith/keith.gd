@@ -9,20 +9,6 @@ var neighbors :Array
 
 func _ready() -> void:
 	super()
-	# Water
-	water = 50
-	min_perfect_water = 30
-	max_perfect_water = 50
-	water_decr_speed = 2.5
-	water_incr_speed = 30
-	
-	# Flower
-	happiness = 1.5
-	min_happiness = 0
-	max_happiness = 1.5
-	happ_decr_speed = 5
-	happ_incr_speed = 7
-	sell_price = 40
 	
 	$HappinessGauge.update_gauge()
 	$WaterGauge.update_gauge()

@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="WaterFlowerData" load_steps=2 format=3 uid="uid://byyhlo1qyyhdw"]
+
+[ext_resource type="Script" path="res://ressources/flowers/water_flower_data.gd" id="1_rxctv"]
+
+[resource]
+script = ExtResource("1_rxctv")
+water = 50.0
+min_perfect_water = 10.0
+max_perfect_water = 30.0
+water_incr_speed = 25.0
+water_decr_speed = 2.0
+happiness = 1.0
+min_happiness = 0.5
+max_happiness = 1.5
+happ_incr_speed = 0.2
+happ_decr_speed = 0.3
+flower_name = "VenusFlytrap"
+seed_price = 15.0
+flower_price = 18.0

@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://xktxove5obr6"]
+[gd_scene load_steps=6 format=3 uid="uid://xktxove5obr6"]
 
 [ext_resource type="Script" path="res://flowers/man_eater/man_eater.gd" id="1_vdkwt"]
+[ext_resource type="Resource" uid="uid://dp5mdr8lxwrrg" path="res://ressources/flowers/man_eater_data.tres" id="2_m3dge"]
 [ext_resource type="Texture2D" uid="uid://dneu5mk1g2rwq" path="res://flowers/man_eater/sprite/man_eater_tmp.png" id="2_w0w04"]
 [ext_resource type="FontFile" uid="uid://b0hof85mkga7d" path="res://art/Playfulist-rgPp8.ttf" id="3_cntkt"]
 
@@ -12,6 +13,7 @@ top_level = true
 collision_layer = 4
 collision_mask = 0
 script = ExtResource("1_vdkwt")
+flower_data = ExtResource("2_m3dge")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(4.03897e-28, -120)

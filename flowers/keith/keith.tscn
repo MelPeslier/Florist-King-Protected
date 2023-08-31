@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://bxe7lsmqr8ddt"]
+[gd_scene load_steps=8 format=3 uid="uid://bxe7lsmqr8ddt"]
 
 [ext_resource type="Script" path="res://flowers/keith/keith.gd" id="1_hgoga"]
 [ext_resource type="Texture2D" uid="uid://da2x082ug4e5r" path="res://flowers/keith/sprite/keith_tmp.jpg" id="1_lygfw"]
 [ext_resource type="PackedScene" uid="uid://7tikciratgn8" path="res://commons/gauge/happiness_gauge.tscn" id="2_m10nn"]
+[ext_resource type="Resource" uid="uid://64t82hn2choc" path="res://flowers/keith/keith_data.tres" id="2_ovs2j"]
 [ext_resource type="PackedScene" uid="uid://br80202nxcfcv" path="res://commons/gauge/water_gauge.tscn" id="3_uo36h"]
 [ext_resource type="FontFile" uid="uid://b0hof85mkga7d" path="res://art/Playfulist-rgPp8.ttf" id="5_d57or"]
 
@@ -11,6 +12,7 @@ size = Vector2(112, 93)
 
 [node name="Keith" type="Area2D" groups=["flower", "water_flower"]]
 script = ExtResource("1_hgoga")
+flower_data = ExtResource("2_ovs2j")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(2.11762, -56)

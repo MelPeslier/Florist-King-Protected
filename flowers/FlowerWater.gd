@@ -13,16 +13,12 @@ var water_decr_speed: float
 var is_drinking := false
 
 
-func click():
-	is_drinking = true
-
-
-func unclick():
-	is_drinking = false
-
-
-func _on_mouse_exited():
-	is_drinking = false
+func _ready() -> void:
+	water = flower_data.water
+	max_perfect_water = flower_data.max_perfect_water
+	min_perfect_water = flower_data.min_perfect_water
+	water_incr_speed = flower_data.water_incr_speed
+	water_decr_speed = flower_data.water_decr_speed
 
 
 func _physics_process(delta) -> void:
@@ -35,6 +31,18 @@ func _physics_process(delta) -> void:
 	
 	if water >= max_water - 0.01:
 		die("water")
+
+
+func click():
+	is_drinking = true
+
+
+func unclick():
+	is_drinking = false
+
+
+func _on_mouse_exited():
+	is_drinking = false
 
 
 func water_update(delta: float):

@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://dxaryvb685fdq"]
+[gd_scene load_steps=8 format=3 uid="uid://dxaryvb685fdq"]
 
 [ext_resource type="Script" path="res://flowers/arsonist/arsonist.gd" id="1_kgwtp"]
 [ext_resource type="Texture2D" uid="uid://7feue2huqhy6" path="res://flowers/arsonist/sprite/arsonist_tmp.png" id="2_gwpet"]
+[ext_resource type="Resource" uid="uid://dc0tggvk37sdf" path="res://ressources/flowers/arsonist_data.tres" id="2_rhccb"]
 [ext_resource type="PackedScene" uid="uid://br80202nxcfcv" path="res://commons/gauge/water_gauge.tscn" id="3_rxim0"]
 [ext_resource type="PackedScene" uid="uid://7tikciratgn8" path="res://commons/gauge/happiness_gauge.tscn" id="4_ykg5g"]
 [ext_resource type="FontFile" uid="uid://b0hof85mkga7d" path="res://art/Playfulist-rgPp8.ttf" id="5_4iuuy"]
@@ -11,6 +12,7 @@ size = Vector2(253, 198)
 
 [node name="Arsonist" type="Area2D"]
 script = ExtResource("1_kgwtp")
+flower_data = ExtResource("2_rhccb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0.5, -109)

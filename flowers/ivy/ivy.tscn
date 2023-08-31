@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://dxpq4kxv2b0pb"]
+[gd_scene load_steps=8 format=3 uid="uid://dxpq4kxv2b0pb"]
 
 [ext_resource type="Script" path="res://flowers/ivy/ivy.gd" id="1_avw74"]
+[ext_resource type="Resource" uid="uid://covhqwt0fm7an" path="res://ressources/flowers/ivy_data.tres" id="2_8d1i2"]
 [ext_resource type="Texture2D" uid="uid://5gc3vluy41bn" path="res://flowers/ivy/sprite/ivy_tmp.png" id="2_es77w"]
 [ext_resource type="PackedScene" uid="uid://7tikciratgn8" path="res://commons/gauge/happiness_gauge.tscn" id="3_45uqv"]
 [ext_resource type="PackedScene" uid="uid://br80202nxcfcv" path="res://commons/gauge/water_gauge.tscn" id="4_csv4a"]
@@ -11,6 +12,7 @@ size = Vector2(249, 193)
 
 [node name="Ivy" type="Area2D" groups=["flower", "water_flower"]]
 script = ExtResource("1_avw74")
+flower_data = ExtResource("2_8d1i2")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(3.28168, -112.25)

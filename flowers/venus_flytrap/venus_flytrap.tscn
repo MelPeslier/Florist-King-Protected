@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://b0d3hxkv3ls1i"]
+[gd_scene load_steps=8 format=3 uid="uid://b0d3hxkv3ls1i"]
 
 [ext_resource type="Script" path="res://flowers/venus_flytrap/venus_flytrap.gd" id="1_6kql5"]
 [ext_resource type="Texture2D" uid="uid://bq02q25cedibw" path="res://flowers/venus_flytrap/sprite/venus_flytrap_tmp.png" id="1_bp7c8"]
+[ext_resource type="Resource" uid="uid://byyhlo1qyyhdw" path="res://flowers/venus_flytrap/venus_flytrap_data.tres" id="2_1n0kw"]
 [ext_resource type="PackedScene" uid="uid://br80202nxcfcv" path="res://commons/gauge/water_gauge.tscn" id="2_e2q2v"]
 [ext_resource type="PackedScene" uid="uid://7tikciratgn8" path="res://commons/gauge/happiness_gauge.tscn" id="3_ajsgf"]
 [ext_resource type="FontFile" uid="uid://b0hof85mkga7d" path="res://art/Playfulist-rgPp8.ttf" id="5_pxlhu"]
@@ -11,6 +12,7 @@ size = Vector2(128, 175)
 
 [node name="VenusFlytrap" type="Area2D" groups=["flower", "water_flower"]]
 script = ExtResource("1_6kql5")
+flower_data = ExtResource("2_1n0kw")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -88)

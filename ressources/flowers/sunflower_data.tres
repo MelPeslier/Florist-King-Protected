@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="WaterFlowerData" load_steps=2 format=3 uid="uid://cd441np78mxgo"]
+
+[ext_resource type="Script" path="res://ressources/flowers/water_flower_data.gd" id="1_xx4qe"]
+
+[resource]
+script = ExtResource("1_xx4qe")
+water = 60.0
+min_perfect_water = 25.0
+max_perfect_water = 75.0
+water_incr_speed = 37.0
+water_decr_speed = 2.0
+happiness = 0.5
+min_happiness = 0.5
+max_happiness = 1.5
+happ_incr_speed = 2.0
+happ_decr_speed = 1.0
+flower_name = "Sunflower"
+seed_price = 2.0
+flower_price = 8.0

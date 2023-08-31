@@ -4,21 +4,6 @@ var something_to_eat := false
 
 func _ready() -> void:
 	super()
-	# Water
-	water = 70
-	min_perfect_water = 65
-	max_perfect_water = 90
-	water_decr_speed = 1.2
-	water_incr_speed = 34
-	
-	# Flower
-	
-	happiness = 1.1
-	min_happiness = 0.5
-	max_happiness = 1.5
-	happ_decr_speed = 5
-	happ_incr_speed = 7
-	sell_price = 18
 	
 	$HappinessGauge.update_gauge()
 	$WaterGauge.update_gauge()

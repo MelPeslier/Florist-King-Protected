@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://mbdex38e41fq"]
+[gd_scene load_steps=8 format=3 uid="uid://mbdex38e41fq"]
 
 [ext_resource type="Script" path="res://flowers/sunflower/sunflower.gd" id="1_naqm4"]
 [ext_resource type="Texture2D" uid="uid://r8hjt2elaemd" path="res://flowers/sunflower/sprite/sunflower_tmp.jpg" id="2_qeco8"]
+[ext_resource type="Resource" uid="uid://cd441np78mxgo" path="res://flowers/sunflower/sunflower_data.tres" id="2_si02n"]
 [ext_resource type="PackedScene" uid="uid://br80202nxcfcv" path="res://commons/gauge/water_gauge.tscn" id="3_crjpr"]
 [ext_resource type="PackedScene" uid="uid://7tikciratgn8" path="res://commons/gauge/happiness_gauge.tscn" id="4_guyuw"]
 [ext_resource type="FontFile" uid="uid://b0hof85mkga7d" path="res://art/Playfulist-rgPp8.ttf" id="5_j6mlg"]
@@ -11,6 +12,7 @@ size = Vector2(96, 93)
 
 [node name="Sunflower" type="Area2D" groups=["flower", "water_flower"]]
 script = ExtResource("1_naqm4")
+flower_data = ExtResource("2_si02n")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -48)

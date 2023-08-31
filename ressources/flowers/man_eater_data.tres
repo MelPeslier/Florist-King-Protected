@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="HappinessFlowerData" load_steps=2 format=3 uid="uid://dp5mdr8lxwrrg"]
+
+[ext_resource type="Script" path="res://ressources/flowers/flower_happiness_data.gd" id="1_6gw4s"]
+
+[resource]
+script = ExtResource("1_6gw4s")
+happiness = 1.0
+min_happiness = 1.0
+max_happiness = 3.5
+happ_incr_speed = 0.25
+happ_decr_speed = 0.0
+flower_name = "ManEater"
+seed_price = 40.0
+flower_price = 50.0

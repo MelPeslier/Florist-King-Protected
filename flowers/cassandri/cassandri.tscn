@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://bx6k8blsiqio"]
+[gd_scene load_steps=8 format=3 uid="uid://bx6k8blsiqio"]
 
 [ext_resource type="Texture2D" uid="uid://r13kpns1a1cm" path="res://flowers/cassandri/sprite/cassandri_tmp.png" id="1_gcy8l"]
 [ext_resource type="Script" path="res://flowers/cassandri/cassandri.gd" id="1_kfiem"]
+[ext_resource type="Resource" uid="uid://cptk5cj5lc2ye" path="res://ressources/flowers/cassandri_data.tres" id="2_hwdbo"]
 [ext_resource type="PackedScene" uid="uid://br80202nxcfcv" path="res://commons/gauge/water_gauge.tscn" id="3_6mg23"]
 [ext_resource type="PackedScene" uid="uid://7tikciratgn8" path="res://commons/gauge/happiness_gauge.tscn" id="4_w43lg"]
 [ext_resource type="FontFile" uid="uid://b0hof85mkga7d" path="res://art/Playfulist-rgPp8.ttf" id="5_2p2ne"]
@@ -11,6 +12,7 @@ size = Vector2(208, 227)
 
 [node name="Cassandri" type="Area2D" groups=["flower", "water_flower"]]
 script = ExtResource("1_kfiem")
+flower_data = ExtResource("2_hwdbo")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-2.24998, -124.754)

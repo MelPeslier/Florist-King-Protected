@@ -15,10 +15,6 @@ func _ready():
 	Music.stream = menuMusic
 	Music.play()
 	
-	# DataManagement
-	ScoreManager.reset()
-	PlacerData.reset()
-	
 	#Visibility
 	var leaderboard: bool = false
 	if ScoreManager.score > 0:
@@ -52,7 +48,6 @@ func _on_mouse_entered():
 	$Audio.play()
 
 
-
 func _on_enter_name_button_up():
 	var i = 0
 	for j in line_edit.text:
@@ -61,6 +56,9 @@ func _on_enter_name_button_up():
 	if i < 2:
 		audio_wrong.play()
 	else:
+			# DataManagement
+		ScoreManager.reset()
+		PlacerData.reset()
 		ScoreManager.player_name = line_edit.text
 		get_tree().change_scene_to_file("res://shop/day/day_shop.tscn")
 

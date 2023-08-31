@@ -2,9 +2,7 @@ class_name Flower
 extends Area2D
 
 
-@onready var flower_room = get_node("../../..") # get_parent() 3 times
-@onready var player = get_node("../../../Player") as Player
-
+@export var flower_data: FlowerData
 
 var happiness: float
 var max_happiness: float
@@ -17,6 +15,8 @@ var sell_price: float
 var placer_room: String
 var placer_pot: String
 
+@onready var flower_room = get_node("../../..") # get_parent() 3 times
+@onready var player = get_node("../../../Player") as Player
 # Debug purposes
 @onready var state_label = $StateLabel
 
@@ -26,6 +26,13 @@ func _ready():
 	input_event.connect(_on_input_event)
 	mouse_entered.connect(_on_mouse_entered)
 	mouse_exited.connect(_on_mouse_exited)
+	
+	happiness = flower_data.happiness
+	max_happiness = flower_data.max_happiness
+	min_happiness = flower_data.min_happiness
+	happ_incr_speed = flower_data.happ_incr_speed
+	happ_decr_speed = flower_data.happ_decr_speed
+	sell_price = flower_data.flower_price
 
 
 func _on_input_event(_viewport, event, _shape_idx):

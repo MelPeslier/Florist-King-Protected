@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="WaterFlowerData" load_steps=2 format=3 uid="uid://cptk5cj5lc2ye"]
+
+[ext_resource type="Script" path="res://ressources/flowers/water_flower_data.gd" id="1_7rxq6"]
+
+[resource]
+script = ExtResource("1_7rxq6")
+water = 65.0
+min_perfect_water = 50.0
+max_perfect_water = 85.0
+water_incr_speed = 35.0
+water_decr_speed = 2.5
+happiness = 0.5
+min_happiness = 0.5
+max_happiness = 1.5
+happ_incr_speed = 1.0
+happ_decr_speed = 7.0
+flower_name = "Cassandri"
+seed_price = 7.0
+flower_price = 14.0

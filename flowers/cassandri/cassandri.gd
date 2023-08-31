@@ -12,20 +12,6 @@ var travel_time := the_travel_time
 
 func _ready() -> void:
 	super()
-	# Water
-	water = 65
-	min_perfect_water = 50
-	max_perfect_water = 85
-	water_decr_speed = 2.5
-	water_incr_speed = 35
-	
-	# Flower
-	happiness = 0.5
-	min_happiness = 0.5
-	max_happiness = 1.5
-	happ_decr_speed = 7
-	happ_incr_speed = 1
-	sell_price = 14
 	
 	$HappinessGauge.update_gauge()
 	$WaterGauge.update_gauge()

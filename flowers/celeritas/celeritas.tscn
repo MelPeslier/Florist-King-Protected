@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://cg78wc71pbch8"]
+[gd_scene load_steps=8 format=3 uid="uid://cg78wc71pbch8"]
 
 [ext_resource type="Texture2D" uid="uid://sy15j5ynehp" path="res://flowers/celeritas/sprite/celeritas_tmp.png" id="1_hqkro"]
 [ext_resource type="Script" path="res://flowers/celeritas/celeritas.gd" id="1_q4p8a"]
+[ext_resource type="Resource" uid="uid://tf66tgoqdmyg" path="res://flowers/celeritas/celeritas_data.tres" id="2_kh12y"]
 [ext_resource type="PackedScene" uid="uid://7tikciratgn8" path="res://commons/gauge/happiness_gauge.tscn" id="2_m4yrd"]
 [ext_resource type="PackedScene" uid="uid://br80202nxcfcv" path="res://commons/gauge/water_gauge.tscn" id="3_t414c"]
 [ext_resource type="FontFile" uid="uid://b0hof85mkga7d" path="res://art/Playfulist-rgPp8.ttf" id="5_3s0f2"]
@@ -11,6 +12,7 @@ size = Vector2(148, 108)
 
 [node name="Celeritas" type="Area2D" groups=["flower", "water_flower"]]
 script = ExtResource("1_q4p8a")
+flower_data = ExtResource("2_kh12y")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1.3332, -58.9999)
