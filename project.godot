@@ -15,7 +15,7 @@ config/tags=PackedStringArray("jam")
 run/main_scene="res://menus/MainMenu.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
 config/icon="res://icon.svg"
-config/version="v 0.1"
+config/version="0.1.1"
 
 [autoload]
 
