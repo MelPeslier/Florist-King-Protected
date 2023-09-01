@@ -53,10 +53,9 @@ func update_data(room, nearby: Array) -> void:
 			i += 1
 			
 		# Init movement for flowers
-		elif marker.is_in_group("table"):
-			for pot in marker.get_children():
-				if not pot.get_child(0).is_in_group("PotVide"):
-					pot.get_child(0).init_movements()
+		elif marker.is_in_group("pot"):
+			if not marker.get_child(0).is_in_group("PotVide"):
+				marker.get_child(0).init_movements()
 			
 
 

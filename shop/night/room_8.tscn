@@ -38,9 +38,6 @@ position = Vector2(920, 368)
 [node name="NextRoom2" parent="." instance=ExtResource("4_0vpsn")]
 position = Vector2(0, 504)
 
-[node name="NextRoom3" parent="." instance=ExtResource("4_0vpsn")]
-position = Vector2(-920, 368)
-
 [node name="Arrows" type="CanvasLayer" parent="."]
 
 [node name="Left" type="Area2D" parent="."]

@@ -1,9 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://k0wuo10gq03a"]
+[gd_scene load_steps=6 format=3 uid="uid://k0wuo10gq03a"]
 
 [ext_resource type="Script" path="res://shop/night/room.gd" id="1_h77w1"]
 [ext_resource type="Texture2D" uid="uid://b6urav4050njn" path="res://art/placeholder/rooms/Room10.png" id="2_e1262"]
 [ext_resource type="PackedScene" uid="uid://dwoebmusguoxv" path="res://shop/night/Display/next_room.tscn" id="3_ngufr"]
-[ext_resource type="Texture2D" uid="uid://b6urav4050njn" path="res://art/placeholder/rooms/Room10.PNG" id="2_e1262"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3618d"]
 size = Vector2(256, 1082)
@@ -23,13 +22,11 @@ position = Vector2(768, 0)
 [node name="NextRoom2" parent="." instance=ExtResource("3_ngufr")]
 position = Vector2(760, 504)
 
-[node name="NextRoom3" parent="." instance=ExtResource("3_ngufr")]
-position = Vector2(-448, 512)
-
 [node name="NextRoom4" parent="." instance=ExtResource("3_ngufr")]
 position = Vector2(-936, 320)
 
 [node name="Arrows" type="CanvasLayer" parent="."]
+
 [node name="Left" type="Area2D" parent="."]
 position = Vector2(-832, 0)
 metadata/_edit_group_ = true

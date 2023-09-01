@@ -69,7 +69,6 @@ func init_dic():
 		[Rooms.ROOM_1, path_to[Rooms.ROOM_1]],
 		[Rooms.ROOM_3, path_to[Rooms.ROOM_3]],
 		[Rooms.ROOM_4, path_to[Rooms.ROOM_4]],
-		[Rooms.ROOM_5, path_to[Rooms.ROOM_5]],
 		[Rooms.ROOM_10, path_to[Rooms.ROOM_10]]
 	]
 	nearby_rooms[Rooms.ROOM_3] = [
@@ -81,7 +80,6 @@ func init_dic():
 		[Rooms.ROOM_6, path_to[Rooms.ROOM_6]]
 	]
 	nearby_rooms[Rooms.ROOM_5] = [
-		[Rooms.ROOM_2, path_to[Rooms.ROOM_2]],
 		[Rooms.ROOM_4, path_to[Rooms.ROOM_4]],
 		[Rooms.ROOM_6, path_to[Rooms.ROOM_6]]
 	]
@@ -97,8 +95,7 @@ func init_dic():
 	]
 	nearby_rooms[Rooms.ROOM_8] = [
 		[Rooms.ROOM_7, path_to[Rooms.ROOM_7]],
-		[Rooms.ROOM_9, path_to[Rooms.ROOM_9]],
-		[Rooms.ROOM_10, path_to[Rooms.ROOM_10]]
+		[Rooms.ROOM_9, path_to[Rooms.ROOM_9]]
 	]
 	nearby_rooms[Rooms.ROOM_9] = [
 		[Rooms.ROOM_7, path_to[Rooms.ROOM_7]],
@@ -108,6 +105,5 @@ func init_dic():
 	nearby_rooms[Rooms.ROOM_10] = [
 		[Rooms.ROOM_1, path_to[Rooms.ROOM_1]],
 		[Rooms.ROOM_2, path_to[Rooms.ROOM_2]],
-		[Rooms.ROOM_8, path_to[Rooms.ROOM_8]],
 		[Rooms.ROOM_9, path_to[Rooms.ROOM_9]]
 	]

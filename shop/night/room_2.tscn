@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://bp8bd6s36skh6"]
 
 [ext_resource type="Script" path="res://shop/night/room.gd" id="1_2p71r"]
-[ext_resource type="Texture2D" uid="uid://d4m5d3776wyh4" path="res://art/placeholder/rooms/Room2.PNG" id="2_ha157"]
+[ext_resource type="Texture2D" uid="uid://d4m5d3776wyh4" path="res://art/placeholder/rooms/Room2.png" id="2_ha157"]
 [ext_resource type="PackedScene" uid="uid://dwoebmusguoxv" path="res://shop/night/Display/next_room.tscn" id="3_gyrbm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lgahr"]
@@ -20,19 +20,16 @@ script = ExtResource("1_2p71r")
 texture = ExtResource("2_ha157")
 
 [node name="NextRoom" parent="." instance=ExtResource("3_gyrbm")]
-position = Vector2(-936, 496)
+position = Vector2(-960, 408)
 
 [node name="NextRoom2" parent="." instance=ExtResource("3_gyrbm")]
-position = Vector2(232, -344)
+position = Vector2(248, -328)
 
 [node name="NextRoom3" parent="." instance=ExtResource("3_gyrbm")]
-position = Vector2(920, 360)
+position = Vector2(896, 336)
 
 [node name="NextRoom4" parent="." instance=ExtResource("3_gyrbm")]
-position = Vector2(624, 520)
-
-[node name="NextRoom5" parent="." instance=ExtResource("3_gyrbm")]
-position = Vector2(-152, 520)
+position = Vector2(224, 536)
 
 [node name="Arrows" type="CanvasLayer" parent="."]
 

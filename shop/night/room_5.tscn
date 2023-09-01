@@ -32,9 +32,6 @@ position = Vector2(437, -7)
 [node name="FlowerInteraction" parent="." node_paths=PackedStringArray("main_room") instance=ExtResource("4_ky610")]
 main_room = NodePath("..")
 
-[node name="NextRoom" parent="." instance=ExtResource("4_3bnxi")]
-position = Vector2(926, 284)
-
 [node name="NextRoom2" parent="." instance=ExtResource("4_3bnxi")]
 position = Vector2(12, 508)
 
