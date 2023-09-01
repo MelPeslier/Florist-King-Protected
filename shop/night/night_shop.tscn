@@ -17,7 +17,7 @@
 [ext_resource type="Script" path="res://shop/day/DayToNight.gd" id="13_uw60l"]
 [ext_resource type="FontFile" uid="uid://b0hof85mkga7d" path="res://art/Playfulist-rgPp8.ttf" id="14_rh50w"]
 [ext_resource type="AudioStream" uid="uid://bkiwohevp4s2i" path="res://audio/sfx/DayToNight.mp3" id="15_k5pqt"]
-[ext_resource type="PackedScene" uid="uid://csmkid2i2d5e1" path="res://menus/night/NightSummary.tscn" id="17_oewxx"]
+[ext_resource type="PackedScene" uid="uid://bq0lrnmxfrmso" path="res://menus/recaps/recap_manager.tscn" id="16_04bqm"]
 
 [node name="NightShop" type="Node2D"]
 script = ExtResource("1_3rpaq")
@@ -113,6 +113,13 @@ text = "180 s"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="RecapManager" parent="." instance=ExtResource("16_04bqm")]
+phase = 1
+title_message = "Night"
+start_of_recap_message = "Night summary :"
+default_message = "Everything seems fine !"
+next_phase_path = "res://shop/day/day_shop.tscn"
+
 [node name="DayToNight" type="CanvasLayer" parent="."]
 editor_description = "Just a quick transition"
 visible = false
@@ -164,10 +171,7 @@ bus = &"SFX"
 wait_time = 3.0
 one_shot = true
 
-[node name="NightSummary" parent="." instance=ExtResource("17_oewxx")]
-visible = false
-
 [connection signal="timeout" from="Timer" to="manager" method="_on_timer_timeout"]
-[connection signal="timeout" from="Timer" to="NightSummary" method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer" to="RecapManager" method="_on_timer_timeout"]
 [connection signal="finished" from="DayToNight/Audio" to="DayToNight" method="_on_audio_finished"]
 [connection signal="timeout" from="DayToNight/Timer" to="DayToNight" method="_on_timer_timeout"]

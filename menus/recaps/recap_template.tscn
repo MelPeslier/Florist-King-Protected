@@ -1,0 +1,137 @@
+[gd_scene load_steps=8 format=3 uid="uid://nf8tocqdtkl1"]
+
+[ext_resource type="FontFile" uid="uid://b0hof85mkga7d" path="res://art/Playfulist-rgPp8.ttf" id="1_7bcbc"]
+[ext_resource type="Script" path="res://menus/recaps/recap_template.gd" id="1_gx6ee"]
+
+[sub_resource type="Animation" id="Animation_dsktx"]
+resource_name = "DISPLAY"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(960, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_67x7h"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(960, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xd2ok"]
+_data = {
+"DISPLAY": SubResource("Animation_dsktx"),
+"RESET": SubResource("Animation_67x7h")
+}
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hpf1f"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qbnjm"]
+bg_color = Color(0, 0, 0, 0.25098)
+corner_detail = 1
+anti_aliasing = false
+
+[node name="RecapTemplate" type="CanvasLayer"]
+layer = 4
+offset = Vector2(960, 0)
+transform = Transform2D(1, 0, 0, 1, 960, 0)
+script = ExtResource("1_gx6ee")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_xd2ok")
+}
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginDummy" type="MarginContainer" parent="Control/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Control" type="Control" parent="Control/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ColorRect" type="ColorRect" parent="Control/HBoxContainer/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0.25098)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/HBoxContainer/Control"]
+layout_mode = 2
+offset_left = 4.0
+offset_right = 960.0
+offset_bottom = 1080.0
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="MarginTitle" type="MarginContainer" parent="Control/HBoxContainer/Control/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_bottom = 25
+
+[node name="Title" type="Label" parent="Control/HBoxContainer/Control/VBoxContainer/MarginTitle"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_7bcbc")
+theme_override_font_sizes/font_size = 90
+text = "Day X completed!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Recap" type="Label" parent="Control/HBoxContainer/Control/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("1_7bcbc")
+theme_override_font_sizes/font_size = 60
+text = " You've earned: 999 €"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContinue" type="MarginContainer" parent="Control/HBoxContainer/Control/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_bottom = 50
+
+[node name="Continue" type="Button" parent="Control/HBoxContainer/Control/VBoxContainer/MarginContinue"]
+layout_mode = 2
+focus_mode = 0
+theme_override_fonts/font = ExtResource("1_7bcbc")
+theme_override_font_sizes/font_size = 80
+theme_override_styles/normal = SubResource("StyleBoxEmpty_hpf1f")
+theme_override_styles/hover = SubResource("StyleBoxFlat_qbnjm")
+text = " Continue"
+
+[connection signal="button_up" from="Control/HBoxContainer/Control/VBoxContainer/MarginContinue/Continue" to="." method="_on_continue_button_up"]

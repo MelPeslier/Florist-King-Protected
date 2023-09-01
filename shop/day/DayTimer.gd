@@ -8,3 +8,4 @@ func _process(_delta):
 
 func _on_timeout():
 	$"../UI".visible = false
+	print("timeout")

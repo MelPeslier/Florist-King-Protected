@@ -6,11 +6,11 @@
 [ext_resource type="Texture2D" uid="uid://dhokg4a7wxecv" path="res://art/placeholder/rooms/Room1.png" id="2_0r3tt"]
 [ext_resource type="PackedScene" uid="uid://1duxwwc7pbei" path="res://menus/day/SeedPlacer.tscn" id="2_usasd"]
 [ext_resource type="FontFile" uid="uid://b0hof85mkga7d" path="res://art/Playfulist-rgPp8.ttf" id="3_ac2vx"]
-[ext_resource type="PackedScene" uid="uid://dfurtkdtvthhh" path="res://menus/day/DaySummary.tscn" id="3_brqb0"]
 [ext_resource type="Script" path="res://shop/day/Points.gd" id="5_4b5cc"]
 [ext_resource type="PackedScene" uid="uid://evem30mswvy5" path="res://autoloads/Pause.tscn" id="7_cfdb7"]
 [ext_resource type="PackedScene" uid="uid://2ktu46qamiis" path="res://player/customer/customer.tscn" id="7_mwgyh"]
 [ext_resource type="PackedScene" uid="uid://bnf1q1354b02l" path="res://menus/day/last_day_summary.tscn" id="9_87srb"]
+[ext_resource type="PackedScene" uid="uid://bq0lrnmxfrmso" path="res://menus/recaps/recap_manager.tscn" id="9_vrxvi"]
 
 [node name="DayShop" type="Node"]
 script = ExtResource("1_ffrgk")
@@ -124,8 +124,11 @@ theme_override_fonts/font = ExtResource("3_ac2vx")
 theme_override_font_sizes/font_size = 34
 text = "Skip day"
 
-[node name="DaySummary" parent="." instance=ExtResource("3_brqb0")]
-visible = false
+[node name="RecapManager" parent="." instance=ExtResource("9_vrxvi")]
+title_message = "Day"
+start_of_recap_message = "Day summary :"
+default_message = "You've earned"
+next_phase_path = "res://shop/night/night_shop.tscn"
 
 [node name="LastDaySummary" parent="." instance=ExtResource("9_87srb")]
 visible = false
@@ -136,7 +139,6 @@ visible = false
 [node name="Audio" type="AudioStreamPlayer" parent="."]
 
 [connection signal="timeout" from="DayTimer" to="DayTimer" method="_on_timeout"]
-[connection signal="timeout" from="DayTimer" to="DaySummary" method="_on_day_timer_timeout"]
+[connection signal="timeout" from="DayTimer" to="RecapManager" method="_on_timer_timeout"]
 [connection signal="button_up" from="UI/Control/SkipDayButton" to="DayTimer" method="_on_timeout"]
-[connection signal="button_up" from="UI/Control/SkipDayButton" to="DaySummary" method="_on_day_timer_timeout"]
-[connection signal="last_day" from="DaySummary" to="LastDaySummary" method="_on_day_summary_last_day"]
+[connection signal="button_up" from="UI/Control/SkipDayButton" to="RecapManager" method="_on_timer_timeout"]
