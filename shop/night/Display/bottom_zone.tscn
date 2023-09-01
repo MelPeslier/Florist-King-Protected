@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://cynvubvqnbai7"]
+
+[ext_resource type="Script" path="res://shop/night/Display/player_next_room.gd" id="1_4xwhy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eno6l"]
+size = Vector2(1536, 184)
+
+[node name="BottomZone" type="Area2D" groups=["zone"]]
+position = Vector2(0, 492)
+script = ExtResource("1_4xwhy")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape" type="CollisionShape2D" parent="."]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_eno6l")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

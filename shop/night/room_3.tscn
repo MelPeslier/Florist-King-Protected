@@ -1,16 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://dsdct3gq054yr"]
+[gd_scene load_steps=6 format=3 uid="uid://dsdct3gq054yr"]
 
 [ext_resource type="Script" path="res://shop/night/room.gd" id="1_t5e40"]
-[ext_resource type="Texture2D" uid="uid://3t5c0iduubwo" path="res://art/placeholder/rooms/Room3.PNG" id="2_qgdpb"]
+[ext_resource type="Texture2D" uid="uid://3t5c0iduubwo" path="res://art/placeholder/rooms/Room3.png" id="2_qgdpb"]
 [ext_resource type="PackedScene" uid="uid://csveo1j7t4qrg" path="res://shop/faucet/faucet.tscn" id="3_flfco"]
-[ext_resource type="PackedScene" uid="uid://dwoebmusguoxv" path="res://shop/night/Display/next_room.tscn" id="4_ere82"]
-[ext_resource type="Script" path="res://shop/night/ElectricalCabinet.gd" id="5_46jrd"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_kymbu"]
-size = Vector2(1413, 227)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_t5tcg"]
-size = Vector2(147, 196)
+[ext_resource type="PackedScene" uid="uid://cs705bluytusc" path="res://shop/night/Display/next_room.tscn" id="4_ere82"]
+[ext_resource type="PackedScene" uid="uid://cynvubvqnbai7" path="res://shop/night/Display/bottom_zone.tscn" id="5_jijop"]
 
 [node name="Room3" type="Node2D"]
 script = ExtResource("1_t5e40")
@@ -21,30 +15,7 @@ texture = ExtResource("2_qgdpb")
 [node name="Faucet" parent="." instance=ExtResource("3_flfco")]
 position = Vector2(-760, -8)
 
-[node name="NextRoom" parent="." instance=ExtResource("4_ere82")]
+[node name="BottomRoom" parent="." instance=ExtResource("4_ere82")]
 position = Vector2(-8, 488)
 
-[node name="Arrows" type="CanvasLayer" parent="."]
-
-[node name="Down" type="Area2D" parent="."]
-position = Vector2(0, 540)
-metadata/_edit_group_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Down"]
-visible = false
-position = Vector2(0.5, -110.5)
-shape = SubResource("RectangleShape2D_kymbu")
-
-[node name="ElectricalCabinet" type="Area2D" parent="."]
-position = Vector2(479, -362)
-script = ExtResource("5_46jrd")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ElectricalCabinet"]
-visible = false
-position = Vector2(-8.5, 8)
-shape = SubResource("RectangleShape2D_t5tcg")
-
-[connection signal="input_event" from="Down" to="." method="_on_down_input_event"]
-[connection signal="mouse_entered" from="Down" to="." method="_on_area_mouse_entered"]
-[connection signal="mouse_exited" from="Down" to="." method="_on_area_mouse_exited"]
-[connection signal="input_event" from="ElectricalCabinet" to="ElectricalCabinet" method="_on_input_event"]
+[node name="BottomZone" parent="." instance=ExtResource("5_jijop")]

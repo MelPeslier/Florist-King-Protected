@@ -1,11 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://dinjpcmsfbml2"]
+[gd_scene load_steps=6 format=3 uid="uid://dinjpcmsfbml2"]
 
 [ext_resource type="Script" path="res://shop/night/room.gd" id="1_cywfe"]
 [ext_resource type="Texture2D" uid="uid://dhokg4a7wxecv" path="res://art/placeholder/rooms/Room1.png" id="2_hbwda"]
-[ext_resource type="PackedScene" uid="uid://dwoebmusguoxv" path="res://shop/night/Display/next_room.tscn" id="3_wb7dy"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_bvu0g"]
-size = Vector2(256, 1082)
+[ext_resource type="PackedScene" uid="uid://cs705bluytusc" path="res://shop/night/Display/next_room.tscn" id="3_wb7dy"]
+[ext_resource type="PackedScene" uid="uid://bpx14qr7213xo" path="res://shop/night/Display/right_zone.tscn" id="4_pipdm"]
+[ext_resource type="PackedScene" uid="uid://dtlc4le5xjem8" path="res://shop/night/Display/left_zone.tscn" id="5_viy1n"]
 
 [node name="Room1" type="Node2D"]
 script = ExtResource("1_cywfe")
@@ -13,33 +12,12 @@ script = ExtResource("1_cywfe")
 [node name="Background" type="Sprite2D" parent="."]
 texture = ExtResource("2_hbwda")
 
-[node name="NextRoom" parent="." instance=ExtResource("3_wb7dy")]
+[node name="LeftRoom" parent="." instance=ExtResource("3_wb7dy")]
 position = Vector2(-928, 432)
 
-[node name="NextRoom2" parent="." instance=ExtResource("3_wb7dy")]
+[node name="RightRoom" parent="." instance=ExtResource("3_wb7dy")]
 position = Vector2(912, 448)
 
-[node name="Arrows" type="CanvasLayer" parent="."]
+[node name="LeftZone" parent="." instance=ExtResource("5_viy1n")]
 
-[node name="Left" type="Area2D" parent="."]
-position = Vector2(-832, 0)
-metadata/_edit_group_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Left"]
-visible = false
-shape = SubResource("RectangleShape2D_bvu0g")
-
-[node name="Right" type="Area2D" parent="."]
-position = Vector2(833, 0)
-metadata/_edit_group_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Right"]
-visible = false
-shape = SubResource("RectangleShape2D_bvu0g")
-
-[connection signal="input_event" from="Left" to="." method="_on_left_input_event"]
-[connection signal="mouse_entered" from="Left" to="." method="_on_area_mouse_entered"]
-[connection signal="mouse_exited" from="Left" to="." method="_on_area_mouse_exited"]
-[connection signal="input_event" from="Right" to="." method="_on_right_input_event"]
-[connection signal="mouse_entered" from="Right" to="." method="_on_area_mouse_entered"]
-[connection signal="mouse_exited" from="Right" to="." method="_on_area_mouse_exited"]
+[node name="RightZone" parent="." instance=ExtResource("4_pipdm")]

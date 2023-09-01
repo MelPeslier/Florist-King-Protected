@@ -4,11 +4,9 @@ enum Room {
 	NUMBER,
 	PATH
 }
-@export var pots: Array[Node2D]
+var pots: Array[Node2D]
 var room_number: int = 0
 var nearby_rooms :=[] 
-@onready var arrow_scene = preload("res://shop/night/Display/arrow.tscn")
-@onready var arrows = $Arrows
 
  
 func _ready():
@@ -22,7 +20,6 @@ func move(selectedRoom): # Move to a different room
 	
 	# To get absolute path
 	selectedRoom = get_node("/root/NightShop/" + str(selectedRoom))
-	arrows.visible = false
 	selectedRoom.enter(player)
 
 
@@ -37,26 +34,28 @@ func update_data(room, nearby: Array) -> void:
 	
 	# Update Arrows
 	var i: int = 0
-	for marker in get_children():
-		if marker is Marker2D:
-			# Update where to wich room the marker is pointing
-			marker.to_room = nearby_rooms[i][0]
-			
-			# Player Movement Arrows
-			var arrow = arrow_scene.instantiate()
-			add_child(arrow)
-			arrow.to_room = nearby_rooms[i][0]
-			arrow.position = marker.position
-			
-			# Rotation
-			rotate_to_target(arrow, marker)
+	var j: int = 0
+	for item in get_children():
+		if item is Marker2D:
+			# Update to wich room the the marker is pointing for flowers movements
+			item.to_room = nearby_rooms[i][0]
 			i += 1
 			
 		# Init movement for flowers
-		elif marker.is_in_group("pot"):
-			if not marker.get_child(0).is_in_group("PotVide"):
-				marker.get_child(0).init_movements()
-			
+		elif item.is_in_group("pot"):
+			pots.append(item)
+			if item.get_children().size() > 0:
+				if not item.get_child(0).is_in_group("PotVide"):
+					item.get_child(0).init_movements()
+		
+		# Area2D as child of a room must be for input movements
+		# Assign to him the room number (will be use to change to room x)
+		elif item is Area2D and item.is_in_group("zone"):
+			item.to_room = nearby_rooms[j][0]
+			print("Room " + str(room) + "zone vers " + str(nearby_rooms[j][0]))
+			j += 1
+	
+	print("Pots dans la chambre" + str(room) + " : " + str(pots))
 
 
 func rotate_to_target(dummy, target):
@@ -76,42 +75,6 @@ func update_flower(target_room: int) -> Array:
 				path = nearby_rooms[i][Room.PATH]
 			i += 1
 	return [pos, path]
-   
-   
-func _on_left_input_event(_viewport, event, _shape_idx):
-#	if event is InputEventMouseButton:
-#		if event.pressed && event.button_index == MOUSE_BUTTON_LEFT:
-#			move(leftRoom)
-			pass
-
-
-func _on_right_input_event(_viewport, event, _shape_idx):
-#	if event is InputEventMouseButton:
-#		if event.pressed && event.button_index == MOUSE_BUTTON_LEFT:
-#			move(rightRoom)
-	pass
-
-
-func _on_up_input_event(_viewport, event, _shape_idx):
-#	if event is InputEventMouseButton:
-#		if event.pressed && event.button_index == MOUSE_BUTTON_LEFT:
-#			move(upRoom)
-	pass
-
-
-func _on_down_input_event(_viewport, event, _shape_idx):
-#	if event is InputEventMouseButton:
-#		if event.pressed && event.button_index == MOUSE_BUTTON_LEFT:
-#			move(downRoom)
-	pass
-
-
-func _on_area_mouse_entered():
-	Input.set_default_cursor_shape(Input.CURSOR_POINTING_HAND)
-
-
-func _on_area_mouse_exited():
-	Input.set_default_cursor_shape(Input.CURSOR_ARROW)
 
 
 func go_to(room: int) -> void:

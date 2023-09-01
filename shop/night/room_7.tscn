@@ -1,20 +1,16 @@
-[gd_scene load_steps=8 format=3 uid="uid://bipttp0f76t1t"]
+[gd_scene load_steps=9 format=3 uid="uid://bipttp0f76t1t"]
 
 [ext_resource type="Script" path="res://shop/night/room.gd" id="1_knn6r"]
 [ext_resource type="Texture2D" uid="uid://c5130ofw0sd22" path="res://art/placeholder/rooms/Room7.png" id="2_h7vko"]
 [ext_resource type="PackedScene" uid="uid://8lpyo4m5siaj" path="res://commons/pot/pot.tscn" id="3_85dy0"]
 [ext_resource type="PackedScene" uid="uid://rmdl0x86wm3g" path="res://shop/night/Flower Interaction/flower_interaction.tscn" id="4_o1y4e"]
-[ext_resource type="PackedScene" uid="uid://dwoebmusguoxv" path="res://shop/night/Display/next_room.tscn" id="4_p2c2n"]
+[ext_resource type="PackedScene" uid="uid://cs705bluytusc" path="res://shop/night/Display/next_room.tscn" id="4_p2c2n"]
+[ext_resource type="PackedScene" uid="uid://dtlc4le5xjem8" path="res://shop/night/Display/left_zone.tscn" id="6_0uw8b"]
+[ext_resource type="PackedScene" uid="uid://cynvubvqnbai7" path="res://shop/night/Display/bottom_zone.tscn" id="7_3bkkq"]
+[ext_resource type="PackedScene" uid="uid://bpx14qr7213xo" path="res://shop/night/Display/right_zone.tscn" id="8_ktr6n"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_2j4x6"]
-size = Vector2(256, 1082)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_dutqm"]
-size = Vector2(1413, 227)
-
-[node name="Room7" type="Node2D" node_paths=PackedStringArray("pots")]
+[node name="Room7" type="Node2D"]
 script = ExtResource("1_knn6r")
-pots = [NodePath("Pot1"), NodePath("Pot2"), NodePath("Pot3")]
 
 [node name="Background" type="Sprite2D" parent="."]
 texture = ExtResource("2_h7vko")
@@ -32,48 +28,17 @@ position = Vector2(256, -8)
 [node name="FlowerInteraction" parent="." node_paths=PackedStringArray("main_room") instance=ExtResource("4_o1y4e")]
 main_room = NodePath("..")
 
-[node name="NextRoom" parent="." instance=ExtResource("4_p2c2n")]
+[node name="LeftRoom" parent="." instance=ExtResource("4_p2c2n")]
 position = Vector2(-920, 472)
 
-[node name="NextRoom2" parent="." instance=ExtResource("4_p2c2n")]
+[node name="BottomRoom" parent="." instance=ExtResource("4_p2c2n")]
 position = Vector2(216, 496)
 
-[node name="NextRoom3" parent="." instance=ExtResource("4_p2c2n")]
+[node name="RightRoom" parent="." instance=ExtResource("4_p2c2n")]
 position = Vector2(912, 480)
 
-[node name="Arrows" type="CanvasLayer" parent="."]
+[node name="LeftZone" parent="." instance=ExtResource("6_0uw8b")]
 
-[node name="Left" type="Area2D" parent="."]
-position = Vector2(-832, 0)
-metadata/_edit_group_ = true
+[node name="BottomZone" parent="." instance=ExtResource("7_3bkkq")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Left"]
-visible = false
-shape = SubResource("RectangleShape2D_2j4x6")
-
-[node name="Right" type="Area2D" parent="."]
-position = Vector2(833, 0)
-metadata/_edit_group_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Right"]
-visible = false
-shape = SubResource("RectangleShape2D_2j4x6")
-
-[node name="Down" type="Area2D" parent="."]
-position = Vector2(0, 540)
-metadata/_edit_group_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Down"]
-visible = false
-position = Vector2(0.5, -110.5)
-shape = SubResource("RectangleShape2D_dutqm")
-
-[connection signal="input_event" from="Left" to="." method="_on_left_input_event"]
-[connection signal="mouse_entered" from="Left" to="." method="_on_area_mouse_entered"]
-[connection signal="mouse_exited" from="Left" to="." method="_on_area_mouse_exited"]
-[connection signal="input_event" from="Right" to="." method="_on_right_input_event"]
-[connection signal="mouse_entered" from="Right" to="." method="_on_area_mouse_entered"]
-[connection signal="mouse_exited" from="Right" to="." method="_on_area_mouse_exited"]
-[connection signal="input_event" from="Down" to="." method="_on_down_input_event"]
-[connection signal="mouse_entered" from="Down" to="." method="_on_area_mouse_entered"]
-[connection signal="mouse_exited" from="Down" to="." method="_on_area_mouse_exited"]
+[node name="RightZone" parent="." instance=ExtResource("8_ktr6n")]

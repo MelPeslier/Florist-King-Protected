@@ -1,14 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://k0wuo10gq03a"]
+[gd_scene load_steps=7 format=3 uid="uid://k0wuo10gq03a"]
 
 [ext_resource type="Script" path="res://shop/night/room.gd" id="1_h77w1"]
 [ext_resource type="Texture2D" uid="uid://b6urav4050njn" path="res://art/placeholder/rooms/Room10.png" id="2_e1262"]
-[ext_resource type="PackedScene" uid="uid://dwoebmusguoxv" path="res://shop/night/Display/next_room.tscn" id="3_ngufr"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_3618d"]
-size = Vector2(256, 1082)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_6w0pt"]
-size = Vector2(1413, 227)
+[ext_resource type="PackedScene" uid="uid://cs705bluytusc" path="res://shop/night/Display/next_room.tscn" id="3_ngufr"]
+[ext_resource type="PackedScene" uid="uid://bpx14qr7213xo" path="res://shop/night/Display/right_zone.tscn" id="4_0l6eu"]
+[ext_resource type="PackedScene" uid="uid://cynvubvqnbai7" path="res://shop/night/Display/bottom_zone.tscn" id="5_64wg8"]
+[ext_resource type="PackedScene" uid="uid://dtlc4le5xjem8" path="res://shop/night/Display/left_zone.tscn" id="6_v0eob"]
 
 [node name="Room10" type="Node2D"]
 script = ExtResource("1_h77w1")
@@ -16,48 +13,17 @@ script = ExtResource("1_h77w1")
 [node name="Background" type="Sprite2D" parent="."]
 texture = ExtResource("2_e1262")
 
-[node name="NextRoom" parent="." instance=ExtResource("3_ngufr")]
+[node name="RightRoom" parent="." instance=ExtResource("3_ngufr")]
 position = Vector2(768, 0)
 
-[node name="NextRoom2" parent="." instance=ExtResource("3_ngufr")]
+[node name="BottomRoom" parent="." instance=ExtResource("3_ngufr")]
 position = Vector2(760, 504)
 
-[node name="NextRoom4" parent="." instance=ExtResource("3_ngufr")]
+[node name="LeftRoom" parent="." instance=ExtResource("3_ngufr")]
 position = Vector2(-936, 320)
 
-[node name="Arrows" type="CanvasLayer" parent="."]
+[node name="RightZone" parent="." instance=ExtResource("4_0l6eu")]
 
-[node name="Left" type="Area2D" parent="."]
-position = Vector2(-832, 0)
-metadata/_edit_group_ = true
+[node name="BottomZone" parent="." instance=ExtResource("5_64wg8")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Left"]
-visible = false
-shape = SubResource("RectangleShape2D_3618d")
-
-[node name="Right" type="Area2D" parent="."]
-position = Vector2(833, 0)
-metadata/_edit_group_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Right"]
-visible = false
-shape = SubResource("RectangleShape2D_3618d")
-
-[node name="Down" type="Area2D" parent="."]
-position = Vector2(0, 540)
-metadata/_edit_group_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Down"]
-visible = false
-position = Vector2(0.5, -110.5)
-shape = SubResource("RectangleShape2D_6w0pt")
-
-[connection signal="input_event" from="Left" to="." method="_on_left_input_event"]
-[connection signal="mouse_entered" from="Left" to="." method="_on_area_mouse_entered"]
-[connection signal="mouse_exited" from="Left" to="." method="_on_area_mouse_exited"]
-[connection signal="input_event" from="Right" to="." method="_on_right_input_event"]
-[connection signal="mouse_entered" from="Right" to="." method="_on_area_mouse_entered"]
-[connection signal="mouse_exited" from="Right" to="." method="_on_area_mouse_exited"]
-[connection signal="input_event" from="Down" to="." method="_on_down_input_event"]
-[connection signal="mouse_entered" from="Down" to="." method="_on_area_mouse_entered"]
-[connection signal="mouse_exited" from="Down" to="." method="_on_area_mouse_exited"]
+[node name="LeftZone" parent="." instance=ExtResource("6_v0eob")]
