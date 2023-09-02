@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bnf1q1354b02l"]
 
 [ext_resource type="Script" path="res://menus/day/last_day_summary.gd" id="1_3p76v"]
-[ext_resource type="FontFile" uid="uid://b0hof85mkga7d" path="res://art/Playfulist-rgPp8.ttf" id="1_gx31f"]
+[ext_resource type="FontFile" uid="uid://b0hof85mkga7d" path="res://fonts/police/Playfulist-rgPp8.ttf" id="1_gx31f"]
 [ext_resource type="Script" path="res://menus/day/fade_in_controller.gd" id="2_w07xe"]
 
 [node name="LastDaySummary" type="CanvasLayer"]

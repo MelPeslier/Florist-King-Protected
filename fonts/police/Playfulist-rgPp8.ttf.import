@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://b0hof85mkga7d"
-path="res://.godot/imported/Playfulist-rgPp8.ttf-8094f7ddab2ab45cb18f3ce9bc9f728c.fontdata"
+path="res://.godot/imported/Playfulist-rgPp8.ttf-03f10c6a90e28ef085c79b0e8929bbac.fontdata"
 
 [deps]
 
-source_file="res://art/Playfulist-rgPp8.ttf"
-dest_files=["res://.godot/imported/Playfulist-rgPp8.ttf-8094f7ddab2ab45cb18f3ce9bc9f728c.fontdata"]
+source_file="res://fonts/police/Playfulist-rgPp8.ttf"
+dest_files=["res://.godot/imported/Playfulist-rgPp8.ttf-03f10c6a90e28ef085c79b0e8929bbac.fontdata"]
 
 [params]
 

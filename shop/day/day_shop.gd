@@ -8,7 +8,6 @@ const no_song = preload("res://audio/sfx/drag_drop/error_sound.wav")
 
 func _ready():
 	Events.play_the_song.connect(_on_play_the_song)
-	Events.change_scene_to.connect(_on_change_scene_to)
 	Pause.canPause = true
 #	$UI/Control/Icon.texture = null
 	Music.stream = daymusicstart

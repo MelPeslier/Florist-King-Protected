@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://nf8tocqdtkl1"]
 
-[ext_resource type="FontFile" uid="uid://b0hof85mkga7d" path="res://art/Playfulist-rgPp8.ttf" id="1_7bcbc"]
+[ext_resource type="FontFile" uid="uid://b0hof85mkga7d" path="res://fonts/police/Playfulist-rgPp8.ttf" id="1_7bcbc"]
 [ext_resource type="Script" path="res://menus/recaps/recap_template.gd" id="1_gx6ee"]
 
 [sub_resource type="Animation" id="Animation_dsktx"]

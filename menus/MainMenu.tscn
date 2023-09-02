@@ -1,11 +1,14 @@
-[gd_scene load_steps=11 format=3 uid="uid://bl0wpwdpgqv2e"]
+[gd_scene load_steps=14 format=3 uid="uid://bl0wpwdpgqv2e"]
 
 [ext_resource type="Script" path="res://menus/MainMenu.gd" id="1_g8514"]
 [ext_resource type="Texture2D" uid="uid://ch7vteblt1yrb" path="res://art/placeholder/MenuImagePlaceholder.jpg" id="2_7rebt"]
-[ext_resource type="FontFile" uid="uid://b0hof85mkga7d" path="res://art/Playfulist-rgPp8.ttf" id="3_jeus4"]
+[ext_resource type="FontFile" uid="uid://b0hof85mkga7d" path="res://fonts/police/Playfulist-rgPp8.ttf" id="3_nv0vf"]
 [ext_resource type="Script" path="res://menus/LeaderboardPanel.gd" id="4_3aoqa"]
 [ext_resource type="AudioStream" uid="uid://dmxqg357ljt0p" path="res://audio/sfx/menu/menu_scroll.wav" id="4_dlyhx"]
+[ext_resource type="PackedScene" uid="uid://bdwmr0niw64nd" path="res://menus/settings/back_continue.tscn" id="4_o5k5n"]
+[ext_resource type="Theme" uid="uid://d1dh06xemqwb5" path="res://fonts/Themes/main_menu_buttons.tres" id="4_y41ge"]
 [ext_resource type="AudioStream" uid="uid://rodbeyob6u82" path="res://audio/sfx/drag_drop/error_sound.wav" id="6_2msp6"]
+[ext_resource type="PackedScene" uid="uid://cfihlrn53rwwl" path="res://menus/settings/settings.tscn" id="7_w80sr"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2csbd"]
 
@@ -53,7 +56,15 @@ custom_minimum_size = Vector2(500, 600)
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="ColorRect" type="ColorRect" parent="UI/UISplit/LeftControl"]
+[node name="MainScreen" type="Control" parent="UI/UISplit/LeftControl"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="UI/UISplit/LeftControl/MainScreen"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -63,7 +74,7 @@ grow_vertical = 2
 color = Color(0, 0, 0, 0.25098)
 metadata/_edit_lock_ = true
 
-[node name="VBoxContainer" type="VBoxContainer" parent="UI/UISplit/LeftControl"]
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/UISplit/LeftControl/MainScreen"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -72,75 +83,146 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 20
 
-[node name="CenterTitle" type="CenterContainer" parent="UI/UISplit/LeftControl/VBoxContainer"]
+[node name="CenterTitle" type="CenterContainer" parent="UI/UISplit/LeftControl/MainScreen/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="Label" type="Label" parent="UI/UISplit/LeftControl/VBoxContainer/CenterTitle"]
+[node name="Label" type="Label" parent="UI/UISplit/LeftControl/MainScreen/VBoxContainer/CenterTitle"]
 layout_mode = 2
 theme_override_constants/outline_size = 3
-theme_override_fonts/font = ExtResource("3_jeus4")
+theme_override_fonts/font = ExtResource("3_nv0vf")
 theme_override_font_sizes/font_size = 135
 text = "Florist King"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="CenterContainer" type="CenterContainer" parent="UI/UISplit/LeftControl/VBoxContainer"]
+[node name="CenterContainer" type="CenterContainer" parent="UI/UISplit/LeftControl/MainScreen/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="MainButtons" type="VBoxContainer" parent="UI/UISplit/LeftControl/VBoxContainer/CenterContainer"]
+[node name="MainButtons" type="VBoxContainer" parent="UI/UISplit/LeftControl/MainScreen/VBoxContainer/CenterContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/separation = 60
 
-[node name="Play" type="Button" parent="UI/UISplit/LeftControl/VBoxContainer/CenterContainer/MainButtons"]
+[node name="Play" type="Button" parent="UI/UISplit/LeftControl/MainScreen/VBoxContainer/CenterContainer/MainButtons"]
+custom_minimum_size = Vector2(700, 80)
 layout_mode = 2
 size_flags_vertical = 3
 focus_mode = 0
-theme_override_fonts/font = ExtResource("3_jeus4")
-theme_override_font_sizes/font_size = 70
+theme = ExtResource("4_y41ge")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_2csbd")
 theme_override_styles/hover = SubResource("StyleBoxFlat_teura")
-text = " Play"
+text = "PLAY"
 alignment = 0
+text_overrun_behavior = 3
 
-[node name="Leaderboards" type="Button" parent="UI/UISplit/LeftControl/VBoxContainer/CenterContainer/MainButtons"]
+[node name="Leaderboards" type="Button" parent="UI/UISplit/LeftControl/MainScreen/VBoxContainer/CenterContainer/MainButtons"]
+custom_minimum_size = Vector2(700, 80)
 layout_mode = 2
 size_flags_vertical = 3
 focus_mode = 0
-theme_override_fonts/font = ExtResource("3_jeus4")
-theme_override_font_sizes/font_size = 70
+theme = ExtResource("4_y41ge")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_2bo0a")
 theme_override_styles/hover = SubResource("StyleBoxFlat_43a2j")
-text = " Leaderboards"
+text = "MAIN_MENU_LEADERBOARD"
 alignment = 0
+text_overrun_behavior = 3
 
-[node name="Credits" type="Button" parent="UI/UISplit/LeftControl/VBoxContainer/CenterContainer/MainButtons"]
+[node name="Settings" type="Button" parent="UI/UISplit/LeftControl/MainScreen/VBoxContainer/CenterContainer/MainButtons"]
+custom_minimum_size = Vector2(700, 80)
 layout_mode = 2
 size_flags_vertical = 3
 focus_mode = 0
-theme_override_fonts/font = ExtResource("3_jeus4")
-theme_override_font_sizes/font_size = 70
+theme = ExtResource("4_y41ge")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_2bo0a")
 theme_override_styles/hover = SubResource("StyleBoxFlat_43a2j")
-text = " Credits"
+text = "SETTINGS"
 alignment = 0
+text_overrun_behavior = 3
 
-[node name="Quit" type="Button" parent="UI/UISplit/LeftControl/VBoxContainer/CenterContainer/MainButtons"]
+[node name="Credits" type="Button" parent="UI/UISplit/LeftControl/MainScreen/VBoxContainer/CenterContainer/MainButtons"]
+custom_minimum_size = Vector2(700, 80)
 layout_mode = 2
 size_flags_vertical = 3
 focus_mode = 0
-theme_override_fonts/font = ExtResource("3_jeus4")
-theme_override_font_sizes/font_size = 70
+theme = ExtResource("4_y41ge")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_2bo0a")
 theme_override_styles/hover = SubResource("StyleBoxFlat_43a2j")
-text = " Quit"
+text = "MAIN_MENU_CREDITS"
 alignment = 0
+text_overrun_behavior = 3
 
-[node name="MarginDummy" type="MarginContainer" parent="UI/UISplit/LeftControl/VBoxContainer"]
+[node name="Quit" type="Button" parent="UI/UISplit/LeftControl/MainScreen/VBoxContainer/CenterContainer/MainButtons"]
+custom_minimum_size = Vector2(700, 80)
 layout_mode = 2
 size_flags_vertical = 3
+focus_mode = 0
+theme = ExtResource("4_y41ge")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_2bo0a")
+theme_override_styles/hover = SubResource("StyleBoxFlat_43a2j")
+text = "QUIT"
+alignment = 0
+text_overrun_behavior = 3
+
+[node name="MarginDummy" type="MarginContainer" parent="UI/UISplit/LeftControl/MainScreen/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="NameRegister" type="HBoxContainer" parent="UI/UISplit/LeftControl"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+
+[node name="NameRegistering" type="Control" parent="UI/UISplit/LeftControl/NameRegister"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ColorRect" type="ColorRect" parent="UI/UISplit/LeftControl/NameRegister/NameRegistering"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.258824, 0, 0.0352941, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/UISplit/LeftControl/NameRegister/NameRegistering"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterAll" type="CenterContainer" parent="UI/UISplit/LeftControl/NameRegister/NameRegistering/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/UISplit/LeftControl/NameRegister/NameRegistering/VBoxContainer/CenterAll"]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="LineEdit" type="LineEdit" parent="UI/UISplit/LeftControl/NameRegister/NameRegistering/VBoxContainer/CenterAll/VBoxContainer"]
+custom_minimum_size = Vector2(600, 90)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("3_nv0vf")
+theme_override_font_sizes/font_size = 40
+placeholder_text = "NAME_REGISTER_PLACEHOLDER"
+alignment = 1
+max_length = 25
+caret_blink = true
+
+[node name="BackContinue" parent="UI/UISplit/LeftControl/NameRegister/NameRegistering/VBoxContainer/CenterAll/VBoxContainer" instance=ExtResource("4_o5k5n")]
+layout_mode = 2
 
 [node name="RightControl" type="Control" parent="UI/UISplit"]
 custom_minimum_size = Vector2(500, 600)
@@ -190,7 +272,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("3_jeus4")
+theme_override_fonts/font = ExtResource("3_nv0vf")
 theme_override_font_sizes/font_size = 44
 text = "Garett Skott
 Mel Peslier
@@ -245,105 +327,22 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 5
 
+[node name="Settings" parent="." instance=ExtResource("7_w80sr")]
+visible = false
+
 [node name="Audio" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_dlyhx")
 
 [node name="AudioWrong" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_2msp6")
 
-[node name="NameRegister" type="HBoxContainer" parent="."]
-visible = false
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 3
+[connection signal="button_up" from="UI/UISplit/LeftControl/MainScreen/VBoxContainer/CenterContainer/MainButtons/Play" to="." method="_on_play_pressed"]
+[connection signal="button_up" from="UI/UISplit/LeftControl/MainScreen/VBoxContainer/CenterContainer/MainButtons/Leaderboards" to="." method="_on_leaderboards_pressed"]
+[connection signal="button_up" from="UI/UISplit/LeftControl/MainScreen/VBoxContainer/CenterContainer/MainButtons/Settings" to="." method="_on_settings_button_up"]
+[connection signal="mouse_entered" from="UI/UISplit/LeftControl/MainScreen/VBoxContainer/CenterContainer/MainButtons/Credits" to="." method="_on_mouse_entered"]
+[connection signal="pressed" from="UI/UISplit/LeftControl/MainScreen/VBoxContainer/CenterContainer/MainButtons/Credits" to="." method="_on_credits_pressed"]
+[connection signal="button_up" from="UI/UISplit/LeftControl/MainScreen/VBoxContainer/CenterContainer/MainButtons/Quit" to="." method="_on_quit_pressed"]
+[connection signal="button_up" from="UI/UISplit/LeftControl/NameRegister/NameRegistering/VBoxContainer/CenterAll/VBoxContainer/BackContinue/BackMargin/Back" to="." method="_on_back_button_up"]
+[connection signal="button_up" from="UI/UISplit/LeftControl/NameRegister/NameRegistering/VBoxContainer/CenterAll/VBoxContainer/BackContinue/ContinueMargin/Continue" to="." method="_on_enter_name_button_up"]
 
-[node name="NameRegistering" type="Control" parent="NameRegister"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="ColorRect" type="ColorRect" parent="NameRegister/NameRegistering"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-color = Color(0.258824, 0, 0.0352941, 1)
-
-[node name="VBoxContainer" type="VBoxContainer" parent="NameRegister/NameRegistering"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="CenterAll" type="CenterContainer" parent="NameRegister/NameRegistering/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="VBoxContainer" type="VBoxContainer" parent="NameRegister/NameRegistering/VBoxContainer/CenterAll"]
-layout_mode = 2
-theme_override_constants/separation = 50
-
-[node name="LineEdit" type="LineEdit" parent="NameRegister/NameRegistering/VBoxContainer/CenterAll/VBoxContainer"]
-custom_minimum_size = Vector2(600, 90)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme_override_fonts/font = ExtResource("3_jeus4")
-theme_override_font_sizes/font_size = 40
-placeholder_text = "Enter your name"
-alignment = 1
-max_length = 25
-caret_blink = true
-
-[node name="HBoxContainer" type="HBoxContainer" parent="NameRegister/NameRegistering/VBoxContainer/CenterAll/VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-
-[node name="BackMargin" type="MarginContainer" parent="NameRegister/NameRegistering/VBoxContainer/CenterAll/VBoxContainer/HBoxContainer"]
-layout_mode = 2
-theme_override_constants/margin_left = 30
-theme_override_constants/margin_right = 30
-
-[node name="Back" type="Button" parent="NameRegister/NameRegistering/VBoxContainer/CenterAll/VBoxContainer/HBoxContainer/BackMargin"]
-custom_minimum_size = Vector2(120, 80)
-layout_mode = 2
-theme_override_fonts/font = ExtResource("3_jeus4")
-theme_override_font_sizes/font_size = 37
-text = "Back
-"
-
-[node name="ContinueMargin" type="MarginContainer" parent="NameRegister/NameRegistering/VBoxContainer/CenterAll/VBoxContainer/HBoxContainer"]
-custom_minimum_size = Vector2(200, 70)
-layout_mode = 2
-theme_override_constants/margin_left = 30
-theme_override_constants/margin_right = 30
-
-[node name="EnterName" type="Button" parent="NameRegister/NameRegistering/VBoxContainer/CenterAll/VBoxContainer/HBoxContainer/ContinueMargin"]
-custom_minimum_size = Vector2(220, 80)
-layout_mode = 2
-theme_override_fonts/font = ExtResource("3_jeus4")
-theme_override_font_sizes/font_size = 37
-text = "Continue"
-
-[node name="MarginDummy" type="MarginContainer" parent="NameRegister"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 0
-
-[connection signal="button_up" from="UI/UISplit/LeftControl/VBoxContainer/CenterContainer/MainButtons/Play" to="." method="_on_play_pressed"]
-[connection signal="button_up" from="UI/UISplit/LeftControl/VBoxContainer/CenterContainer/MainButtons/Leaderboards" to="." method="_on_leaderboards_pressed"]
-[connection signal="mouse_entered" from="UI/UISplit/LeftControl/VBoxContainer/CenterContainer/MainButtons/Credits" to="." method="_on_mouse_entered"]
-[connection signal="pressed" from="UI/UISplit/LeftControl/VBoxContainer/CenterContainer/MainButtons/Credits" to="." method="_on_credits_pressed"]
-[connection signal="button_up" from="UI/UISplit/LeftControl/VBoxContainer/CenterContainer/MainButtons/Quit" to="." method="_on_quit_pressed"]
-[connection signal="button_up" from="NameRegister/NameRegistering/VBoxContainer/CenterAll/VBoxContainer/HBoxContainer/BackMargin/Back" to="." method="_on_back_button_up"]
-[connection signal="mouse_entered" from="NameRegister/NameRegistering/VBoxContainer/CenterAll/VBoxContainer/HBoxContainer/BackMargin/Back" to="." method="_on_mouse_entered"]
-[connection signal="button_up" from="NameRegister/NameRegistering/VBoxContainer/CenterAll/VBoxContainer/HBoxContainer/ContinueMargin/EnterName" to="." method="_on_enter_name_button_up"]
-[connection signal="mouse_entered" from="NameRegister/NameRegistering/VBoxContainer/CenterAll/VBoxContainer/HBoxContainer/ContinueMargin/EnterName" to="." method="_on_mouse_entered"]
+[editable path="UI/UISplit/LeftControl/NameRegister/NameRegistering/VBoxContainer/CenterAll/VBoxContainer/BackContinue"]

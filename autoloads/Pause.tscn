@@ -1,16 +1,28 @@
-[gd_scene load_steps=4 format=3 uid="uid://evem30mswvy5"]
+[gd_scene load_steps=7 format=3 uid="uid://evem30mswvy5"]
 
 [ext_resource type="Script" path="res://autoloads/Pause.gd" id="1_h8vmw"]
-[ext_resource type="FontFile" uid="uid://b0hof85mkga7d" path="res://art/Playfulist-rgPp8.ttf" id="2_dgphf"]
+[ext_resource type="Theme" uid="uid://dipbey4bho4f5" path="res://fonts/Themes/title.tres" id="2_oq5s6"]
+[ext_resource type="Theme" uid="uid://c8wmqfoaavicw" path="res://fonts/Themes/buttons_style_parameters.tres" id="3_efqyo"]
 [ext_resource type="AudioStream" uid="uid://dnhlb4eqth7jk" path="res://audio/sfx/menu/pause_game.wav" id="3_iihk6"]
+[ext_resource type="Theme" uid="uid://761yoq1r5qop" path="res://fonts/Themes/caution.tres" id="5_mx3cc"]
+[ext_resource type="PackedScene" uid="uid://cfihlrn53rwwl" path="res://menus/settings/settings.tscn" id="5_uy2sj"]
 
 [node name="Pause" type="CanvasLayer"]
 process_mode = 3
 layer = 3
 script = ExtResource("1_h8vmw")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="PauseMenu" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="PauseMenu"]
 process_mode = 3
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -18,64 +30,64 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.25098)
 
-[node name="CenterContainer" type="CenterContainer" parent="."]
+[node name="CenterContainer" type="CenterContainer" parent="PauseMenu"]
 process_mode = 3
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="PauseMenu/CenterContainer"]
 process_mode = 3
 layout_mode = 2
 theme_override_constants/separation = 40
+alignment = 1
 
-[node name="Label" type="Label" parent="CenterContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="PauseMenu/CenterContainer/VBoxContainer"]
 process_mode = 3
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_dgphf")
-theme_override_font_sizes/font_size = 100
-text = "Paused"
+theme = ExtResource("2_oq5s6")
+text = "PAUSE"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Resume" type="Button" parent="CenterContainer/VBoxContainer"]
-process_mode = 3
+[node name="Resume" type="Button" parent="PauseMenu/CenterContainer/VBoxContainer"]
 layout_mode = 2
-focus_mode = 0
-theme_override_fonts/font = ExtResource("2_dgphf")
-theme_override_font_sizes/font_size = 60
-text = "Resume"
-flat = true
+theme = ExtResource("3_efqyo")
+text = "PAUSE_RESUME"
 
-[node name="Container" type="VBoxContainer" parent="CenterContainer/VBoxContainer"]
+[node name="Settings" type="Button" parent="PauseMenu/CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_efqyo")
+text = "SETTINGS"
+
+[node name="Container" type="VBoxContainer" parent="PauseMenu/CenterContainer/VBoxContainer"]
 process_mode = 3
 layout_mode = 2
-size_flags_horizontal = 8
 size_flags_vertical = 8
+alignment = 1
 
-[node name="MainMenu" type="Button" parent="CenterContainer/VBoxContainer/Container"]
+[node name="MainMenu" type="Button" parent="PauseMenu/CenterContainer/VBoxContainer/Container"]
+layout_mode = 2
+theme = ExtResource("3_efqyo")
+text = "MAIN_MENU"
+
+[node name="Caution" type="Label" parent="PauseMenu/CenterContainer/VBoxContainer/Container"]
 process_mode = 3
 layout_mode = 2
-focus_mode = 0
-theme_override_fonts/font = ExtResource("2_dgphf")
-theme_override_font_sizes/font_size = 60
-text = "Main menu"
-flat = true
-
-[node name="Caution" type="Label" parent="CenterContainer/VBoxContainer/Container"]
-process_mode = 3
-layout_mode = 2
-theme_override_fonts/font = ExtResource("2_dgphf")
-theme_override_font_sizes/font_size = 26
-text = "(Lose all progress!)"
+theme = ExtResource("5_mx3cc")
+text = "CAUTION_LOSE_PROGRESS"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Settings" parent="." instance=ExtResource("5_uy2sj")]
 
 [node name="Audio" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_iihk6")
 bus = &"SFX"
 
-[connection signal="pressed" from="CenterContainer/VBoxContainer/Resume" to="." method="unpause"]
-[connection signal="pressed" from="CenterContainer/VBoxContainer/Container/MainMenu" to="." method="_on_main_menu_pressed"]
+[connection signal="button_up" from="PauseMenu/CenterContainer/VBoxContainer/Resume" to="." method="unpause"]
+[connection signal="pressed" from="PauseMenu/CenterContainer/VBoxContainer/Settings" to="." method="_on_settings_pressed"]
+[connection signal="button_up" from="PauseMenu/CenterContainer/VBoxContainer/Container/MainMenu" to="." method="_on_main_menu_pressed"]

@@ -1,9 +1,12 @@
 extends CanvasLayer
 
-@onready var death_message = $Control/VBoxContainer/DeathMessage
+
+@onready var info: Label = $Control/VBoxContainer/Info
+
+
 
 func set_death_cause(message:String):
-	death_message.text = message
+	info.text = message
 
 
 func _on_try_again_pressed():
