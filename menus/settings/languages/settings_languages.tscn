@@ -88,6 +88,23 @@ text = "Russian"
 script = ExtResource("3_4pbwi")
 new_language = "ru"
 
+[node name="Italian" type="MarginContainer" parent="All/Parameters"]
+custom_minimum_size = Vector2(500, 100)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Italian" type="Button" parent="All/Parameters/Italian"]
+layout_mode = 2
+theme = ExtResource("2_62tac")
+text = "Italian"
+script = ExtResource("3_4pbwi")
+new_language = "it"
+
 [connection signal="button_up" from="All/Parameters/English/Param" to="All/Parameters/English/Param" method="_on_button_up"]
 [connection signal="button_up" from="All/Parameters/French/Param" to="All/Parameters/French/Param" method="_on_button_up"]
 [connection signal="button_up" from="All/Parameters/Russian/Param" to="All/Parameters/Russian/Param" method="_on_button_up"]
+[connection signal="button_up" from="All/Parameters/Italian/Italian" to="All/Parameters/Italian/Italian" method="_on_button_up"]
