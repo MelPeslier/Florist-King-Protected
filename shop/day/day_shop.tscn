@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bglsobqq16un0" path="res://menus/day/SeedList.tscn" id="1_t8liv"]
 [ext_resource type="Texture2D" uid="uid://dhokg4a7wxecv" path="res://art/placeholder/rooms/Room1.png" id="2_0r3tt"]
 [ext_resource type="PackedScene" uid="uid://1duxwwc7pbei" path="res://menus/day/SeedPlacer.tscn" id="2_usasd"]
-[ext_resource type="FontFile" uid="uid://b0hof85mkga7d" path="res://art/Playfulist-rgPp8.ttf" id="3_ac2vx"]
+[ext_resource type="FontFile" uid="uid://b0hof85mkga7d" path="res://fonts/Playfulist-rgPp8.ttf" id="3_ac2vx"]
 [ext_resource type="Script" path="res://shop/day/Points.gd" id="5_4b5cc"]
 [ext_resource type="PackedScene" uid="uid://evem30mswvy5" path="res://autoloads/Pause.tscn" id="7_cfdb7"]
 [ext_resource type="PackedScene" uid="uid://2ktu46qamiis" path="res://player/customer/customer.tscn" id="7_mwgyh"]

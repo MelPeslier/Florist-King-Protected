@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://b6n3rbbpj1csk"]
 
 [ext_resource type="Script" path="res://menus/day/SeedPicker.gd" id="1_uxl4n"]
-[ext_resource type="FontFile" uid="uid://b0hof85mkga7d" path="res://art/Playfulist-rgPp8.ttf" id="2_1l1r1"]
+[ext_resource type="FontFile" uid="uid://b0hof85mkga7d" path="res://fonts/police/Playfulist-rgPp8.ttf" id="2_1l1r1"]
 [ext_resource type="Shader" path="res://menus/day/SeedPicker.gdshader" id="2_8ul5u"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rsppl"]

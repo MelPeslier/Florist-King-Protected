@@ -1,0 +1,16 @@
+keys,en,fr,ru,it
+BACK,Back,Retour,Назад,Indietro
+CONTINUE,Continue,Continuer,Продолжить,Continua
+GAME_OVER,GAME OVER,GAME OVER,ИГРА ОКОНЧЕНА,GAME OVER
+GAME_OVER_TRY_AGAIN,Try again,Réessayer,Начать заново,Riprova
+MAIN_MENU,Main menu,Menu principal,Главное Меню,Menù principale
+MAIN_MENU_CREDITS,Credits,Crédits,Титры,Riconoscimenti
+MAIN_MENU_LEADERBOARD,Leaderboard,Classement,Список Лидеров,Tabellone
+PLAY,Play,Jouer,"Играть (or ""Начать"")",Gioca
+QUIT,Quit,Quitter,Выйти,Esci
+NAME_REGISTER_PLACEHOLDER,Enter your name,Rentre ton nom,Введите ваше имя,Inserisci un nome
+SETTINGS,Settings,Réglages,Настройки,Opzioni
+SETTINGS_LANGUAGES,Languages,Langues,Язык,Lingue
+CAUTION_LOSE_PROGRESS,(Lose all progress),(Perdre tout progrès),Сбросить весь прогресс,(Azzera progressi)
+PAUSE,Paused,En pause,Пауза,Pausa
+PAUSE_RESUME,Resume,Reprendre,Продолжить,Riprendi

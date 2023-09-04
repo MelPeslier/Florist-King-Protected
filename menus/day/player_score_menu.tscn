@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://d1s8v1ip3k30o"]
 
 [ext_resource type="Script" path="res://menus/day/player_score_menu.gd" id="1_hlbpw"]
-[ext_resource type="FontFile" uid="uid://b0hof85mkga7d" path="res://art/Playfulist-rgPp8.ttf" id="1_swvnm"]
+[ext_resource type="FontFile" uid="uid://b0hof85mkga7d" path="res://fonts/police/Playfulist-rgPp8.ttf" id="1_swvnm"]
 
 [node name="PlayerScoreMenu" type="MarginContainer"]
 custom_minimum_size = Vector2(205, 44)

@@ -3,10 +3,11 @@ extends CanvasLayer
 const menuMusic = preload("res://audio/music/MenuTheme.ogg")
 
 @onready var audio_wrong = $AudioWrong
-@onready var line_edit = $NameRegister/NameRegistering/VBoxContainer/CenterAll/VBoxContainer/LineEdit
-@onready var name_register = $NameRegister
+@onready var line_edit: LineEdit = $UI/UISplit/LeftControl/NameRegister/NameRegistering/VBoxContainer/CenterAll/VBoxContainer/LineEdit
+@onready var name_register: HBoxContainer = $UI/UISplit/LeftControl/NameRegister
 @onready var credits_control = $UI/UISplit/RightControl/SharedControl/CreditsControl
 @onready var leaderboard_control = $UI/UISplit/RightControl/SharedControl/LeaderboardControl
+@onready var settings: Control = $Settings
 
 
 func _ready():
@@ -55,6 +56,7 @@ func _on_enter_name_button_up():
 	
 	if i < 2:
 		audio_wrong.play()
+		line_edit.text = ""
 	else:
 			# DataManagement
 		ScoreManager.reset()
@@ -67,3 +69,7 @@ func _on_back_button_up():
 	line_edit.clear()
 	line_edit.release_focus()
 	name_register.visible = false
+
+
+func _on_settings_button_up() -> void:
+	settings.visible = !settings.visible

@@ -1,0 +1,7 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://dipbey4bho4f5"]
+
+[ext_resource type="FontFile" uid="uid://b0hof85mkga7d" path="res://fonts/police/Playfulist-rgPp8.ttf" id="1_l3ksg"]
+
+[resource]
+default_font = ExtResource("1_l3ksg")
+default_font_size = 100

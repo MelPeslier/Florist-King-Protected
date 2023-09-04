@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://b5s6swmoxdck7"]
 
 [ext_resource type="Script" path="res://menus/night/GameOver.gd" id="1_8g6sc"]
-[ext_resource type="FontFile" uid="uid://b0hof85mkga7d" path="res://art/Playfulist-rgPp8.ttf" id="2_nyb1u"]
+[ext_resource type="FontFile" uid="uid://b0hof85mkga7d" path="res://fonts/police/Playfulist-rgPp8.ttf" id="2_xfap8"]
 
 [node name="GameOver" type="CanvasLayer"]
 script = ExtResource("1_8g6sc")
@@ -40,15 +40,15 @@ theme_override_constants/separation = 60
 
 [node name="Label" type="Label" parent="Control/VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_nyb1u")
+theme_override_fonts/font = ExtResource("2_xfap8")
 theme_override_font_sizes/font_size = 160
-text = "GAME OVER"
+text = "GAME_OVER"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="DeathMessage" type="Label" parent="Control/VBoxContainer"]
+[node name="Info" type="Label" parent="Control/VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_nyb1u")
+theme_override_fonts/font = ExtResource("2_xfap8")
 theme_override_font_sizes/font_size = 36
 text = "Shenanigans!"
 horizontal_alignment = 1
@@ -56,9 +56,9 @@ horizontal_alignment = 1
 [node name="TryAgain" type="Button" parent="Control/VBoxContainer"]
 layout_mode = 2
 focus_mode = 0
-theme_override_fonts/font = ExtResource("2_nyb1u")
+theme_override_fonts/font = ExtResource("2_xfap8")
 theme_override_font_sizes/font_size = 50
-text = "Try again"
+text = "GAME_OVER_TRY_AGAIN"
 flat = true
 
 [node name="menu" type="VBoxContainer" parent="Control/VBoxContainer"]
@@ -68,16 +68,16 @@ size_flags_vertical = 3
 [node name="MainMenu" type="Button" parent="Control/VBoxContainer/menu"]
 layout_mode = 2
 focus_mode = 0
-theme_override_fonts/font = ExtResource("2_nyb1u")
+theme_override_fonts/font = ExtResource("2_xfap8")
 theme_override_font_sizes/font_size = 50
-text = "Main menu"
+text = "MAIN_MENU"
 flat = true
 
 [node name="Caution" type="Label" parent="Control/VBoxContainer/menu"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_nyb1u")
+theme_override_fonts/font = ExtResource("2_xfap8")
 theme_override_font_sizes/font_size = 24
-text = "(Lose all progress!)"
+text = "CAUTION_LOSE_PROGRESS"
 horizontal_alignment = 1
 vertical_alignment = 1
 

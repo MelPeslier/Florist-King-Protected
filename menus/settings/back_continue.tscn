@@ -1,0 +1,34 @@
+[gd_scene load_steps=3 format=3 uid="uid://bdwmr0niw64nd"]
+
+[ext_resource type="FontFile" uid="uid://b0hof85mkga7d" path="res://fonts/police/Playfulist-rgPp8.ttf" id="1_k3nje"]
+[ext_resource type="Theme" uid="uid://c7ctsh0ef4qgx" path="res://fonts/Themes/buttons_style_1.tres" id="2_47bov"]
+
+[node name="BackContinue" type="HBoxContainer"]
+offset_right = 464.0
+offset_bottom = 80.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="BackMargin" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_right = 30
+
+[node name="Back" type="Button" parent="BackMargin"]
+custom_minimum_size = Vector2(120, 80)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_k3nje")
+theme_override_font_sizes/font_size = 37
+text = "BACK"
+
+[node name="ContinueMargin" type="MarginContainer" parent="."]
+custom_minimum_size = Vector2(200, 70)
+layout_mode = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_right = 30
+
+[node name="Continue" type="Button" parent="ContinueMargin"]
+custom_minimum_size = Vector2(220, 80)
+layout_mode = 2
+theme = ExtResource("2_47bov")
+text = "CONTINUE"

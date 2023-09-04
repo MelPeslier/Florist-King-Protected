@@ -15,7 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://cj3sjty8osk0m" path="res://player/Player.tscn" id="11_shb70"]
 [ext_resource type="Script" path="res://shop/night/manager.gd" id="13_oapso"]
 [ext_resource type="Script" path="res://shop/day/DayToNight.gd" id="13_uw60l"]
-[ext_resource type="FontFile" uid="uid://b0hof85mkga7d" path="res://art/Playfulist-rgPp8.ttf" id="14_rh50w"]
+[ext_resource type="FontFile" uid="uid://b0hof85mkga7d" path="res://fonts/Playfulist-rgPp8.ttf" id="14_rh50w"]
 [ext_resource type="AudioStream" uid="uid://bkiwohevp4s2i" path="res://audio/sfx/DayToNight.mp3" id="15_k5pqt"]
 [ext_resource type="PackedScene" uid="uid://bq0lrnmxfrmso" path="res://menus/recaps/recap_manager.tscn" id="16_04bqm"]
 

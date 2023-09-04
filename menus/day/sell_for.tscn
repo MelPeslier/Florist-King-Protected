@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dk5j2mssutuww"]
 
-[ext_resource type="FontFile" uid="uid://b0hof85mkga7d" path="res://art/Playfulist-rgPp8.ttf" id="1_l5lvs"]
+[ext_resource type="FontFile" uid="uid://b0hof85mkga7d" path="res://fonts/police/Playfulist-rgPp8.ttf" id="1_l5lvs"]
 
 [node name="sell_for" type="Label"]
 anchors_preset = 15
