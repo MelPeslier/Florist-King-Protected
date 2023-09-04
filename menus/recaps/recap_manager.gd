@@ -53,4 +53,3 @@ func _on_timer_timeout():
 		recap_message,
 		next_phase_path
 	)
-	ScoreManager.next_day()
