@@ -11,8 +11,12 @@ func _on_input_event(_viewport, event, _shape_idx):
 
 func _on_mouse_entered() -> void:
 	Input.set_default_cursor_shape(Input.CURSOR_POINTING_HAND)
+	if $Sprite2D:
+		create_tween().tween_property($Sprite2D, "modulate:a", 0.75, 0.3)
 	print("This go to room : " + str(to_room))
 
 
 func _on_mouse_exited() -> void:
 	Input.set_default_cursor_shape(Input.CURSOR_ARROW)
+	if $Sprite2D:
+		create_tween().tween_property($Sprite2D, "modulate:a", 1, 0.3)

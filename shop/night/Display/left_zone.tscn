@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://dtlc4le5xjem8"]
+[gd_scene load_steps=4 format=3 uid="uid://dtlc4le5xjem8"]
 
 [ext_resource type="Script" path="res://shop/night/Display/player_next_room.gd" id="1_dnepi"]
+[ext_resource type="Texture2D" uid="uid://cgm0fujkwihi1" path="res://art/BlurryBlack.png" id="2_68wmg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gxkis"]
 size = Vector2(192, 1080)
@@ -11,7 +12,15 @@ script = ExtResource("1_dnepi")
 metadata/_edit_group_ = true
 
 [node name="CollisionShape" type="CollisionShape2D" parent="."]
+position = Vector2(0, -4)
 shape = SubResource("RectangleShape2D_gxkis")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.75)
+position = Vector2(-0.202091, -4.07282)
+rotation = 1.5708
+scale = Vector2(1.35034, 0.479859)
+texture = ExtResource("2_68wmg")
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]

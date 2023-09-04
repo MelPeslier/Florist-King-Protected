@@ -1,9 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://bpx14qr7213xo"]
+[gd_scene load_steps=4 format=3 uid="uid://bpx14qr7213xo"]
 
 [ext_resource type="Script" path="res://shop/night/Display/player_next_room.gd" id="1_6732c"]
+[ext_resource type="Texture2D" uid="uid://cgm0fujkwihi1" path="res://art/BlurryBlack.png" id="2_fqivp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cnico"]
-size = Vector2(194, 1080)
+size = Vector2(192, 1080)
 
 [node name="RightZone" type="Area2D" groups=["zone"]]
 position = Vector2(912, 0)
@@ -13,6 +14,13 @@ metadata/_edit_group_ = true
 [node name="CollisionShape" type="CollisionShape2D" parent="."]
 position = Vector2(0, 4)
 shape = SubResource("RectangleShape2D_cnico")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.75)
+position = Vector2(-0.0270428, 4.12714)
+rotation = 4.71239
+scale = Vector2(1.3505, 0.479907)
+texture = ExtResource("2_fqivp")
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
